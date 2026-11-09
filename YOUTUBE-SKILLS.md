@@ -1,6 +1,6 @@
 # YouTube video skill'leri
 
-`awesome-claude-video-skills` listesinden YouTube için seçilen skill'ler. Seslendirme, görsel ve animasyon işlerini kapsar.
+`awesome-claude-video-skills` listesinden YouTube için seçilen skill'ler. Seslendirme, görsel, animasyon ve Shorts işlerini kapsar.
 
 ## 1. Proje genelindeki skill'ler (`.claude/skills/`)
 
@@ -46,3 +46,25 @@ Gereken API anahtarları:
 - **Gemini:** yalnızca thumbnail üretimi için.
 - **fal.ai:** isteğe bağlı, üretilen video klipler için.
 - **YouTube yükleme:** OAuth ile çalışır, ayrıntılar `tools/yt_upload_SETUP.md` dosyasında.
+
+## 3. Yüzsüz YouTube Shorts üreticisi (`shorts-creator/`)
+
+[hassancs91/claude-faceless-shorts-creator](https://github.com/hassancs91/claude-faceless-shorts-creator) @ `773054b` (MIT). Kamera kaydı gerektirmeyen dikey Shorts üretir. Üç üretim hattı vardır:
+
+| Ne istersin | Skill | Görüntü |
+|---|---|---|
+| "×11 hilesi hakkında bir short yap" | `/make-short` | Tamamen kodla üretilen Remotion animasyonu, stok görüntü yok |
+| "blue-man ile AI video short yap" | `/make-ai-short` | fal video modeliyle sabit, tekrar eden bir karakter |
+| "kahve hakkında vox tarzı short yap" | `/make-vox` | Vox belgeseli tarzı kâğıt kolaj ve kamera hareketi |
+
+Üç hattın ortak özellikleri:
+- ElevenLabs seslendirmesi ve kelimesi kelimesine senkron altyazı,
+- `/suggest-sfx` ile ses efekti ve müzik kütüphanesi,
+- başa dönen kesintisiz döngüler.
+
+`shorts/` klasöründe 12 hazır örnek prodüksiyon var.
+
+Claude Code'u **`shorts-creator/` klasöründe** açın. Kurulum adımları `shorts-creator/README.md` dosyasında; gereken anahtarlar:
+- **ElevenLabs:** seslendirme için.
+- **fal.ai:** AI video ve görsel üretimi için.
+- **Gemini:** isteğe bağlı.
