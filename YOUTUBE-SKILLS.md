@@ -68,3 +68,32 @@ Claude Code'u **`shorts-creator/` klasöründe** açın. Kurulum adımları `sho
 - **ElevenLabs:** seslendirme için.
 - **fal.ai:** AI video ve görsel üretimi için.
 - **Gemini:** isteğe bağlı.
+
+## Claude Code bulut ortamında render
+
+Bulut ortamında ağ kısıtlı olduğu için Remotion kendi Chrome'unu indiremiyor (`remotion.media`). Bunun yerine ortamda kurulu Chromium kullanılmalı:
+
+```bash
+npx remotion render src/index.ts <KompozisyonId> out.mp4 \
+  --browser-executable=/opt/pw-browsers/chromium-1243/chrome-linux64/chrome \
+  --chrome-mode=chrome-for-testing
+```
+
+`chromium_headless_shell` yerine tam `chrome` sürümü kullanılmalı. Headless shell, ortam proxy'sinin sertifikasına güvenmediği için Google Fonts'u yükleyemiyor.
+
+## Test sonuçları (2026-11-09)
+
+| Test | Sonuç |
+|---|---|
+| `youtube-editor`: pip + npm kurulumu, `npm run gen` | ✅ |
+| `youtube-editor`: `RuleCard` render (1920×1080, 30 fps, 5,5 sn) | ✅ |
+| `youtube-editor`: yerel RNNoise ses temizleme (anahtarsız) | ✅ |
+| `youtube-editor`: `tsc --noEmit` | ⚠️ Örnek sahnelerde 8 tür hatası var (lucide ikon tipleri). Render'ı etkilemiyor. |
+| `shorts-creator`: npm kurulumu, 14 kompozisyon listelendi, tür hatası yok | ✅ |
+| `shorts-creator`: `Short2Math` render (1080×1920, 42 sn) | ✅ Görüntü ve altyazı doğru, ses yok (aşağıya bakın). |
+| `shorts-creator`: `mix_sfx.py` ile 17 ses efekti miksi | ✅ |
+| Proje kökündeki 15 skill'in Claude Code'a yüklenmesi | ✅ |
+
+Örnek Shorts'ların seslendirme dosyaları repoya konmuyor (`shorts/*/voice/` gitignore'da); bunlar ElevenLabs ile üretiliyor. Bu yüzden anahtar olmadan render edilen örnekler sessiz çıkıyor. Ses efektleri ise kütüphaneden geldiği için anahtarsız çalışıyor.
+
+API anahtarı gerektiren adımlar test edilmedi: transkripsiyon, ElevenLabs ses ve efekt üretimi, Gemini thumbnail üretimi, fal.ai video üretimi ve YouTube'a yükleme.
