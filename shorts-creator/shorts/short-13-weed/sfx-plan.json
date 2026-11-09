@@ -1,0 +1,32 @@
+{
+  "master": "remotion/out/Short13Weed-voiced.mp4",
+  "master_fps": 30,
+  "catalog": "media/library/sfx/catalog.json",
+  "render": {
+    "preview": "remotion/out/Short13Weed-voiced.mp4",
+    "out": "shorts/short-13-weed/output/short-13-sfx.mp4",
+    "end_s": 38.6,
+    "duck": true
+  },
+  "events": [
+    { "at_s": 0.10,  "sfx_id": "warm-shimmer",   "gain_db": -12, "shot": "Hook",     "cue": "molecule starts drawing" },
+    { "at_s": 2.55,  "sfx_id": "whoosh-soft",    "gain_db": -10, "shot": "Thc",      "cue": "cut to MEET THC" },
+    { "at_s": 3.00,  "sfx_id": "sparkle-soft",   "gain_db": -12, "shot": "Thc",      "cue": "THC label lands" },
+    { "at_s": 5.95,  "sfx_id": "whoosh-soft",    "gain_db": -10, "shot": "Lock",     "cue": "cut to the CB1 lock" },
+    { "at_s": 12.15, "sfx_id": "knock-solid",    "gain_db": -9,  "shot": "Lock",     "cue": "anandamide key seats in the lock" },
+    { "at_s": 14.55, "sfx_id": "whoosh-soft",    "gain_db": -10, "shot": "Copycat",  "cue": "cut to THC IS A COPYCAT" },
+    { "at_s": 16.75, "sfx_id": "stamp-hit",      "gain_db": -8,  "shot": "Copycat",  "cue": "THC key lands, lock glows" },
+    { "at_s": 18.55, "sfx_id": "whoosh-reverse", "gain_db": -11, "shot": "Dopamine", "cue": "cut to RELEASE THE BRAKE" },
+    { "at_s": 19.60, "sfx_id": "trap-snap",      "gain_db": -10, "shot": "Dopamine", "cue": "GABA brake lifts" },
+    { "at_s": 21.80, "sfx_id": "chime-reward",   "gain_db": -8,  "shot": "Dopamine", "cue": "dopamine burst on 'dopamine'" },
+    { "at_s": 24.55, "sfx_id": "whoosh-soft",    "gain_db": -10, "shot": "Regions",  "cue": "cut to WHERE IT HITS" },
+    { "at_s": 25.07, "sfx_id": "ui-click-soft",  "gain_db": -11, "shot": "Regions",  "cue": "row 1 reward circuit" },
+    { "at_s": 25.80, "sfx_id": "ui-click-soft",  "gain_db": -11, "shot": "Regions",  "cue": "row 2 hippocampus" },
+    { "at_s": 26.53, "sfx_id": "ui-click-soft",  "gain_db": -11, "shot": "Regions",  "cue": "row 3 cerebellum" },
+    { "at_s": 27.27, "sfx_id": "ui-click-soft",  "gain_db": -11, "shot": "Regions",  "cue": "row 4 hypothalamus" },
+    { "at_s": 29.55, "sfx_id": "whoosh-soft",    "gain_db": -10, "shot": "Lasts",    "cue": "cut to WHY IT LASTS" },
+    { "at_s": 30.10, "sfx_id": "riser-soft",     "gain_db": -13, "shot": "Lasts",    "cue": "bars grow" },
+    { "at_s": 34.15, "sfx_id": "whoosh-reverse", "gain_db": -11, "shot": "Outro",    "cue": "back to the hook (loop)" },
+    { "at_s": 34.40, "sfx_id": "impact-soft",    "gain_db": -9,  "shot": "Outro",    "cue": "title lands" }
+  ]
+}
