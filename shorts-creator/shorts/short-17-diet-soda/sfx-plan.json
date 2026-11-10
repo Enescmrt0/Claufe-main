@@ -1,0 +1,188 @@
+{
+  "master": "remotion/out/Short17DietSoda-voiced.mp4",
+  "master_fps": 30,
+  "catalog": "media/library/sfx/catalog.json",
+  "render": {
+    "preview": "remotion/out/Short17DietSoda-voiced.mp4",
+    "out": "shorts/short-17-diet-soda/output/short-17-diet-soda-sfx.mp4",
+    "end_s": 43,
+    "duck": true
+  },
+  "events": [
+    {
+      "at_s": 0.1,
+      "sfx_id": "sparkle-soft",
+      "gain_db": -12,
+      "shot": "Hook",
+      "cue": "bubbles rise from the can"
+    },
+    {
+      "at_s": 2.89,
+      "sfx_id": "whoosh-soft",
+      "gain_db": -11,
+      "shot": "Sweet",
+      "cue": "cut to WHAT IS INSIDE"
+    },
+    {
+      "at_s": 3.24,
+      "sfx_id": "pop-reveal",
+      "gain_db": -11,
+      "shot": "Sweet",
+      "cue": "0 SUGAR chip"
+    },
+    {
+      "at_s": 4.14,
+      "sfx_id": "pop-reveal",
+      "gain_db": -11,
+      "shot": "Sweet",
+      "cue": "0 CALORIES chip"
+    },
+    {
+      "at_s": 5.85,
+      "sfx_id": "riser-soft",
+      "gain_db": -13,
+      "shot": "Sweet",
+      "cue": "sweetener bar grows to 200-600x"
+    },
+    {
+      "at_s": 8.59,
+      "sfx_id": "whoosh-soft",
+      "gain_db": -11,
+      "shot": "Tongue",
+      "cue": "cut to SUGAR INCOMING"
+    },
+    {
+      "at_s": 9.35,
+      "sfx_id": "pop-reveal",
+      "gain_db": -11,
+      "shot": "Tongue",
+      "cue": "sweet receptors light up"
+    },
+    {
+      "at_s": 9.75,
+      "sfx_id": "scan-hum",
+      "gain_db": -15,
+      "shot": "Tongue",
+      "cue": "signal travels to the brain"
+    },
+    {
+      "at_s": 11.15,
+      "sfx_id": "chime-magic",
+      "gain_db": -11,
+      "shot": "Tongue",
+      "cue": "brain gets ready for energy"
+    },
+    {
+      "at_s": 13.23,
+      "sfx_id": "whoosh-reverse",
+      "gain_db": -12,
+      "shot": "NoCal",
+      "cue": "cut to THE CALORIES NEVER ARRIVE"
+    },
+    {
+      "at_s": 15.1,
+      "sfx_id": "impact-deep-soft",
+      "gain_db": -10,
+      "shot": "NoCal",
+      "cue": "delivered: 0 kcal"
+    },
+    {
+      "at_s": 15.5,
+      "sfx_id": "glitch-zap",
+      "gain_db": -14,
+      "shot": "NoCal",
+      "cue": "question mark over the brain"
+    },
+    {
+      "at_s": 17.63,
+      "sfx_id": "whoosh-soft",
+      "gain_db": -11,
+      "shot": "Reward",
+      "cue": "cut to REWARD RESPONSE"
+    },
+    {
+      "at_s": 18.5,
+      "sfx_id": "warm-shimmer",
+      "gain_db": -12,
+      "shot": "Reward",
+      "cue": "sugar brain lights up"
+    },
+    {
+      "at_s": 20.3,
+      "sfx_id": "ui-click-soft",
+      "gain_db": -11,
+      "shot": "Reward",
+      "cue": "WEAKER chip"
+    },
+    {
+      "at_s": 22.16,
+      "sfx_id": "whoosh-soft",
+      "gain_db": -11,
+      "shot": "Crave",
+      "cue": "cut to DOES IT CAUSE CRAVINGS"
+    },
+    {
+      "at_s": 22.75,
+      "sfx_id": "ui-click-soft",
+      "gain_db": -11,
+      "shot": "Crave",
+      "cue": "some studies card"
+    },
+    {
+      "at_s": 25.65,
+      "sfx_id": "ui-click-soft",
+      "gain_db": -11,
+      "shot": "Crave",
+      "cue": "other studies card"
+    },
+    {
+      "at_s": 26.1,
+      "sfx_id": "pop-reveal",
+      "gain_db": -11,
+      "shot": "Crave",
+      "cue": "EVIDENCE: MIXED"
+    },
+    {
+      "at_s": 27.33,
+      "sfx_id": "whoosh-soft",
+      "gain_db": -11,
+      "shot": "Memory",
+      "cue": "cut to DIET SODA & MEMORY"
+    },
+    {
+      "at_s": 31.5,
+      "sfx_id": "stamp-hit",
+      "gain_db": -8,
+      "shot": "Memory",
+      "cue": "CORRELATION is not PROOF stamp"
+    },
+    {
+      "at_s": 33.74,
+      "sfx_id": "whoosh-soft",
+      "gain_db": -11,
+      "shot": "Safe",
+      "cue": "cut to WHAT REGULATORS SAY"
+    },
+    {
+      "at_s": 34.8,
+      "sfx_id": "chime-reward",
+      "gain_db": -9,
+      "shot": "Safe",
+      "cue": "shield check"
+    },
+    {
+      "at_s": 37.74,
+      "sfx_id": "whoosh-reverse",
+      "gain_db": -12,
+      "shot": "Outro",
+      "cue": "back to the hook (loop)"
+    },
+    {
+      "at_s": 37.99,
+      "sfx_id": "impact-soft",
+      "gain_db": -9,
+      "shot": "Outro",
+      "cue": "title lands"
+    }
+  ]
+}

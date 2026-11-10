@@ -72,6 +72,22 @@
   "transparent": false
  },
  {
+  "id": "Short17DietSoda",
+  "durationInSeconds": 43,
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "transparent": false
+ },
+ {
+  "id": "Short18OnlyMeat",
+  "durationInSeconds": 43.4,
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "transparent": false
+ },
+ {
   "id": "Short2Math",
   "durationInSeconds": 42,
   "fps": 30,

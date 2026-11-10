@@ -9,15 +9,17 @@ import Shot5, { compositionConfig as cfg5 } from './shots/short-13/Short13Weed';
 import Shot6, { compositionConfig as cfg6 } from './shots/short-14/Short14Coffee';
 import Shot7, { compositionConfig as cfg7 } from './shots/short-15/Short15Sugar';
 import Shot8, { compositionConfig as cfg8 } from './shots/short-16/Short16LastSeconds';
-import Shot9, { compositionConfig as cfg9 } from './shots/short-2/Short2Math';
-import Shot10, { compositionConfig as cfg10 } from './shots/short-3/Short3Algo';
-import Shot11, { compositionConfig as cfg11 } from './shots/short-4/Short4Reflog';
-import Shot12, { compositionConfig as cfg12 } from './shots/short-5/Short5Monty';
-import Shot13, { compositionConfig as cfg13 } from './shots/short-6/Short6Sheet';
-import Shot14, { compositionConfig as cfg14 } from './shots/short-7/Short7Kids';
-import Shot15, { compositionConfig as cfg15 } from './shots/short-8/Short8Phish';
-import Shot16, { compositionConfig as cfg16 } from './shots/short-9/Short9Chords';
-import Shot17, { compositionConfig as cfg17 } from './shots/vox-1/Vox1Coffee';
+import Shot9, { compositionConfig as cfg9 } from './shots/short-17/Short17DietSoda';
+import Shot10, { compositionConfig as cfg10 } from './shots/short-18/Short18OnlyMeat';
+import Shot11, { compositionConfig as cfg11 } from './shots/short-2/Short2Math';
+import Shot12, { compositionConfig as cfg12 } from './shots/short-3/Short3Algo';
+import Shot13, { compositionConfig as cfg13 } from './shots/short-4/Short4Reflog';
+import Shot14, { compositionConfig as cfg14 } from './shots/short-5/Short5Monty';
+import Shot15, { compositionConfig as cfg15 } from './shots/short-6/Short6Sheet';
+import Shot16, { compositionConfig as cfg16 } from './shots/short-7/Short7Kids';
+import Shot17, { compositionConfig as cfg17 } from './shots/short-8/Short8Phish';
+import Shot18, { compositionConfig as cfg18 } from './shots/short-9/Short9Chords';
+import Shot19, { compositionConfig as cfg19 } from './shots/vox-1/Vox1Coffee';
 
 export const shots: { Comp: React.FC; config: any }[] = [
   { Comp: Shot0 as React.FC, config: cfg0 },
@@ -38,4 +40,6 @@ export const shots: { Comp: React.FC; config: any }[] = [
   { Comp: Shot15 as React.FC, config: cfg15 },
   { Comp: Shot16 as React.FC, config: cfg16 },
   { Comp: Shot17 as React.FC, config: cfg17 },
+  { Comp: Shot18 as React.FC, config: cfg18 },
+  { Comp: Shot19 as React.FC, config: cfg19 },
 ];
