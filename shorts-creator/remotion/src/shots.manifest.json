@@ -88,6 +88,14 @@
   "transparent": false
  },
  {
+  "id": "Short19Pushups",
+  "durationInSeconds": 43.4,
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "transparent": false
+ },
+ {
   "id": "Short2Math",
   "durationInSeconds": 42,
   "fps": 30,
