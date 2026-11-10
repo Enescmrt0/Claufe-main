@@ -1,0 +1,216 @@
+{
+  "master": "remotion/out/Short15Sugar-voiced.mp4",
+  "master_fps": 30,
+  "catalog": "media/library/sfx/catalog.json",
+  "render": {
+    "preview": "remotion/out/Short15Sugar-voiced.mp4",
+    "out": "shorts/short-15-sugar/output/short-15-sfx.mp4",
+    "end_s": 38,
+    "duck": true
+  },
+  "events": [
+    {
+      "at_s": 0.1,
+      "sfx_id": "sparkle-soft",
+      "gain_db": -11,
+      "shot": "Hook",
+      "cue": "sugar cube sparkles"
+    },
+    {
+      "at_s": 2.15,
+      "sfx_id": "whoosh-soft",
+      "gain_db": -10,
+      "shot": "Ancient",
+      "cue": "cut to 100,000 YEARS AGO"
+    },
+    {
+      "at_s": 5.2,
+      "sfx_id": "chime-magic",
+      "gain_db": -10,
+      "shot": "Ancient",
+      "cue": "SWEET = SAFE, FAST ENERGY chip"
+    },
+    {
+      "at_s": 6.6,
+      "sfx_id": "whoosh-soft",
+      "gain_db": -10,
+      "shot": "Rare",
+      "cue": "cut to RIPE FRUIT WAS RARE"
+    },
+    {
+      "at_s": 8.25,
+      "sfx_id": "riser-soft",
+      "gain_db": -13,
+      "shot": "Rare",
+      "cue": "want-it meter fills"
+    },
+    {
+      "at_s": 9.95,
+      "sfx_id": "whoosh-soft",
+      "gain_db": -10,
+      "shot": "Tongue",
+      "cue": "cut to TONGUE -> BRAIN"
+    },
+    {
+      "at_s": 11.1,
+      "sfx_id": "pop-reveal",
+      "gain_db": -10,
+      "shot": "Tongue",
+      "cue": "sweet receptors light up"
+    },
+    {
+      "at_s": 11.6,
+      "sfx_id": "scan-hum",
+      "gain_db": -15,
+      "shot": "Tongue",
+      "cue": "signal travels up the nerve"
+    },
+    {
+      "at_s": 13.6,
+      "sfx_id": "chime-reward",
+      "gain_db": -8,
+      "shot": "Tongue",
+      "cue": "dopamine burst"
+    },
+    {
+      "at_s": 14.6,
+      "sfx_id": "glitch-zap",
+      "gain_db": -13,
+      "shot": "Gut",
+      "cue": "THE TWIST"
+    },
+    {
+      "at_s": 16.05,
+      "sfx_id": "warm-shimmer",
+      "gain_db": -12,
+      "shot": "Gut",
+      "cue": "gut glows"
+    },
+    {
+      "at_s": 17.95,
+      "sfx_id": "ui-send",
+      "gain_db": -10,
+      "shot": "Gut",
+      "cue": "vagus nerve message"
+    },
+    {
+      "at_s": 18.65,
+      "sfx_id": "pop-reveal",
+      "gain_db": -10,
+      "shot": "Gut",
+      "cue": "brain receives it"
+    },
+    {
+      "at_s": 20.0,
+      "sfx_id": "whoosh-soft",
+      "gain_db": -10,
+      "shot": "Sweetener",
+      "cue": "cut to SUGAR VS SWEETENER"
+    },
+    {
+      "at_s": 20.65,
+      "sfx_id": "ui-click-soft",
+      "gain_db": -10,
+      "shot": "Sweetener",
+      "cue": "tongue: sugar check"
+    },
+    {
+      "at_s": 20.92,
+      "sfx_id": "ui-click-soft",
+      "gain_db": -10,
+      "shot": "Sweetener",
+      "cue": "tongue: sweetener check"
+    },
+    {
+      "at_s": 22.85,
+      "sfx_id": "ui-click-soft",
+      "gain_db": -10,
+      "shot": "Sweetener",
+      "cue": "gut: sugar check"
+    },
+    {
+      "at_s": 23.12,
+      "sfx_id": "trap-snap",
+      "gain_db": -10,
+      "shot": "Sweetener",
+      "cue": "gut: sweetener cross"
+    },
+    {
+      "at_s": 24.3,
+      "sfx_id": "whoosh-soft",
+      "gain_db": -10,
+      "shot": "Spike",
+      "cue": "cut to THE SPIKE"
+    },
+    {
+      "at_s": 26.15,
+      "sfx_id": "riser-soft",
+      "gain_db": -12,
+      "shot": "Spike",
+      "cue": "blood sugar spikes"
+    },
+    {
+      "at_s": 27.25,
+      "sfx_id": "pop-reveal",
+      "gain_db": -10,
+      "shot": "Spike",
+      "cue": "INSULIN chip"
+    },
+    {
+      "at_s": 28.55,
+      "sfx_id": "impact-deep-soft",
+      "gain_db": -8,
+      "shot": "Spike",
+      "cue": "CRASH"
+    },
+    {
+      "at_s": 29.7,
+      "sfx_id": "whoosh-reverse",
+      "gain_db": -11,
+      "shot": "Loop",
+      "cue": "cut to THE LOOP"
+    },
+    {
+      "at_s": 29.95,
+      "sfx_id": "ui-click-soft",
+      "gain_db": -11,
+      "shot": "Loop",
+      "cue": "SUGAR node"
+    },
+    {
+      "at_s": 30.25,
+      "sfx_id": "ui-click-soft",
+      "gain_db": -11,
+      "shot": "Loop",
+      "cue": "SPIKE node"
+    },
+    {
+      "at_s": 30.55,
+      "sfx_id": "ui-click-soft",
+      "gain_db": -11,
+      "shot": "Loop",
+      "cue": "CRASH node"
+    },
+    {
+      "at_s": 30.85,
+      "sfx_id": "ui-click-soft",
+      "gain_db": -11,
+      "shot": "Loop",
+      "cue": "CRAVING node"
+    },
+    {
+      "at_s": 32.95,
+      "sfx_id": "whoosh-reverse",
+      "gain_db": -11,
+      "shot": "Outro",
+      "cue": "back to the hook (loop)"
+    },
+    {
+      "at_s": 33.2,
+      "sfx_id": "impact-soft",
+      "gain_db": -9,
+      "shot": "Outro",
+      "cue": "title lands"
+    }
+  ]
+}
