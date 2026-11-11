@@ -1,0 +1,216 @@
+{
+  "master": "remotion/out/Short23Iq500-voiced.mp4",
+  "master_fps": 30,
+  "catalog": "media/library/sfx/catalog.json",
+  "render": {
+    "preview": "remotion/out/Short23Iq500-voiced.mp4",
+    "out": "shorts/short-23-iq-500/output/short-23-iq-500-sfx.mp4",
+    "end_s": 37.8,
+    "duck": true
+  },
+  "events": [
+    {
+      "at_s": 0.1,
+      "sfx_id": "riser-soft",
+      "gain_db": -12,
+      "shot": "Hook",
+      "cue": "IQ counter climbs to 500"
+    },
+    {
+      "at_s": 2.05,
+      "sfx_id": "chime-magic",
+      "gain_db": -11,
+      "shot": "Hook",
+      "cue": "500 reached"
+    },
+    {
+      "at_s": 2.59,
+      "sfx_id": "whoosh-soft",
+      "gain_db": -11,
+      "shot": "Bell",
+      "cue": "cut to FIRST, THE CATCH"
+    },
+    {
+      "at_s": 3.95,
+      "sfx_id": "pencil-scribble",
+      "gain_db": -11,
+      "shot": "Bell",
+      "cue": "bell curve draws"
+    },
+    {
+      "at_s": 5.55,
+      "sfx_id": "pop-reveal",
+      "gain_db": -11,
+      "shot": "Bell",
+      "cue": "IQ = A RANKING"
+    },
+    {
+      "at_s": 6.75,
+      "sfx_id": "ui-click-soft",
+      "gain_db": -11,
+      "shot": "Bell",
+      "cue": "100 average"
+    },
+    {
+      "at_s": 8.25,
+      "sfx_id": "ui-click-soft",
+      "gain_db": -11,
+      "shot": "Bell",
+      "cue": "160, one in 30,000"
+    },
+    {
+      "at_s": 11.15,
+      "sfx_id": "whoosh-wind",
+      "gain_db": -11,
+      "shot": "Bell",
+      "cue": "axis zooms out to 500"
+    },
+    {
+      "at_s": 11.65,
+      "sfx_id": "pop-reveal",
+      "gain_db": -11,
+      "shot": "Bell",
+      "cue": "OFF THE CHART"
+    },
+    {
+      "at_s": 12.05,
+      "sfx_id": "impact-soft",
+      "gain_db": -10,
+      "shot": "Bell",
+      "cue": "500 marker far right"
+    },
+    {
+      "at_s": 13.25,
+      "sfx_id": "pop-reveal",
+      "gain_db": -11,
+      "shot": "Bell",
+      "cue": "NO TEST CAN MEASURE IT"
+    },
+    {
+      "at_s": 14.72,
+      "sfx_id": "whoosh-soft",
+      "gain_db": -11,
+      "shot": "Imagine",
+      "cue": "cut to IMAGINE IT ANYWAY"
+    },
+    {
+      "at_s": 16.27,
+      "sfx_id": "ui-click-soft",
+      "gain_db": -11,
+      "shot": "Imagine",
+      "cue": "day 1 Spanish"
+    },
+    {
+      "at_s": 16.67,
+      "sfx_id": "ui-click-soft",
+      "gain_db": -11,
+      "shot": "Imagine",
+      "cue": "day 2 Japanese"
+    },
+    {
+      "at_s": 17.07,
+      "sfx_id": "ui-click-soft",
+      "gain_db": -11,
+      "shot": "Imagine",
+      "cue": "day 3 Arabic"
+    },
+    {
+      "at_s": 18.2,
+      "sfx_id": "sparkle-soft",
+      "gain_db": -11,
+      "shot": "Imagine",
+      "cue": "dots connect into a pattern"
+    },
+    {
+      "at_s": 20.04,
+      "sfx_id": "whoosh-reverse",
+      "gain_db": -12,
+      "shot": "Slow",
+      "cue": "cut to THE PROBLEM"
+    },
+    {
+      "at_s": 20.7,
+      "sfx_id": "clock-tick-soft",
+      "gain_db": -11,
+      "shot": "Slow",
+      "cue": "impatient foot tap, slow loading bar"
+    },
+    {
+      "at_s": 23.5,
+      "sfx_id": "ui-click-soft",
+      "gain_db": -12,
+      "shot": "Slow",
+      "cue": "CONVERSATIONS"
+    },
+    {
+      "at_s": 24.03,
+      "sfx_id": "ui-click-soft",
+      "gain_db": -12,
+      "shot": "Slow",
+      "cue": "JOKES"
+    },
+    {
+      "at_s": 24.57,
+      "sfx_id": "ui-click-soft",
+      "gain_db": -12,
+      "shot": "Slow",
+      "cue": "SCHOOL"
+    },
+    {
+      "at_s": 25.1,
+      "sfx_id": "ui-click-soft",
+      "gain_db": -12,
+      "shot": "Slow",
+      "cue": "WORK"
+    },
+    {
+      "at_s": 28.21,
+      "sfx_id": "whoosh-soft",
+      "gain_db": -11,
+      "shot": "Guarantee",
+      "cue": "cut to NOT GUARANTEED"
+    },
+    {
+      "at_s": 30.45,
+      "sfx_id": "trap-snap",
+      "gain_db": -12,
+      "shot": "Guarantee",
+      "cue": "happiness struck out"
+    },
+    {
+      "at_s": 30.95,
+      "sfx_id": "trap-snap",
+      "gain_db": -12,
+      "shot": "Guarantee",
+      "cue": "wealth struck out"
+    },
+    {
+      "at_s": 31.45,
+      "sfx_id": "trap-snap",
+      "gain_db": -12,
+      "shot": "Guarantee",
+      "cue": "friends struck out"
+    },
+    {
+      "at_s": 32.1,
+      "sfx_id": "whoosh-soft",
+      "gain_db": -11,
+      "shot": "Final",
+      "cue": "cut to THE SMARTEST MOVE"
+    },
+    {
+      "at_s": 35.05,
+      "sfx_id": "pop-reveal",
+      "gain_db": -11,
+      "shot": "Final",
+      "cue": "STAY CURIOUS"
+    },
+    {
+      "at_s": 35.85,
+      "sfx_id": "chime-reward",
+      "gain_db": -10,
+      "shot": "Final",
+      "cue": "STAY KIND"
+    }
+  ]
+}
