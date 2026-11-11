@@ -1,0 +1,202 @@
+{
+  "master": "remotion/out/Short22NoPain-voiced.mp4",
+  "master_fps": 30,
+  "catalog": "media/library/sfx/catalog.json",
+  "render": {
+    "preview": "remotion/out/Short22NoPain-voiced.mp4",
+    "out": "shorts/short-22-no-pain/output/short-22-no-pain-sfx.mp4",
+    "end_s": 33.4,
+    "duck": true
+  },
+  "events": [
+    {
+      "at_s": 0.1,
+      "sfx_id": "glitch-zap",
+      "gain_db": -15,
+      "shot": "Hook",
+      "cue": "pain bolts bounce off the bubble"
+    },
+    {
+      "at_s": 2.08,
+      "sfx_id": "whoosh-soft",
+      "gain_db": -11,
+      "shot": "Power",
+      "cue": "cut to SUPERPOWER"
+    },
+    {
+      "at_s": 3.6,
+      "sfx_id": "pop-reveal",
+      "gain_db": -11,
+      "shot": "Power",
+      "cue": "NO HEADACHES"
+    },
+    {
+      "at_s": 4.5,
+      "sfx_id": "pop-reveal",
+      "gain_db": -11,
+      "shot": "Power",
+      "cue": "NO STUBBED TOES"
+    },
+    {
+      "at_s": 5.78,
+      "sfx_id": "whoosh-reverse",
+      "gain_db": -12,
+      "shot": "Alarm",
+      "cue": "cut to ALARM SYSTEM"
+    },
+    {
+      "at_s": 6.9,
+      "sfx_id": "ui-click-soft",
+      "gain_db": -10,
+      "shot": "Alarm",
+      "cue": "hand touches the cactus"
+    },
+    {
+      "at_s": 6.95,
+      "sfx_id": "scan-hum",
+      "gain_db": -14,
+      "shot": "Alarm",
+      "cue": "nerve signal travels to the brain"
+    },
+    {
+      "at_s": 7.33,
+      "sfx_id": "pop-reveal",
+      "gain_db": -10,
+      "shot": "Alarm",
+      "cue": "OUCH"
+    },
+    {
+      "at_s": 8.4,
+      "sfx_id": "pop-reveal",
+      "gain_db": -11,
+      "shot": "Alarm",
+      "cue": "NERVES to BRAIN"
+    },
+    {
+      "at_s": 9.4,
+      "sfx_id": "pop-reveal",
+      "gain_db": -11,
+      "shot": "Alarm",
+      "cue": "IN A SPLIT SECOND"
+    },
+    {
+      "at_s": 10.76,
+      "sfx_id": "whoosh-soft",
+      "gain_db": -11,
+      "shot": "Pan",
+      "cue": "cut to WITHOUT THE ALARM"
+    },
+    {
+      "at_s": 11.4,
+      "sfx_id": "riser-soft",
+      "gain_db": -12,
+      "shot": "Pan",
+      "cue": "burn damage rises"
+    },
+    {
+      "at_s": 12.3,
+      "sfx_id": "pop-reveal",
+      "gain_db": -11,
+      "shot": "Pan",
+      "cue": "NO WARNING NO REFLEX"
+    },
+    {
+      "at_s": 13.84,
+      "sfx_id": "whoosh-soft",
+      "gain_db": -11,
+      "shot": "Ankle",
+      "cue": "cut to A BROKEN ANKLE"
+    },
+    {
+      "at_s": 14.3,
+      "sfx_id": "trap-snap",
+      "gain_db": -11,
+      "shot": "Ankle",
+      "cue": "crack at the ankle"
+    },
+    {
+      "at_s": 15.4,
+      "sfx_id": "pop-reveal",
+      "gain_db": -11,
+      "shot": "Ankle",
+      "cue": "KEEPS WALKING"
+    },
+    {
+      "at_s": 16.84,
+      "sfx_id": "whoosh-soft",
+      "gain_db": -11,
+      "shot": "Small",
+      "cue": "cut to SMALL THINGS ADD UP"
+    },
+    {
+      "at_s": 18.6,
+      "sfx_id": "ui-click-soft",
+      "gain_db": -11,
+      "shot": "Small",
+      "cue": "BITTEN TONGUE"
+    },
+    {
+      "at_s": 19.6,
+      "sfx_id": "ui-click-soft",
+      "gain_db": -11,
+      "shot": "Small",
+      "cue": "SCRATCHED EYES"
+    },
+    {
+      "at_s": 20.5,
+      "sfx_id": "ui-click-soft",
+      "gain_db": -11,
+      "shot": "Small",
+      "cue": "MISSED INFECTIONS"
+    },
+    {
+      "at_s": 21.88,
+      "sfx_id": "whoosh-reverse",
+      "gain_db": -12,
+      "shot": "Real",
+      "cue": "cut to THIS IS REAL"
+    },
+    {
+      "at_s": 24.15,
+      "sfx_id": "pop-reveal",
+      "gain_db": -12,
+      "shot": "Real",
+      "cue": "VERY RARE"
+    },
+    {
+      "at_s": 25.75,
+      "sfx_id": "page-flip",
+      "gain_db": -13,
+      "shot": "Real",
+      "cue": "first bandage"
+    },
+    {
+      "at_s": 26.25,
+      "sfx_id": "page-flip",
+      "gain_db": -13,
+      "shot": "Real",
+      "cue": "second bandage"
+    },
+    {
+      "at_s": 26.75,
+      "sfx_id": "page-flip",
+      "gain_db": -13,
+      "shot": "Real",
+      "cue": "third bandage"
+    },
+    {
+      "at_s": 28.14,
+      "sfx_id": "whoosh-reverse",
+      "gain_db": -12,
+      "shot": "Outro",
+      "cue": "back to the hook (loop)"
+    },
+    {
+      "at_s": 29.5,
+      "sfx_id": "chime-reward",
+      "gain_db": -10,
+      "shot": "Outro",
+      "cue": "PAIN = PROTECTION"
+    }
+  ]
+}
