@@ -1,0 +1,181 @@
+{
+  "master": "remotion/out/Short24Cat-voiced.mp4",
+  "master_fps": 30,
+  "catalog": "media/library/sfx/catalog.json",
+  "render": {
+    "preview": "remotion/out/Short24Cat-voiced.mp4",
+    "out": "shorts/short-24-cat/output/short-24-cat-sfx.mp4",
+    "end_s": 27,
+    "duck": true
+  },
+  "events": [
+    {
+      "at_s": 0.55,
+      "sfx_id": "chime-magic",
+      "gain_db": -9,
+      "shot": "Hook",
+      "cue": "poof: human turns into a cat"
+    },
+    {
+      "at_s": 0.6,
+      "sfx_id": "whoosh-soft",
+      "gain_db": -11,
+      "shot": "Hook",
+      "cue": "poof cloud"
+    },
+    {
+      "at_s": 1.96,
+      "sfx_id": "whoosh-soft",
+      "gain_db": -11,
+      "shot": "Hear",
+      "cue": "cut to SUPER HEARING"
+    },
+    {
+      "at_s": 3.9,
+      "sfx_id": "riser-soft",
+      "gain_db": -12,
+      "shot": "Hear",
+      "cue": "cat range grows to 64 kHz"
+    },
+    {
+      "at_s": 5.5,
+      "sfx_id": "pop-reveal",
+      "gain_db": -11,
+      "shot": "Hear",
+      "cue": "3x HIGHER PITCH"
+    },
+    {
+      "at_s": 7.05,
+      "sfx_id": "whoosh-reverse",
+      "gain_db": -12,
+      "shot": "Night",
+      "cue": "lights go out"
+    },
+    {
+      "at_s": 7.7,
+      "sfx_id": "warm-shimmer",
+      "gain_db": -12,
+      "shot": "Night",
+      "cue": "cat view brightens"
+    },
+    {
+      "at_s": 8.4,
+      "sfx_id": "pop-reveal",
+      "gain_db": -11,
+      "shot": "Night",
+      "cue": "1/6 OF THE LIGHT"
+    },
+    {
+      "at_s": 10.03,
+      "sfx_id": "whoosh-soft",
+      "gain_db": -11,
+      "shot": "Smell",
+      "cue": "cut to SUPER SMELL"
+    },
+    {
+      "at_s": 10.95,
+      "sfx_id": "keys-typing-soft",
+      "gain_db": -12,
+      "shot": "Smell",
+      "cue": "200 receptor dots fill in"
+    },
+    {
+      "at_s": 13.33,
+      "sfx_id": "whoosh-soft",
+      "gain_db": -11,
+      "shot": "Jump",
+      "cue": "cut to SUPER JUMP"
+    },
+    {
+      "at_s": 14.08,
+      "sfx_id": "whoosh-wind",
+      "gain_db": -10,
+      "shot": "Jump",
+      "cue": "jump up to the shelf"
+    },
+    {
+      "at_s": 14.88,
+      "sfx_id": "knock-solid",
+      "gain_db": -12,
+      "shot": "Jump",
+      "cue": "lands on the shelf"
+    },
+    {
+      "at_s": 15.48,
+      "sfx_id": "whoosh-wind",
+      "gain_db": -12,
+      "shot": "Jump",
+      "cue": "tumbles down"
+    },
+    {
+      "at_s": 16.28,
+      "sfx_id": "impact-soft",
+      "gain_db": -10,
+      "shot": "Jump",
+      "cue": "lands on its feet"
+    },
+    {
+      "at_s": 16.3,
+      "sfx_id": "pop-reveal",
+      "gain_db": -12,
+      "shot": "Jump",
+      "cue": "LANDS ON ITS FEET"
+    },
+    {
+      "at_s": 16.89,
+      "sfx_id": "whoosh-soft",
+      "gain_db": -11,
+      "shot": "Sweet",
+      "cue": "cut to DESSERT IS RUINED"
+    },
+    {
+      "at_s": 18.44,
+      "sfx_id": "trap-snap",
+      "gain_db": -10,
+      "shot": "Sweet",
+      "cue": "red X over the cake"
+    },
+    {
+      "at_s": 18.84,
+      "sfx_id": "pop-reveal",
+      "gain_db": -11,
+      "shot": "Sweet",
+      "cue": "NO SWEET TASTE"
+    },
+    {
+      "at_s": 20.57,
+      "sfx_id": "whoosh-soft",
+      "gain_db": -12,
+      "shot": "Sleep",
+      "cue": "cut to sleep"
+    },
+    {
+      "at_s": 21.1,
+      "sfx_id": "clock-tick-soft",
+      "gain_db": -12,
+      "shot": "Sleep",
+      "cue": "14 hour ring fills"
+    },
+    {
+      "at_s": 23.06,
+      "sfx_id": "whoosh-soft",
+      "gain_db": -12,
+      "shot": "Final",
+      "cue": "cut to final"
+    },
+    {
+      "at_s": 24.0,
+      "sfx_id": "chime-reward",
+      "gain_db": -10,
+      "shot": "Final",
+      "cue": "NOT A BAD DEAL"
+    },
+    {
+      "at_s": 24.6,
+      "sfx_id": "sparkle-soft",
+      "gain_db": -12,
+      "shot": "Final",
+      "cue": "heart floats up"
+    }
+  ]
+}
