@@ -97,3 +97,37 @@ npx remotion render src/index.ts <KompozisyonId> out.mp4 \
 Örnek Shorts'ların seslendirme dosyaları repoya konmuyor (`shorts/*/voice/` gitignore'da); bunlar ElevenLabs ile üretiliyor. Bu yüzden anahtar olmadan render edilen örnekler sessiz çıkıyor. Ses efektleri ise kütüphaneden geldiği için anahtarsız çalışıyor.
 
 API anahtarı gerektiren adımlar test edilmedi: transkripsiyon, ElevenLabs ses ve efekt üretimi, Gemini thumbnail üretimi, fal.ai video üretimi ve YouTube'a yükleme.
+
+## 4. Animasyon skill'leri (`animation-skills/`)
+
+[artemnovitckii/claude-animation-skills](https://github.com/artemnovitckii/claude-animation-skills) @ `5dbea55` (MIT). Altı skill `.claude/skills/` altına sembolik bağlantıyla eklendi, bu yüzden repo kökünden çağrılabilir:
+
+| Skill | Ne yapar | Süre |
+|---|---|---|
+| `/stick-figure` | Renkli çizgi film dünyasında çöp adam açıklama videosu (30-45 sn), kelime kelime altyazı, kodla üretilen müzik ve efektler | uzun oturum |
+| `/zach-d-films` | three.js ile 3D çizgi film "what if" videosu, ağır çekim çarpmalar | uzun oturum |
+| `/graph` | Çizilen bir çizgi grafik ve onunla birlikte sayan büyük bir rakam | ~10 sn |
+| `/map-route` | 3D şehir haritasında A'dan B'ye rota | ~1,5 dk |
+| `/breakdown` | Telefonun katman katman açıldığı 3D patlatılmış görünüm | ~1,5 dk |
+| `/minimalistic-graphics` | Siyah-beyaz çizgi sanatı, merdiven çıkan bir nokta | ~10 sn |
+
+### Kurulum (bir kez, her yeni bulut oturumunda tekrar)
+
+```bash
+cd animation-skills/kit
+npm install --no-audit --no-fund
+# GSAP: cdnjs bu ortamda engelli, npm'den alınır
+mkdir -p vendor && (cd /tmp && npm pack gsap@3.12.5 && tar xzf gsap-3.12.5.tgz package/dist/gsap.min.js) && cp /tmp/package/dist/gsap.min.js vendor/
+# Ses ve kelime zamanlaması (yaklaşık 1 GB)
+bash setup.sh --voice   # ya da modelleri elle kit/models/ altına koy
+```
+
+`node_modules`, `vendor`, `.venv` ve `models` klasörleri deponun kendi `.gitignore` dosyası tarafından dışarıda tutulur.
+
+### Bu bulut ortamında render
+
+- Tarayıcı olarak kurulu Chromium kullanılmalı: `export CHROME=/opt/pw-browsers/chromium`.
+  - `stick-figure` motoru bu değişkeni zaten destekliyor.
+  - `zach-d-films/engine/render.mjs` dosyasına aynı desteği ekledim; bu, orijinal depodan tek farkımız.
+- 3D motor GPU olmadığı için `GL=swiftshader` ile çalıştırılmalı.
+- 3D motorda her proje klasörüne `ln -s <kit>/node_modules <proje>/node_modules` bağlantısı gerekir (skill dosyası bunu anlatıyor).
