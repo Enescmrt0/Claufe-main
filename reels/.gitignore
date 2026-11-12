@@ -5,3 +5,5 @@
 */audio/*.wav
 */audio/lines.json
 */*.part.mp4
+# raw engine output (large); the shareable copy is <name>-final.mp4
+oxygen/oxygen.mp4
