@@ -131,3 +131,12 @@ bash setup.sh --voice   # ya da modelleri elle kit/models/ altına koy
   - `zach-d-films/engine/render.mjs` dosyasına aynı desteği ekledim; bu, orijinal depodan tek farkımız.
 - 3D motor GPU olmadığı için `GL=swiftshader` ile çalıştırılmalı.
 - 3D motorda her proje klasörüne `ln -s <kit>/node_modules <proje>/node_modules` bağlantısı gerekir (skill dosyası bunu anlatıyor).
+
+## 5. Çizgi film 3D hikâye short'u (`cartoon-3d-short/`)
+
+Kaynak: [mromidev/claude-animated-shorts](https://github.com/mromidev/claude-animated-shorts) (MIT). Skill adı `cartoon-3d-short`.
+55-70 saniyelik dikey hikâye short'u üretir: boyalı 3D dünyada 2D "fasulye kafalı" karakterler, mürekkep çizgileri,
+alan derinliği, kayan kamera. three.js ile Remotion içinde render edilir.
+
+- Hazır proje: `cartoon-3d-short/project/` (köprü şablonu kayıtlı).
+- **Durum: kuruldu, render test edilmedi.** Eksikler ve ayrıntılar `cartoon-3d-short/SOURCE.md` dosyasında.
