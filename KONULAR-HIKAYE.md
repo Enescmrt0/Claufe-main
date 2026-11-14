@@ -3,8 +3,7 @@
 Hazırlanma: 2026-11-14. Kalıp: `reels/style/hikaye-shorts-stili.md` (tuhaf durum gerçek gibi söylenir → dünya kurulur →
 "But" → tırmanma → şüpheci → ters köşe → tek cümlelik açıklama → kancaya dönüş).
 
-Başlıklar ve kanca cümleleri İngilizce, çünkü videolar İngilizce. Gerçek olaylar **hafızadan** yazıldı; tarih, sayı ve
-isimler metin yazılmadan önce kaynaktan doğrulanmalı. E grubu bizim uydurduğumuz kurgulardır; açıklamaya
+Başlıklar ve kanca cümleleri İngilizce, çünkü videolar İngilizce. Gerçek olaylar 2026-11-14'te web aramasıyla kontrol edildi; kalan belirsizlikler `reels/scripts/hikaye-metinleri.md` içinde her metnin altında. E grubu bizim uydurduğumuz kurgulardır; açıklamaya
 "fictional story" yazılmalı.
 
 ## A. Tarih: "Eskiden neden böyle yaparlardı?"
@@ -20,7 +19,7 @@ isimler metin yazılmadan önce kaynaktan doğrulanmalı. E grubu bizim uydurdu�
 
 | # | Başlık | Kanca cümlesi | Gerçek neden / ters köşe |
 |---|---|---|---|
-| 5 | Why Plane Windows Are Round | The first jet airliners had square windows, and that's exactly why they fell out of the sky. | de Havilland Comet kazaları (1954): köşelerde metal yorgunluğu çatlak başlattı. |
+| 5 | Why Plane Windows Are Round | The world's first jet airliner kept falling out of the sky, and the reason was the shape of a window. | de Havilland Comet kazaları (1954): çatıdaki köşeli bir açıklığın köşesinde metal yorgunluğu çatlak başlattı. "Kare yolcu pencereleri" anlatımı yaygın bir efsane. |
 | 6 | The Bridge That Danced Itself Apart | A brand-new bridge started bouncing so much that people drove across it for fun. | Tacoma Narrows (1940): rüzgârın yarattığı burulma salınımı köprüyü yıktı. |
 | 7 | How They Saved the Leaning Tower | Engineers stopped the world's most famous tower from falling by removing dirt. | Pisa: yüksek taraftaki zeminin altından toprak çekilerek eğim azaltıldı. |
 | 8 | The Tower That Grows in Summer | Every summer, the Eiffel Tower gets taller, and nobody adds a single piece. | Isıl genleşme: sıcakta demir uzar, kule birkaç santim yükselir. |
@@ -30,7 +29,7 @@ isimler metin yazılmadan önce kaynaktan doğrulanmalı. E grubu bizim uydurdu�
 | # | Başlık | Kanca cümlesi | Gerçek neden / ters köşe |
 |---|---|---|---|
 | 9 | The Job of Waking Up a Whole Town | People used to pay a stranger to shoot peas at their window every morning. | İngiltere'de "knocker-up": alarm saati yokken insanları uyandıran meslek. Sonu: "Peki onu kim uyandırıyordu?" |
-| 10 | The Missiles Steered by Pigeons | During World War Two, a scientist trained pigeons to fly a bomb. | B. F. Skinner'ın Project Pigeon'u: güvercinler ekrandaki hedefi gagalayarak yön veriyordu. |
+| 10 | The Bombs Steered by Pigeons | During World War Two, a scientist trained pigeons to fly a bomb. | B. F. Skinner'ın Project Pigeon'u: güvercinler ekrandaki hedefi gagalayarak yön veriyordu. |
 | 11 | The Town That Couldn't Stop Dancing | In 1518, a woman started dancing in the street and didn't stop for days. | Strazburg dans salgını; yetkililer çözüm diye müzisyen tuttu, işler kötüleşti. |
 | 12 | The Sweetest Disaster in History | A wave of syrup taller than a house rolled through a city at the speed of a car. | Boston melas seli (1919): tank patladı, yoğun dalga can aldı. |
 
