@@ -216,13 +216,14 @@ def sneak(t0, t1, g=1.0):
         t += BEAT * (1 if i % 2 == 0 else 1); i += 1
 # calm store -> rising panic -> the turn -> relief
 END = S(NLINES)
-playful(0, S(3), DMAJ, .65)
-place(music, strings((50, 56, 62), S(6) - S(3), .45), S(3))
-sneak(S(6), S(8), .7)
-place(music, strings((50, 57, 62), S(11) - S(8), .35), S(8))
-for k in range(int((S(11) - S(9)) / (BEAT * .75))): place(music, pizz([38, 45, 41][k % 3], .3, .4), S(9) + k * BEAT * .75)
-playful(S(11), END - 1.0, DMAJ, .7)
-for m in (62, 66, 69, 74): place(music, pizz(m - 12, .8, .5), END - .9); place(music, glock(m + 12, 1.3, .25), END - .9)
+exec(open('../music_styles.py').read())
+swing(0, S(3), .8)
+place(music, strings((45, 52, 57), S(6) - S(3), .45), S(3))
+swing(S(6), S(8), .6, minor=True)
+place(music, strings((45, 53, 57), S(11) - S(8), .35), S(8))
+swing(S(9), S(11), .35, minor=True, bpm=96)
+swing(S(11), END - 1.0, .85)
+for m in (57, 61, 64, 69): place(music, _vibes(m + 12, 1.6, .6), END - .9)
 
 music = lp(music, 6000)
 

@@ -205,15 +205,15 @@ def sneak(t0, t1, g=1.0):
         t += BEAT * (1 if i % 2 == 0 else 1); i += 1
 # calm store -> rising panic -> the turn -> relief
 END = S(NLINES)
-# medieval jig feel: the plucked D-minor dance from the start, a breather for the doctors, darker for the collapse
-playful(0, S(5), DM, .7)
-sneak(S(5), S(7), .7)
-playful(S(7), S(9), DM, .85)
+exec(open('../music_styles.py').read())
+medieval(0, S(5), .9)
+medieval(S(5), S(7), .5, tune=False)
+medieval(S(7), S(9), 1.0, bpm=104)
 place(music, strings((50, 56, 62), S(10) - S(9), .45), S(9))
-sneak(S(10), S(11), .5)
+medieval(S(10), S(11), .4, tune=False, bpm=76)
 place(music, strings((50, 57, 62), S(12) - S(11), .35), S(11))
-playful(S(12), END - 1.0, DM, .7)
-for m in (62, 65, 69, 74): place(music, pizz(m - 12, .8, .5), END - .9); place(music, glock(m + 12, 1.3, .25), END - .9)
+medieval(S(12), END - 1.0, .85)
+for m in (62, 65, 69, 74): place(music, pizz(m - 12, .8, .5), END - .9)
 
 music = lp(music, 6000)
 

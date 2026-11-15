@@ -1,0 +1,90 @@
+# Distinct underscore styles for the stick-figure reels, so each video has its own music.
+# Loaded by a reel's audio.py with exec(), after its synth helpers (place, pizz, glock, reed, strings, tick, thud,
+# hp, lp, bp, T, SR, rng, midi, music) are defined. Every function writes into the global `music` buffer.
+
+def _snare(g=1.0):
+    n = int(.12 * SR); t = T(n); return (hp(rng.standard_normal(n), 1800) * np.exp(-t * 45) + np.sin(2 * np.pi * 190 * t) * np.exp(-t * 60) * .5) * g
+def _hat(g=1.0):
+    n = int(.03 * SR); t = T(n); return hp(rng.standard_normal(n), 6000) * np.exp(-t * 180) * g
+def _cowbell(g=1.0):
+    n = int(.12 * SR); t = T(n); return (np.sign(np.sin(2 * np.pi * 800 * t)) + np.sign(np.sin(2 * np.pi * 540 * t))) * np.exp(-t * 30) * .12 * g
+def _organ(m, dur=.16, g=1.0):
+    n = int(dur * SR); t = T(n); f = midi(m)
+    x = np.sin(2 * np.pi * f * t) + .5 * np.sin(4 * np.pi * f * t) + .3 * np.sin(6 * np.pi * f * t) + .2 * np.sin(8 * np.pi * f * t)
+    return x * np.minimum(1, t / .008) * np.minimum(1, (dur - t) / .03) * .22 * g
+def _fife(m, dur=.2, g=1.0):
+    n = int(dur * SR); t = T(n); f = midi(m) * (1 + .006 * np.sin(2 * np.pi * 6 * t))
+    x = np.sin(2 * np.pi * np.cumsum(f) / SR) + .25 * np.sin(4 * np.pi * np.cumsum(f) / SR) + bp(rng.standard_normal(n), 2500, 6000) * .08
+    return x * np.minimum(1, t / .02) * np.minimum(1, (dur - t) / .04) * .3 * g
+def _vibes(m, dur=1.4, g=1.0):
+    n = int(dur * SR); t = T(n); f = midi(m)
+    return (np.sin(2 * np.pi * f * t) + .3 * np.sin(2 * np.pi * f * 4 * t) * np.exp(-t * 8)) * np.exp(-t * 2.2) * (1 + .25 * np.sin(2 * np.pi * 5 * t)) * np.minimum(1, t / .003) * .3 * g
+
+# 1950s jet-age swing: walking bass, swung ride, vibraphone chords
+def swing(t0, t1, g=1.0, minor=False, bpm=128):
+    b = 60 / bpm; roots = [45, 50, 43, 48] if not minor else [45, 41, 43, 40]; t = t0; i = 0
+    while t < t1 - .05:
+        r = roots[(i // 4) % 4]; st = [0, 4, 7, 9] if not minor else [0, 3, 7, 8]
+        place(music, pizz(r - 12 + st[i % 4], .4, .9), t, g)
+        place(music, _hat(.5), t, g * .5)
+        if i % 2 == 1: place(music, _hat(.4), t + b * .66, g * .5)
+        if i % 4 == 0:
+            for m in ((r + 16, r + 19, r + 23) if not minor else (r + 15, r + 19, r + 22)): place(music, _vibes(m, 1.6, .5), t + b * 1.5, g)
+        t += b; i += 1
+
+# game-show cha-cha: organ off-beats, cowbell, bright glock riff
+def gameshow(t0, t1, g=1.0, riff=True, bpm=120):
+    b = 60 / bpm; prog = [(48, (60, 64, 67)), (53, (60, 65, 69)), (55, (59, 62, 67)), (48, (60, 64, 67))]; t = t0; bar = 0
+    lick = [(0, 79), (.5, 76), (1, 72), (1.5, 76), (2, 79), (3, 84)]
+    while t < t1 - .05:
+        root, ch = prog[bar % 4]
+        for k in range(4):
+            place(music, pizz(root - 12 if k % 2 == 0 else root - 5, .35, .9), t + k * b, g)
+            place(music, _cowbell(), t + k * b, g)
+            for m in ch: place(music, _organ(m), t + k * b + b / 2, g)
+        place(music, _cowbell(.7), t + 3.5 * b, g)
+        if riff and bar % 2 == 0:
+            for (bt, m) in lick:
+                if t + bt * b < t1: place(music, glock(m + (5 if bar % 4 == 2 else 0) - (5 if bar % 4 == 2 else 0), .7, .3), t + bt * b, g)
+        t += 4 * b; bar += 1
+# game-show "thinking" clock: tick-tock with a low pedal
+def thinking(t0, t1, g=1.0, bpm=120):
+    b = 60 / bpm; t = t0; i = 0
+    while t < t1 - .05:
+        place(music, glock(84 if i % 2 == 0 else 79, .2, .22), t, g)
+        if i % 4 == 0: place(music, pizz(36, .6, .8), t, g)
+        t += b / 2 * 2 if False else b; i += 1
+
+# military march: bass drum, snare with rolls, fife tune
+def march(t0, t1, g=1.0, tune=True, bpm=112):
+    b = 60 / bpm; t = t0; bar = 0
+    mel = [77, 77, 79, 81, 84, 81, 79, 77, 76, 77, 79, 76, 77, 72, 77, None]
+    bass = [41, 36, 41, 36, 43, 36, 41, 36]
+    while t < t1 - .05:
+        for k in range(4):
+            if k % 2 == 0: place(music, thud(60, .22, .5), t + k * b, g)
+            place(music, pizz(bass[(bar * 4 + k) % 8] + (0 if k % 2 == 0 else 12), .3, .7), t + k * b, g)
+            if k % 2 == 1: place(music, _snare(.5), t + k * b, g)
+            place(music, _snare(.22), t + k * b + b / 2, g)
+        if bar % 2 == 1:
+            for r in range(6): place(music, _snare(.2 + r * .04), t + 3 * b + r * b / 6, g)
+        if tune:
+            for k in range(8):
+                m = mel[(bar * 8 + k) % 16]
+                if m and t + k * b / 2 < t1: place(music, _fife(m, b / 2 * .9), t + k * b / 2, g)
+        t += 4 * b; bar += 1
+
+# medieval dance: drone, hand drum and a modal whistle tune in 6/8
+def medieval(t0, t1, g=1.0, tune=True, bpm=92):
+    e = 60 / bpm / 3; t = t0; i = 0
+    mel = [74, 72, 74, 77, 76, 74, 72, 69, 72, 74, 72, 69, 67, 69, 72, 74, 77, 79, 77, 74, 72, 74, 72, 69]
+    n = int(max(0.1, t1 - t0) * SR); tt = T(n)
+    dr = (np.sin(2 * np.pi * 73.4 * tt) + .6 * np.sin(2 * np.pi * 110 * tt) + .25 * np.sin(2 * np.pi * 146.8 * tt)) * np.minimum(1, tt / .3) * np.minimum(1, (t1 - t0 - tt) / .3) * .12
+    place(music, lp(dr, 900), t0, g)
+    while t < t1 - .05:
+        if i % 6 == 0: place(music, thud(95, .16, .45), t, g)
+        if i % 6 == 3: place(music, thud(140, .1, .3), t, g)
+        if i % 6 in (2, 5): place(music, _hat(.35), t, g)
+        if i % 3 == 0: place(music, pizz([50, 50, 48, 45][(i // 6) % 4], .5, .7), t, g)
+        if tune and i % 3 != 1: place(music, _fife(mel[(i // 3 * 2 + (1 if i % 3 == 2 else 0)) % 24], e * 1.4, .8), t, g)
+        t += e; i += 1
