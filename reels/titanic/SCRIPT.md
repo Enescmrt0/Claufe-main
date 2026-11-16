@@ -1,0 +1,157 @@
+# The Night the Titanic Sank
+
+Gerçek olay. 66 cümle, 884 kelime. Yatay 16:9, `/stick-figure` motoru.
+
+## 1. The last minute (11:39 PM)
+
+At eleven thirty-nine on a freezing April night, a lookout named Frederick Fleet sees a dark shape in the water, straight ahead.
+
+He rings the bell three times and grabs the telephone.
+
+Iceberg, right ahead.
+
+The largest moving object ever built has less than a minute to get out of the way.
+
+It doesn't make it.
+
+What happens over the next two hours and forty minutes will change the rules of the sea forever.
+
+## 2. The unsinkable ship (APRIL 10, 1912)
+
+Four days earlier, the Titanic leaves Southampton, England, on her very first voyage, heading for New York.
+
+She is almost nine hundred feet long, as tall as an eleven-story building, and carries about twenty-two hundred people.
+
+There are millionaires in first class, and families in third class with everything they own in a suitcase.
+
+Below the waterline, her hull is divided into sixteen watertight compartments.
+
+She can stay afloat with any four of them flooded.
+
+The newspapers have a word for her. Unsinkable.
+
+There is one small detail. She carries twenty lifeboats, with room for about twelve hundred people.
+
+That is barely half of the people on board. And it is completely legal.
+
+## 3. The warnings (APRIL 14)
+
+On Sunday, April fourteenth, other ships send the Titanic warning after warning. Ice ahead.
+
+She keeps going at nearly full speed.
+
+The night is moonless, and the sea is perfectly calm, as flat as glass.
+
+That sounds safe. It isn't.
+
+With no waves breaking against it, an iceberg is almost invisible in the dark.
+
+And up in the crow's nest, the lookouts have no binoculars. They are locked in a cabinet, and the key never came aboard.
+
+## 4. The collision (11:40 PM)
+
+So when Fleet finally sees the iceberg, it is already too close.
+
+On the bridge, the officer orders the ship to turn, and the engines to stop.
+
+For a few long seconds, nothing happens. Then, slowly, the bow begins to swing.
+
+The ship doesn't hit the iceberg head-on. It scrapes along her right side, below the water.
+
+Most passengers feel only a faint shudder. Some of them sleep right through it.
+
+But the ice has opened not four compartments to the sea. It has opened at least five.
+
+## 5. The verdict (MIDNIGHT)
+
+Around midnight, the man who designed the ship, Thomas Andrews, goes below to look.
+
+He comes back with simple arithmetic. Five compartments are flooding. She can survive four.
+
+As the bow fills, it will sink lower, and the water will spill from one compartment into the next, like an ice-cube tray being filled from one end.
+
+He gives the Titanic two hours, at most.
+
+The captain now knows two numbers. About twenty-two hundred people. Room in the boats for about twelve hundred.
+
+## 6. The call for help (12:15 AM)
+
+In the wireless room, two young operators start calling for help.
+
+One ship answers. The Carpathia. She turns around and races toward them at full speed.
+
+But she is fifty-eight miles away. That is about four hours.
+
+There is another ship, the Californian, much closer. Close enough to see lights on the horizon.
+
+Her only wireless operator went to bed about ten minutes before the collision.
+
+## 7. The lifeboats (12:45 AM)
+
+At twelve forty-five, the first lifeboat is lowered.
+
+It has seats for sixty-five people. It leaves with fewer than thirty.
+
+Because at this point, almost nobody believes the ship is really sinking.
+
+The deck is warm and bright. The lifeboat is a small wooden boat hanging over a black, freezing ocean.
+
+Many people decide to stay where they are.
+
+The crew fires white rockets into the sky. On the Californian, sailors watch them, and wonder what they mean.
+
+And on deck, the ship's band starts to play, to keep everyone calm.
+
+## 8. The slope (1:30 AM)
+
+By half past one, the deck is tilting, and everyone understands.
+
+Now the boats leave full. But there aren't many left.
+
+Deep inside the ship, the engineers stay at their posts to keep the lights burning, so the boats can be loaded.
+
+The wireless operators keep sending, even after the captain tells them they have done their duty.
+
+And by most accounts, the band keeps playing.
+
+At five past two, the last lifeboat is lowered. More than fifteen hundred people are still on board.
+
+## 9. 2:20 (2:20 AM)
+
+The bow goes under. The stern rises high out of the water, with hundreds of people clinging to it.
+
+The lights flicker once, and go out.
+
+Then the ship breaks in two.
+
+At two twenty in the morning, two hours and forty minutes after the iceberg, the Titanic is gone.
+
+The water is about minus two degrees Celsius. Colder than ice.
+
+In the lifeboats, about seven hundred people sit in the dark, and listen, and wait.
+
+## 10. The rescue (4:00 AM)
+
+Around four in the morning, a rocket appears on the horizon. The Carpathia.
+
+She has steamed through the same ice field, in the dark, at a speed she was never built for.
+
+By nine o'clock, every survivor is on board. About seven hundred people.
+
+Roughly fifteen hundred never came home.
+
+## 11. What changed (AFTER)
+
+The world was furious, and the rules changed fast.
+
+From then on, every ship had to carry lifeboat seats for every single person on board.
+
+Ship radios had to be staffed twenty-four hours a day.
+
+And an international ice patrol began watching the North Atlantic. It still does today.
+
+The wreck was finally found in 1985, in two pieces, more than two miles down.
+
+The Titanic wasn't sunk by an iceberg alone.
+
+It was sunk by the belief that nothing could go wrong.

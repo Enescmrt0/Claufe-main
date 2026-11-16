@@ -88,3 +88,34 @@ def medieval(t0, t1, g=1.0, tune=True, bpm=92):
         if i % 3 == 0: place(music, pizz([50, 50, 48, 45][(i // 6) % 4], .5, .7), t, g)
         if tune and i % 3 != 1: place(music, _fife(mel[(i // 3 * 2 + (1 if i % 3 == 2 else 0)) % 24], e * 1.4, .8), t, g)
         t += e; i += 1
+
+# Edwardian salon waltz (3/4): oom-pah-pah with a lilting glock line
+def waltz(t0, t1, g=1.0, bpm=150, minor=False):
+    b = 60 / bpm; t = t0; bar = 0
+    prog = [(43, (67, 71, 74)), (48, (67, 72, 76)), (50, (66, 69, 72)), (43, (67, 71, 74))] if not minor else [(45, (69, 72, 76)), (50, (69, 74, 77)), (52, (68, 71, 74)), (45, (69, 72, 76))]
+    mel = [79, 78, 79, 83, 81, 79, 76, 74, 76, 79, 78, 76]
+    while t < t1 - .05:
+        root, ch = prog[bar % 4]
+        place(music, pizz(root - 12, .5, .9), t, g)
+        for k in (1, 2):
+            for m in ch: place(music, pizz(m - 12, .25, .3), t + k * b, g)
+        for k in range(3):
+            m = mel[(bar * 3 + k) % 12] - (3 if minor and mel[(bar * 3 + k) % 12] % 12 in (11, 4) else 0)
+            if t + k * b < t1: place(music, glock(m, .9, .28), t + k * b, g)
+        t += 3 * b; bar += 1
+# tension pulse: low ostinato and ticking, no melody
+def pulse(t0, t1, g=1.0, bpm=96):
+    b = 60 / bpm; t = t0; i = 0
+    while t < t1 - .05:
+        place(music, pizz([33, 33, 36, 34][(i // 8) % 4], .3, .8), t, g)
+        if i % 2 == 0: place(music, thud(55, .2, .35), t, g)
+        place(music, _hat(.25), t + b / 2, g)
+        t += b / 2; i += 1
+# elegy: slow sustained strings with a few low piano-like notes
+def elegy(t0, t1, g=1.0, prog=((45, 52, 57, 60), (41, 48, 57, 60), (43, 50, 55, 59), (40, 47, 55, 59)), bar=6.0):
+    t = t0; i = 0
+    while t < t1 - .2:
+        ch = prog[i % len(prog)]; d = min(bar, t1 - t)
+        place(music, strings(ch[1:], d, .45), t, g)
+        place(music, pizz(ch[0] - 12, 1.6, .7), t, g); place(music, glock(ch[-1] + 12, 2.0, .14), t + bar / 2, g)
+        t += bar; i += 1
