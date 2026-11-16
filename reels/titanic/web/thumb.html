@@ -1,0 +1,41 @@
+<!doctype html><html><head><meta charset="utf-8">
+<style>@font-face{font-family:Poppins;font-weight:700;src:url(fonts/Poppins-Bold.ttf)}body{margin:0;background:#000}</style></head><body>
+<canvas id="c" width="1920" height="1080"></canvas>
+<script src="lib.js"></script><script src="chars.js"></script><script src="env.js"></script><script src="env3.js"></script><script src="env5.js"></script><script src="env6.js"></script><script src="env7.js"></script><script src="env8.js"></script><script src="env9.js"></script>
+<script>
+// YouTube cover for the Titanic film. drawThumb('A' | 'B') paints a 1920x1080 frame.
+const ctx = document.getElementById('c').getContext('2d');
+const cam = { x: 960, y: 540, z: 1, r: 0 };
+function bigText(str, x, y, size, fill, rot = 0) { ctx.save(); ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.translate(x, y); ctx.rotate(rot); text(ctx, str, 0, 0, size, fill, INK, size * .22); text(ctx, str, 0, 0, size, fill, INK, 0); ctx.restore(); }
+function vignette() { ctx.setTransform(1, 0, 0, 1, 0, 0); const g = ctx.createRadialGradient(960, 540, 500, 960, 540, 1250); g.addColorStop(0, 'rgba(0,0,0,0)'); g.addColorStop(1, 'rgba(0,0,0,.55)'); ctx.fillStyle = g; ctx.fillRect(0, 0, 1920, 1080); }
+window.drawThumb = (v) => {
+  ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.clearRect(0, 0, 1920, 1080);
+  const t = 3.3;
+  nightSky(ctx, t, cam, { top: '#05081a', bot: '#24305e', stars: 160 }); applyCam(ctx, cam, 1);
+  if (v === 'A') {
+    // the sinking liner, stern up, lights blazing; a shocked lookout's face huge on the left
+    drawTitanic(ctx, 1220, SEA - 70, 1500, { rot: .38, sink: 160, lights: 1, smoke: null });
+    seaFront(ctx, t, { calm: true });
+    lifeboat(ctx, 1500, SEA + 170, 260, 6, 0); lifeboat(ctx, 1840, SEA + 110, 200, 5, 0);
+    iceberg(ctx, 260, SEA + 6, 220, { dark: false });
+    ctx.save(); ctx.globalCompositeOperation = 'lighter'; const g = ctx.createRadialGradient(1220, 560, 30, 1220, 560, 700); g.addColorStop(0, 'rgba(255,200,110,.35)'); g.addColorStop(1, 'rgba(255,200,110,0)'); ctx.fillStyle = g; ctx.fillRect(0, 0, 1920, 1080); ctx.restore();
+    const o = { cols: ['#2a3550', '#2a3550'], hat: 'none', belt: false, x: 330, y: 1500, s: 1250, arms: POSE.idle.arms, face: { eyes: 'wide', mouth: 'o', browUp: 1, look: [1, 0] } };
+    drawStick(ctx, o); capHat(ctx, o, '#2a3550', false); sweat(ctx, 520, 1500 - .98 * 1250, 90, 1);
+    vignette();
+    bigText('2 HOURS', 1250, 150, 150, '#ffffff', -.03);
+    bigText('40 MINUTES', 1250, 300, 150, '#ffd23a', -.03);
+  } else {
+    // the moment of impact: the iceberg towering over the bow, clock at 11:40
+    iceberg(ctx, 1380, SEA + 6, 560, { dark: false });
+    ctx.save(); ctx.translate(560, SEA - 1700 * .055); ctx.scale(1700, 1700); titanicBody(ctx, 1, null); ctx.restore();
+    seaFront(ctx, t, { calm: true });
+    for (let i = 0; i < 10; i++) { const R = rng(i + 3); burst(ctx, 1080 + R() * 80, SEA - 40 + R() * 70, 30 + R() * 30, 7, '#ffe14d', i); }
+    vignette();
+    bigText('"ICEBERG,', 560, 170, 140, '#ffffff', -.04);
+    bigText('RIGHT AHEAD!"', 600, 320, 140, '#ff6a5a', -.04);
+    ctx.setTransform(1, 0, 0, 1, 0, 0); rrect(ctx, 1460, 860, 380, 150, 30); ctx.fillStyle = 'rgba(10,12,24,.85)'; ctx.fill(); ctx.lineWidth = 8; ctx.strokeStyle = '#ffd23a'; ctx.stroke(); text(ctx, '11:40 PM', 1650, 935, 76, '#ffd23a', INK, 0);
+  }
+  return true;
+};
+window.ready = document.fonts.load('700 100px Poppins').then(() => document.fonts.ready).then(() => true);
+</script></body></html>
