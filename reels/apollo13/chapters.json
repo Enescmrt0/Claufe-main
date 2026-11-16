@@ -1,0 +1,41 @@
+{
+ "starts": [
+  0,
+  5,
+  11,
+  17,
+  22,
+  27,
+  32,
+  41,
+  47,
+  52,
+  58
+ ],
+ "titles": [
+  "The bang",
+  "The routine mission",
+  "What blew up",
+  "Losing the ship",
+  "The lifeboat",
+  "Going around",
+  "The square peg",
+  "Cold",
+  "Waking the ship",
+  "Splashdown",
+  "The successful failure"
+ ],
+ "tags": [
+  "APRIL 13, 1970",
+  "APRIL 11",
+  "55 HOURS IN",
+  "10:10 PM",
+  "11:00 PM",
+  "DAY 3",
+  "DAY 3",
+  "DAY 4",
+  "APRIL 17",
+  "1:07 PM",
+  "AFTER"
+ ]
+}
