@@ -2,6 +2,9 @@
 
 Soruları ve sonuçları bir JSON dosyasına yaz, şablon 1080×1920 (9:16) sesli bir YouTube Shorts videosu çıkarsın.
 
+**Konsept:** Her cevabın bir puanı var. İzleyici geri sayım bitene kadar cevabını seçer, sonra şıkların puanları (+1, +4…) görünür.
+Sonunda puanlarını toplar ve toplam puanına göre sonucunu öğrenir ("13–16 puan aldıysan... ⭐ Yıldız Kızı").
+
 ## Kurulum (bir kere)
 ```bash
 cd kisilik-testi
@@ -15,28 +18,37 @@ npm install
 
 ```json
 {
-  "ustYazi": "KİŞİLİK TESTİ",
-  "baslik": "Hangi Kahvesin?",
-  "kanca": "Sadece %5'i Türk Kahvesi çıkıyor...",
-  "tema": { "renk1": "#C08552", "renk2": "#5E3023" },
+  "ustYazi": "MANİFEST TESTİ",
+  "baslik": "Hangi Manifest Kızısın?",
+  "kanca": "Sadece %4'ü Güneş Kızı çıkıyor...",
+  "tema": { "renk1": "#B388EB", "renk2": "#F7A1C4" },
   "sorular": [
-    { "soru": "Sabah ilk ne yaparsın?", "secenekler": ["A şıkkı", "B şıkkı", "C şıkkı", "D şıkkı"] }
+    { "soru": "Sabah uyanınca ilk ne yaparsın?", "secenekler": [
+      { "metin": "Olumlamalarımı okurum ✨", "puan": 4 },
+      { "metin": "Telefona bakarım 📱", "puan": 1 },
+      { "metin": "Su içip esnerim 💧", "puan": 3 },
+      { "metin": "Rüyamı yazarım 📓", "puan": 2 } ] }
   ],
   "sonuclar": [
-    { "emoji": "☕", "ad": "Türk Kahvesi", "aciklama": "A çoğunluktaysa çıkan sonuç" },
-    { "emoji": "🥤", "ad": "Ice Latte", "aciklama": "B çoğunluktaysa" },
-    { "emoji": "🍵", "ad": "Matcha", "aciklama": "C çoğunluktaysa" },
-    { "emoji": "🫖", "ad": "Çay", "aciklama": "D çoğunluktaysa" }
+    { "emoji": "🌊", "ad": "Okyanus Kızı", "aciklama": "...", "aralik": [5, 8] },
+    { "emoji": "🌙", "ad": "Ay Kızı",      "aciklama": "...", "aralik": [9, 12] },
+    { "emoji": "⭐", "ad": "Yıldız Kızı",  "aciklama": "...", "aralik": [13, 16] },
+    { "emoji": "☀️", "ad": "Güneş Kızı",   "aciklama": "...", "aralik": [17, 20] }
   ],
-  "kapanis": "Ne çıktın? Yorumlara yaz!",
+  "kapanis": "Kaç puan aldın? Yorumlara yaz!",
   "uyari": "(isteğe bağlı) Kapanışta küçük yazıyla gösterilir"
 }
 ```
 
-- `sonuclar` sırası şıklarla eşleşir: 1. sonuç = A, 2. = B, ...
-- 5 soru ve 4 sonuçla video yaklaşık **50 saniye** sürer (Shorts için 60 saniyenin altında).
-- Süreleri değiştirmek istersen `"sureler": { "soru": 4, "sonuc": 3 }` ekle (saniye cinsinden).
-  Ayarlanabilenler: `giris`, `kural`, `soru`, `sayim`, `sonucSorusu`, `sonuc`, `kapanis`.
+**Puanlar:**
+- Her şık `{ "metin": "...", "puan": 3 }` şeklinde yazılır. Puanları karışık sırala (A hep 1 olmasın), yoksa izleyici kalıbı çözer.
+- Şıkları düz yazı olarak yazarsan (`"Kırmızı ❤️"`) puanları otomatik A=1, B=2, C=3, D=4 olur.
+- `aralik`: o sonucun toplam puan aralığı. Yazmazsan en düşük ve en yüksek olası toplam, sonuçlara eşit bölünür.
+  Aralıklar boşluksuz ve çakışmasız olmalı (örnek: 5–8, 9–12, 13–16, 17–20). 4 şıklı 5 soruda toplam 5 ile 20 arasında olur.
+- `"puanZamani": "hemen"` eklersen puanlar şıklarla birlikte en baştan görünür. Varsayılan `"sonra"`: puanlar geri sayımdan sonra açılır.
+
+**Süre:** 5 soru ve 4 sonuçla video yaklaşık **56 saniye** sürer. 6 soru yaparsan `"sureler": { "soru": 5, "sonuc": 3 }` ile kısalt ki 60 saniyeyi geçmesin.
+Ayarlanabilen süreler (saniye): `giris`, `kural`, `soru`, `sayim`, `puan`, `sonucSorusu`, `sonuc`, `kapanis`.
 
 ## Video çıkarmak
 ```bash

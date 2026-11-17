@@ -2,7 +2,7 @@ import React from "react";
 import { AbsoluteFill, Html5Audio, interpolate, Sequence, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
 import { FONT } from "./font";
 import { Hap, HarfDairesi, Kart, solma, useGiris } from "./ortak";
-import { HARF_RENKLERI, HARFLER, Sonuc, Soru } from "./tipler";
+import { HARF_RENKLERI, HARFLER, secenekMetni, secenekPuani, Sonuc, Soru } from "./tipler";
 
 /** Shorts güvenli alanı: üstte başlık, altta açıklama/müzik, sağda butonlar */
 const Guvenli: React.FC<{ children: React.ReactNode; style?: React.CSSProperties }> = ({ children, style }) => (
@@ -94,31 +94,42 @@ export const Kural: React.FC = () => {
       </div>
       <Kart style={{ transform: `scale(${b})`, padding: "30px 44px" }}>
         <div style={{ fontSize: 54, fontWeight: 800, color: "#222", textAlign: "center", lineHeight: 1.15 }}>
-          En çok seçtiğin harfi aklında tut 🧠
+          Her cevabın bir puanı var, puanlarını topla 🧮
         </div>
       </Kart>
     </Guvenli>
   );
 };
 
-export const SoruSahnesi: React.FC<{ soru: Soru; no: number; toplam: number; sayimSn: number }> = ({ soru, no, toplam, sayimSn }) => {
+export const SoruSahnesi: React.FC<{ soru: Soru; no: number; toplam: number; sayimSn: number; puanSn: number; puanHemen: boolean }> = ({
+  soru,
+  no,
+  toplam,
+  sayimSn,
+  puanSn,
+  puanHemen,
+}) => {
   const frame = useCurrentFrame();
   const { fps, durationInFrames } = useVideoConfig();
   const a = useGiris(0);
-  const sayimBas = durationInFrames - Math.round(sayimSn * fps);
-  const kalan = Math.max(0, durationInFrames - frame);
-  const sayimDevrede = frame >= sayimBas;
+  const puanBas = puanHemen ? 0 : durationInFrames - Math.round(puanSn * fps);
+  const sayimSon = puanHemen ? durationInFrames : puanBas;
+  const sayimBas = sayimSon - Math.round(sayimSn * fps);
+  const kalan = Math.max(0, sayimSon - frame);
+  const sayimDevrede = frame >= sayimBas && frame < sayimSon;
   const sayi = Math.ceil(kalan / fps);
-  const cubuk = interpolate(frame, [sayimBas, durationInFrames - 4], [1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+  const cubuk = interpolate(frame, [sayimBas, sayimSon - 2], [1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
   const cikis = interpolate(frame, [durationInFrames - 6, durationInFrames], [0, -1200], { extrapolateLeft: "clamp" });
   const secenekBas = 12;
-  const uzun = soru.secenekler.some((s) => s.length > 24);
+  const metinler = soru.secenekler.map(secenekMetni);
+  const uzun = metinler.some((m) => m.length > 22);
   return (
     <Guvenli style={{ gap: 30, transform: `translateX(${cikis}px)` }}>
       <Ses ad="whoosh" ses={0.5} />
       {soru.secenekler.map((_, i) => (
         <Ses key={i} ad="pop" kare={secenekBas + i * 6} ses={0.45} />
       ))}
+      {!puanHemen ? <Ses ad="ding" kare={puanBas} ses={0.35} /> : null}
       {Array.from({ length: Math.round(sayimSn) }, (_, i) => (
         <Ses key={`t${i}`} ad="tik" kare={sayimBas + i * fps} ses={0.7} />
       ))}
@@ -138,8 +149,10 @@ export const SoruSahnesi: React.FC<{ soru: Soru; no: number; toplam: number; say
         </div>
       </Kart>
       <div style={{ width: "100%", display: "flex", flexDirection: "column", gap: 22 }}>
-        {soru.secenekler.map((s, i) => {
+        {soru.secenekler.map((sec, i) => {
           const g = useGiris(secenekBas + i * 6, 11);
+          const p = useGiris(puanHemen ? secenekBas + i * 6 + 4 : puanBas + i * 3, 9);
+          const puan = secenekPuani(sec, i);
           return (
             <div
               key={i}
@@ -149,18 +162,35 @@ export const SoruSahnesi: React.FC<{ soru: Soru; no: number; toplam: number; say
                 gap: 28,
                 background: "rgba(255,255,255,0.95)",
                 borderRadius: 999,
-                padding: "14px 36px 14px 14px",
+                padding: "14px 18px 14px 14px",
                 transform: `translateX(${(1 - g) * (i % 2 ? 900 : -900)}px)`,
                 boxShadow: `0 8px 0 ${HARF_RENKLERI[i]}`,
               }}
             >
               <HarfDairesi harf={HARFLER[i]} renk={HARF_RENKLERI[i]} boy={92} />
-              <div style={{ fontSize: uzun ? 44 : 52, fontWeight: 800, color: "#222", lineHeight: 1.05 }}>{s}</div>
+              <div style={{ flex: 1, fontSize: uzun ? 44 : 52, fontWeight: 800, color: "#222", lineHeight: 1.05 }}>{metinler[i]}</div>
+              <div
+                style={{
+                  flexShrink: 0,
+                  minWidth: 110,
+                  textAlign: "center",
+                  padding: "8px 20px",
+                  borderRadius: 999,
+                  background: HARF_RENKLERI[i],
+                  color: "white",
+                  fontSize: 44,
+                  fontWeight: 800,
+                  transform: `scale(${p})`,
+                  opacity: Math.min(1, p * 2),
+                }}
+              >
+                +{puan}
+              </div>
             </div>
           );
         })}
       </div>
-      <div style={{ width: "100%", display: "flex", alignItems: "center", gap: 24, opacity: sayimDevrede ? 1 : 0.0 }}>
+      <div style={{ width: "100%", display: "flex", alignItems: "center", gap: 24, opacity: sayimDevrede ? 1 : 0 }}>
         <div style={{ flex: 1, height: 26, borderRadius: 26, background: "rgba(0,0,0,0.2)", overflow: "hidden" }}>
           <div style={{ width: `${cubuk * 100}%`, height: "100%", background: "white", borderRadius: 26 }} />
         </div>
@@ -186,33 +216,28 @@ export const SoruSahnesi: React.FC<{ soru: Soru; no: number; toplam: number; say
   );
 };
 
-export const SonucSorusu: React.FC<{ adet: number }> = ({ adet }) => {
+export const SonucSorusu: React.FC<{ enAz: number; enCok: number }> = ({ enAz, enCok }) => {
   const frame = useCurrentFrame();
   const { durationInFrames } = useVideoConfig();
   const a = useGiris(0);
+  const b = useGiris(10);
   return (
     <Guvenli style={{ opacity: solma(frame, durationInFrames) }}>
       <Ses ad="whoosh" />
-      <div style={{ fontSize: 140, transform: `scale(${a})` }}>🤔</div>
+      <div style={{ fontSize: 150, transform: `scale(${a}) rotate(${Math.sin(frame / 6) * 6}deg)` }}>🧮</div>
       <div style={{ fontSize: 100, fontWeight: 800, color: "white", textAlign: "center", lineHeight: 1.02, textShadow: golge, transform: `scale(${a})` }}>
-        En çok hangi harfi seçtin?
+        Puanlarını topla!
       </div>
-      <div style={{ display: "flex", gap: 26 }}>
-        {Array.from({ length: adet }, (_, i) => {
-          const g = useGiris(8 + i * 5, 8);
-          const nabiz = 1 + Math.sin((frame - i * 6) / 4) * 0.06;
-          return (
-            <div key={i} style={{ transform: `scale(${g * nabiz})` }}>
-              <HarfDairesi harf={HARFLER[i]} renk={HARF_RENKLERI[i]} boy={150} />
-            </div>
-          );
-        })}
-      </div>
+      <Kart style={{ transform: `scale(${b})`, padding: "28px 48px" }}>
+        <div style={{ fontSize: 54, fontWeight: 800, color: "#222", textAlign: "center" }}>
+          Toplamın kaç? ({enAz}–{enCok} arası) 🤔
+        </div>
+      </Kart>
     </Guvenli>
   );
 };
 
-export const SonucSahnesi: React.FC<{ sonuc: Sonuc; i: number }> = ({ sonuc, i }) => {
+export const SonucSahnesi: React.FC<{ sonuc: Sonuc; i: number; aralik: [number, number] }> = ({ sonuc, i, aralik }) => {
   const frame = useCurrentFrame();
   const { durationInFrames } = useVideoConfig();
   const a = useGiris(0);
@@ -223,9 +248,12 @@ export const SonucSahnesi: React.FC<{ sonuc: Sonuc; i: number }> = ({ sonuc, i }
     <Guvenli style={{ opacity: solma(frame, durationInFrames, 5), gap: 30 }}>
       <Ses ad="ding" kare={6} ses={0.5} />
       <div style={{ display: "flex", alignItems: "center", gap: 20, transform: `scale(${a})` }}>
-        <div style={{ fontSize: 58, fontWeight: 800, color: "white", textShadow: golge }}>Çoğunlukla</div>
-        <HarfDairesi harf={HARFLER[i]} renk={renk} boy={100} />
-        <div style={{ fontSize: 58, fontWeight: 800, color: "white", textShadow: golge }}>seçtiysen...</div>
+        <div
+          style={{ background: renk, color: "white", fontSize: 64, fontWeight: 800, padding: "6px 34px", borderRadius: 999, boxShadow: "inset 0 -6px 0 rgba(0,0,0,0.18)" }}
+        >
+          {aralik[0] === aralik[1] ? aralik[0] : `${aralik[0]}–${aralik[1]}`} puan
+        </div>
+        <div style={{ fontSize: 58, fontWeight: 800, color: "white", textShadow: golge }}>aldıysan...</div>
       </div>
       <div
         style={{
