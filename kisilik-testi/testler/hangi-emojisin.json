@@ -1,0 +1,40 @@
+{
+  "ustYazi": "KİŞİLİK TESTİ",
+  "baslik": "Hangi Emojisin?",
+  "kanca": "Çoğu kişi 🤭 çıkıyor... peki sen?",
+  "tema": { "renk1": "#FFB703", "renk2": "#FB5607" },
+  "sorular": [
+    { "soru": "Mesajına 1 saattir cevap gelmedi...", "secenekler": [
+      { "metin": "Arka arkaya 15 mesaj 📱", "puan": 4 },
+      { "metin": "Normal, meşguldür 🙂", "puan": 1 },
+      { "metin": "\"Hm?\" yazıp atarım", "puan": 3 },
+      { "metin": "Son görülmesine bakarım 👀", "puan": 2 } ] },
+    { "soru": "En çok kullandığın kelime?", "secenekler": [
+      { "metin": "\"Kanka dinle...\"", "puan": 2 },
+      { "metin": "\"AAAAA\"", "puan": 4 },
+      { "metin": "\"Aynen\"", "puan": 1 },
+      { "metin": "\"Bence...\"", "puan": 3 } ] },
+    { "soru": "Partide sen hangisisin?", "secenekler": [
+      { "metin": "Müziği seçen 🎧", "puan": 3 },
+      { "metin": "Herkesi dinleyen 👂", "puan": 2 },
+      { "metin": "Masada dans eden 💃", "puan": 4 },
+      { "metin": "Köşede telefonla 📵", "puan": 1 } ] },
+    { "soru": "Grup sohbetinde sen...", "secenekler": [
+      { "metin": "Sessiz okuyucu 🤫", "puan": 1 },
+      { "metin": "Son sözü söyleyen", "puan": 3 },
+      { "metin": "Ekran görüntüsü alan 📸", "puan": 2 },
+      { "metin": "Sticker yağdıran 🌧️", "puan": 4 } ] },
+    { "soru": "Cuma akşamı planın?", "secenekler": [
+      { "metin": "Plan yok, maceraya! 🚀", "puan": 4 },
+      { "metin": "Yeni bir mekan keşfi", "puan": 3 },
+      { "metin": "Dizi + battaniye 🛋️", "puan": 1 },
+      { "metin": "Kahvede dedikodu ☕", "puan": 2 } ] }
+  ],
+  "sonuclar": [
+    { "emoji": "🫶", "ad": "Kalp Eller", "aciklama": "Sakin ve sevgi dolusun. Herkes dertleşmek için seni arar.", "aralik": [5, 8] },
+    { "emoji": "🤭", "ad": "Kıkırdayan", "aciklama": "Meraklısın, her şeyi ilk sen duyarsın. Sırlar sende güvende... sanırım.", "aralik": [9, 12] },
+    { "emoji": "😏", "ad": "Sırıtan", "aciklama": "Özgüvenin tavan! Ne istediğini bilirsin ve son söz hep senindir.", "aralik": [13, 16] },
+    { "emoji": "🤪", "ad": "Çılgın", "aciklama": "Kaosun ta kendisisin. Sen olmadan hiçbir ortam eğlenceli değil!", "aralik": [17, 20] }
+  ],
+  "kapanis": "Kaç puan aldın? Yorumlara yaz!"
+}

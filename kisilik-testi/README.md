@@ -18,10 +18,10 @@ npm install
 
 ```json
 {
-  "ustYazi": "MANİFEST TESTİ",
-  "baslik": "Hangi Manifest Kızısın?",
-  "kanca": "Sadece %4'ü Güneş Kızı çıkıyor...",
-  "tema": { "renk1": "#B388EB", "renk2": "#F7A1C4" },
+  "ustYazi": "KİŞİLİK TESTİ",
+  "baslik": "Hangi Emojisin?",
+  "kanca": "Çoğu kişi 🤭 çıkıyor...",
+  "tema": { "renk1": "#FFB703", "renk2": "#FB5607" },
   "sorular": [
     { "soru": "Sabah uyanınca ilk ne yaparsın?", "secenekler": [
       { "metin": "Olumlamalarımı okurum ✨", "puan": 4 },
