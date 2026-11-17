@@ -1,0 +1,27 @@
+{
+  "name": "kisilik-testi",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Türkçe kişilik testi Shorts şablonu (Remotion).",
+  "type": "module",
+  "scripts": {
+    "studio": "remotion studio src/index.ts",
+    "sesler": "node scripts/sesler.mjs",
+    "render": "node scripts/render.mjs",
+    "kapak": "node scripts/render.mjs --kapak",
+    "kanal": "node scripts/render.mjs --kanal"
+  },
+  "dependencies": {
+    "@remotion/bundler": "4.0.486",
+    "@remotion/cli": "4.0.486",
+    "@remotion/renderer": "4.0.486",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "remotion": "4.0.486"
+  },
+  "devDependencies": {
+    "@types/react": "18.3.31",
+    "@types/react-dom": "18.3.7",
+    "typescript": "5.9.3"
+  }
+}

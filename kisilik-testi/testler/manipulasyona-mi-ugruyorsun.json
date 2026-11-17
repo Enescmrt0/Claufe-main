@@ -1,0 +1,21 @@
+{
+  "ustYazi": "İLİŞKİ TESTİ",
+  "baslik": "Manipülasyona mı Uğruyorsun?",
+  "kanca": "Bu 5 soruya dürüst cevap ver...",
+  "tema": { "renk1": "#7F5AF0", "renk2": "#2CB1BC" },
+  "sorular": [
+    { "soru": "Bir şey istediğinde karşı taraf ne yapar?", "secenekler": ["Konuşur, ortada buluşuruz", "Bazen alınır ama geçer", "Suçluluk hissettirir", "Seni dinlemez bile"] },
+    { "soru": "Hatırladığın bir olayı anlatınca...", "secenekler": ["Bana inanır", "Farklı hatırladığını söyler", "\"Abartıyorsun\" der", "\"Öyle bir şey olmadı\" der"] },
+    { "soru": "Arkadaşlarınla buluşmak istediğinde?", "secenekler": ["İyi eğlenceler der", "Biraz kıskanır", "Surat asar", "Gitmemem için sahne yapar"] },
+    { "soru": "Ondan sonra kendini nasıl hissediyorsun?", "secenekler": ["Huzurlu", "Bazen yorgun", "Sürekli tetikte", "Değersiz"] },
+    { "soru": "Özür dileyen genelde kim?", "secenekler": ["İkimiz de", "Çoğunlukla o", "Çoğunlukla ben", "Hep ben"] }
+  ],
+  "sonuclar": [
+    { "emoji": "💚", "ad": "Sağlıklı Bağ", "aciklama": "İletişim açık, saygı karşılıklı. Bu güzel dengeyi koru!" },
+    { "emoji": "💛", "ad": "Küçük Sinyaller", "aciklama": "Ciddi değil ama bazı anlar seni zorluyor. Sınırlarını dile getir." },
+    { "emoji": "🧡", "ad": "Dikkat!", "aciklama": "Suçluluk ve şüphe hissettiriliyorsun. Güvendiğin biriyle konuş." },
+    { "emoji": "❤️‍🩹", "ad": "Kırmızı Alarm", "aciklama": "Bu ilişki sana zarar veriyor olabilir. Yalnız değilsin, destek al." }
+  ],
+  "kapanis": "Hangisi çıktı? Yorumlara yaz!",
+  "uyari": "Bu bir eğlence testidir, profesyonel bir değerlendirme değildir. Kendini güvende hissetmiyorsan: Alo 183 (ücretsiz) · Acil: 112"
+}
