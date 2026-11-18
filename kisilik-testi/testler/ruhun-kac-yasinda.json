@@ -1,0 +1,41 @@
+{
+  "ustYazi": "KİŞİLİK TESTİ",
+  "baslik": "Ruhun Kaç Yaşında?",
+  "kanca": "Kimlikteki yaşın yalan söylüyor olabilir...",
+  "seslendirme": true,
+  "sorular": [
+    { "soru": "Gece 12. Ne yapıyorsun?", "secenekler": [
+      { "metin": "Dizi bitiriyorum 🍿", "puan": 3 },
+      { "metin": "Çoktan uyudum 😴", "puan": 4 },
+      { "metin": "Arkadaşlarla mesajlaşıyorum 💬", "puan": 2 },
+      { "metin": "Çizgi film izliyorum 📺", "puan": 1 } ] },
+    { "soru": "En sevdiğin içecek?", "secenekler": [
+      { "metin": "Meyve suyu 🧃", "puan": 1 },
+      { "metin": "Sade kahve ☕", "puan": 3 },
+      { "metin": "Bitki çayı 🌿", "puan": 4 },
+      { "metin": "Enerji içeceği ⚡", "puan": 2 } ] },
+    { "soru": "Bir sorunla karşılaşınca?", "secenekler": [
+      { "metin": "Kulaklığı takarım 🎧", "puan": 2 },
+      { "metin": "Sabret, her şey geçer 🍵", "puan": 4 },
+      { "metin": "Ağlarım, sonra geçer 😭", "puan": 1 },
+      { "metin": "Liste yapıp çözerim 📝", "puan": 3 } ] },
+    { "soru": "Hangi müzik seni anlatır?", "secenekler": [
+      { "metin": "Eski Türk plakları 📻", "puan": 4 },
+      { "metin": "Trend TikTok sesleri 🔥", "puan": 2 },
+      { "metin": "Çocuk şarkıları 🎈", "puan": 1 },
+      { "metin": "90'lar pop 💿", "puan": 3 } ] },
+    { "soru": "Hayalindeki hafta sonu?", "secenekler": [
+      { "metin": "Konser ve parti 🎤", "puan": 2 },
+      { "metin": "Lunaparka gitmek 🎢", "puan": 1 },
+      { "metin": "Brunch ve sohbet 🥐", "puan": 3 },
+      { "metin": "Bahçede çiçek sulamak 🪴", "puan": 4 } ] }
+  ],
+  "sonuclar": [
+    { "emoji": "🧒", "ad": "8 Yaşında", "aciklama": "İçindeki çocuk hiç büyümedi. Merakın ve neşen bulaşıcı!", "aralik": [5, 8] },
+    { "emoji": "🎧", "ad": "17 Yaşında", "aciklama": "Asi, tutkulu, hep bir adım önde. Kuralları sen koyarsın.", "aralik": [9, 12] },
+    { "emoji": "☕", "ad": "35 Yaşında", "aciklama": "Olgun ve dengelisin. Herkes akıl danışmaya sana gelir.", "aralik": [13, 16] },
+    { "emoji": "👵", "ad": "80 Yaşında", "aciklama": "Bilge bir ruhsun. Sakinliğin ve sabrın herkese ilaç gibi.", "aralik": [17, 20] }
+  ],
+  "kapanis": "👵 80 yaşında çıkanlar, çayınız hazır mı?",
+  "sabitYorum": "Ben 80 yaşında çıktım ve hiç şaşırmadım 😂 Senin ruhun kaç yaşında? Kimliğindeki yaşla aynı mı?"
+}

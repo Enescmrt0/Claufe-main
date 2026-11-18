@@ -12,7 +12,8 @@
     "kanal": "node scripts/render.mjs --kanal",
     "metin": "node scripts/seslendirme.mjs",
     "seslendir": "node scripts/seslendirme.mjs --uret",
-    "yayin": "node scripts/yayin.mjs"
+    "yayin": "node scripts/yayin.mjs",
+    "seslendir-yerel": "node scripts/seslendirme.mjs --uret --motor=espeak"
   },
   "dependencies": {
     "@remotion/bundler": "4.0.486",

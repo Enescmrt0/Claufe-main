@@ -9,7 +9,9 @@ import { execFileSync } from "node:child_process";
 const kok = path.resolve(path.dirname(new URL(import.meta.url).pathname), "..");
 const args = process.argv.slice(2);
 const uret = args.includes("--uret");
-const ses = (args.find((a) => a.startsWith("--ses=")) ?? "--ses=tr-TR-EmelNeural").slice(6);
+// --motor=edge (Microsoft, internet gerekir) · --motor=espeak (internetsiz, MBROLA Türkçe sesleri)
+const motor = (args.find((a) => a.startsWith("--motor=")) ?? "--motor=edge").slice(8);
+const ses = (args.find((a) => a.startsWith("--ses=")) ?? (motor === "espeak" ? "--ses=mb-tr2" : "--ses=tr-TR-EmelNeural")).slice(6);
 const secilen = args.filter((a) => !a.startsWith("--"));
 
 const slug = (d) => d.replace(/\.json$/, "").toLowerCase()
@@ -43,9 +45,9 @@ export const klipler = (v) => {
     ["puan-topla", "Süre bitti! Şimdi puanlarını topla. Toplamın kaç?"],
     ...v.sonuclar.map((r, i) => {
       const [a, b] = ar[i];
-      return [`sonuc-${i + 1}`, `${a === b ? `${a}` : `${a} ile ${b} arası`} puan aldıysan... ${r.ad}! ${r.aciklama}`];
+      return [`sonuc-${i + 1}`, `${a === b ? `${a}` : `${a} ile ${b} arası`} puan aldıysan... ${r.ad}!`];
     }),
-    ["kapanis", `${v.kapanis ?? "Ne çıktın? Yorumlara yaz!"} Yeni testler için takip etmeyi unutma!`],
+    ["kapanis", `${v.kapanis ?? "Ne çıktın? Yorumlara yaz!"} Puanını yorumlara yaz!`],
   ];
   return liste.map(([ad, metin]) => [ad, temizle(v.ses?.[ad] ?? metin)]);
 };
@@ -66,7 +68,12 @@ for (const f of dosyalar) {
     const klasor = path.join(kok, "public", "ses", id);
     fs.mkdirSync(klasor, { recursive: true });
     for (const [ad, metin] of liste) {
-      execFileSync("edge-tts", ["--voice", ses, "--rate=+8%", "--text", metin, "--write-media", path.join(klasor, `${ad}.mp3`)], { stdio: "inherit" });
+      for (const eski of ["mp3", "wav", "m4a"]) fs.rmSync(path.join(klasor, `${ad}.${eski}`), { force: true });
+      if (motor === "espeak") {
+        execFileSync("espeak-ng", ["-v", ses, "-s", "175", "-p", "55", "-w", path.join(klasor, `${ad}.wav`), metin], { stdio: "ignore" });
+      } else {
+        execFileSync("edge-tts", ["--voice", ses, "--rate=+8%", "--text", metin, "--write-media", path.join(klasor, `${ad}.mp3`)], { stdio: "inherit" });
+      }
       console.log("  🎙", ad);
     }
   }

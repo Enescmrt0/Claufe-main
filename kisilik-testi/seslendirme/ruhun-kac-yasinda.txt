@@ -1,0 +1,35 @@
+# Ruhun Kaç Yaşında? — seslendirme metni
+# Kayıtları public/ses/ruhun-kac-yasinda/ klasörüne bu adlarla koy (.mp3, .wav veya .m4a)
+
+soru-1.mp3
+Ruhun Kaç Yaşında? Puanlarını topla! İlk soru: Gece 12. Ne yapıyorsun?
+
+soru-2.mp3
+Soru 2. En sevdiğin içecek?
+
+soru-3.mp3
+Soru 3. Bir sorunla karşılaşınca?
+
+soru-4.mp3
+Soru 4. Hangi müzik seni anlatır?
+
+soru-5.mp3
+Son soru! Hayalindeki hafta sonu?
+
+puan-topla.mp3
+Süre bitti! Şimdi puanlarını topla. Toplamın kaç?
+
+sonuc-1.mp3
+5 ile 8 arası puan aldıysan... 8 Yaşında!
+
+sonuc-2.mp3
+9 ile 12 arası puan aldıysan... 17 Yaşında!
+
+sonuc-3.mp3
+13 ile 16 arası puan aldıysan... 35 Yaşında!
+
+sonuc-4.mp3
+17 ile 20 arası puan aldıysan... 80 Yaşında!
+
+kapanis.mp3
+80 yaşında çıkanlar, çayınız hazır mı? Puanını yorumlara yaz!
