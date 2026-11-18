@@ -119,3 +119,26 @@ def elegy(t0, t1, g=1.0, prog=((45, 52, 57, 60), (41, 48, 57, 60), (43, 50, 55, 
         place(music, strings(ch[1:], d, .45), t, g)
         place(music, pizz(ch[0] - 12, 1.6, .7), t, g); place(music, glock(ch[-1] + 12, 2.0, .14), t + bar / 2, g)
         t += bar; i += 1
+
+# Victorian music hall: honky-tonk piano oom-pah with a cheeky melody (and a sleepy variant)
+def _piano(m, dur=.5, g=1.0):
+    n = int(dur * SR); t = T(n); f = midi(m)
+    x = sum(a * np.sin(2 * np.pi * f * k * (1 + .0015 * k) * t) for k, a in ((1, 1), (2, .5), (3, .25), (4, .12)))
+    x += .5 * np.sin(2 * np.pi * f * 1.004 * t)  # slightly out-of-tune second string
+    return x * np.exp(-t * 4.5) * np.minimum(1, t / .003) * .22 * g
+def musichall(t0, t1, g=1.0, bpm=126, tune=True, sleepy=False):
+    b = 60 / bpm; t = t0; bar = 0
+    prog = [(43, (59, 62, 67)), (48, (60, 64, 67)), (50, (57, 62, 66)), (43, (59, 62, 67))]
+    mel = [74, 76, 78, 79, 81, 79, 76, 74, 72, 74, 76, 72, 74, None, 71, None]
+    while t < t1 - .05:
+        root, ch = prog[bar % 4]
+        for k in range(4):
+            if k % 2 == 0: place(music, _piano(root - (0 if k == 0 else 7), .5, .9), t + k * b, g)
+            else:
+                for m in ch: place(music, _piano(m - 12, .25, .45), t + k * b, g)
+        if tune and not sleepy:
+            for k in range(4):
+                m = mel[(bar * 4 + k) % 16]
+                if m and t + k * b < t1: place(music, _piano(m, .45, .7), t + k * b + (b * .1 if k % 2 else 0), g)
+        if sleepy and bar % 2 == 0: place(music, glock(79, 1.6, .25), t, g)
+        t += 4 * b; bar += 1
