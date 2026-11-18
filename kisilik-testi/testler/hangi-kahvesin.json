@@ -1,41 +1,153 @@
 {
   "ustYazi": "KİŞİLİK TESTİ",
   "baslik": "Hangi Kahvesin?",
-  "kanca": "Sadece %6'sı Türk Kahvesi çıkıyor... sen hangisisin?",
-  "tema": { "renk1": "#D4A373", "renk2": "#7F5539" },
+  "kanca": "Herkes latte çıkıyor... bir tek sen çıkmayabilirsin.",
   "seslendirme": true,
   "sorular": [
-    { "soru": "Alarm çaldı. İlk ne yaparsın?", "secenekler": [
-      { "metin": "5 dakika daha 😴", "puan": 1 },
-      { "metin": "Hemen kalkarım ⏰", "puan": 4 },
-      { "metin": "Telefona bakarım 📱", "puan": 2 },
-      { "metin": "Pencereyi açarım 🌤️", "puan": 3 } ] },
-    { "soru": "Hafta sonu seni nerede buluruz?", "secenekler": [
-      { "metin": "Brunch'ta arkadaşlarla 🥞", "puan": 2 },
-      { "metin": "Yeni projemin başında 💻", "puan": 4 },
-      { "metin": "Kafede kitapla 📖", "puan": 1 },
-      { "metin": "Ailemle sohbette 🏡", "puan": 3 } ] },
-    { "soru": "Arkadaşların sana ne için gelir?", "secenekler": [
-      { "metin": "Akıl danışmak için 🦉", "puan": 3 },
-      { "metin": "Sakinleşmek için 🧘", "puan": 1 },
-      { "metin": "Motivasyon için 🔥", "puan": 4 },
-      { "metin": "Eğlenmek için 🎉", "puan": 2 } ] },
-    { "soru": "Telefonunda en çok açık olan uygulama?", "secenekler": [
-      { "metin": "Takvim 📅", "puan": 4 },
-      { "metin": "WhatsApp grupları 💬", "puan": 3 },
-      { "metin": "Instagram 📸", "puan": 2 },
-      { "metin": "Spotify 🎧", "puan": 1 } ] },
-    { "soru": "Hayat mottonu seç!", "secenekler": [
-      { "metin": "Akışına bırak 🌊", "puan": 1 },
-      { "metin": "Durmak yok, yola devam 🚀", "puan": 4 },
-      { "metin": "Hatır her şeydir ☕", "puan": 3 },
-      { "metin": "Hayat tatlı olunca güzel 🍭", "puan": 2 } ] }
+    {
+      "soru": "Alarm çaldı. İlk ne yaparsın?",
+      "secenekler": [
+        {
+          "metin": "5 dakika daha 😴",
+          "puan": 1
+        },
+        {
+          "metin": "Hemen kalkarım ⏰",
+          "puan": 4
+        },
+        {
+          "metin": "Telefona bakarım 📱",
+          "puan": 2
+        },
+        {
+          "metin": "Pencereyi açarım 🌤️",
+          "puan": 3
+        }
+      ]
+    },
+    {
+      "soru": "Hafta sonu seni nerede buluruz?",
+      "secenekler": [
+        {
+          "metin": "Brunch'ta arkadaşlarla 🥞",
+          "puan": 2
+        },
+        {
+          "metin": "Yeni projemin başında 💻",
+          "puan": 4
+        },
+        {
+          "metin": "Kafede kitapla 📖",
+          "puan": 1
+        },
+        {
+          "metin": "Ailemle sohbette 🏡",
+          "puan": 3
+        }
+      ]
+    },
+    {
+      "soru": "Arkadaşların sana ne için gelir?",
+      "secenekler": [
+        {
+          "metin": "Akıl danışmak için 🦉",
+          "puan": 3
+        },
+        {
+          "metin": "Sakinleşmek için 🧘",
+          "puan": 1
+        },
+        {
+          "metin": "Motivasyon için 🔥",
+          "puan": 4
+        },
+        {
+          "metin": "Eğlenmek için 🎉",
+          "puan": 2
+        }
+      ]
+    },
+    {
+      "soru": "Telefonunda en çok açık olan uygulama?",
+      "secenekler": [
+        {
+          "metin": "Takvim 📅",
+          "puan": 4
+        },
+        {
+          "metin": "WhatsApp grupları 💬",
+          "puan": 3
+        },
+        {
+          "metin": "Instagram 📸",
+          "puan": 2
+        },
+        {
+          "metin": "Spotify 🎧",
+          "puan": 1
+        }
+      ]
+    },
+    {
+      "soru": "Hayat mottonu seç!",
+      "secenekler": [
+        {
+          "metin": "Akışına bırak 🌊",
+          "puan": 1
+        },
+        {
+          "metin": "Durmak yok, yola devam 🚀",
+          "puan": 4
+        },
+        {
+          "metin": "Hatır her şeydir ☕",
+          "puan": 3
+        },
+        {
+          "metin": "Hayat tatlı olunca güzel 🍭",
+          "puan": 2
+        }
+      ]
+    }
   ],
   "sonuclar": [
-    { "emoji": "🥛", "ad": "Sütlü Latte", "aciklama": "Yumuşak ve huzurlusun. Yanında herkes rahatlar.", "aralik": [5, 8] },
-    { "emoji": "🧋", "ad": "Karamel Macchiato", "aciklama": "Tatlı ve sosyalsin! Ortamın neşesi hep sensin.", "aralik": [9, 12] },
-    { "emoji": "☕", "ad": "Türk Kahvesi", "aciklama": "Derin sohbetlerin ustasısın. Seninle bir fincanın kırk yıl hatırı var.", "aralik": [13, 16] },
-    { "emoji": "⚡", "ad": "Double Espresso", "aciklama": "Hırslı ve enerjiksin. Hedefine kimse yetişemez!", "aralik": [17, 20] }
+    {
+      "emoji": "🥛",
+      "ad": "Sütlü Latte",
+      "aciklama": "Yumuşak ve huzurlusun. Yanında herkes rahatlar.",
+      "aralik": [
+        5,
+        8
+      ]
+    },
+    {
+      "emoji": "🧋",
+      "ad": "Karamel Macchiato",
+      "aciklama": "Tatlı ve sosyalsin! Ortamın neşesi hep sensin.",
+      "aralik": [
+        9,
+        12
+      ]
+    },
+    {
+      "emoji": "☕",
+      "ad": "Türk Kahvesi",
+      "aciklama": "Derin sohbetlerin ustasısın. Seninle bir fincanın kırk yıl hatırı var.",
+      "aralik": [
+        13,
+        16
+      ]
+    },
+    {
+      "emoji": "⚡",
+      "ad": "Double Espresso",
+      "aciklama": "Hırslı ve enerjiksin. Hedefine kimse yetişemez!",
+      "aralik": [
+        17,
+        20
+      ]
+    }
   ],
-  "kapanis": "Kaç puan aldın? Yorumlara yaz!"
+  "kapanis": "☕ Türk Kahvesi çıkan var mı? Puanını yaz!",
+  "sabitYorum": "Bence en nadir sonuç ⚡ Double Espresso. Çıkan var mı? 👀 Puanını yaz, kaç kişiyiz görelim!"
 }

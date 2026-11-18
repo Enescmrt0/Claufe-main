@@ -2,6 +2,9 @@
 
 Soruları ve sonuçları bir JSON dosyasına yaz, şablon 1080×1920 (9:16) sesli bir YouTube Shorts videosu çıkarsın.
 
+**Açılış:** Video doğrudan 1. soruyla açılır. Kaydıran kişi ilk karede soruyu görür, üstte test adı yazar.
+Eski başlık kartlı açılışı istersen JSON'a `"acilis": "baslik"` ekle.
+
 **Konsept:** Her cevabın bir puanı var. İzleyici geri sayım bitene kadar cevabını seçer, sonra şıkların puanları (+1, +4…) görünür.
 Sonunda puanlarını toplar ve toplam puanına göre sonucunu öğrenir ("13–16 puan aldıysan... ⭐ Yıldız Kızı").
 
@@ -81,3 +84,10 @@ Erkek ses için sonuna `-- --ses=tr-TR-AhmetNeural` ekle.
 
 Bir cümleyi değiştirmek istersen JSON'a `"ses": { "giris": "Kendi cümlen..." }` yaz.
 Kaydı olmayan sahneler sessiz kalır, video yine çıkar.
+
+## Yayınlarken (yorum = büyüme)
+`npm run yayin` çalıştır. Her test için `yayin/<test>.txt` dosyasına başlık, açıklama, etiketler ve **sabitlenecek ilk yorum** yazılır.
+- İlk yorumu videoyu yükler yüklemez **sen at ve sabitle**. Sonuçlardan birini "en abartılı" ya da "en nadir" diye ilan et ki tartışma başlasın.
+- Kapanış cümlesi (`"kapanis"`) bir sonuca meydan okusun: "🤪 Çılgın çıkanlar, kendinizi gösterin!"
+- Uydurma istatistik kullanma ("%7'si … çıkıyor" gibi). Onun yerine: "Herkes X çıkıyor… bir tek sen çıkmayabilirsin."
+- Formatı sabit tut: aynı renk (kanal paleti), 5 soru, 4 sonuç, aynı süre.

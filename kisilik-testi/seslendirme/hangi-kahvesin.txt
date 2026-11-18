@@ -1,14 +1,8 @@
 # Hangi Kahvesin? — seslendirme metni
 # Kayıtları public/ses/hangi-kahvesin/ klasörüne bu adlarla koy (.mp3, .wav veya .m4a)
 
-giris.mp3
-Hangi Kahvesin? Sadece yüzde 6'sı Türk Kahvesi çıkıyor... sen hangisisin?
-
-kural.mp3
-Her cevabın bir puanı var. Aklına ilk geleni seç ve puanlarını topla!
-
 soru-1.mp3
-Soru 1. Alarm çaldı. İlk ne yaparsın?
+Hangi Kahvesin? Puanlarını topla! İlk soru: Alarm çaldı. İlk ne yaparsın?
 
 soru-2.mp3
 Soru 2. Hafta sonu seni nerede buluruz?
@@ -38,4 +32,4 @@ sonuc-4.mp3
 17 ile 20 arası puan aldıysan... Double Espresso! Hırslı ve enerjiksin. Hedefine kimse yetişemez!
 
 kapanis.mp3
-Kaç puan aldın? Yorumlara yaz! Yeni testler için takip etmeyi unutma!
+Türk Kahvesi çıkan var mı? Puanını yaz! Yeni testler için takip etmeyi unutma!

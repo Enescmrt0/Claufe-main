@@ -1,0 +1,35 @@
+# Hangi Emojisin? — seslendirme metni
+# Kayıtları public/ses/hangi-emojisin/ klasörüne bu adlarla koy (.mp3, .wav veya .m4a)
+
+soru-1.mp3
+Hangi Emojisin? Puanlarını topla! İlk soru: Mesajına 1 saattir cevap gelmedi...
+
+soru-2.mp3
+Soru 2. En çok kullandığın kelime?
+
+soru-3.mp3
+Soru 3. Partide sen hangisisin?
+
+soru-4.mp3
+Soru 4. Grup sohbetinde sen...
+
+soru-5.mp3
+Son soru! Cuma akşamı planın?
+
+puan-topla.mp3
+Süre bitti! Şimdi puanlarını topla. Toplamın kaç?
+
+sonuc-1.mp3
+5 ile 8 arası puan aldıysan... Kalp Eller! Sakin ve sevgi dolusun. Herkes dertleşmek için seni arar.
+
+sonuc-2.mp3
+9 ile 12 arası puan aldıysan... Kıkırdayan! Meraklısın, her şeyi ilk sen duyarsın. Sırlar sende güvende... sanırım.
+
+sonuc-3.mp3
+13 ile 16 arası puan aldıysan... Sırıtan! Özgüvenin tavan! Ne istediğini bilirsin ve son söz hep senindir.
+
+sonuc-4.mp3
+17 ile 20 arası puan aldıysan... Çılgın! Kaosun ta kendisisin. Sen olmadan hiçbir ortam eğlenceli değil!
+
+kapanis.mp3
+Çılgın çıkanlar, kendinizi gösterin! Yeni testler için takip etmeyi unutma!

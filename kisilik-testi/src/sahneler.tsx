@@ -101,17 +101,21 @@ export const Kural: React.FC = () => {
   );
 };
 
-export const SoruSahnesi: React.FC<{ soru: Soru; no: number; toplam: number; sayimSn: number; puanSn: number; puanHemen: boolean }> = ({
-  soru,
-  no,
-  toplam,
-  sayimSn,
-  puanSn,
-  puanHemen,
-}) => {
+export const SoruSahnesi: React.FC<{
+  soru: Soru;
+  no: number;
+  toplam: number;
+  sayimSn: number;
+  puanSn: number;
+  puanHemen: boolean;
+  /** Video doğrudan bu soruyla açılıyorsa: ilk karede her şey hazır görünür, üstte test adı yazar */
+  acilisBasligi?: string;
+}> = ({ soru, no, toplam, sayimSn, puanSn, puanHemen, acilisBasligi }) => {
   const frame = useCurrentFrame();
   const { fps, durationInFrames } = useVideoConfig();
-  const a = useGiris(0);
+  const acilis = Boolean(acilisBasligi);
+  const giris = useGiris(0);
+  const a = acilis ? 1 : giris;
   const puanBas = puanHemen ? 0 : durationInFrames - Math.round(puanSn * fps);
   const sayimSon = puanHemen ? durationInFrames : puanBas;
   const sayimBas = sayimSon - Math.round(sayimSn * fps);
@@ -125,10 +129,13 @@ export const SoruSahnesi: React.FC<{ soru: Soru; no: number; toplam: number; say
   const uzun = metinler.some((m) => m.length > 22);
   return (
     <Guvenli style={{ gap: 30, transform: `translateX(${cikis}px)` }}>
-      <Ses ad="whoosh" ses={0.5} />
-      {soru.secenekler.map((_, i) => (
-        <Ses key={i} ad="pop" kare={secenekBas + i * 6} ses={0.45} />
-      ))}
+      {!acilis ? <Ses ad="whoosh" ses={0.5} /> : null}
+      {!acilis
+        ? soru.secenekler.map((_, i) => <Ses key={i} ad="pop" kare={secenekBas + i * 6} ses={0.45} />)
+        : null}
+      {acilisBasligi ? (
+        <div style={{ fontSize: 76, fontWeight: 800, color: "white", textAlign: "center", lineHeight: 1, textShadow: golge }}>{acilisBasligi}</div>
+      ) : null}
       {!puanHemen ? <Ses ad="ding" kare={puanBas} ses={0.35} /> : null}
       {Array.from({ length: Math.round(sayimSn) }, (_, i) => (
         <Ses key={`t${i}`} ad="tik" kare={sayimBas + i * fps} ses={0.7} />
@@ -150,7 +157,8 @@ export const SoruSahnesi: React.FC<{ soru: Soru; no: number; toplam: number; say
       </Kart>
       <div style={{ width: "100%", display: "flex", flexDirection: "column", gap: 22 }}>
         {soru.secenekler.map((sec, i) => {
-          const g = useGiris(secenekBas + i * 6, 11);
+          const gelis = useGiris(secenekBas + i * 6, 11);
+          const g = acilis ? 1 : gelis;
           const p = useGiris(puanHemen ? secenekBas + i * 6 + 4 : puanBas + i * 3, 9);
           const puan = secenekPuani(sec, i);
           return (
@@ -190,7 +198,10 @@ export const SoruSahnesi: React.FC<{ soru: Soru; no: number; toplam: number; say
           );
         })}
       </div>
-      <div style={{ width: "100%", display: "flex", alignItems: "center", gap: 24, opacity: sayimDevrede ? 1 : 0 }}>
+      {acilis && frame < sayimBas ? (
+        <Hap style={{ fontSize: 40 }}>🧮 Her cevabın puanı var, sonunda topla!</Hap>
+      ) : null}
+      <div style={{ width: "100%", display: acilis && frame < sayimBas ? "none" : "flex", alignItems: "center", gap: 24, opacity: sayimDevrede ? 1 : 0 }}>
         <div style={{ flex: 1, height: 26, borderRadius: 26, background: "rgba(0,0,0,0.2)", overflow: "hidden" }}>
           <div style={{ width: `${cubuk * 100}%`, height: "100%", background: "white", borderRadius: 26 }} />
         </div>

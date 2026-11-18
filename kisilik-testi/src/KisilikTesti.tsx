@@ -3,7 +3,7 @@ import { AbsoluteFill, Html5Audio, Sequence, Series, staticFile } from "remotion
 import { ArkaPlan } from "./ortak";
 import { useFont } from "./font";
 import { Giris, Kapanis, Kural, SonucSahnesi, SonucSorusu, SoruSahnesi } from "./sahneler";
-import { puanSiniri, sahneKareleri, sonucAraliklari, sureleriAl, TestVerisi } from "./tipler";
+import { puanSiniri, sahneKareleri, soruIleAcilir, sonucAraliklari, sureleriAl, TestVerisi } from "./tipler";
 
 /** Sahnenin başında ilgili ses kaydını çalar (varsa) */
 const Anlatim: React.FC<{ v: TestVerisi; ad: string; gecikme?: number }> = ({ v, ad, gecikme = 4 }) => {
@@ -23,21 +23,29 @@ export const KisilikTesti: React.FC<TestVerisi> = (v) => {
   const emojiler = v.sonuclar.map((x) => x.emoji);
   const [enAz, enCok] = puanSiniri(v);
   const araliklar = sonucAraliklari(v);
+  const soruAcilisi = soruIleAcilir(v);
   return (
     <AbsoluteFill lang="tr">
       <ArkaPlan renk1={v.tema?.renk1 ?? "#FF9A62"} renk2={v.tema?.renk2 ?? "#FF4F81"} emojiler={emojiler} />
       <Series>
-        <Series.Sequence durationInFrames={r.giris} name="Giriş">
-          <Giris ustYazi={v.ustYazi ?? "KİŞİLİK TESTİ"} baslik={v.baslik} kanca={v.kanca} emojiler={emojiler} />
-          <Anlatim v={v} ad="giris" />
-        </Series.Sequence>
-        <Series.Sequence durationInFrames={r.kural} name="Kural">
-          <Kural />
-          <Anlatim v={v} ad="kural" />
-        </Series.Sequence>
+        {!soruAcilisi ? (
+          <Series.Sequence durationInFrames={r.giris} name="Giriş">
+            <Giris ustYazi={v.ustYazi ?? "KİŞİLİK TESTİ"} baslik={v.baslik} kanca={v.kanca} emojiler={emojiler} />
+            <Anlatim v={v} ad="giris" />
+          </Series.Sequence>
+        ) : null}
+        {!soruAcilisi ? (
+          <Series.Sequence durationInFrames={r.kural} name="Kural">
+            <Kural />
+            <Anlatim v={v} ad="kural" />
+          </Series.Sequence>
+        ) : null}
         {v.sorular.map((soru, i) => (
           <Series.Sequence key={i} durationInFrames={r.sorular[i]} name={`Soru ${i + 1}`}>
-            <SoruSahnesi soru={soru} no={i + 1} toplam={v.sorular.length} sayimSn={s.sayim} puanSn={s.puan} puanHemen={v.puanZamani === "hemen"} />
+            <SoruSahnesi
+              soru={soru} no={i + 1} toplam={v.sorular.length} sayimSn={s.sayim} puanSn={s.puan} puanHemen={v.puanZamani === "hemen"}
+              acilisBasligi={soruAcilisi && i === 0 ? v.baslik : undefined}
+            />
             <Anlatim v={v} ad={`soru-${i + 1}`} gecikme={2} />
           </Series.Sequence>
         ))}

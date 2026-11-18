@@ -18,6 +18,10 @@ export type TestVerisi = {
   puanZamani?: "sonra" | "hemen";
   /** true ise public/ses/<test-adı>/ klasöründeki ses kayıtları videoya eklenir */
   seslendirme?: boolean;
+  /** "soru" (varsayılan): video doğrudan 1. soruyla açılır · "baslik": önce başlık kartı ve kural ekranı gelir */
+  acilis?: "soru" | "baslik";
+  /** Yayın metni için: sabitlenecek ilk yorum */
+  sabitYorum?: string;
   /** Seslendirme metnini elle değiştirmek için: { "giris": "...", "soru-2": "..." } */
   ses?: Record<string, string>;
   /** (otomatik) bulunan ses dosyaları ve süreleri */
@@ -50,9 +54,10 @@ export const HARF_RENKLERI = ["#FF4D6D", "#3A86FF", "#06D6A0", "#FFB703", "#9B5D
 export const sureleriAl = (v: TestVerisi): Sureler => ({ ...VARSAYILAN_SURELER, ...(v.sureler ?? {}) });
 
 /** Seslendirme klip adları (dosya adları da bunlar: giris.mp3, soru-1.mp3 ...) */
+export const soruIleAcilir = (v: TestVerisi) => v.acilis !== "baslik";
+
 export const klipAdlari = (v: TestVerisi) => [
-  "giris",
-  "kural",
+  ...(soruIleAcilir(v) ? [] : ["giris", "kural"]),
   ...v.sorular.map((_, i) => `soru-${i + 1}`),
   "puan-topla",
   ...v.sonuclar.map((_, i) => `sonuc-${i + 1}`),
@@ -66,11 +71,14 @@ export const sahneKareleri = (v: TestVerisi) => {
   const s = sureleriAl(v);
   const klip = (ad: string) => v._klipler?.[ad]?.sure ?? 0;
   const uzat = (varsayilan: number, ad: string) => k(Math.max(varsayilan, klip(ad) ? klip(ad) + 0.7 : 0));
+  const soruAcilisi = soruIleAcilir(v);
   return {
-    giris: uzat(s.giris, "giris"),
-    kural: uzat(s.kural, "kural"),
+    giris: soruAcilisi ? 0 : uzat(s.giris, "giris"),
+    kural: soruAcilisi ? 0 : uzat(s.kural, "kural"),
     sorular: v.sorular.map((_, i) => {
-      const acilis = Math.max(s.soru - s.sayim - s.puan, klip(`soru-${i + 1}`) ? klip(`soru-${i + 1}`) + 0.4 : 0);
+      // ilk soru videoyu açıyorsa başlığı okumak için +1 sn
+      const ek = soruAcilisi && i === 0 ? 1 : 0;
+      const acilis = Math.max(s.soru - s.sayim - s.puan + ek, klip(`soru-${i + 1}`) ? klip(`soru-${i + 1}`) + 0.4 : 0);
       return k(acilis + s.sayim + s.puan);
     }),
     puanTopla: uzat(s.sonucSorusu, "puan-topla"),

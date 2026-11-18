@@ -1,20 +1,76 @@
 {
   "ustYazi": "KİŞİLİK TESTİ",
   "baslik": "Hangi Yemeksin?",
-  "kanca": "Sadece %7'si Suşi çıkıyor... sen hangisisin?",
-  "tema": { "renk1": "#FF9A62", "renk2": "#FF4F81" },
+  "kanca": "Herkes pizza çıkıyor... bir tek sen çıkmayabilirsin.",
   "sorular": [
-    { "soru": "Cumartesi planın ne?", "secenekler": ["Arkadaşlarla dışarı 🎉", "Evde aileyle 🏠", "Tek başıma yeni bir yer 🗺️", "Spor ve erken uyku 🏃"] },
-    { "soru": "Telefonunda en çok ne var?", "secenekler": ["Meme'ler 😂", "Aile fotoğrafları 📸", "Estetik pinler 🖤", "To-do listeleri 📝"] },
-    { "soru": "Bir renk seç!", "secenekler": ["Kırmızı ❤️", "Kahverengi 🤎", "Siyah 🖤", "Yeşil 💚"] },
-    { "soru": "Arkadaşların seni nasıl tanımlar?", "secenekler": ["Eğlenceli", "Şefkatli", "Gizemli", "Disiplinli"] },
-    { "soru": "Hayalindeki tatil?", "secenekler": ["Festival 🎶", "Köy evi 🌾", "Tokyo 🗼", "Bali'de yoga 🧘"] }
+    {
+      "soru": "Cumartesi planın ne?",
+      "secenekler": [
+        "Arkadaşlarla dışarı 🎉",
+        "Evde aileyle 🏠",
+        "Tek başıma yeni bir yer 🗺️",
+        "Spor ve erken uyku 🏃"
+      ]
+    },
+    {
+      "soru": "Telefonunda en çok ne var?",
+      "secenekler": [
+        "Meme'ler 😂",
+        "Aile fotoğrafları 📸",
+        "Estetik pinler 🖤",
+        "To-do listeleri 📝"
+      ]
+    },
+    {
+      "soru": "Bir renk seç!",
+      "secenekler": [
+        "Kırmızı ❤️",
+        "Kahverengi 🤎",
+        "Siyah 🖤",
+        "Yeşil 💚"
+      ]
+    },
+    {
+      "soru": "Arkadaşların seni nasıl tanımlar?",
+      "secenekler": [
+        "Eğlenceli",
+        "Şefkatli",
+        "Gizemli",
+        "Disiplinli"
+      ]
+    },
+    {
+      "soru": "Hayalindeki tatil?",
+      "secenekler": [
+        "Festival 🎶",
+        "Köy evi 🌾",
+        "Tokyo 🗼",
+        "Bali'de yoga 🧘"
+      ]
+    }
   ],
   "sonuclar": [
-    { "emoji": "🍕", "ad": "Pizza", "aciklama": "Herkes seni sever! Girdiğin ortamın enerjisi anında yükselir." },
-    { "emoji": "🍲", "ad": "Mercimek Çorbası", "aciklama": "Ev gibisin. Yanında herkes kendini güvende hisseder." },
-    { "emoji": "🍣", "ad": "Suşi", "aciklama": "Farklısın, seçicisin. Seni anlayan az ama anlayan bırakmaz." },
-    { "emoji": "🥗", "ad": "Salata", "aciklama": "Hedefi belli, kendine iyi bakan birisin. Gizli motivasyon kaynağısın." }
+    {
+      "emoji": "🍕",
+      "ad": "Pizza",
+      "aciklama": "Herkes seni sever! Girdiğin ortamın enerjisi anında yükselir."
+    },
+    {
+      "emoji": "🍲",
+      "ad": "Mercimek Çorbası",
+      "aciklama": "Ev gibisin. Yanında herkes kendini güvende hisseder."
+    },
+    {
+      "emoji": "🍣",
+      "ad": "Suşi",
+      "aciklama": "Farklısın, seçicisin. Seni anlayan az ama anlayan bırakmaz."
+    },
+    {
+      "emoji": "🥗",
+      "ad": "Salata",
+      "aciklama": "Hedefi belli, kendine iyi bakan birisin. Gizli motivasyon kaynağısın."
+    }
   ],
-  "kapanis": "Kaç puan aldın? Yorumlara yaz!"
+  "kapanis": "Bence en abartılısı 🍣 Suşi. Katılıyor musun?",
+  "sabitYorum": "Ben 🍣 Suşi çıktım ama hiç katılmıyorum 😅 Sen kaç puan aldın? En abartılı sonuç hangisi sence?"
 }

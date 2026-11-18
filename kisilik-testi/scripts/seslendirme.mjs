@@ -31,10 +31,15 @@ const araliklar = (v) => {
 
 export const klipler = (v) => {
   const ar = araliklar(v);
+  const soruIleAcilir = v.acilis !== "baslik";
   const liste = [
-    ["giris", `${v.baslik} ${v.kanca ?? ""}`],
-    ["kural", "Her cevabın bir puanı var. Aklına ilk geleni seç ve puanlarını topla!"],
-    ...v.sorular.map((q, i) => [`soru-${i + 1}`, `${i === v.sorular.length - 1 ? "Son soru!" : `Soru ${i + 1}.`} ${q.soru}`]),
+    ...(soruIleAcilir ? [] : [
+      ["giris", `${v.baslik} ${v.kanca ?? ""}`],
+      ["kural", "Her cevabın bir puanı var. Aklına ilk geleni seç ve puanlarını topla!"],
+    ]),
+    ...v.sorular.map((q, i) => [`soru-${i + 1}`,
+      i === 0 && soruIleAcilir ? `${v.baslik} Puanlarını topla! İlk soru: ${q.soru}`
+      : `${i === v.sorular.length - 1 ? "Son soru!" : `Soru ${i + 1}.`} ${q.soru}`]),
     ["puan-topla", "Süre bitti! Şimdi puanlarını topla. Toplamın kaç?"],
     ...v.sonuclar.map((r, i) => {
       const [a, b] = ar[i];

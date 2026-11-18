@@ -1,0 +1,35 @@
+# Hangi Yemeksin? — seslendirme metni
+# Kayıtları public/ses/hangi-yemeksin/ klasörüne bu adlarla koy (.mp3, .wav veya .m4a)
+
+soru-1.mp3
+Hangi Yemeksin? Puanlarını topla! İlk soru: Cumartesi planın ne?
+
+soru-2.mp3
+Soru 2. Telefonunda en çok ne var?
+
+soru-3.mp3
+Soru 3. Bir renk seç!
+
+soru-4.mp3
+Soru 4. Arkadaşların seni nasıl tanımlar?
+
+soru-5.mp3
+Son soru! Hayalindeki tatil?
+
+puan-topla.mp3
+Süre bitti! Şimdi puanlarını topla. Toplamın kaç?
+
+sonuc-1.mp3
+5 ile 8 arası puan aldıysan... Pizza! Herkes seni sever! Girdiğin ortamın enerjisi anında yükselir.
+
+sonuc-2.mp3
+9 ile 12 arası puan aldıysan... Mercimek Çorbası! Ev gibisin. Yanında herkes kendini güvende hisseder.
+
+sonuc-3.mp3
+13 ile 16 arası puan aldıysan... Suşi! Farklısın, seçicisin. Seni anlayan az ama anlayan bırakmaz.
+
+sonuc-4.mp3
+17 ile 20 arası puan aldıysan... Salata! Hedefi belli, kendine iyi bakan birisin. Gizli motivasyon kaynağısın.
+
+kapanis.mp3
+Bence en abartılısı Suşi. Katılıyor musun? Yeni testler için takip etmeyi unutma!
