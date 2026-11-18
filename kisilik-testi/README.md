@@ -47,7 +47,7 @@ npm install
   Aralıklar boşluksuz ve çakışmasız olmalı (örnek: 5–8, 9–12, 13–16, 17–20). 4 şıklı 5 soruda toplam 5 ile 20 arasında olur.
 - `"puanZamani": "hemen"` eklersen puanlar şıklarla birlikte en baştan görünür. Varsayılan `"sonra"`: puanlar geri sayımdan sonra açılır.
 
-**Süre:** 5 soru ve 4 sonuçla video yaklaşık **56 saniye** sürer. 6 soru yaparsan `"sureler": { "soru": 5, "sonuc": 3 }` ile kısalt ki 60 saniyeyi geçmesin.
+**Süre:** 5 soru ve 4 sonuçla video yaklaşık **64 saniye** sürer (her soruda 5 saniyelik geri sayım). Shorts 3 dakikaya kadar olabildiği için sorun yok; daha kısa istersen `"sureler": { "sayim": 4, "soru": 6.5 }` gibi ayarla.
 Ayarlanabilen süreler (saniye): `giris`, `kural`, `soru`, `sayim`, `puan`, `sonucSorusu`, `sonuc`, `kapanis`.
 
 ## Video çıkarmak

@@ -31,9 +31,9 @@ export const FPS = 30;
 export const VARSAYILAN_SURELER: Sureler = {
   giris: 3,
   kural: 2.5,
-  soru: 6,
-  sayim: 3,
-  puan: 1.5, // sorunun son kaç saniyesinde geri sayım akar
+  soru: 7.5,
+  sayim: 5, // geri sayım süresi (saniye)
+  puan: 1.5, // geri sayımdan sonra puanların ekranda kaldığı süre
   sonucSorusu: 3,
   sonuc: 3.5,
   kapanis: 3.5,
