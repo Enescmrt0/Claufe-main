@@ -1,0 +1,41 @@
+# Hangi Kahvesin? — seslendirme metni
+# Kayıtları public/ses/hangi-kahvesin/ klasörüne bu adlarla koy (.mp3, .wav veya .m4a)
+
+giris.mp3
+Hangi Kahvesin? Sadece yüzde 6'sı Türk Kahvesi çıkıyor... sen hangisisin?
+
+kural.mp3
+Her cevabın bir puanı var. Aklına ilk geleni seç ve puanlarını topla!
+
+soru-1.mp3
+Soru 1. Alarm çaldı. İlk ne yaparsın?
+
+soru-2.mp3
+Soru 2. Hafta sonu seni nerede buluruz?
+
+soru-3.mp3
+Soru 3. Arkadaşların sana ne için gelir?
+
+soru-4.mp3
+Soru 4. Telefonunda en çok açık olan uygulama?
+
+soru-5.mp3
+Son soru! Hayat mottonu seç!
+
+puan-topla.mp3
+Süre bitti! Şimdi puanlarını topla. Toplamın kaç?
+
+sonuc-1.mp3
+5 ile 8 arası puan aldıysan... Sütlü Latte! Yumuşak ve huzurlusun. Yanında herkes rahatlar.
+
+sonuc-2.mp3
+9 ile 12 arası puan aldıysan... Karamel Macchiato! Tatlı ve sosyalsin! Ortamın neşesi hep sensin.
+
+sonuc-3.mp3
+13 ile 16 arası puan aldıysan... Türk Kahvesi! Derin sohbetlerin ustasısın. Seninle bir fincanın kırk yıl hatırı var.
+
+sonuc-4.mp3
+17 ile 20 arası puan aldıysan... Double Espresso! Hırslı ve enerjiksin. Hedefine kimse yetişemez!
+
+kapanis.mp3
+Kaç puan aldın? Yorumlara yaz! Yeni testler için takip etmeyi unutma!

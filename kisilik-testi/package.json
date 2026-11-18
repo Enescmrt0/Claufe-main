@@ -9,11 +9,14 @@
     "sesler": "node scripts/sesler.mjs",
     "render": "node scripts/render.mjs",
     "kapak": "node scripts/render.mjs --kapak",
-    "kanal": "node scripts/render.mjs --kanal"
+    "kanal": "node scripts/render.mjs --kanal",
+    "metin": "node scripts/seslendirme.mjs",
+    "seslendir": "node scripts/seslendirme.mjs --uret"
   },
   "dependencies": {
     "@remotion/bundler": "4.0.486",
     "@remotion/cli": "4.0.486",
+    "@remotion/media-utils": "^4.0.486",
     "@remotion/renderer": "4.0.486",
     "react": "18.3.1",
     "react-dom": "18.3.1",

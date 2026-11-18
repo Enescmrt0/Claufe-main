@@ -2,7 +2,9 @@ import React from "react";
 import { Composition, Still } from "remotion";
 import { KanalBanner, KanalProfil } from "./Kanal";
 import { KisilikTesti } from "./KisilikTesti";
-import { FPS, toplamKare, TestVerisi } from "./tipler";
+import { getAudioDurationInSeconds } from "@remotion/media-utils";
+import { staticFile } from "remotion";
+import { FPS, klipAdlari, toplamKare, TestVerisi } from "./tipler";
 
 // testler/ klasöründeki her .json dosyası otomatik olarak ayrı bir video olur.
 declare const require: { context: (d: string, r: boolean, re: RegExp) => { keys(): string[]; (k: string): unknown } };
@@ -16,6 +18,25 @@ export const slug = (dosya: string) =>
     .replace(/ç/g, "c").replace(/ğ/g, "g").replace(/ı/g, "i").replace(/ö/g, "o").replace(/ş/g, "s").replace(/ü/g, "u")
     .replace(/[^a-z0-9-]+/g, "-")
     .replace(/^-+|-+$/g, "");
+
+/** public/ses/<test>/ klasöründeki kayıtları bulur (mp3, wav veya m4a) ve sürelerini ölçer */
+const klipleriBul = async (id: string, v: TestVerisi) => {
+  const klipler: NonNullable<TestVerisi["_klipler"]> = {};
+  if (!v.seslendirme) return klipler;
+  for (const ad of klipAdlari(v)) {
+    for (const uzanti of ["mp3", "wav", "m4a"]) {
+      const dosya = `ses/${id}/${ad}.${uzanti}`;
+      try {
+        const sure = await getAudioDurationInSeconds(staticFile(dosya));
+        klipler[ad] = { dosya, sure };
+        break;
+      } catch {
+        // bu uzantıda dosya yok, sıradakini dene
+      }
+    }
+  }
+  return klipler;
+};
 
 export const RemotionRoot: React.FC = () => (
   <>
@@ -33,7 +54,12 @@ export const RemotionRoot: React.FC = () => (
           fps={FPS}
           durationInFrames={toplamKare(veri)}
           defaultProps={veri as unknown as Record<string, unknown>}
-          calculateMetadata={({ props }: { props: Record<string, unknown> }) => ({ durationInFrames: toplamKare(props as unknown as TestVerisi) })}
+          calculateMetadata={async ({ props }: { props: Record<string, unknown> }) => {
+            const v = props as unknown as TestVerisi;
+            const _klipler = await klipleriBul(slug(k), v);
+            const yeni = { ...v, _klipler };
+            return { durationInFrames: toplamKare(yeni), props: yeni as unknown as Record<string, unknown> };
+          }}
         />
       );
     })}

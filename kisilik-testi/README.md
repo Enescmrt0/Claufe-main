@@ -68,3 +68,16 @@ npm run studio                    # tarayıcıda canlı önizleme ve düzenleme
   Müziği yüklerken YouTube Shorts uygulamasından trend bir ses ekleyebilirsin.
 - Font: Baloo 2 (Google Fonts, OFL). Projeye gömülü, internet gerekmez.
 - Sorular Shorts'un güvenli alanında kalır; alttaki başlık ve sağdaki butonlar yazıların üstüne gelmez.
+
+## Seslendirme 🎙️
+1. JSON'a `"seslendirme": true` ekle.
+2. `npm run metin -- hangi-kahvesin` çalıştır. Okunacak cümleler `seslendirme/hangi-kahvesin.txt` dosyasına yazılır: giriş, kural, her soru, "puanlarını topla", her sonuç ve kapanış.
+3. Her cümleyi kaydet ve dosyada yazan adla `public/ses/hangi-kahvesin/` klasörüne koy (`giris.mp3`, `soru-1.mp3`, `sonuc-1.mp3` …). `.mp3`, `.wav` ve `.m4a` olabilir.
+4. `npm run render -- hangi-kahvesin` çalıştır. Kayıtlar videoya eklenir. Kayıt sahneden uzunsa sahne kendiliğinden uzar, yazılar sesle senkron kalır.
+
+**Otomatik yapay zeka sesi (ücretsiz):** Bilgisayarında `pip install edge-tts` yaptıktan sonra
+`npm run seslendir -- hangi-kahvesin` komutu tüm kayıtları Türkçe kadın sesiyle (tr-TR-EmelNeural) üretir.
+Erkek ses için sonuna `-- --ses=tr-TR-AhmetNeural` ekle.
+
+Bir cümleyi değiştirmek istersen JSON'a `"ses": { "giris": "Kendi cümlen..." }` yaz.
+Kaydı olmayan sahneler sessiz kalır, video yine çıkar.
