@@ -20,16 +20,16 @@ puan-topla.mp3
 Süre bitti! Şimdi puanlarını topla. Toplamın kaç?
 
 sonuc-1.mp3
-5 ile 8 arası puan aldıysan... Sütlü Latte! Yumuşak ve huzurlusun. Yanında herkes rahatlar.
+5 ile 8 arası puan aldıysan... Sütlü Latte!
 
 sonuc-2.mp3
-9 ile 12 arası puan aldıysan... Karamel Macchiato! Tatlı ve sosyalsin! Ortamın neşesi hep sensin.
+9 ile 12 arası puan aldıysan... Karamel Macchiato!
 
 sonuc-3.mp3
-13 ile 16 arası puan aldıysan... Türk Kahvesi! Derin sohbetlerin ustasısın. Seninle bir fincanın kırk yıl hatırı var.
+13 ile 16 arası puan aldıysan... Türk Kahvesi!
 
 sonuc-4.mp3
-17 ile 20 arası puan aldıysan... Double Espresso! Hırslı ve enerjiksin. Hedefine kimse yetişemez!
+17 ile 20 arası puan aldıysan... Double Espresso!
 
 kapanis.mp3
-Türk Kahvesi çıkan var mı? Puanını yaz! Yeni testler için takip etmeyi unutma!
+Türk Kahvesi çıkan var mı? Puanını yaz! Puanını yorumlara yaz!

@@ -20,16 +20,16 @@ puan-topla.mp3
 Süre bitti! Şimdi puanlarını topla. Toplamın kaç?
 
 sonuc-1.mp3
-5 ile 8 arası puan aldıysan... Pizza! Herkes seni sever! Girdiğin ortamın enerjisi anında yükselir.
+5 ile 8 arası puan aldıysan... Pizza!
 
 sonuc-2.mp3
-9 ile 12 arası puan aldıysan... Mercimek Çorbası! Ev gibisin. Yanında herkes kendini güvende hisseder.
+9 ile 12 arası puan aldıysan... Mercimek Çorbası!
 
 sonuc-3.mp3
-13 ile 16 arası puan aldıysan... Suşi! Farklısın, seçicisin. Seni anlayan az ama anlayan bırakmaz.
+13 ile 16 arası puan aldıysan... Suşi!
 
 sonuc-4.mp3
-17 ile 20 arası puan aldıysan... Salata! Hedefi belli, kendine iyi bakan birisin. Gizli motivasyon kaynağısın.
+17 ile 20 arası puan aldıysan... Salata!
 
 kapanis.mp3
-Bence en abartılısı Suşi. Katılıyor musun? Yeni testler için takip etmeyi unutma!
+Bence en abartılısı Suşi. Katılıyor musun? Puanını yorumlara yaz!

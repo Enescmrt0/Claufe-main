@@ -20,16 +20,16 @@ puan-topla.mp3
 Süre bitti! Şimdi puanlarını topla. Toplamın kaç?
 
 sonuc-1.mp3
-5 ile 8 arası puan aldıysan... Sağlıklı Bağ! İletişim açık, saygı karşılıklı. Bu güzel dengeyi koru!
+5 ile 8 arası puan aldıysan... Sağlıklı Bağ!
 
 sonuc-2.mp3
-9 ile 12 arası puan aldıysan... Küçük Sinyaller! Ciddi değil ama bazı anlar seni zorluyor. Sınırlarını dile getir.
+9 ile 12 arası puan aldıysan... Küçük Sinyaller!
 
 sonuc-3.mp3
-13 ile 16 arası puan aldıysan... Dikkat!! Suçluluk ve şüphe hissettiriliyorsun. Güvendiğin biriyle konuş.
+13 ile 16 arası puan aldıysan... Dikkat!!
 
 sonuc-4.mp3
-17 ile 20 arası puan aldıysan... Kırmızı Alarm! Bu ilişki sana zarar veriyor olabilir. Yalnız değilsin, destek al.
+17 ile 20 arası puan aldıysan... Kırmızı Alarm!
 
 kapanis.mp3
-Kaç puan aldın? İstersen yorumlara yaz. Yeni testler için takip etmeyi unutma!
+Kaç puan aldın? İstersen yorumlara yaz. Puanını yorumlara yaz!
