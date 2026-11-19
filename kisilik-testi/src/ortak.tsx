@@ -11,11 +11,13 @@ export const useGiris = (gecikme = 0, damping = 12) => {
 /** Hareketli degrade arka plan + süzülen emojiler */
 export const ArkaPlan: React.FC<{ renk1: string; renk2: string; emojiler: string[] }> = ({ renk1, renk2, emojiler }) => {
   const frame = useCurrentFrame();
+  const { width, height } = useVideoConfig();
   const aci = 160 + Math.sin(frame / 90) * 20;
-  const parcalar = Array.from({ length: 14 }, (_, i) => {
-    const x = (i * 137) % 1000 + 40;
+  const adet = Math.round(14 * Math.max(1, width / 1080));
+  const parcalar = Array.from({ length: adet }, (_, i) => {
+    const x = (i * 137) % (width - 80) + 40;
     const hiz = 0.6 + ((i * 53) % 10) / 12;
-    const y = 1980 - ((frame * hiz * 2 + i * 260) % 2200);
+    const y = height + 60 - ((frame * hiz * 2 + i * 260) % (height + 280));
     const boy = 70 + ((i * 37) % 60);
     const don = Math.sin((frame + i * 40) / 40) * 20;
     return (

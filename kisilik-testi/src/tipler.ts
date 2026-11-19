@@ -2,7 +2,18 @@
 export type Secenek = string | { metin: string; puan: number };
 export type Soru = { soru: string; secenekler: Secenek[] };
 /** aralik: [en az, en çok] toplam puan. Yazılmazsa puan aralığı sonuçlara eşit bölünür. */
-export type Sonuc = { emoji: string; ad: string; aciklama: string; aralik?: [number, number] };
+export type Sonuc = {
+  emoji: string;
+  ad: string;
+  aciklama: string;
+  aralik?: [number, number];
+  /** Uzun videolar için: tek cümlelik alt başlık */
+  slogan?: string;
+  /** Uzun videolar için: detaylı paragraf (varsa detaylı sonuç ekranı kullanılır) */
+  detay?: string;
+  /** Uzun videolar için: madde madde özellikler */
+  ozellikler?: string[];
+};
 export type TestVerisi = {
   ustYazi?: string;
   baslik: string;
@@ -18,6 +29,12 @@ export type TestVerisi = {
   puanZamani?: "sonra" | "hemen";
   /** true ise public/ses/<test-adı>/ klasöründeki ses kayıtları videoya eklenir */
   seslendirme?: boolean;
+  /** "dikey" (varsayılan, Shorts 1080x1920) · "yatay" (uzun video 1920x1080) */
+  format?: "dikey" | "yatay";
+  /** Kural ekranındaki kart yazısı */
+  kural?: string;
+  /** true ise sonuçlardan önce tüm puan aralıklarını gösteren tablo gelir */
+  puanTablosu?: boolean;
   /** "soru" (varsayılan): video doğrudan 1. soruyla açılır · "baslik": önce başlık kartı ve kural ekranı gelir */
   acilis?: "soru" | "baslik";
   /** Yayın metni için: sabitlenecek ilk yorum */
@@ -34,6 +51,7 @@ export type Sureler = {
   sayim: number;
   puan: number; // geri sayımdan sonra puanların ekranda kaldığı süre
   sonucSorusu: number;
+  tablo: number;
   sonuc: number;
   kapanis: number;
 };
@@ -45,6 +63,7 @@ export const VARSAYILAN_SURELER: Sureler = {
   sayim: 5, // geri sayım süresi (saniye)
   puan: 1.5, // geri sayımdan sonra puanların ekranda kaldığı süre
   sonucSorusu: 3,
+  tablo: 7,
   sonuc: 3.5,
   kapanis: 3.5,
 };
@@ -66,6 +85,12 @@ export const klipAdlari = (v: TestVerisi) => [
 
 const k = (sn: number) => Math.round(sn * FPS);
 
+/** Detaylı sonuç ekranının süresi: okuma hızı ~17 karakter/sn + 5 sn pay */
+export const detayliSonucSuresi = (r: Sonuc, enAz: number) => {
+  const metin = (r.slogan ?? "") + (r.detay ?? "") + (r.ozellikler ?? []).join("");
+  return Math.max(enAz, 5 + metin.length / 17);
+};
+
 /** Her sahnenin kare sayısı. Ses kaydı varsa sahne, kayıt bitene kadar uzar. */
 export const sahneKareleri = (v: TestVerisi) => {
   const s = sureleriAl(v);
@@ -82,14 +107,15 @@ export const sahneKareleri = (v: TestVerisi) => {
       return k(acilis + s.sayim + s.puan);
     }),
     puanTopla: uzat(s.sonucSorusu, "puan-topla"),
-    sonuclar: v.sonuclar.map((_, i) => uzat(s.sonuc, `sonuc-${i + 1}`)),
+    tablo: v.puanTablosu ? k(s.tablo) : 0,
+    sonuclar: v.sonuclar.map((r, i) => uzat(r.detay ? detayliSonucSuresi(r, s.sonuc) : s.sonuc, `sonuc-${i + 1}`)),
     kapanis: uzat(s.kapanis, "kapanis"),
   };
 };
 
 export const toplamKare = (v: TestVerisi) => {
   const r = sahneKareleri(v);
-  return r.giris + r.kural + r.sorular.reduce((a, b) => a + b, 0) + r.puanTopla + r.sonuclar.reduce((a, b) => a + b, 0) + r.kapanis;
+  return r.giris + r.kural + r.sorular.reduce((a, b) => a + b, 0) + r.puanTopla + r.tablo + r.sonuclar.reduce((a, b) => a + b, 0) + r.kapanis;
 };
 
 export const secenekMetni = (s: Secenek) => (typeof s === "string" ? s : s.metin);

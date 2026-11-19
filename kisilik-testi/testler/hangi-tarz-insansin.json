@@ -1,0 +1,109 @@
+{
+  "format": "yatay",
+  "acilis": "baslik",
+  "puanTablosu": true,
+  "ustYazi": "DETAYLI KİŞİLİK TESTİ",
+  "baslik": "Hangi Tarz İnsansın?",
+  "kanca": "10 soru, 6 farklı kişilik. Kağıt kalem al, puanlarını not et ✍️",
+  "kural": "Her cevabın bir puanı var. Puanlarını not et, sonunda topla ✍️",
+  "sureler": { "giris": 4, "kural": 3.5 },
+  "sorular": [
+    { "soru": "Yorucu bir haftanın sonunda cuma akşamı...", "secenekler": [
+      { "metin": "En yakın 2 arkadaşımla sohbet 🕯️", "puan": 3 },
+      { "metin": "Kalabalık bir partiye giderim 🎉", "puan": 1 },
+      { "metin": "Evde tek başıma film 🎬", "puan": 4 },
+      { "metin": "Arkadaşlarla yemeğe çıkarım 🍝", "puan": 2 } ] },
+    { "soru": "Yeni girdiğin bir ortamda sen...", "secenekler": [
+      { "metin": "Biri gelirse konuşurum 🙂", "puan": 2 },
+      { "metin": "Köşeden herkesi izlerim 🪑", "puan": 4 },
+      { "metin": "Herkesle tanışırım 🙋", "puan": 1 },
+      { "metin": "Tanıdık birini ararım 👀", "puan": 3 } ] },
+    { "soru": "Bilinmeyen bir numara arıyor...", "secenekler": [
+      { "metin": "Mesaj atmalarını beklerim 💬", "puan": 3 },
+      { "metin": "Hemen açarım 📞", "puan": 1 },
+      { "metin": "Asla açmam 🙅", "puan": 4 },
+      { "metin": "Açarım ama tedirginim 😬", "puan": 2 } ] },
+    { "soru": "Seni en çok ne yorar?", "secenekler": [
+      { "metin": "Yüzeysel sohbetler 🥱", "puan": 4 },
+      { "metin": "Planların iptal olması 📅", "puan": 2 },
+      { "metin": "Evde boş oturmak 😩", "puan": 1 },
+      { "metin": "Kalabalık ve gürültü 🔊", "puan": 3 } ] },
+    { "soru": "Biri sana bir sır anlattı...", "secenekler": [
+      { "metin": "Sadece en yakınıma 🤫", "puan": 2 },
+      { "metin": "Kimseye söylemem 🔒", "puan": 3 },
+      { "metin": "Neden bana anlattı, düşünürüm 🤔", "puan": 4 },
+      { "metin": "Dayanamam, birine anlatırım 🤭", "puan": 1 } ] },
+    { "soru": "Arkadaşlarınla tatildesin...", "secenekler": [
+      { "metin": "Her gece dışarıdayız 🌃", "puan": 1 },
+      { "metin": "Kendime de vakit ayırırım 📖", "puan": 3 },
+      { "metin": "Gündüz gezi, gece dinlenme 🗺️", "puan": 2 },
+      { "metin": "Aslında tek başıma giderdim 🏞️", "puan": 4 } ] },
+    { "soru": "Bir tartışmada sen...", "secenekler": [
+      { "metin": "Sessiz kalır, içimde yaşarım 🌧️", "puan": 4 },
+      { "metin": "Söyler, hemen unuturum 💨", "puan": 2 },
+      { "metin": "Önce düşünür, sonra konuşurum 🧠", "puan": 3 },
+      { "metin": "Sesimi yükseltirim 🔥", "puan": 1 } ] },
+    { "soru": "Mesajlaşırken sen...", "secenekler": [
+      { "metin": "Bol emoji ve çıkartma 😂", "puan": 2 },
+      { "metin": "Sesli mesaj kraliyim 🎤", "puan": 1 },
+      { "metin": "Görüldü atar, sonra dönerim 👁️", "puan": 4 },
+      { "metin": "Kısa ve net yazarım 📝", "puan": 3 } ] },
+    { "soru": "İdeal doğum günün nasıl olur?", "secenekler": [
+      { "metin": "Birkaç yakın dostla yemek 🕯️", "puan": 3 },
+      { "metin": "Kimse hatırlamasa da olur 🤍", "puan": 4 },
+      { "metin": "Sevdiğim mekanda kutlama 🍰", "puan": 2 },
+      { "metin": "Sürpriz parti, herkes gelsin 🥳", "puan": 1 } ] },
+    { "soru": "Seni en iyi anlatan cümle?", "secenekler": [
+      { "metin": "Kendi dünyamda mutluyum 🌌", "puan": 4 },
+      { "metin": "Ortam bensiz başlamaz ⭐", "puan": 1 },
+      { "metin": "Az ama öz arkadaşım var 💎", "puan": 3 },
+      { "metin": "Herkesle iyi anlaşırım 🤝", "puan": 2 } ] }
+  ],
+  "sonuclar": [
+    {
+      "emoji": "🎉", "ad": "Sahnenin Yıldızı", "aralik": [10, 14],
+      "slogan": "Enerjini insanlardan alıyorsun.",
+      "aciklama": "Kalabalık seni şarj eder.",
+      "detay": "Kalabalık seni yormuyor, tam tersine şarj ediyor. Bir ortama girdiğinde havayı değiştirirsin; insanlar seninle konuşunca kendilerini değerli hisseder. Sessizlik ve yalnızlık sana uzun gelir, plansız bir akşam ise küçük bir kâbus gibidir. Bazen herkesi mutlu etmeye çalışırken kendi duygularını ertelediğin olur.",
+      "ozellikler": ["💪 Güçlü yanın: Girdiğin her ortamı canlandırırsın.", "⚠️ Dikkat: Yalnız kalmamak için kendini fazla yorabilirsin.", "💞 En iyi anlaştığın: Sakin ama esprilerine gülen insanlar."]
+    },
+    {
+      "emoji": "🌻", "ad": "Güneş Enerjili", "aralik": [15, 19],
+      "slogan": "Sosyalsin ama kendini de unutmuyorsun.",
+      "aciklama": "Sıcak, sosyal ve dengeli.",
+      "detay": "İnsanlarla vakit geçirmeyi seversin, yeni tanışmalardan çekinmezsin. Ama bir noktadan sonra 'tamam, şimdi biraz kendime döneyim' dersin. Arkadaşlarının dert ortağısın; neşeni kaybetmeden ciddi konuları da konuşabilirsin. Planlı eğlenceyi seversin, son dakika değişiklikleri biraz canını sıkar.",
+      "ozellikler": ["💪 Güçlü yanın: Herkesle bağ kurabilen sıcak bir enerjin var.", "⚠️ Dikkat: 'Hayır' demekte zorlanabilirsin.", "💞 En iyi anlaştığın: Hem eğlenip hem derin konuşabilen insanlar."]
+    },
+    {
+      "emoji": "⚖️", "ad": "Tam Dengeli", "aralik": [20, 24],
+      "slogan": "Ortama göre şekil alan bir ruhsun.",
+      "aciklama": "Bazen sosyal, bazen sakin.",
+      "detay": "Bazen partinin ortasında dans eden, bazen evde battaniyenin altında kitap okuyan kişi sensin. Ruh haline göre sosyal ya da sakin olabilirsin ve ikisinde de kendini kaybetmezsin. İnsanlar seni çözmekte zorlanır, çünkü her ortamda farklı bir yanını gösterirsin. Bu esneklik en büyük gücün; ama bazen ne istediğine karar vermek zor gelebilir.",
+      "ozellikler": ["💪 Güçlü yanın: Her türden insanla anlaşabilirsin.", "⚠️ Dikkat: Kararsızlık zaman zaman seni yorabilir.", "💞 En iyi anlaştığın: Seni olduğun gibi kabul eden, baskı yapmayan insanlar."]
+    },
+    {
+      "emoji": "🌙", "ad": "Seçici Sosyal", "aralik": [25, 29],
+      "slogan": "İçine kapanıksın ama doğru insanlarla bambaşkasın.",
+      "aciklama": "Az ama gerçek bağlar.",
+      "detay": "İlk bakışta sessiz ve mesafeli görünürsün, ama seni tanıyanlar bunun ne kadar yanlış olduğunu bilir. Güvendiğin birkaç arkadaşınla gülmekten karnın ağrıyana kadar eğlenebilirsin. Yüzeysel sohbetler ve 'nasılsın, iyiyim' muhabbetleri sana boş gelir; sen gerçek bir bağ ararsın. Kalabalık bir ortamdan sonra kendini toparlamak için yalnız kalmaya ihtiyaç duyarsın.",
+      "ozellikler": ["💪 Güçlü yanın: Sadakatin ve derin dostlukların.", "⚠️ Dikkat: Yeni insanlara şans vermekte geç kalabilirsin.", "💞 En iyi anlaştığın: Sessizliği garip bulmayan, derin sohbet eden insanlar."]
+    },
+    {
+      "emoji": "📚", "ad": "Derin Düşünür", "aralik": [30, 34],
+      "slogan": "Kafanın içi kocaman bir evren.",
+      "aciklama": "Sakin dışarıdan, fırtına içeride.",
+      "detay": "Dışarıdan sakin görünürsün ama zihnin hiç durmaz. Bir konuşmadan sonra saatlerce 'acaba şöyle mi demeliydim' diye düşündüğün olur. Duyguları ve detayları herkesten önce fark edersin. Az ama öz arkadaşın vardır ve onlar için çok değerlisin. Kalabalık seni yorar; müzik, kitap ya da uzun yürüyüşler sana iyi gelir.",
+      "ozellikler": ["💪 Güçlü yanın: Empatin ve gözlem gücün.", "⚠️ Dikkat: Fazla düşünmek seni gereksiz yere üzebilir.", "💞 En iyi anlaştığın: Sabırlı, dinlemeyi bilen ve dürüst insanlar."]
+    },
+    {
+      "emoji": "🌌", "ad": "Kendi Evreninde", "aralik": [35, 40],
+      "slogan": "Yalnızlık senin için ceza değil, bir sığınak.",
+      "aciklama": "Kendi kendine yeten bir ruh.",
+      "detay": "Kendi kendine yetmeyi öğrenmişsin. İnsanlardan kaçmazsın ama onlara ihtiyaç da duymazsın; kendi dünyanda, kendi kurallarınla mutlusun. Seni tanımak zaman ister ve bu sabrı gösterenler hayatlarındaki en dürüst dostu bulur. İçindekileri kimseyle paylaşmadığın için bazen yalnız hissedebilirsin; unutma, seni anlamak isteyen insanlar var.",
+      "ozellikler": ["💪 Güçlü yanın: Bağımsızlığın ve iç huzurun.", "⚠️ Dikkat: Duygularını içine atmak zamanla ağırlaşabilir.", "💞 En iyi anlaştığın: Alanına saygı duyan, seni zorlamayan insanlar."]
+    }
+  ],
+  "kapanis": "Hangisi çıktı? Sana ne kadar uydu, yorumlara yaz!",
+  "uyari": "Bu bir eğlence testidir, bilimsel bir kişilik değerlendirmesi değildir.",
+  "sabitYorum": "Bence en çok 🌙 Seçici Sosyal çıkan olacak 👀 Sana ne çıktı ve 10 üzerinden ne kadar uydu?"
+}

@@ -1,0 +1,62 @@
+# Hangi Tarz İnsansın? — seslendirme metni
+# Kayıtları public/ses/hangi-tarz-insansin/ klasörüne bu adlarla koy (.mp3, .wav veya .m4a)
+
+giris.mp3
+Hangi Tarz İnsansın? 10 soru, 6 farklı kişilik. Kağıt kalem al, puanlarını not et
+
+kural.mp3
+Her cevabın bir puanı var. Aklına ilk geleni seç ve puanlarını topla!
+
+soru-1.mp3
+Soru 1. Yorucu bir haftanın sonunda cuma akşamı...
+
+soru-2.mp3
+Soru 2. Yeni girdiğin bir ortamda sen...
+
+soru-3.mp3
+Soru 3. Bilinmeyen bir numara arıyor...
+
+soru-4.mp3
+Soru 4. Seni en çok ne yorar?
+
+soru-5.mp3
+Soru 5. Biri sana bir sır anlattı...
+
+soru-6.mp3
+Soru 6. Arkadaşlarınla tatildesin...
+
+soru-7.mp3
+Soru 7. Bir tartışmada sen...
+
+soru-8.mp3
+Soru 8. Mesajlaşırken sen...
+
+soru-9.mp3
+Soru 9. İdeal doğum günün nasıl olur?
+
+soru-10.mp3
+Son soru! Seni en iyi anlatan cümle?
+
+puan-topla.mp3
+Süre bitti! Şimdi puanlarını topla. Toplamın kaç?
+
+sonuc-1.mp3
+10 ile 14 arası puan aldıysan... Sahnenin Yıldızı!
+
+sonuc-2.mp3
+15 ile 19 arası puan aldıysan... Güneş Enerjili!
+
+sonuc-3.mp3
+20 ile 24 arası puan aldıysan... Tam Dengeli!
+
+sonuc-4.mp3
+25 ile 29 arası puan aldıysan... Seçici Sosyal!
+
+sonuc-5.mp3
+30 ile 34 arası puan aldıysan... Derin Düşünür!
+
+sonuc-6.mp3
+35 ile 40 arası puan aldıysan... Kendi Evreninde!
+
+kapanis.mp3
+Hangisi çıktı? Sana ne kadar uydu, yorumlara yaz! Puanını yorumlara yaz!

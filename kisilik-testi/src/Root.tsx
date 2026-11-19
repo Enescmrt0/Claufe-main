@@ -49,8 +49,8 @@ export const RemotionRoot: React.FC = () => (
           key={k}
           id={slug(k)}
           component={KisilikTesti as unknown as React.FC<Record<string, unknown>>}
-          width={1080}
-          height={1920}
+          width={veri.format === "yatay" ? 1920 : 1080}
+          height={veri.format === "yatay" ? 1080 : 1920}
           fps={FPS}
           durationInFrames={toplamKare(veri)}
           defaultProps={veri as unknown as Record<string, unknown>}

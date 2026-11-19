@@ -91,3 +91,14 @@ Kaydı olmayan sahneler sessiz kalır, video yine çıkar.
 - Kapanış cümlesi (`"kapanis"`) bir sonuca meydan okusun: "🤪 Çılgın çıkanlar, kendinizi gösterin!"
 - Uydurma istatistik kullanma ("%7'si … çıkıyor" gibi). Onun yerine: "Herkes X çıkıyor… bir tek sen çıkmayabilirsin."
 - Formatı sabit tut: aynı renk (kanal paleti), 5 soru, 4 sonuç, aynı süre.
+
+## Uzun video (yatay, detaylı sonuçlar)
+JSON'a şunları ekle:
+- `"format": "yatay"`: 1920×1080 YouTube videosu olur. Şıklar 2×2 dizilir.
+- `"acilis": "baslik"`: başlık kartı ve kural ekranıyla açılır. `"kural"` alanıyla kural yazısını değiştirebilirsin.
+- `"puanTablosu": true`: sonuçlardan önce tüm puan aralıklarını tek ekranda gösterir.
+- Her sonuca `"slogan"` (alt başlık), `"detay"` (paragraf) ve `"ozellikler"` (madde listesi) yazabilirsin. Detaylı sonuç ekranının süresi metnin uzunluğuna göre ayarlanır (okuma hızı yaklaşık 17 karakter/sn).
+
+Örnek: `testler/hangi-tarz-insansin.json` (10 soru, 6 sonuç, yaklaşık 5 dakika).
+`npm run yayin` uzun videolar için açıklamaya **YouTube bölümlerini** (zaman damgaları) de ekler.
+`npm run kapak -- <test>` küçük resim için kapak görseli çıkarır.

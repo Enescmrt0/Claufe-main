@@ -4,11 +4,18 @@ import { FONT } from "./font";
 import { Hap, HarfDairesi, Kart, solma, useGiris } from "./ortak";
 import { HARF_RENKLERI, HARFLER, secenekMetni, secenekPuani, Sonuc, Soru } from "./tipler";
 
-/** Shorts güvenli alanı: üstte başlık, altta açıklama/müzik, sağda butonlar */
-const Guvenli: React.FC<{ children: React.ReactNode; style?: React.CSSProperties }> = ({ children, style }) => (
+export const useYatay = () => {
+  const { width, height } = useVideoConfig();
+  return width > height;
+};
+
+/** Güvenli alan. Dikey (Shorts): üstte başlık, altta açıklama/müzik, sağda butonlar. Yatay: kenarlardan pay. */
+const Guvenli: React.FC<{ children: React.ReactNode; style?: React.CSSProperties }> = ({ children, style }) => {
+  const yatay = useYatay();
+  return (
   <AbsoluteFill
     style={{
-      padding: "190px 90px 430px 90px",
+      padding: yatay ? "80px 150px" : "190px 90px 430px 90px",
       display: "flex",
       flexDirection: "column",
       alignItems: "center",
@@ -20,7 +27,8 @@ const Guvenli: React.FC<{ children: React.ReactNode; style?: React.CSSProperties
   >
     {children}
   </AbsoluteFill>
-);
+  );
+};
 
 const golge = "0 6px 0 rgba(0,0,0,0.18)";
 const Ses: React.FC<{ ad: string; kare?: number; ses?: number }> = ({ ad, kare = 0, ses = 0.6 }) => (
@@ -80,7 +88,7 @@ export const Giris: React.FC<{ ustYazi: string; baslik: string; kanca?: string; 
   );
 };
 
-export const Kural: React.FC = () => {
+export const Kural: React.FC<{ metin?: string }> = ({ metin }) => {
   const frame = useCurrentFrame();
   const { durationInFrames } = useVideoConfig();
   const a = useGiris(0);
@@ -94,7 +102,7 @@ export const Kural: React.FC = () => {
       </div>
       <Kart style={{ transform: `scale(${b})`, padding: "30px 44px" }}>
         <div style={{ fontSize: 54, fontWeight: 800, color: "#222", textAlign: "center", lineHeight: 1.15 }}>
-          Her cevabın bir puanı var, puanlarını topla 🧮
+          {metin ?? "Her cevabın bir puanı var, puanlarını topla 🧮"}
         </div>
       </Kart>
     </Guvenli>
@@ -114,6 +122,7 @@ export const SoruSahnesi: React.FC<{
   const frame = useCurrentFrame();
   const { fps, durationInFrames } = useVideoConfig();
   const acilis = Boolean(acilisBasligi);
+  const yatay = useYatay();
   const giris = useGiris(0);
   const a = acilis ? 1 : giris;
   const puanBas = puanHemen ? 0 : durationInFrames - Math.round(puanSn * fps);
@@ -156,7 +165,13 @@ export const SoruSahnesi: React.FC<{
           {soru.soru}
         </div>
       </Kart>
-      <div style={{ width: "100%", display: "flex", flexDirection: "column", gap: 22 }}>
+      <div
+        style={
+          yatay
+            ? { width: "100%", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 26 }
+            : { width: "100%", display: "flex", flexDirection: "column", gap: 22 }
+        }
+      >
         {soru.secenekler.map((sec, i) => {
           const gelis = useGiris(secenekBas + i * 6, 11);
           const g = acilis ? 1 : gelis;
@@ -177,7 +192,7 @@ export const SoruSahnesi: React.FC<{
               }}
             >
               <HarfDairesi harf={HARFLER[i]} renk={HARF_RENKLERI[i]} boy={92} />
-              <div style={{ flex: 1, fontSize: uzun ? 44 : 52, fontWeight: 800, color: "#222", lineHeight: 1.05 }}>{metinler[i]}</div>
+              <div style={{ flex: 1, fontSize: yatay ? 40 : uzun ? 44 : 52, fontWeight: 800, color: "#222", lineHeight: 1.05 }}>{metinler[i]}</div>
               <div
                 style={{
                   flexShrink: 0,
@@ -305,6 +320,145 @@ export const Kapanis: React.FC<{ metin: string; uyari?: string }> = ({ metin, uy
           {uyari}
         </div>
       ) : null}
+    </Guvenli>
+  );
+};
+
+/** Tüm sonuçları puan aralıklarıyla tek ekranda gösterir (izleyici kendi sonucunu hemen bulur) */
+export const PuanTablosu: React.FC<{ sonuclar: Sonuc[]; araliklar: [number, number][] }> = ({ sonuclar, araliklar }) => {
+  const frame = useCurrentFrame();
+  const { durationInFrames } = useVideoConfig();
+  const yatay = useYatay();
+  const a = useGiris(0);
+  return (
+    <Guvenli style={{ opacity: solma(frame, durationInFrames), gap: yatay ? 36 : 30 }}>
+      <Ses ad="whoosh" />
+      <div style={{ fontSize: yatay ? 84 : 92, fontWeight: 800, color: "white", textShadow: golge, transform: `scale(${a})` }}>Puan tablosu 📋</div>
+      <div
+        style={
+          yatay
+            ? { width: "100%", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }
+            : { width: "100%", display: "flex", flexDirection: "column", gap: 20 }
+        }
+      >
+        {sonuclar.map((r, i) => {
+          const g = useGiris(8 + i * 5, 11);
+          const [x, y] = araliklar[i];
+          return (
+            <div
+              key={i}
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: 24,
+                background: "rgba(255,255,255,0.95)",
+                borderRadius: 999,
+                padding: "12px 30px 12px 12px",
+                transform: `scale(${g})`,
+                boxShadow: `0 8px 0 ${HARF_RENKLERI[i % HARF_RENKLERI.length]}`,
+              }}
+            >
+              <div
+                style={{
+                  minWidth: 190,
+                  textAlign: "center",
+                  background: HARF_RENKLERI[i % HARF_RENKLERI.length],
+                  color: "white",
+                  fontSize: 44,
+                  fontWeight: 800,
+                  padding: "8px 18px",
+                  borderRadius: 999,
+                }}
+              >
+                {x === y ? x : `${x}–${y}`}
+              </div>
+              <div style={{ fontSize: 60 }}>{r.emoji}</div>
+              <div style={{ fontSize: 48, fontWeight: 800, color: "#222" }}>{r.ad}</div>
+            </div>
+          );
+        })}
+      </div>
+    </Guvenli>
+  );
+};
+
+/** Beyaz zemin üstünde okunması zor açık renkleri (sarı) koyulaştırır */
+const koyuRenk = (r: string) => (r.toUpperCase() === "#FFB703" ? "#B77900" : r);
+
+/** Uzun videolar için detaylı sonuç: alt başlık, paragraf ve maddeler */
+export const DetayliSonuc: React.FC<{ sonuc: Sonuc; i: number; aralik: [number, number] }> = ({ sonuc, i, aralik }) => {
+  const frame = useCurrentFrame();
+  const { durationInFrames } = useVideoConfig();
+  const yatay = useYatay();
+  const a = useGiris(0);
+  const b = useGiris(8, 7);
+  const c = useGiris(14);
+  const renk = HARF_RENKLERI[i % HARF_RENKLERI.length];
+  const belir = (bas: number) => interpolate(frame, [bas, bas + 12], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+  const ozellikler = sonuc.ozellikler ?? [];
+
+  const sol = (
+    <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: yatay ? 24 : 14, width: yatay ? 520 : "100%", flexShrink: 0 }}>
+      <div style={{ display: "flex", alignItems: "center", gap: 16, transform: `scale(${a})` }}>
+        <div style={{ background: renk, color: "white", fontSize: 52, fontWeight: 800, padding: "6px 30px", borderRadius: 999, boxShadow: "inset 0 -6px 0 rgba(0,0,0,0.18)" }}>
+          {aralik[0] === aralik[1] ? aralik[0] : `${aralik[0]}–${aralik[1]}`} puan
+        </div>
+      </div>
+      <div
+        style={{
+          fontSize: yatay ? 230 : 170,
+          lineHeight: 1,
+          transform: `scale(${b}) rotate(${(1 - b) * 40 + Math.sin(frame / 14) * 4}deg)`,
+          filter: "drop-shadow(0 16px 0 rgba(0,0,0,0.15))",
+        }}
+      >
+        {sonuc.emoji}
+      </div>
+      <div style={{ fontSize: yatay ? 76 : 80, fontWeight: 800, color: "white", textAlign: "center", lineHeight: 1, textShadow: golge, transform: `scale(${a})` }}>
+        {sonuc.ad}
+      </div>
+    </div>
+  );
+
+  const kart = (
+    <Kart style={{ flex: 1, width: yatay ? undefined : "100%", padding: yatay ? "44px 52px" : "34px 38px", borderBottom: `14px solid ${renk}`, transform: `translateY(${(1 - c) * 300}px)`, opacity: c }}>
+      {sonuc.slogan ? (
+        <div style={{ fontSize: yatay ? 46 : 44, fontWeight: 800, color: koyuRenk(renk), lineHeight: 1.12, marginBottom: 18 }}>{sonuc.slogan}</div>
+      ) : null}
+      <div style={{ fontSize: yatay ? 37 : 34, fontWeight: 600, color: "#333", lineHeight: 1.4, opacity: belir(20) }}>{sonuc.detay ?? sonuc.aciklama}</div>
+      {ozellikler.length ? (
+        <div style={{ display: "flex", flexDirection: "column", gap: 12, marginTop: 24 }}>
+          {ozellikler.map((o, k) => (
+            <div
+              key={k}
+              style={{
+                fontSize: yatay ? 32 : 30,
+                fontWeight: 700,
+                color: "#222",
+                lineHeight: 1.3,
+                background: "#F6F2F8",
+                borderRadius: 20,
+                padding: "12px 20px",
+                opacity: belir(45 + k * 25),
+                transform: `translateX(${(1 - belir(45 + k * 25)) * 40}px)`,
+              }}
+            >
+              {o}
+            </div>
+          ))}
+        </div>
+      ) : null}
+    </Kart>
+  );
+
+  return (
+    <Guvenli style={{ opacity: solma(frame, durationInFrames, 6), flexDirection: yatay ? "row" : "column", gap: yatay ? 60 : 24 }}>
+      <Ses ad="ding" kare={6} ses={0.5} />
+      {ozellikler.map((_, k) => (
+        <Ses key={k} ad="pop" kare={45 + k * 25} ses={0.3} />
+      ))}
+      {sol}
+      {kart}
     </Guvenli>
   );
 };

@@ -2,7 +2,7 @@ import React from "react";
 import { AbsoluteFill, Html5Audio, Sequence, Series, staticFile } from "remotion";
 import { ArkaPlan } from "./ortak";
 import { useFont } from "./font";
-import { Giris, Kapanis, Kural, SonucSahnesi, SonucSorusu, SoruSahnesi } from "./sahneler";
+import { DetayliSonuc, Giris, Kapanis, Kural, PuanTablosu, SonucSahnesi, SonucSorusu, SoruSahnesi } from "./sahneler";
 import { puanSiniri, sahneKareleri, soruIleAcilir, sonucAraliklari, sureleriAl, TestVerisi } from "./tipler";
 
 /** Sahnenin başında ilgili ses kaydını çalar (varsa) */
@@ -36,7 +36,7 @@ export const KisilikTesti: React.FC<TestVerisi> = (v) => {
         ) : null}
         {!soruAcilisi ? (
           <Series.Sequence durationInFrames={r.kural} name="Kural">
-            <Kural />
+            <Kural metin={v.kural} />
             <Anlatim v={v} ad="kural" />
           </Series.Sequence>
         ) : null}
@@ -53,9 +53,18 @@ export const KisilikTesti: React.FC<TestVerisi> = (v) => {
           <SonucSorusu enAz={enAz} enCok={enCok} />
           <Anlatim v={v} ad="puan-topla" />
         </Series.Sequence>
+        {v.puanTablosu ? (
+          <Series.Sequence durationInFrames={r.tablo} name="Puan tablosu">
+            <PuanTablosu sonuclar={v.sonuclar} araliklar={araliklar} />
+          </Series.Sequence>
+        ) : null}
         {v.sonuclar.map((sonuc, i) => (
           <Series.Sequence key={i} durationInFrames={r.sonuclar[i]} name={`Sonuç ${i + 1}`}>
-            <SonucSahnesi sonuc={sonuc} i={i} aralik={araliklar[i]} />
+            {sonuc.detay ? (
+              <DetayliSonuc sonuc={sonuc} i={i} aralik={araliklar[i]} />
+            ) : (
+              <SonucSahnesi sonuc={sonuc} i={i} aralik={araliklar[i]} />
+            )}
             <Anlatim v={v} ad={`sonuc-${i + 1}`} />
           </Series.Sequence>
         ))}

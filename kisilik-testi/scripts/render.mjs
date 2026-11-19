@@ -50,7 +50,8 @@ for (const composition of liste) {
       composition,
       serveUrl,
       codec: "h264",
-      crf: 18,
+      // Shorts yüksek kalite; uzun (yatay) videolarda dosya boyutu için biraz daha sıkıştır
+      crf: composition.width > composition.height ? 23 : 18,
       browserExecutable,
       logLevel: process.env.LOG || 'info',
       outputLocation: cikti,
