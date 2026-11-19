@@ -29,6 +29,51 @@ const bolumler = (v) => {
   return liste.map(([sn, ad]) => `${zaman(sn)} ${ad}`).join("\n");
 };
 
+// Derlemedeki bir testin süresi (sn) — src/tipler.ts derlemeTesti + sahneKareleri ile aynı
+const testSuresi = (v, sureler) => {
+  const s = { ...VARS, ...(v.sureler ?? {}), ...(sureler ?? {}) };
+  const kare = (sn) => Math.round(sn * 30) / 30;
+  let t = kare(s.giris) + v.sorular.length * kare(s.soru) + kare(s.sonucSorusu) + kare(s.tablo);
+  for (const r of v.sonuclar) {
+    const metin = (r.slogan ?? "") + (r.detay ?? "") + (r.ozellikler ?? []).join("");
+    t += kare(r.detay ? Math.max(s.sonuc, 5 + metin.length / 17) : s.sonuc);
+  }
+  return t;
+};
+
+const derlemeKlasoru = path.join(kok, "derlemeler");
+for (const f of fs.existsSync(derlemeKlasoru) ? fs.readdirSync(derlemeKlasoru).filter((x) => x.endsWith(".json")) : []) {
+  const d = JSON.parse(fs.readFileSync(path.join(derlemeKlasoru, f), "utf8"));
+  const testler = d.testler.map((t) => JSON.parse(fs.readFileSync(path.join(kok, "testler", `${t}.json`), "utf8")));
+  const s = { ...VARS, ...(d.sureler ?? {}) };
+  let t = Math.round(s.giris * 30) / 30 + Math.round(s.kural * 30) / 30;
+  const bolum = ["0:00 Giriş"];
+  testler.forEach((v, j) => {
+    bolum.push(`${zaman(t)} Test ${j + 1}: ${v.baslik}`);
+    t += testSuresi(v, d.sureler);
+  });
+  const metin = [
+    "BAŞLIK",
+    `${d.baslik} ${testler.map((v) => v.sonuclar[0].emoji).join("")} | ${testler.length} Kişilik Testi Bir Arada`,
+    "",
+    "AÇIKLAMA",
+    `${d.baslik} ${testler.length} test bir arada: ${testler.map((v) => v.baslik).join(" · ")}`,
+    d.kanca ?? "",
+    "Sonuçlarını emojilerle yorumlara yaz 👇 Yeni testler için takip et ✨",
+    "",
+    "BÖLÜMLER",
+    ...bolum,
+    "",
+    "#kişiliktesti #test #hangisisin #kişilik",
+    ...(d.uyari ? ["", d.uyari] : []),
+    "",
+    "SABİTLENECEK İLK YORUM (videoyu yükler yüklemez sen at ve sabitle)",
+    d.sabitYorum ?? "Sonuçlarını emojilerle sırayla yaz 👇",
+  ].join("\n");
+  fs.writeFileSync(path.join(kok, "yayin", `${slug(f)}.txt`), metin + "\n");
+  console.log("✔", `yayin/${slug(f)}.txt`);
+}
+
 for (const f of fs.readdirSync(path.join(kok, "testler")).filter((x) => x.endsWith(".json"))) {
   const v = JSON.parse(fs.readFileSync(path.join(kok, "testler", f), "utf8"));
   const emojiler = v.sonuclar.map((r) => r.emoji).join("");

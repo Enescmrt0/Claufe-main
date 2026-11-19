@@ -102,3 +102,22 @@ JSON'a şunları ekle:
 Örnek: `testler/hangi-tarz-insansin.json` (10 soru, 6 sonuç, yaklaşık 5 dakika).
 `npm run yayin` uzun videolar için açıklamaya **YouTube bölümlerini** (zaman damgaları) de ekler.
 `npm run kapak -- <test>` küçük resim için kapak görseli çıkarır.
+
+## Derleme: birden fazla test tek uzun videoda
+`derlemeler/` klasörüne bir JSON koy (örnek: `derlemeler/5-testte-sen-kimsin.json`):
+```json
+{
+  "format": "yatay",
+  "ustYazi": "5 TEST BİR ARADA",
+  "baslik": "5 Testte Sen Kimsin?",
+  "kanca": "Her testin puanını ayrı topla ✍️",
+  "kural": "Her testte puanlarını ayrı topla, sonuçlarını not al ✍️",
+  "testler": ["hangi-yemeksin", "hangi-emojisin", "hangi-kahvesin"],
+  "sureler": { "giris": 4, "kural": 3.5, "sonuc": 5 },
+  "kapanis": "Sonuçlarını emojilerle sırayla yaz!",
+  "sabitYorum": "..."
+}
+```
+- `testler`: `testler/` klasöründeki dosya adları (uzantısız), videodaki sırayla.
+- Video ana giriş ve kural ekranıyla açılır. Her test "TEST 1/5" kartıyla başlar ve kendi soruları, puan tablosu ve sonuçlarıyla devam eder. En sonda tek bir kapanış ekranı gelir.
+- `npm run render -- 5-testte-sen-kimsin` videoyu çıkarır. `npm run yayin` açıklamaya her test için bir YouTube bölümü ekler.

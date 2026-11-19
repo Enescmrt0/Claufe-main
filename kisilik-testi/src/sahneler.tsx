@@ -266,6 +266,7 @@ export const SonucSorusu: React.FC<{ enAz: number; enCok: number }> = ({ enAz, e
 
 export const SonucSahnesi: React.FC<{ sonuc: Sonuc; i: number; aralik: [number, number] }> = ({ sonuc, i, aralik }) => {
   const frame = useCurrentFrame();
+  const yatay = useYatay();
   const { durationInFrames } = useVideoConfig();
   const a = useGiris(0);
   const b = useGiris(8, 7);
@@ -292,7 +293,7 @@ export const SonucSahnesi: React.FC<{ sonuc: Sonuc; i: number; aralik: [number, 
       >
         {sonuc.emoji}
       </div>
-      <Kart style={{ width: "100%", transform: `translateY(${(1 - c) * 400}px)`, borderBottom: `14px solid ${renk}` }}>
+      <Kart style={{ width: "100%", maxWidth: yatay ? 1150 : undefined, transform: `translateY(${(1 - c) * 400}px)`, borderBottom: `14px solid ${renk}` }}>
         <div style={{ fontSize: sonuc.ad.length > 14 ? 76 : 96, fontWeight: 800, color: renk, textAlign: "center", lineHeight: 1 }}>{sonuc.ad}</div>
         <div style={{ fontSize: 48, fontWeight: 600, color: "#333", textAlign: "center", lineHeight: 1.18, marginTop: 18 }}>{sonuc.aciklama}</div>
       </Kart>

@@ -41,6 +41,9 @@ export type TestVerisi = {
   sabitYorum?: string;
   /** Seslendirme metnini elle değiştirmek için: { "giris": "...", "soru-2": "..." } */
   ses?: Record<string, string>;
+  /** (derleme içinde otomatik) kural ve kapanış ekranlarını atla */
+  _kuralYok?: boolean;
+  _kapanisYok?: boolean;
   /** (otomatik) bulunan ses dosyaları ve süreleri */
   _klipler?: Record<string, { dosya: string; sure: number }>;
 };
@@ -99,7 +102,7 @@ export const sahneKareleri = (v: TestVerisi) => {
   const soruAcilisi = soruIleAcilir(v);
   return {
     giris: soruAcilisi ? 0 : uzat(s.giris, "giris"),
-    kural: soruAcilisi ? 0 : uzat(s.kural, "kural"),
+    kural: soruAcilisi || v._kuralYok ? 0 : uzat(s.kural, "kural"),
     sorular: v.sorular.map((_, i) => {
       // ilk soru videoyu açıyorsa başlığı okumak için +1 sn
       const ek = soruAcilisi && i === 0 ? 1 : 0;
@@ -109,7 +112,7 @@ export const sahneKareleri = (v: TestVerisi) => {
     puanTopla: uzat(s.sonucSorusu, "puan-topla"),
     tablo: v.puanTablosu ? k(s.tablo) : 0,
     sonuclar: v.sonuclar.map((r, i) => uzat(r.detay ? detayliSonucSuresi(r, s.sonuc) : s.sonuc, `sonuc-${i + 1}`)),
-    kapanis: uzat(s.kapanis, "kapanis"),
+    kapanis: v._kapanisYok ? 0 : uzat(s.kapanis, "kapanis"),
   };
 };
 
@@ -138,4 +141,52 @@ export const sonucAraliklari = (v: TestVerisi): [number, number][] => {
   const n = v.sonuclar.length;
   const adim = (cok - az + 1) / n;
   return v.sonuclar.map((r, i) => r.aralik ?? [Math.round(az + i * adim), i === n - 1 ? cok : Math.round(az + (i + 1) * adim) - 1]);
+};
+
+/** Birden fazla testi tek uzun videoda birleştiren derleme */
+export type DerlemeVerisi = {
+  format?: "dikey" | "yatay";
+  ustYazi?: string;
+  baslik: string;
+  kanca?: string;
+  kural?: string;
+  /** testler/ klasöründeki dosya adları (uzantısız), sırayla */
+  testler: string[];
+  /** her teste uygulanacak süre ayarları */
+  sureler?: Partial<Sureler>;
+  kapanis?: string;
+  uyari?: string;
+  sabitYorum?: string;
+  /** (otomatik) testlerin verisi */
+  _testler?: TestVerisi[];
+};
+
+/** Derlemedeki bir testi videoya uygun hale getirir */
+export const derlemeTesti = (d: DerlemeVerisi, t: TestVerisi, j: number, n: number): TestVerisi => ({
+  ...t,
+  format: d.format ?? "yatay",
+  acilis: "baslik",
+  ustYazi: `TEST ${j + 1}/${n}`,
+  puanTablosu: true,
+  seslendirme: false,
+  _klipler: {},
+  _kuralYok: true,
+  _kapanisYok: true,
+  sureler: { ...(t.sureler ?? {}), ...(d.sureler ?? {}) },
+});
+
+export const derlemeKareleri = (d: DerlemeVerisi) => {
+  const s = { ...VARSAYILAN_SURELER, ...(d.sureler ?? {}) };
+  const n = d._testler?.length ?? 0;
+  return {
+    giris: k(s.giris),
+    kural: k(s.kural),
+    testler: (d._testler ?? []).map((t, j) => toplamKare(derlemeTesti(d, t, j, n))),
+    kapanis: k(s.kapanis),
+  };
+};
+
+export const derlemeToplamKare = (d: DerlemeVerisi) => {
+  const r = derlemeKareleri(d);
+  return r.giris + r.kural + r.testler.reduce((a, b) => a + b, 0) + r.kapanis;
 };

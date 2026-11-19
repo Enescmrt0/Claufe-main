@@ -1,0 +1,17 @@
+{
+  "format": "yatay",
+  "ustYazi": "5 TEST BİR ARADA",
+  "baslik": "5 Testte Sen Kimsin?",
+  "kanca": "Yemekten emojiye, ruh yaşından arkadaş grubuna... Her testin puanını ayrı topla ✍️",
+  "kural": "Her testte puanlarını ayrı topla, sonuçlarını not al ✍️",
+  "testler": [
+    "hangi-yemeksin",
+    "hangi-emojisin",
+    "hangi-kahvesin",
+    "ruhun-kac-yasinda",
+    "arkadas-grubunda-hangisisin"
+  ],
+  "sureler": { "giris": 4, "kural": 3.5, "sonuc": 5 },
+  "kapanis": "Sonuçlarını emojilerle sırayla yaz!",
+  "sabitYorum": "Sonuçlarını emojilerle sırayla yaz, aynı kombinasyonu çıkaran var mı bakalım 👀 Örnek: 🍕🤪☕🎧🐢"
+}

@@ -4,11 +4,14 @@ import { KanalBanner, KanalProfil } from "./Kanal";
 import { KisilikTesti } from "./KisilikTesti";
 import { getAudioDurationInSeconds } from "@remotion/media-utils";
 import { staticFile } from "remotion";
-import { FPS, klipAdlari, toplamKare, TestVerisi } from "./tipler";
+import { derlemeToplamKare, DerlemeVerisi, FPS, klipAdlari, toplamKare, TestVerisi } from "./tipler";
+import { Derleme } from "./Derleme";
 
 // testler/ klasöründeki her .json dosyası otomatik olarak ayrı bir video olur.
 declare const require: { context: (d: string, r: boolean, re: RegExp) => { keys(): string[]; (k: string): unknown } };
 const ctx = require.context("../testler", false, /\.json$/);
+// derlemeler/ klasöründeki her .json, birden fazla testi birleştiren uzun bir video olur.
+const derlemeCtx = require.context("../derlemeler", false, /\.json$/);
 
 export const slug = (dosya: string) =>
   dosya
@@ -42,6 +45,25 @@ export const RemotionRoot: React.FC = () => (
   <>
     <Still id="kanal-profil" component={KanalProfil} width={800} height={800} />
     <Still id="kanal-banner" component={KanalBanner} width={2560} height={1440} />
+    {derlemeCtx.keys().map((k) => {
+      const d = derlemeCtx(k) as DerlemeVerisi;
+      const testMap = Object.fromEntries(ctx.keys().map((t) => [slug(t), ctx(t) as TestVerisi]));
+      const eksik = d.testler.filter((t) => !testMap[t]);
+      if (eksik.length) throw new Error(`Derleme ${k}: bulunamayan test(ler): ${eksik.join(", ")}`);
+      const veri: DerlemeVerisi = { ...d, _testler: d.testler.map((t) => testMap[t]) };
+      return (
+        <Composition
+          key={`d-${k}`}
+          id={slug(k)}
+          component={Derleme as unknown as React.FC<Record<string, unknown>>}
+          width={d.format === "dikey" ? 1080 : 1920}
+          height={d.format === "dikey" ? 1920 : 1080}
+          fps={FPS}
+          durationInFrames={derlemeToplamKare(veri)}
+          defaultProps={veri as unknown as Record<string, unknown>}
+        />
+      );
+    })}
     {ctx.keys().map((k) => {
       const veri = ctx(k) as TestVerisi;
       return (

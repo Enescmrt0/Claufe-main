@@ -18,6 +18,16 @@ const Anlatim: React.FC<{ v: TestVerisi; ad: string; gecikme?: number }> = ({ v,
 
 export const KisilikTesti: React.FC<TestVerisi> = (v) => {
   useFont();
+  return (
+    <AbsoluteFill lang="tr">
+      <ArkaPlan renk1={v.tema?.renk1 ?? "#FF9A62"} renk2={v.tema?.renk2 ?? "#FF4F81"} emojiler={v.sonuclar.map((x) => x.emoji)} />
+      <TestAkisi v={v} />
+    </AbsoluteFill>
+  );
+};
+
+/** Bir testin tüm sahneleri (arka plan hariç). Derlemelerde de kullanılır. */
+export const TestAkisi: React.FC<{ v: TestVerisi }> = ({ v }) => {
   const s = sureleriAl(v);
   const r = sahneKareleri(v);
   const emojiler = v.sonuclar.map((x) => x.emoji);
@@ -25,8 +35,6 @@ export const KisilikTesti: React.FC<TestVerisi> = (v) => {
   const araliklar = sonucAraliklari(v);
   const soruAcilisi = soruIleAcilir(v);
   return (
-    <AbsoluteFill lang="tr">
-      <ArkaPlan renk1={v.tema?.renk1 ?? "#FF9A62"} renk2={v.tema?.renk2 ?? "#FF4F81"} emojiler={emojiler} />
       <Series>
         {!soruAcilisi ? (
           <Series.Sequence durationInFrames={r.giris} name="Giriş">
@@ -34,7 +42,7 @@ export const KisilikTesti: React.FC<TestVerisi> = (v) => {
             <Anlatim v={v} ad="giris" />
           </Series.Sequence>
         ) : null}
-        {!soruAcilisi ? (
+        {!soruAcilisi && !v._kuralYok ? (
           <Series.Sequence durationInFrames={r.kural} name="Kural">
             <Kural metin={v.kural} />
             <Anlatim v={v} ad="kural" />
@@ -68,11 +76,12 @@ export const KisilikTesti: React.FC<TestVerisi> = (v) => {
             <Anlatim v={v} ad={`sonuc-${i + 1}`} />
           </Series.Sequence>
         ))}
-        <Series.Sequence durationInFrames={r.kapanis} name="Kapanış">
-          <Kapanis metin={v.kapanis ?? "Ne çıktın? Yorumlara yaz!"} uyari={v.uyari} />
-          <Anlatim v={v} ad="kapanis" />
-        </Series.Sequence>
+        {!v._kapanisYok ? (
+          <Series.Sequence durationInFrames={r.kapanis} name="Kapanış">
+            <Kapanis metin={v.kapanis ?? "Ne çıktın? Yorumlara yaz!"} uyari={v.uyari} />
+            <Anlatim v={v} ad="kapanis" />
+          </Series.Sequence>
+        ) : null}
       </Series>
-    </AbsoluteFill>
   );
 };
