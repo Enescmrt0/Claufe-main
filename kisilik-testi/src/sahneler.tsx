@@ -125,7 +125,8 @@ export const SoruSahnesi: React.FC<{
   const cubuk = interpolate(frame, [sayimBas, sayimSon - 2], [1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
   const cikis = interpolate(frame, [durationInFrames - 6, durationInFrames], [0, -1200], { extrapolateLeft: "clamp" });
   const secenekBas = 12;
-  const metinler = soru.secenekler.map(secenekMetni);
+  // son kelime ile emoji ayrı satıra düşmesin
+  const metinler = soru.secenekler.map((x) => secenekMetni(x).replace(/ (\S+)$/, "\u00A0$1"));
   const uzun = metinler.some((m) => m.length > 22);
   return (
     <Guvenli style={{ gap: 30, transform: `translateX(${cikis}px)` }}>

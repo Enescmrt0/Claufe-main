@@ -1,0 +1,152 @@
+{
+  "ustYazi": "KİŞİLİK TESTİ",
+  "baslik": "Arkadaş Grubunda Hangisisin?",
+  "kanca": "Her arkadaş grubunda bu 4 kişi mutlaka var...",
+  "sorular": [
+    {
+      "soru": "Buluşmaya ne zaman gelirsin?",
+      "secenekler": [
+        {
+          "metin": "Herkesten önce 📅",
+          "puan": 3
+        },
+        {
+          "metin": "Tam vaktinde 🍪",
+          "puan": 1
+        },
+        {
+          "metin": "Yoldayım dedim, evdeyim 🛌",
+          "puan": 4
+        },
+        {
+          "metin": "Geç ama espriyle 😂",
+          "puan": 2
+        }
+      ]
+    },
+    {
+      "soru": "Grup sohbetinde sen...",
+      "secenekler": [
+        {
+          "metin": "Meme atarım 🤣",
+          "puan": 2
+        },
+        {
+          "metin": "\"Eve vardın mı?\" yazarım 🏠",
+          "puan": 1
+        },
+        {
+          "metin": "3 gün sonra cevap veririm 🙈",
+          "puan": 4
+        },
+        {
+          "metin": "Anket açarım 📊",
+          "puan": 3
+        }
+      ]
+    },
+    {
+      "soru": "Tatil planı yapılıyor...",
+      "secenekler": [
+        {
+          "metin": "Excel tablosu yaparım 📋",
+          "puan": 3
+        },
+        {
+          "metin": "Son gün haberim olur 😅",
+          "puan": 4
+        },
+        {
+          "metin": "İlaç çantası bende 💊",
+          "puan": 1
+        },
+        {
+          "metin": "Sadece eğlence 🎉",
+          "puan": 2
+        }
+      ]
+    },
+    {
+      "soru": "Arkadaşın üzgün. Ne yaparsın?",
+      "secenekler": [
+        {
+          "metin": "Sarılıp çorba yaparım 🍲",
+          "puan": 1
+        },
+        {
+          "metin": "Onu güldürürüm 🤡",
+          "puan": 2
+        },
+        {
+          "metin": "Çözüm listesi yaparım 📝",
+          "puan": 3
+        },
+        {
+          "metin": "Geç fark ederim 🫣",
+          "puan": 4
+        }
+      ]
+    },
+    {
+      "soru": "Toplu fotoğraf çekilirken sen?",
+      "secenekler": [
+        {
+          "metin": "Hiç fotoğrafta yokum 👻",
+          "puan": 4
+        },
+        {
+          "metin": "Herkesi poza dizerim 📸",
+          "puan": 3
+        },
+        {
+          "metin": "Komik surat yaparım 🤪",
+          "puan": 2
+        },
+        {
+          "metin": "Çantaları tutarım 👜",
+          "puan": 1
+        }
+      ]
+    }
+  ],
+  "sonuclar": [
+    {
+      "emoji": "🧸",
+      "ad": "Grubun Annesi",
+      "aciklama": "Herkesi sen düşünürsün. Sen olmasan bu grup çoktan dağılmıştı.",
+      "aralik": [
+        5,
+        8
+      ]
+    },
+    {
+      "emoji": "🤡",
+      "ad": "Grubun Komiği",
+      "aciklama": "En kötü günü bile sen kurtarırsın. Ortam sende başlar.",
+      "aralik": [
+        9,
+        12
+      ]
+    },
+    {
+      "emoji": "📋",
+      "ad": "Planlayıcı",
+      "aciklama": "Rezervasyon, rota, bütçe... hepsi sende. Grubun beyni sensin.",
+      "aralik": [
+        13,
+        16
+      ]
+    },
+    {
+      "emoji": "🐢",
+      "ad": "Hep Geç Kalan",
+      "aciklama": "Geç gelirsin ama gelince parti başlar. Herkes seni yine de bekler.",
+      "aralik": [
+        17,
+        20
+      ]
+    }
+  ],
+  "kapanis": "Bu videoyu grubunun 🐢 geç kalanına gönder!",
+  "sabitYorum": "Bizim grubun 📋 planlayıcısı benim ve kimse beni dinlemiyor 😤 Sizin grubun 🐢 geç kalanı kim? Etiketle!"
+}

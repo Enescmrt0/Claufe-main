@@ -1,0 +1,35 @@
+# Arkadaş Grubunda Hangisisin? — seslendirme metni
+# Kayıtları public/ses/arkadas-grubunda-hangisisin/ klasörüne bu adlarla koy (.mp3, .wav veya .m4a)
+
+soru-1.mp3
+Arkadaş Grubunda Hangisisin? Puanlarını topla! İlk soru: Buluşmaya ne zaman gelirsin?
+
+soru-2.mp3
+Soru 2. Grup sohbetinde sen...
+
+soru-3.mp3
+Soru 3. Tatil planı yapılıyor...
+
+soru-4.mp3
+Soru 4. Arkadaşın üzgün. Ne yaparsın?
+
+soru-5.mp3
+Son soru! Toplu fotoğraf çekilirken sen?
+
+puan-topla.mp3
+Süre bitti! Şimdi puanlarını topla. Toplamın kaç?
+
+sonuc-1.mp3
+5 ile 8 arası puan aldıysan... Grubun Annesi!
+
+sonuc-2.mp3
+9 ile 12 arası puan aldıysan... Grubun Komiği!
+
+sonuc-3.mp3
+13 ile 16 arası puan aldıysan... Planlayıcı!
+
+sonuc-4.mp3
+17 ile 20 arası puan aldıysan... Hep Geç Kalan!
+
+kapanis.mp3
+Bu videoyu grubunun geç kalanına gönder! Puanını yorumlara yaz!
