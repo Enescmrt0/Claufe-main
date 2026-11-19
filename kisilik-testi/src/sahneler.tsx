@@ -426,7 +426,7 @@ export const DetayliSonuc: React.FC<{ sonuc: Sonuc; i: number; aralik: [number, 
       </div>
       <div
         style={{
-          fontSize: yatay ? 230 : 170,
+          fontSize: yatay ? 230 : 230,
           lineHeight: 1,
           transform: `scale(${b}) rotate(${(1 - b) * 40 + Math.sin(frame / 14) * 4}deg)`,
           filter: "drop-shadow(0 16px 0 rgba(0,0,0,0.15))",
@@ -434,25 +434,25 @@ export const DetayliSonuc: React.FC<{ sonuc: Sonuc; i: number; aralik: [number, 
       >
         {sonuc.emoji}
       </div>
-      <div style={{ fontSize: yatay ? 76 : 80, fontWeight: 800, color: "white", textAlign: "center", lineHeight: 1, textShadow: golge, transform: `scale(${a})` }}>
+      <div style={{ fontSize: yatay ? 76 : 100, fontWeight: 800, color: "white", textAlign: "center", lineHeight: 1, textShadow: golge, transform: `scale(${a})` }}>
         {sonuc.ad}
       </div>
     </div>
   );
 
   const kart = (
-    <Kart style={{ flex: 1, width: yatay ? undefined : "100%", padding: yatay ? "44px 52px" : "34px 38px", borderBottom: `14px solid ${renk}`, transform: `translateY(${(1 - c) * 300}px)`, opacity: c }}>
+    <Kart style={{ flex: yatay ? 1 : undefined, width: yatay ? undefined : "100%", padding: yatay ? "44px 52px" : "40px 44px", borderBottom: `14px solid ${renk}`, transform: `translateY(${(1 - c) * 300}px)`, opacity: c }}>
       {sonuc.slogan ? (
-        <div style={{ fontSize: yatay ? 46 : 44, fontWeight: 800, color: koyuRenk(renk), lineHeight: 1.12, marginBottom: 18 }}>{sonuc.slogan}</div>
+        <div style={{ fontSize: yatay ? 46 : 58, fontWeight: 800, color: koyuRenk(renk), lineHeight: 1.1, marginBottom: 18, textAlign: yatay ? "left" : "center" }}>{sonuc.slogan}</div>
       ) : null}
-      <div style={{ fontSize: yatay ? 37 : 34, fontWeight: 600, color: "#333", lineHeight: 1.4, opacity: belir(20) }}>{sonuc.detay ?? sonuc.aciklama}</div>
+      <div style={{ fontSize: yatay ? 37 : 46, fontWeight: 600, color: "#333", lineHeight: 1.35, opacity: belir(20), textAlign: yatay ? "left" : "center" }}>{sonuc.detay ?? sonuc.aciklama}</div>
       {ozellikler.length ? (
         <div style={{ display: "flex", flexDirection: "column", gap: 12, marginTop: 24 }}>
           {ozellikler.map((o, k) => (
             <div
               key={k}
               style={{
-                fontSize: yatay ? 32 : 30,
+                fontSize: yatay ? 32 : 40,
                 fontWeight: 700,
                 color: "#222",
                 lineHeight: 1.3,
@@ -472,7 +472,7 @@ export const DetayliSonuc: React.FC<{ sonuc: Sonuc; i: number; aralik: [number, 
   );
 
   return (
-    <Guvenli style={{ opacity: solma(frame, durationInFrames, 6), flexDirection: yatay ? "row" : "column", gap: yatay ? 60 : 24 }}>
+    <Guvenli style={{ opacity: solma(frame, durationInFrames, 6), flexDirection: yatay ? "row" : "column", gap: yatay ? 60 : 30 }}>
       <Ses ad="ding" kare={6} ses={0.5} />
       {ozellikler.map((_, k) => (
         <Ses key={k} ad="pop" kare={45 + k * 25} ses={0.3} />

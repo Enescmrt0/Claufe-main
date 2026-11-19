@@ -1,0 +1,169 @@
+{
+  "ustYazi": "KİŞİLİK TESTİ",
+  "baslik": "Hangi Hayvansın?",
+  "kanca": "Herkes kedi çıkıyor... bir tek sen çıkmayabilirsin.",
+  "sureler": {
+    "okuma": 24
+  },
+  "sorular": [
+    {
+      "soru": "Bir partide sen...",
+      "secenekler": [
+        {
+          "metin": "Herkesle dans ederim 💃",
+          "puan": 3
+        },
+        {
+          "metin": "Köşede derin sohbet 🌙",
+          "puan": 1
+        },
+        {
+          "metin": "Partiyi ben düzenledim 👑",
+          "puan": 4
+        },
+        {
+          "metin": "Takılır, erken kaçarım 🚪",
+          "puan": 2
+        }
+      ]
+    },
+    {
+      "soru": "Arkadaşın çok dertli...",
+      "secenekler": [
+        {
+          "metin": "Sorunu çözmeye girişirim 💪",
+          "puan": 4
+        },
+        {
+          "metin": "Kendi yöntemimle teselli 🐾",
+          "puan": 2
+        },
+        {
+          "metin": "Sessizce yanında olurum 🤍",
+          "puan": 1
+        },
+        {
+          "metin": "Hemen yanına koşarım 🏃",
+          "puan": 3
+        }
+      ]
+    },
+    {
+      "soru": "Grupta karar verilecek...",
+      "secenekler": [
+        {
+          "metin": "Bana uyarsa katılırım 😼",
+          "puan": 2
+        },
+        {
+          "metin": "Son kararı ben veririm 🎯",
+          "puan": 4
+        },
+        {
+          "metin": "Herkes mutlu olsun yeter 🤗",
+          "puan": 3
+        },
+        {
+          "metin": "Fikrimi içimden geçiririm 🤐",
+          "puan": 1
+        }
+      ]
+    },
+    {
+      "soru": "Boş bir pazar günü...",
+      "secenekler": [
+        {
+          "metin": "Kitap ve çay 📖",
+          "puan": 1
+        },
+        {
+          "metin": "Arkadaşlarla piknik 🧺",
+          "puan": 3
+        },
+        {
+          "metin": "Yeni bir maceraya 🧗",
+          "puan": 4
+        },
+        {
+          "metin": "Uzun bir öğle uykusu 😴",
+          "puan": 2
+        }
+      ]
+    },
+    {
+      "soru": "İnsanlar seni ilk gördüğünde...",
+      "secenekler": [
+        {
+          "metin": "Soğuk sanırlar 🧊",
+          "puan": 2
+        },
+        {
+          "metin": "Etkilenirler 🔥",
+          "puan": 4
+        },
+        {
+          "metin": "Gizemli derler 🔮",
+          "puan": 1
+        },
+        {
+          "metin": "Hemen ısınırlar ☀️",
+          "puan": 3
+        }
+      ]
+    }
+  ],
+  "sonuclar": [
+    {
+      "emoji": "🦉",
+      "ad": "Baykuş",
+      "aralik": [
+        5,
+        8
+      ],
+      "slogan": "Az konuşursun ama söylediğin akılda kalır.",
+      "aciklama": "Sessiz ve derin.",
+      "detay": "Kalabalıkta sessizsin ama hiçbir şeyi kaçırmazsın. Yüzeysel sohbetler sana boş gelir; seçtiğin birkaç kişiye ise ömür boyu sadıksın."
+    },
+    {
+      "emoji": "🐱",
+      "ad": "Kedi",
+      "aralik": [
+        9,
+        12
+      ],
+      "slogan": "Bağımsızsın ama sevdiklerine bambaşkasın.",
+      "aciklama": "Bağımsız ve seçici.",
+      "detay": "İlk bakışta soğuk görünürsün, ama güvendiğin insanların yanında en sevecen hâline bürünürsün. Kendi alanın senin için kutsaldır."
+    },
+    {
+      "emoji": "🐶",
+      "ad": "Köpek",
+      "aralik": [
+        13,
+        16
+      ],
+      "slogan": "Herkesin en iyi arkadaşısın.",
+      "aciklama": "Sadık ve sıcak.",
+      "detay": "Sevdiklerin için gecenin üçünde bile yola çıkarsın. Enerjin bulaşıcıdır; ama kimseyi kırmamak için kendi isteklerini hep sona bırakırsın."
+    },
+    {
+      "emoji": "🦁",
+      "ad": "Aslan",
+      "aralik": [
+        17,
+        20
+      ],
+      "slogan": "Doğuştan lidersin.",
+      "aciklama": "Cesur ve lider.",
+      "detay": "Girdiğin ortamda fark edilirsin, zor anda herkes sana bakar. Yorulduğunu bile belli etmezsin, çünkü zayıf görünmekten hoşlanmazsın."
+    }
+  ],
+  "kapanis": "🦁 Aslan çıkanlar, sesinizi duyalım!",
+  "sabitYorum": "Bence en nadir sonuç 🦉 Baykuş 👀 Sen ne çıktın, sana ne kadar uydu?",
+  "sonrakiTestler": [
+    "🎨 Hangi renksin?",
+    "🌍 Hangi şehirde yaşamalısın?",
+    "🍰 Hangi tatlısın?",
+    "🌙 Hangi gezegensin?"
+  ]
+}

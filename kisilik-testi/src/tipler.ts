@@ -60,6 +60,7 @@ export type Sureler = {
   sonuc: number;
   kapanis: number;
   sonraki: number; // "Sıradaki test ne olsun?" ekranı
+  okuma: number; // detaylı sonuçlarda okuma hızı (karakter/sn)
 };
 export const FPS = 30;
 export const VARSAYILAN_SURELER: Sureler = {
@@ -73,6 +74,7 @@ export const VARSAYILAN_SURELER: Sureler = {
   sonuc: 3.5,
   kapanis: 3.5,
   sonraki: 5,
+  okuma: 17,
 };
 
 /** "Sıradaki test ne olsun?" ekranının varsayılan seçenekleri */
@@ -101,9 +103,9 @@ export const klipAdlari = (v: TestVerisi) => [
 const k = (sn: number) => Math.round(sn * FPS);
 
 /** Detaylı sonuç ekranının süresi: okuma hızı ~17 karakter/sn + 5 sn pay */
-export const detayliSonucSuresi = (r: Sonuc, enAz: number) => {
+export const detayliSonucSuresi = (r: Sonuc, enAz: number, okuma = 17) => {
   const metin = (r.slogan ?? "") + (r.detay ?? "") + (r.ozellikler ?? []).join("");
-  return Math.max(enAz, 5 + metin.length / 17);
+  return Math.max(enAz, 5 + metin.length / okuma);
 };
 
 /** Her sahnenin kare sayısı. Ses kaydı varsa sahne, kayıt bitene kadar uzar. */
@@ -123,7 +125,7 @@ export const sahneKareleri = (v: TestVerisi) => {
     }),
     puanTopla: uzat(s.sonucSorusu, "puan-topla"),
     tablo: v.puanTablosu ? k(s.tablo) : 0,
-    sonuclar: v.sonuclar.map((r, i) => uzat(r.detay ? detayliSonucSuresi(r, s.sonuc) : s.sonuc, `sonuc-${i + 1}`)),
+    sonuclar: v.sonuclar.map((r, i) => uzat(r.detay ? detayliSonucSuresi(r, s.sonuc, s.okuma) : s.sonuc, `sonuc-${i + 1}`)),
     sonraki: v._kapanisYok ? 0 : k(s.sonraki),
     kapanis: v._kapanisYok ? 0 : uzat(s.kapanis, "kapanis"),
   };

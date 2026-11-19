@@ -1,0 +1,35 @@
+# Hangi Hayvansın? — seslendirme metni
+# Kayıtları public/ses/hangi-hayvansin/ klasörüne bu adlarla koy (.mp3, .wav veya .m4a)
+
+soru-1.mp3
+Hangi Hayvansın? Puanlarını topla! İlk soru: Bir partide sen...
+
+soru-2.mp3
+Soru 2. Arkadaşın çok dertli...
+
+soru-3.mp3
+Soru 3. Grupta karar verilecek...
+
+soru-4.mp3
+Soru 4. Boş bir pazar günü...
+
+soru-5.mp3
+Son soru! İnsanlar seni ilk gördüğünde...
+
+puan-topla.mp3
+Süre bitti! Şimdi puanlarını topla. Toplamın kaç?
+
+sonuc-1.mp3
+5 ile 8 arası puan aldıysan... Baykuş!
+
+sonuc-2.mp3
+9 ile 12 arası puan aldıysan... Kedi!
+
+sonuc-3.mp3
+13 ile 16 arası puan aldıysan... Köpek!
+
+sonuc-4.mp3
+17 ile 20 arası puan aldıysan... Aslan!
+
+kapanis.mp3
+Aslan çıkanlar, sesinizi duyalım! Puanını yorumlara yaz!

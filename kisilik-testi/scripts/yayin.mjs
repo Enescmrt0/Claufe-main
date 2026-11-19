@@ -8,7 +8,7 @@ const slug = (d) => d.replace(/\.json$/, "").toLowerCase()
   .replace(/[^a-z0-9-]+/g, "-").replace(/^-+|-+$/g, "");
 fs.mkdirSync(path.join(kok, "yayin"), { recursive: true });
 // Uzun (yatay) videolar için YouTube bölümleri — süreler src/tipler.ts ile aynı mantık (seslendirmesiz)
-const VARS = { giris: 3, kural: 2.5, soru: 7.5, sayim: 5, puan: 1.5, sonucSorusu: 3, tablo: 7, sonuc: 3.5, kapanis: 3.5 };
+const VARS = { giris: 3, kural: 2.5, soru: 7.5, sayim: 5, puan: 1.5, sonucSorusu: 3, tablo: 7, sonuc: 3.5, kapanis: 3.5, okuma: 17 };
 const SONRAKI = ["🐾 Hangi hayvansın?", "🎨 Hangi renksin?", "🌍 Hangi şehirde yaşamalısın?", "🍰 Hangi tatlısın?"];
 const anket = (liste) => [
   "",
@@ -33,7 +33,7 @@ const bolumler = (v) => {
   v.sonuclar.forEach((r) => {
     liste.push([t, `${r.emoji} ${r.ad}`]);
     const metin = (r.slogan ?? "") + (r.detay ?? "") + (r.ozellikler ?? []).join("");
-    t += kare(r.detay ? Math.max(s.sonuc, 5 + metin.length / 17) : s.sonuc);
+    t += kare(r.detay ? Math.max(s.sonuc, 5 + metin.length / s.okuma) : s.sonuc);
   });
   return liste.map(([sn, ad]) => `${zaman(sn)} ${ad}`).join("\n");
 };
@@ -45,7 +45,7 @@ const testSuresi = (v, sureler) => {
   let t = kare(s.giris) + v.sorular.length * kare(s.soru) + kare(s.sonucSorusu) + kare(s.tablo);
   for (const r of v.sonuclar) {
     const metin = (r.slogan ?? "") + (r.detay ?? "") + (r.ozellikler ?? []).join("");
-    t += kare(r.detay ? Math.max(s.sonuc, 5 + metin.length / 17) : s.sonuc);
+    t += kare(r.detay ? Math.max(s.sonuc, 5 + metin.length / s.okuma) : s.sonuc);
   }
   return t;
 };
