@@ -3,8 +3,8 @@ import { AbsoluteFill, Series } from "remotion";
 import { useFont } from "./font";
 import { TestAkisi } from "./KisilikTesti";
 import { ArkaPlan } from "./ortak";
-import { Giris, Kapanis, Kural } from "./sahneler";
-import { derlemeKareleri, derlemeTesti, DerlemeVerisi } from "./tipler";
+import { Giris, Kapanis, Kural, SonrakiTest } from "./sahneler";
+import { derlemeKareleri, derlemeTesti, DerlemeVerisi, VARSAYILAN_SONRAKI_TESTLER } from "./tipler";
 
 /** Birden fazla testi arka arkaya oynatan uzun video */
 export const Derleme: React.FC<DerlemeVerisi> = (d) => {
@@ -34,6 +34,10 @@ export const Derleme: React.FC<DerlemeVerisi> = (d) => {
             </Series.Sequence>
           );
         })}
+        <Series.Sequence durationInFrames={r.sonraki} name="Sıradaki test">
+          <ArkaPlan renk1="#FF9A62" renk2="#FF4F81" emojiler={tumEmojiler} />
+          <SonrakiTest secenekler={d.sonrakiTestler ?? VARSAYILAN_SONRAKI_TESTLER} />
+        </Series.Sequence>
         <Series.Sequence durationInFrames={r.kapanis} name="Kapanış">
           <ArkaPlan renk1="#FF9A62" renk2="#FF4F81" emojiler={tumEmojiler} />
           <Kapanis metin={d.kapanis ?? "Hangi testte ne çıktın? Yorumlara yaz!"} uyari={d.uyari} />

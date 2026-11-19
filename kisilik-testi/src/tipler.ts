@@ -37,6 +37,8 @@ export type TestVerisi = {
   puanTablosu?: boolean;
   /** "soru" (varsayılan): video doğrudan 1. soruyla açılır · "baslik": önce başlık kartı ve kural ekranı gelir */
   acilis?: "soru" | "baslik";
+  /** Sondaki "Sıradaki test ne olsun?" ekranındaki seçenekler (yazılmazsa varsayılan liste) */
+  sonrakiTestler?: string[];
   /** Yayın metni için: sabitlenecek ilk yorum */
   sabitYorum?: string;
   /** Seslendirme metnini elle değiştirmek için: { "giris": "...", "soru-2": "..." } */
@@ -57,6 +59,7 @@ export type Sureler = {
   tablo: number;
   sonuc: number;
   kapanis: number;
+  sonraki: number; // "Sıradaki test ne olsun?" ekranı
 };
 export const FPS = 30;
 export const VARSAYILAN_SURELER: Sureler = {
@@ -69,7 +72,16 @@ export const VARSAYILAN_SURELER: Sureler = {
   tablo: 7,
   sonuc: 3.5,
   kapanis: 3.5,
+  sonraki: 5,
 };
+
+/** "Sıradaki test ne olsun?" ekranının varsayılan seçenekleri */
+export const VARSAYILAN_SONRAKI_TESTLER = [
+  "🐾 Hangi hayvansın?",
+  "🎨 Hangi renksin?",
+  "🌍 Hangi şehirde yaşamalısın?",
+  "🍰 Hangi tatlısın?",
+];
 export const HARFLER = ["A", "B", "C", "D", "E", "F"];
 export const HARF_RENKLERI = ["#FF4D6D", "#3A86FF", "#06D6A0", "#FFB703", "#9B5DE5", "#F15BB5"];
 
@@ -112,13 +124,14 @@ export const sahneKareleri = (v: TestVerisi) => {
     puanTopla: uzat(s.sonucSorusu, "puan-topla"),
     tablo: v.puanTablosu ? k(s.tablo) : 0,
     sonuclar: v.sonuclar.map((r, i) => uzat(r.detay ? detayliSonucSuresi(r, s.sonuc) : s.sonuc, `sonuc-${i + 1}`)),
+    sonraki: v._kapanisYok ? 0 : k(s.sonraki),
     kapanis: v._kapanisYok ? 0 : uzat(s.kapanis, "kapanis"),
   };
 };
 
 export const toplamKare = (v: TestVerisi) => {
   const r = sahneKareleri(v);
-  return r.giris + r.kural + r.sorular.reduce((a, b) => a + b, 0) + r.puanTopla + r.tablo + r.sonuclar.reduce((a, b) => a + b, 0) + r.kapanis;
+  return r.giris + r.kural + r.sorular.reduce((a, b) => a + b, 0) + r.puanTopla + r.tablo + r.sonuclar.reduce((a, b) => a + b, 0) + r.sonraki + r.kapanis;
 };
 
 export const secenekMetni = (s: Secenek) => (typeof s === "string" ? s : s.metin);
@@ -157,6 +170,7 @@ export type DerlemeVerisi = {
   kapanis?: string;
   uyari?: string;
   sabitYorum?: string;
+  sonrakiTestler?: string[];
   /** (otomatik) testlerin verisi */
   _testler?: TestVerisi[];
 };
@@ -182,11 +196,12 @@ export const derlemeKareleri = (d: DerlemeVerisi) => {
     giris: k(s.giris),
     kural: k(s.kural),
     testler: (d._testler ?? []).map((t, j) => toplamKare(derlemeTesti(d, t, j, n))),
+    sonraki: k(s.sonraki),
     kapanis: k(s.kapanis),
   };
 };
 
 export const derlemeToplamKare = (d: DerlemeVerisi) => {
   const r = derlemeKareleri(d);
-  return r.giris + r.kural + r.testler.reduce((a, b) => a + b, 0) + r.kapanis;
+  return r.giris + r.kural + r.testler.reduce((a, b) => a + b, 0) + r.sonraki + r.kapanis;
 };

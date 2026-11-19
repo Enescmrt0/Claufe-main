@@ -121,3 +121,9 @@ JSON'a şunları ekle:
 - `testler`: `testler/` klasöründeki dosya adları (uzantısız), videodaki sırayla.
 - Video ana giriş ve kural ekranıyla açılır. Her test "TEST 1/5" kartıyla başlar ve kendi soruları, puan tablosu ve sonuçlarıyla devam eder. En sonda tek bir kapanış ekranı gelir.
 - `npm run render -- 5-testte-sen-kimsin` videoyu çıkarır. `npm run yayin` açıklamaya her test için bir YouTube bölümü ekler.
+
+## Video sonu etkileşim
+Her videonun (ve derlemenin) sonunda kapanıştan önce **"🗳️ Sıradaki test ne olsun?"** ekranı gelir: 4 seçenek A/B/C/D harfleriyle gösterilir ve izleyiciden "Yorumlara harfini yaz 👇" istenir. Kapanış kartında "👍 Tuttuysa beğen · 🔔 Yeni testler için takip et" yazar.
+- Seçenekleri değiştirmek için JSON'a `"sonrakiTestler": ["🐾 Hangi hayvansın?", "🎨 Hangi renksin?", ...]` yaz. Yazmazsan varsayılan liste kullanılır (`src/tipler.ts` → `VARSAYILAN_SONRAKI_TESTLER`).
+- `npm run yayin` aynı seçeneklerle bir **Topluluk sekmesi anketi** ve sabit yorumun altına atılacak **ikinci yorumu** da hazırlar.
+- En çok oyu alan testi gerçekten çek ve videoda "sizin seçiminiz" de. İzleyici sesinin duyulduğunu görünce tekrar oy verir.

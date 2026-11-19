@@ -306,18 +306,37 @@ export const Kapanis: React.FC<{ metin: string; uyari?: string }> = ({ metin, uy
   const a = useGiris(0);
   const b = useGiris(12);
   const ok = Math.abs(Math.sin(frame / 6)) * 30;
+  const yatay = useYatay();
   return (
-    <Guvenli>
+    <Guvenli style={{ gap: yatay ? 28 : 40 }}>
       <Ses ad="tada" ses={0.5} />
-      <div style={{ fontSize: 108, fontWeight: 800, color: "white", textAlign: "center", lineHeight: 1.02, textShadow: golge, transform: `scale(${a})` }}>
+      <div style={{ fontSize: yatay ? 92 : 108, fontWeight: 800, color: "white", textAlign: "center", lineHeight: 1.02, textShadow: golge, transform: `scale(${a})` }}>
         {metin}
       </div>
-      <div style={{ fontSize: 170, transform: `translateY(${ok}px) scale(${a})` }}>👇</div>
-      <Kart style={{ transform: `scale(${b})`, padding: "28px 44px" }}>
-        <div style={{ fontSize: 52, fontWeight: 800, color: "#222", textAlign: "center" }}>Yeni testler için takip et! ✨</div>
+      <div style={{ fontSize: yatay ? 110 : 170, transform: `translateY(${ok * (yatay ? 0.6 : 1)}px) scale(${a})` }}>👇</div>
+      <Kart style={{ transform: `scale(${b})`, padding: "24px 44px" }}>
+        <div style={{ fontSize: 50, fontWeight: 800, color: "#222", textAlign: "center", lineHeight: 1.25 }}>
+          👍 Tuttuysa beğen
+          {yatay ? " · " : <br />}
+          🔔 Yeni testler için takip et
+        </div>
       </Kart>
       {uyari ? (
-        <div style={{ fontSize: 34, fontWeight: 600, color: "white", textAlign: "center", lineHeight: 1.25, opacity: b, maxWidth: 860, background: "rgba(0,0,0,0.25)", padding: "18px 28px", borderRadius: 24 }}>
+        <div
+          style={{
+            fontSize: yatay ? 28 : 34,
+            fontWeight: 600,
+            color: "white",
+            textAlign: "center",
+            lineHeight: 1.25,
+            opacity: b,
+            maxWidth: yatay ? 1400 : 860,
+            background: "rgba(0,0,0,0.25)",
+            padding: yatay ? "12px 28px" : "18px 28px",
+            borderRadius: 24,
+            ...(yatay ? { position: "absolute", bottom: 36 } : {}),
+          }}
+        >
           {uyari}
         </div>
       ) : null}
@@ -460,6 +479,61 @@ export const DetayliSonuc: React.FC<{ sonuc: Sonuc; i: number; aralik: [number, 
       ))}
       {sol}
       {kart}
+    </Guvenli>
+  );
+};
+
+/** Kapanıştan önce: izleyici sıradaki testi seçer, yorumlara harfini yazar */
+export const SonrakiTest: React.FC<{ secenekler: string[] }> = ({ secenekler }) => {
+  const frame = useCurrentFrame();
+  const { durationInFrames } = useVideoConfig();
+  const yatay = useYatay();
+  const a = useGiris(0);
+  const alt = useGiris(8 + secenekler.length * 5 + 6);
+  return (
+    <Guvenli style={{ opacity: solma(frame, durationInFrames), gap: 30 }}>
+      <Ses ad="whoosh" />
+      {secenekler.map((_, i) => (
+        <Ses key={i} ad="pop" kare={8 + i * 5} ses={0.4} />
+      ))}
+      <div style={{ transform: `scale(${a})` }}>
+        <Hap>🗳️ SEN SEÇ</Hap>
+      </div>
+      <div style={{ fontSize: yatay ? 92 : 96, fontWeight: 800, color: "white", textAlign: "center", lineHeight: 1.02, textShadow: golge, transform: `scale(${a})` }}>
+        Sıradaki test ne olsun?
+      </div>
+      <div
+        style={
+          yatay
+            ? { width: "100%", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }
+            : { width: "100%", display: "flex", flexDirection: "column", gap: 20 }
+        }
+      >
+        {secenekler.slice(0, 4).map((m, i) => {
+          const g = useGiris(8 + i * 5, 11);
+          return (
+            <div
+              key={i}
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: 24,
+                background: "rgba(255,255,255,0.95)",
+                borderRadius: 999,
+                padding: "12px 30px 12px 12px",
+                transform: `scale(${g})`,
+                boxShadow: `0 8px 0 ${HARF_RENKLERI[i]}`,
+              }}
+            >
+              <HarfDairesi harf={HARFLER[i]} renk={HARF_RENKLERI[i]} boy={84} />
+              <div style={{ fontSize: yatay ? 42 : 46, fontWeight: 800, color: "#222", lineHeight: 1.05, whiteSpace: yatay ? "nowrap" : undefined }}>{m}</div>
+            </div>
+          );
+        })}
+      </div>
+      <Kart style={{ transform: `scale(${alt})`, padding: "22px 40px" }}>
+        <div style={{ fontSize: 50, fontWeight: 800, color: "#222", textAlign: "center" }}>Yorumlara harfini yaz 👇</div>
+      </Kart>
     </Guvenli>
   );
 };

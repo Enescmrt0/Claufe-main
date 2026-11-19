@@ -2,8 +2,8 @@ import React from "react";
 import { AbsoluteFill, Html5Audio, Sequence, Series, staticFile } from "remotion";
 import { ArkaPlan } from "./ortak";
 import { useFont } from "./font";
-import { DetayliSonuc, Giris, Kapanis, Kural, PuanTablosu, SonucSahnesi, SonucSorusu, SoruSahnesi } from "./sahneler";
-import { puanSiniri, sahneKareleri, soruIleAcilir, sonucAraliklari, sureleriAl, TestVerisi } from "./tipler";
+import { SonrakiTest, DetayliSonuc, Giris, Kapanis, Kural, PuanTablosu, SonucSahnesi, SonucSorusu, SoruSahnesi } from "./sahneler";
+import { VARSAYILAN_SONRAKI_TESTLER, puanSiniri, sahneKareleri, soruIleAcilir, sonucAraliklari, sureleriAl, TestVerisi } from "./tipler";
 
 /** Sahnenin başında ilgili ses kaydını çalar (varsa) */
 const Anlatim: React.FC<{ v: TestVerisi; ad: string; gecikme?: number }> = ({ v, ad, gecikme = 4 }) => {
@@ -76,6 +76,11 @@ export const TestAkisi: React.FC<{ v: TestVerisi }> = ({ v }) => {
             <Anlatim v={v} ad={`sonuc-${i + 1}`} />
           </Series.Sequence>
         ))}
+        {!v._kapanisYok ? (
+          <Series.Sequence durationInFrames={r.sonraki} name="Sıradaki test">
+            <SonrakiTest secenekler={v.sonrakiTestler ?? VARSAYILAN_SONRAKI_TESTLER} />
+          </Series.Sequence>
+        ) : null}
         {!v._kapanisYok ? (
           <Series.Sequence durationInFrames={r.kapanis} name="Kapanış">
             <Kapanis metin={v.kapanis ?? "Ne çıktın? Yorumlara yaz!"} uyari={v.uyari} />

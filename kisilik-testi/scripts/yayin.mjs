@@ -9,6 +9,15 @@ const slug = (d) => d.replace(/\.json$/, "").toLowerCase()
 fs.mkdirSync(path.join(kok, "yayin"), { recursive: true });
 // Uzun (yatay) videolar için YouTube bölümleri — süreler src/tipler.ts ile aynı mantık (seslendirmesiz)
 const VARS = { giris: 3, kural: 2.5, soru: 7.5, sayim: 5, puan: 1.5, sonucSorusu: 3, tablo: 7, sonuc: 3.5, kapanis: 3.5 };
+const SONRAKI = ["🐾 Hangi hayvansın?", "🎨 Hangi renksin?", "🌍 Hangi şehirde yaşamalısın?", "🍰 Hangi tatlısın?"];
+const anket = (liste) => [
+  "",
+  "ANKET (Topluluk sekmesinde aç: \"Sıradaki test ne olsun?\") — videonun sonundaki seçeneklerle aynı",
+  ...(liste ?? SONRAKI).slice(0, 4).map((m, i) => `${"ABCD"[i]}) ${m}`),
+  "",
+  "İKİNCİ YORUM (sabit yorumun altına yanıt olarak at)",
+  `Sıradaki test sizden! ${(liste ?? SONRAKI).slice(0, 4).map((m, i) => `${"ABCD"[i]}) ${m}`).join("  ")} Harfini yaz, en çok oyu alanı çekiyorum 🗳️`,
+];
 const zaman = (sn) => `${Math.floor(sn / 60)}:${String(Math.floor(sn % 60)).padStart(2, "0")}`;
 const bolumler = (v) => {
   const s = { ...VARS, ...(v.sureler ?? {}) };
@@ -69,6 +78,7 @@ for (const f of fs.existsSync(derlemeKlasoru) ? fs.readdirSync(derlemeKlasoru).f
     "",
     "SABİTLENECEK İLK YORUM (videoyu yükler yüklemez sen at ve sabitle)",
     d.sabitYorum ?? "Sonuçlarını emojilerle sırayla yaz 👇",
+    ...anket(d.sonrakiTestler),
   ].join("\n");
   fs.writeFileSync(path.join(kok, "yayin", `${slug(f)}.txt`), metin + "\n");
   console.log("✔", `yayin/${slug(f)}.txt`);
@@ -93,6 +103,7 @@ for (const f of fs.readdirSync(path.join(kok, "testler")).filter((x) => x.endsWi
     "",
     "SABİTLENECEK İLK YORUM (videoyu yükler yüklemez sen at ve sabitle)",
     v.sabitYorum ?? "Ben ... çıktım! Sen kaç puan aldın? 👇",
+    ...anket(v.sonrakiTestler),
   ].join("\n");
   fs.writeFileSync(path.join(kok, "yayin", `${slug(f)}.txt`), metin + "\n");
   console.log("✔", `yayin/${slug(f)}.txt`);
