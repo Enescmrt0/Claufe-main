@@ -1,0 +1,35 @@
+# Seni En Çok Ne Yoruyor? — seslendirme metni
+# Kayıtları public/ses/seni-en-cok-ne-yoruyor/ klasörüne bu adlarla koy (.mp3, .wav veya .m4a)
+
+soru-1.mp3
+Seni En Çok Ne Yoruyor? Puanlarını topla! İlk soru: Uzun bir günün sonunda en çok neye ihtiyacın var?
+
+soru-2.mp3
+Soru 2. Gece uyuyamıyorsan sebebi...
+
+soru-3.mp3
+Soru 3. Seni en çok ne strese sokar?
+
+soru-4.mp3
+Soru 4. Tatilde bile aklından çıkmayan...
+
+soru-5.mp3
+Son soru! Arkadaşların sana en çok ne der?
+
+puan-topla.mp3
+Süre bitti! Şimdi puanlarını topla. Toplamın kaç?
+
+sonuc-1.mp3
+5 ile 8 arası puan aldıysan... İnsanlar!
+
+sonuc-2.mp3
+9 ile 12 arası puan aldıysan... Bitmeyen Sorumluluklar!
+
+sonuc-3.mp3
+13 ile 16 arası puan aldıysan... Belirsizlik!
+
+sonuc-4.mp3
+17 ile 20 arası puan aldıysan... Kendi Zihnin!
+
+kapanis.mp3
+Kendi zihni çıkanlar, gece 3'te uyanık mısınız? Puanını yorumlara yaz!

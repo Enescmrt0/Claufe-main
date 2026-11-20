@@ -1,0 +1,171 @@
+{
+  "ustYazi": "KİŞİLİK TESTİ",
+  "baslik": "Seni En Çok Ne Yoruyor?",
+  "kanca": "Yorgunluğunun sebebi sandığın şey olmayabilir...",
+  "muzik": "muzik/sakin.m4a",
+  "muzikSes": 0.15,
+  "sureler": {
+    "okuma": 24
+  },
+  "sorular": [
+    {
+      "soru": "Uzun bir günün sonunda en çok neye ihtiyacın var?",
+      "secenekler": [
+        {
+          "metin": "Yarının belli olmasına 📅",
+          "puan": 3
+        },
+        {
+          "metin": "Hiçbir şey yapmamaya 🛋️",
+          "puan": 2
+        },
+        {
+          "metin": "Kimseyle konuşmamaya 🤐",
+          "puan": 1
+        },
+        {
+          "metin": "Kafamın susmasına 🧠",
+          "puan": 4
+        }
+      ]
+    },
+    {
+      "soru": "Gece uyuyamıyorsan sebebi...",
+      "secenekler": [
+        {
+          "metin": "Bir konuşmayı tekrar düşünmek 🔁",
+          "puan": 4
+        },
+        {
+          "metin": "\"Ya olmazsa?\" düşüncesi 😟",
+          "puan": 3
+        },
+        {
+          "metin": "Yarın yapacaklarım 📝",
+          "puan": 2
+        },
+        {
+          "metin": "Gün içindeki kalabalık 👥",
+          "puan": 1
+        }
+      ]
+    },
+    {
+      "soru": "Seni en çok ne strese sokar?",
+      "secenekler": [
+        {
+          "metin": "Plansız misafir 🚪",
+          "puan": 1
+        },
+        {
+          "metin": "Son teslim tarihi ⏰",
+          "puan": 2
+        },
+        {
+          "metin": "Kendi hatalarım 🪞",
+          "puan": 4
+        },
+        {
+          "metin": "Cevapsız kalan mesaj 📱",
+          "puan": 3
+        }
+      ]
+    },
+    {
+      "soru": "Tatilde bile aklından çıkmayan...",
+      "secenekler": [
+        {
+          "metin": "Gelecek planları 🔮",
+          "puan": 3
+        },
+        {
+          "metin": "Geçmişte yaptıklarım ⏪",
+          "puan": 4
+        },
+        {
+          "metin": "Dönünce göreceğim insanlar 🙃",
+          "puan": 1
+        },
+        {
+          "metin": "Biriken işler 📂",
+          "puan": 2
+        }
+      ]
+    },
+    {
+      "soru": "Arkadaşların sana en çok ne der?",
+      "secenekler": [
+        {
+          "metin": "Bu kadar kafana takma 💭",
+          "puan": 4
+        },
+        {
+          "metin": "Yine mi kayboldun? 👻",
+          "puan": 1
+        },
+        {
+          "metin": "Her şey yoluna girecek 🌈",
+          "puan": 3
+        },
+        {
+          "metin": "Biraz da kendini düşün 🫶",
+          "puan": 2
+        }
+      ]
+    }
+  ],
+  "sonuclar": [
+    {
+      "emoji": "🫂",
+      "ad": "İnsanlar",
+      "aralik": [
+        5,
+        8
+      ],
+      "slogan": "Sosyal pilin çabuk bitiyor.",
+      "aciklama": "Kalabalık seni tüketiyor.",
+      "detay": "Kalabalıklar, uzun sohbetler ve sürekli ulaşılabilir olmak seni tüketiyor. Yalnız kaldığın sessiz saatler senin şarj istasyonun; bunun için suçluluk duyma."
+    },
+    {
+      "emoji": "📋",
+      "ad": "Bitmeyen Sorumluluklar",
+      "aralik": [
+        9,
+        12
+      ],
+      "slogan": "Her şeyi sen taşıyorsun.",
+      "aciklama": "Yükün çok ağır.",
+      "detay": "Herkesin işini, planını, derdini üstlenirsin. Yapılacaklar listen hiç bitmez; dinlenirken bile aklın bir sonraki görevdedir."
+    },
+    {
+      "emoji": "🌫️",
+      "ad": "Belirsizlik",
+      "aralik": [
+        13,
+        16
+      ],
+      "slogan": "Ne olacağını bilmemek seni yoruyor.",
+      "aciklama": "Kontrol edemediğin şeyler.",
+      "detay": "Planlar havada kaldığında ya da biri net cevap vermediğinde içini bir huzursuzluk kaplar. En çok enerjini çalanlar kontrol edemediğin şeyler."
+    },
+    {
+      "emoji": "💭",
+      "ad": "Kendi Zihnin",
+      "aralik": [
+        17,
+        20
+      ],
+      "slogan": "En yorucu sohbetler kafanın içinde.",
+      "aciklama": "Zihnin hiç susmuyor.",
+      "detay": "Bir konuşmayı saatlerce kafanda tekrar oynatır, hiç yaşanmamış senaryoları yaşarsın. Dışarıdan sakin görünsen de zihnin hiç susmaz."
+    }
+  ],
+  "kapanis": "💭 Kendi zihni çıkanlar, gece 3'te uyanık mısınız?",
+  "sabitYorum": "Bence en çok 💭 Kendi Zihnin çıkacak 👀 Senin sonucun ne? En son ne zaman gerçekten dinlendin?",
+  "sonrakiTestler": [
+    "💞 Bağlanma stilin ne?",
+    "🔥 Stresle nasıl başa çıkıyorsun?",
+    "🫀 Kalbin mi, aklın mı?",
+    "🌱 Hayatında neyi değiştirmelisin?"
+  ]
+}
