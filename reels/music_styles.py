@@ -142,3 +142,20 @@ def musichall(t0, t1, g=1.0, bpm=126, tune=True, sleepy=False):
                 if m and t + k * b < t1: place(music, _piano(m, .45, .7), t + k * b + (b * .1 if k % 2 else 0), g)
         if sleepy and bar % 2 == 0: place(music, glock(79, 1.6, .25), t, g)
         t += 4 * b; bar += 1
+
+# 1910s ragtime: stride left hand, syncopated right-hand melody (3+3+2), honky-tonk piano
+def ragtime(t0, t1, g=1.0, bpm=96, tune=True):
+    e = 60 / bpm / 2; t = t0; bar = 0
+    prog = [(41, (57, 60, 65)), (41, (57, 60, 65)), (46, (58, 62, 65)), (36, (58, 60, 64))]
+    riff = [(0, 77), (3, 81), (6, 84), (8, 79), (11, 81), (14, 77)]   # sixteenth-ish offsets in eighths*... (3+3+2 feel)
+    while t < t1 - .05:
+        root, ch = prog[bar % 4]
+        for k in range(4):
+            if k % 2 == 0: place(music, _piano(root - (12 if k == 0 else 5), .45, .9), t + k * 2 * e, g)
+            else:
+                for m in ch: place(music, _piano(m - 12, .22, .4), t + k * 2 * e, g)
+        if tune:
+            for (o, m) in riff:
+                tt = t + o * e / 2
+                if tt < t1: place(music, _piano(m + (0 if bar % 4 < 2 else -2), .3, .55), tt, g)
+        t += 8 * e; bar += 1
