@@ -1,0 +1,64 @@
+{
+  "ustYazi": "KİŞİLİK TESTİ",
+  "baslik": "Aslında Kaç Yaşındasın?",
+  "kanca": "Kimlikteki yaşın seni yansıtmıyor olabilir...",
+  "muzik": "muzik/enerjik.m4a",
+  "muzikSes": 0.13,
+  "sureler": { "okuma": 24 },
+  "sorular": [
+    { "soru": "Sabah alarm çaldığında...", "secenekler": [
+      { "metin": "Alarmdan önce uyanırım 🐓", "puan": 4 },
+      { "metin": "5 kere ertelerim 📱", "puan": 2 },
+      { "metin": "Biri kaldırana kadar uyurum 🧸", "puan": 1 },
+      { "metin": "İlk alarmda kalkarım ⏰", "puan": 3 } ] },
+    { "soru": "Bir mesaja cevabın nasıl olur?", "secenekler": [
+      { "metin": "Bol \"ahahaha\" 😂", "puan": 1 },
+      { "metin": "Sesli arama yaparım 📞", "puan": 4 },
+      { "metin": "Düzgün, noktalı cümle.", "puan": 3 },
+      { "metin": "Sadece emoji 💀", "puan": 2 } ] },
+    { "soru": "Cuma akşamı planın?", "secenekler": [
+      { "metin": "Sabaha kadar dışarıda 🪩", "puan": 2 },
+      { "metin": "Güzel bir akşam yemeği 🍽️", "puan": 3 },
+      { "metin": "Saat 10'da yataktayım 🛏️", "puan": 4 },
+      { "metin": "Oyun gecesi 🎮", "puan": 1 } ] },
+    { "soru": "Sırtın ağrıdığında...", "secenekler": [
+      { "metin": "Ortopedik yastık aldım 🛌", "puan": 3 },
+      { "metin": "Ağrı mı? O ne? 🤸", "puan": 1 },
+      { "metin": "Yanlış yatmışım 🙃", "puan": 2 },
+      { "metin": "Hava değişecek, hissediyorum 🌧️", "puan": 4 } ] },
+    { "soru": "Eline biraz para geçti...", "secenekler": [
+      { "metin": "Konser bileti alırım 🎟️", "puan": 2 },
+      { "metin": "Kenara koyarım, lazım olur 💰", "puan": 4 },
+      { "metin": "Abur cubura giderim 🍫", "puan": 1 },
+      { "metin": "Yatırım yaparım 📈", "puan": 3 } ] }
+  ],
+  "sonuclar": [
+    {
+      "emoji": "🧒", "ad": "12 Yaşında", "aralik": [5, 8],
+      "slogan": "İçindeki çocuk hâlâ kontrolde.",
+      "aciklama": "Meraklı ve neşeli.",
+      "detay": "Merakın, enerjin ve en saçma şeye bile gülebilmen hiç kaybolmamış. Sorumluluklar biraz sıkıcı gelse de hayatı en çok eğlenerek yaşayan sensin."
+    },
+    {
+      "emoji": "🎧", "ad": "21 Yaşında", "aralik": [9, 12],
+      "slogan": "Özgür ruhlu, plansız, hep yolda.",
+      "aciklama": "Spontane ve maceracı.",
+      "detay": "Son dakika kararların ve \"bir kere yaşıyoruz\" modun seni maceradan maceraya sürüklüyor. Uyku düzenin yok ama anıların çok."
+    },
+    {
+      "emoji": "💼", "ad": "34 Yaşında", "aralik": [13, 16],
+      "slogan": "Olgun, düzenli ve bütçeli.",
+      "aciklama": "Dengeli ve planlı.",
+      "detay": "Ortopedik bir yastığın, vazgeçemediğin bir kahven ve bir bütçe tablon var. Eğlenmeyi bilirsin ama ertesi günü de düşünürsün."
+    },
+    {
+      "emoji": "🧓", "ad": "67 Yaşında", "aralik": [17, 20],
+      "slogan": "Bilge, sakin ve hava durumunu dizlerinden bilen.",
+      "aciklama": "Huzurlu ve bilge.",
+      "detay": "Erken yatar, erken kalkarsın; telaşın yoktur. İnsanlar tavsiye için sana gelir. Gençler \"sıkıcı\" diyebilir ama sen huzurun tadını çıkarıyorsun."
+    }
+  ],
+  "kapanis": "🧓 67 çıkanlar, saat kaçta yatıyorsunuz? 😂",
+  "sabitYorum": "Kimlikteki yaşınla çıkan yaşın arasında kaç yıl fark var? 👀 Yorumlara yaz, en büyük farkı bulalım!",
+  "sonrakiTestler": ["🫀 Kalbin mi, aklın mı?", "💞 Bağlanma stilin ne?", "🌱 Hayatında neyi değiştirmelisin?", "🔥 Stresle nasıl başa çıkıyorsun?"]
+}

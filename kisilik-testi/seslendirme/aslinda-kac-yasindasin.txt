@@ -1,0 +1,35 @@
+# Aslında Kaç Yaşındasın? — seslendirme metni
+# Kayıtları public/ses/aslinda-kac-yasindasin/ klasörüne bu adlarla koy (.mp3, .wav veya .m4a)
+
+soru-1.mp3
+Aslında Kaç Yaşındasın? Puanlarını topla! İlk soru: Sabah alarm çaldığında...
+
+soru-2.mp3
+Soru 2. Bir mesaja cevabın nasıl olur?
+
+soru-3.mp3
+Soru 3. Cuma akşamı planın?
+
+soru-4.mp3
+Soru 4. Sırtın ağrıdığında...
+
+soru-5.mp3
+Son soru! Eline biraz para geçti...
+
+puan-topla.mp3
+Süre bitti! Şimdi puanlarını topla. Toplamın kaç?
+
+sonuc-1.mp3
+5 ile 8 arası puan aldıysan... 12 Yaşında!
+
+sonuc-2.mp3
+9 ile 12 arası puan aldıysan... 21 Yaşında!
+
+sonuc-3.mp3
+13 ile 16 arası puan aldıysan... 34 Yaşında!
+
+sonuc-4.mp3
+17 ile 20 arası puan aldıysan... 67 Yaşında!
+
+kapanis.mp3
+67 çıkanlar, saat kaçta yatıyorsunuz? Puanını yorumlara yaz!
