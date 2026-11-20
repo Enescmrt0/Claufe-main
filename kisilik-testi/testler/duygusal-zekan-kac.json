@@ -1,0 +1,117 @@
+{
+  "format": "yatay",
+  "acilis": "baslik",
+  "puanZamani": "sonda",
+  "puanTablosu": true,
+  "muzik": "muzik/sakin.m4a",
+  "muzikSes": 0.16,
+  "tema": { "renk1": "#4C1D95", "renk2": "#0F172A" },
+  "ustYazi": "12 SORULUK CİDDİ TEST",
+  "baslik": "Duygusal Zekan Kaç? 🧠",
+  "kanca": "Bu test seni kendinle yüzleştirebilir. Dürüst cevap ver.",
+  "kural": "Puanlar en sonda! Her soruda seçtiğin harfi not et ✍️",
+  "sureler": { "giris": 4.5, "kural": 4 },
+  "sorular": [
+    { "soru": "Bir arkadaşının sana kırgın olduğunu fark ettin...", "secenekler": [
+      { "metin": "Mesaj atıp ne olduğunu sorarım", "puan": 3 },
+      { "metin": "Bir şey demezse sorun yoktur", "puan": 1 },
+      { "metin": "Yüz yüze konuşup onu dinlerim", "puan": 4 },
+      { "metin": "Kendiliğinden geçer, beklerim", "puan": 2 } ] },
+    { "soru": "Çok sinirlendiğin bir anda...", "secenekler": [
+      { "metin": "Susarım ama günlerce içimde kalır", "puan": 2 },
+      { "metin": "Neden sinirlendiğimi anlamaya çalışırım", "puan": 4 },
+      { "metin": "Aklıma geleni söylerim", "puan": 1 },
+      { "metin": "Ortamdan çıkıp sakinleşirim", "puan": 3 } ] },
+    { "soru": "Biri seni eleştirdiğinde ilk tepkin?", "secenekler": [
+      { "metin": "Önce dinler, sonra düşünürüm", "puan": 3 },
+      { "metin": "Hemen savunmaya geçerim", "puan": 1 },
+      { "metin": "Çok kırılırım, aklımdan çıkmaz", "puan": 2 },
+      { "metin": "Haklı kısmını kabul ederim", "puan": 4 } ] },
+    { "soru": "Kendini kötü hissettiğinde...", "secenekler": [
+      { "metin": "Ne hissettiğimi adlandırırım", "puan": 4 },
+      { "metin": "Telefona gömülüp unuturum", "puan": 2 },
+      { "metin": "Neden kötü olduğumu bilmem", "puan": 1 },
+      { "metin": "Güvendiğim biriyle konuşurum", "puan": 3 } ] },
+    { "soru": "Bir grupta biri hep sessiz kalıyor...", "secenekler": [
+      { "metin": "Fark ederim ama karışmam", "puan": 2 },
+      { "metin": "Sonra yanına gidip sorarım", "puan": 3 },
+      { "metin": "Fark etmem bile", "puan": 1 },
+      { "metin": "Ona da söz hakkı açarım", "puan": 4 } ] },
+    { "soru": "Önemli bir görüşme öncesi çok gerginsin...", "secenekler": [
+      { "metin": "Gerginliği kabul edip hazırlanırım", "puan": 4 },
+      { "metin": "Nefes alıp kendimi sakinleştiririm", "puan": 3 },
+      { "metin": "Panik olur, her şeyi bırakırım", "puan": 1 },
+      { "metin": "Gerginliği yok saymaya çalışırım", "puan": 2 } ] },
+    { "soru": "Bir arkadaşın sana derdini anlatıyor...", "secenekler": [
+      { "metin": "Hemen çözüm önerileri sıralarım", "puan": 2 },
+      { "metin": "Kendi benzer hikayemi anlatırım", "puan": 1 },
+      { "metin": "Önce ne istediğini sorarım", "puan": 4 },
+      { "metin": "Sözünü kesmeden dinlerim", "puan": 3 } ] },
+    { "soru": "Bir hata yaptın ve herkes fark etti...", "secenekler": [
+      { "metin": "Özür dilerim", "puan": 3 },
+      { "metin": "Kendimi günlerce yerden yere vururum", "puan": 2 },
+      { "metin": "Özür diler, telafi ederim", "puan": 4 },
+      { "metin": "Suçu başkasına atarım", "puan": 1 } ] },
+    { "soru": "İnsanların ruh halini anlamak senin için...", "secenekler": [
+      { "metin": "Söylemeden hissederim", "puan": 4 },
+      { "metin": "Söylemezlerse anlamam", "puan": 1 },
+      { "metin": "Genelde yüzlerinden anlarım", "puan": 3 },
+      { "metin": "Bazen anlarım", "puan": 2 } ] },
+    { "soru": "Planların son dakika iptal oldu...", "secenekler": [
+      { "metin": "Söylenip dururum", "puan": 2 },
+      { "metin": "Üzülür ama güne devam ederim", "puan": 4 },
+      { "metin": "Günüm tamamen mahvolur", "puan": 1 },
+      { "metin": "Hemen yeni bir plan yaparım", "puan": 3 } ] },
+    { "soru": "Biriyle fikir ayrılığına düştün...", "secenekler": [
+      { "metin": "Onu anlamaya çalışırım", "puan": 4 },
+      { "metin": "Kazanana kadar tartışırım", "puan": 1 },
+      { "metin": "Ortak bir nokta ararım", "puan": 3 },
+      { "metin": "Konuyu kapatıp küserim", "puan": 2 } ] },
+    { "soru": "Kendini ne kadar tanıyorsun?", "secenekler": [
+      { "metin": "Bazen kendime şaşırırım", "puan": 2 },
+      { "metin": "Beni neyin tetiklediğini bilirim", "puan": 4 },
+      { "metin": "Güçlü ve zayıf yanlarımı bilirim", "puan": 3 },
+      { "metin": "Pek düşünmedim", "puan": 1 } ] }
+  ],
+  "sonuclar": [
+    {
+      "emoji": "🌱", "ad": "Keşif Aşamasında", "aralik": [12, 19],
+      "slogan": "Duyguların hızlı, ama henüz onları tanımaya başlıyorsun.",
+      "aciklama": "Gelişime çok açık.",
+      "detay": "Duygular sana bazen bir anda çarpıyor ve ne olduğunu anlamadan tepki veriyorsun. Bu kötü bir şey değil; çoğu insan buradan başlar. Duygusal zeka bir yetenek değil, öğrenilen bir beceri. Küçük farkındalıklar bile çok hızlı fark yaratır.",
+      "ozellikler": ["💪 Güçlü yanın: Duygularını saklamıyorsun, samimisin.", "🌱 Geliştirebileceğin: Tepki vermeden önce birkaç saniye durmak.", "🎯 Öneri: Günde bir kez 'şu an ne hissediyorum?' diye sor."]
+    },
+    {
+      "emoji": "🌤️", "ad": "Gelişen Farkındalık", "aralik": [20, 27],
+      "slogan": "Ne hissettiğini fark ediyorsun, yönetmek bazen zor geliyor.",
+      "aciklama": "Farkındalık var, kontrol gelişiyor.",
+      "detay": "Duygularının farkındasın ama yoğun anlarda kontrolü kaybedebiliyorsun. Başkalarının ne hissettiğini çoğu zaman sezebiliyorsun, yine de kendi kırgınlıklarını içinde biriktirme eğilimin var. Doğru yoldasın; biraz pratik çok şey değiştirir.",
+      "ozellikler": ["💪 Güçlü yanın: Empati kurma isteğin.", "🌱 Geliştirebileceğin: Kırgınlıklarını zamanında dile getirmek.", "🎯 Öneri: Zor bir konuşmadan önce ne hissettiğini bir cümleyle yaz."]
+    },
+    {
+      "emoji": "🌊", "ad": "Dengeli Duygusal Zeka", "aralik": [28, 35],
+      "slogan": "Çoğu durumda hem kendini hem karşındakini idare edebiliyorsun.",
+      "aciklama": "Dengeli ve olgun.",
+      "detay": "Sinirlendiğinde bile genelde sakin kalmayı başarıyorsun ve insanlar seninle konuşmaktan rahatsız olmuyor. Eleştiriyi kişisel algılamadan dinleyebiliyorsun. Sadece çok yorgun ya da stresli olduğun günlerde eski alışkanlıklar geri dönebiliyor.",
+      "ozellikler": ["💪 Güçlü yanın: Sakinliğin ve dinleme becerin.", "🌱 Geliştirebileceğin: Stresli günlerde kendine de aynı anlayışı göstermek.", "🎯 Öneri: Haftada bir 'bu hafta beni ne zorladı?' diye düşün."]
+    },
+    {
+      "emoji": "🧭", "ad": "Yüksek Duygusal Zeka", "aralik": [36, 42],
+      "slogan": "İnsanlar seninle konuşunca kendini anlaşılmış hisseder.",
+      "aciklama": "Güçlü empati ve öz farkındalık.",
+      "detay": "Duygularını tanıyor, adlandırıyor ve yönetiyorsun. Başkalarının söylemediği şeyleri bile fark edebiliyorsun. Çatışmalarda kazanmak yerine anlamaya odaklanıyorsun; bu yüzden insanlar zor anlarında seni arıyor. Kendi sınırlarını korumayı unutmamalısın.",
+      "ozellikler": ["💪 Güçlü yanın: Empatin ve çatışma çözme becerin.", "🌱 Geliştirebileceğin: Herkesin yükünü taşımamak.", "🎯 Öneri: Başkalarına ayırdığın zamanı kendine de ayır."]
+    },
+    {
+      "emoji": "💎", "ad": "Duygusal Usta", "aralik": [43, 48],
+      "slogan": "Duygular senin için bir kaos değil, bir pusula.",
+      "aciklama": "Çok yüksek duygusal zeka.",
+      "detay": "Kendini çok iyi tanıyorsun; seni neyin tetiklediğini bilir, tepkini seçersin. Eleştiriyi büyümek için kullanır, hatalarının sorumluluğunu alırsın. Bu seviyede bir duygusal zeka nadirdir. Tek risk: herkesi anlamaya çalışırken kendi duygularını ikinci plana atmak.",
+      "ozellikler": ["💪 Güçlü yanın: Öz farkındalığın ve olgunluğun.", "🌱 Geliştirebileceğin: Kendi ihtiyaçlarını da yüksek sesle söylemek.", "🎯 Öneri: Bu becerini çevrene öğretmeyi dene."]
+    }
+  ],
+  "kapanis": "Kaç puan aldın? Yorumlara yaz, karşılaştıralım!",
+  "uyari": "Bu test eğitim ve eğlence amaçlıdır; bilimsel bir ölçüm veya psikolojik değerlendirme değildir.",
+  "sabitYorum": "Sence duygusal zeka öğrenilebilir mi, yoksa doğuştan mı gelir? 🤔 Puanını da yaz, kaçar aldık görelim!",
+  "sonrakiTestler": ["💞 Bağlanma stilin ne?", "🔥 Stresle nasıl başa çıkıyorsun?", "🎭 İnsanlar seni nasıl görüyor?", "🧠 Hangi zeka türüne sahipsin?"]
+}

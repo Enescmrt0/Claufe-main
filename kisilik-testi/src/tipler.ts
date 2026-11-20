@@ -26,7 +26,11 @@ export type TestVerisi = {
   /** saniye cinsinden, isteğe bağlı */
   sureler?: Partial<Sureler>;
   /** "sonra": puanlar geri sayımdan sonra görünür (varsayılan) · "hemen": şıklarla birlikte görünür */
-  puanZamani?: "sonra" | "hemen";
+  puanZamani?: "sonra" | "hemen" | "sonda";
+  /** Arka plan müziği: public/ altındaki dosya (ör. "muzik/sakin.m4a"), döngüde çalar */
+  muzik?: string;
+  /** Müziğin ses seviyesi (0–1), varsayılan 0.18 */
+  muzikSes?: number;
   /** true ise public/ses/<test-adı>/ klasöründeki ses kayıtları videoya eklenir */
   seslendirme?: boolean;
   /** "dikey" (varsayılan, Shorts 1080x1920) · "yatay" (uzun video 1920x1080) */
@@ -61,6 +65,7 @@ export type Sureler = {
   kapanis: number;
   sonraki: number; // "Sıradaki test ne olsun?" ekranı
   okuma: number; // detaylı sonuçlarda okuma hızı (karakter/sn)
+  anahtar: number; // cevap anahtarının her sayfası (6 soru) kaç sn
 };
 export const FPS = 30;
 export const VARSAYILAN_SURELER: Sureler = {
@@ -75,7 +80,11 @@ export const VARSAYILAN_SURELER: Sureler = {
   kapanis: 3.5,
   sonraki: 5,
   okuma: 17,
+  anahtar: 14,
 };
+
+/** Cevap anahtarı: her sayfada en fazla bu kadar soru */
+export const ANAHTAR_SAYFA = 6;
 
 /** "Sıradaki test ne olsun?" ekranının varsayılan seçenekleri */
 export const VARSAYILAN_SONRAKI_TESTLER = [
@@ -121,8 +130,10 @@ export const sahneKareleri = (v: TestVerisi) => {
       // ilk soru videoyu açıyorsa başlığı okumak için +1 sn
       const ek = soruAcilisi && i === 0 ? 1 : 0;
       const acilis = Math.max(s.soru - s.sayim - s.puan + ek, klip(`soru-${i + 1}`) ? klip(`soru-${i + 1}`) + 0.4 : 0);
-      return k(acilis + s.sayim + s.puan);
+      // puanlar sonda verilecekse soru sonunda puan gösterimi yok, kısa bir geçiş yeter
+      return k(acilis + s.sayim + (v.puanZamani === "sonda" ? 0.7 : s.puan));
     }),
+    anahtar: v.puanZamani === "sonda" ? Array.from({ length: Math.ceil(v.sorular.length / ANAHTAR_SAYFA) }, () => k(s.anahtar)) : [],
     puanTopla: uzat(s.sonucSorusu, "puan-topla"),
     tablo: v.puanTablosu ? k(s.tablo) : 0,
     sonuclar: v.sonuclar.map((r, i) => uzat(r.detay ? detayliSonucSuresi(r, s.sonuc, s.okuma) : s.sonuc, `sonuc-${i + 1}`)),
@@ -133,7 +144,7 @@ export const sahneKareleri = (v: TestVerisi) => {
 
 export const toplamKare = (v: TestVerisi) => {
   const r = sahneKareleri(v);
-  return r.giris + r.kural + r.sorular.reduce((a, b) => a + b, 0) + r.puanTopla + r.tablo + r.sonuclar.reduce((a, b) => a + b, 0) + r.sonraki + r.kapanis;
+  return r.giris + r.kural + r.sorular.reduce((a, b) => a + b, 0) + r.anahtar.reduce((a, b) => a + b, 0) + r.puanTopla + r.tablo + r.sonuclar.reduce((a, b) => a + b, 0) + r.sonraki + r.kapanis;
 };
 
 export const secenekMetni = (s: Secenek) => (typeof s === "string" ? s : s.metin);

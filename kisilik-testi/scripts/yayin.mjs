@@ -8,7 +8,7 @@ const slug = (d) => d.replace(/\.json$/, "").toLowerCase()
   .replace(/[^a-z0-9-]+/g, "-").replace(/^-+|-+$/g, "");
 fs.mkdirSync(path.join(kok, "yayin"), { recursive: true });
 // Uzun (yatay) videolar için YouTube bölümleri — süreler src/tipler.ts ile aynı mantık (seslendirmesiz)
-const VARS = { giris: 3, kural: 2.5, soru: 7.5, sayim: 5, puan: 1.5, sonucSorusu: 3, tablo: 7, sonuc: 3.5, kapanis: 3.5, okuma: 17 };
+const VARS = { giris: 3, kural: 2.5, soru: 7.5, sayim: 5, puan: 1.5, sonucSorusu: 3, tablo: 7, sonuc: 3.5, kapanis: 3.5, okuma: 17, anahtar: 14 };
 const SONRAKI = ["🐾 Hangi hayvansın?", "🎨 Hangi renksin?", "🌍 Hangi şehirde yaşamalısın?", "🍰 Hangi tatlısın?"];
 const anket = (liste) => [
   "",
@@ -27,7 +27,9 @@ const bolumler = (v) => {
   const liste = [[0, "Giriş"]];
   if (!soruAcilisi) t += kare(s.giris) + kare(s.kural);
   liste.push([t, "Sorular"]);
-  v.sorular.forEach((_, i) => { t += kare(s.soru + (soruAcilisi && i === 0 ? 1 : 0)); });
+  const sonda = v.puanZamani === "sonda";
+  v.sorular.forEach((_, i) => { t += kare(s.soru + (soruAcilisi && i === 0 ? 1 : 0) - (sonda ? s.puan - 0.7 : 0)); });
+  if (sonda) { liste.push([t, "Cevap anahtarı"]); t += Math.ceil(v.sorular.length / 6) * kare(s.anahtar); }
   t += kare(s.sonucSorusu);
   if (v.puanTablosu) { liste.push([t, "Puan tablosu"]); t += kare(s.tablo); }
   v.sonuclar.forEach((r) => {

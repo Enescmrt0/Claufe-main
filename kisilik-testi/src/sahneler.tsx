@@ -118,7 +118,9 @@ export const SoruSahnesi: React.FC<{
   puanHemen: boolean;
   /** Video doğrudan bu soruyla açılıyorsa: ilk karede her şey hazır görünür, üstte test adı yazar */
   acilisBasligi?: string;
-}> = ({ soru, no, toplam, sayimSn, puanSn, puanHemen, acilisBasligi }) => {
+  /** true: puanlar soruda gösterilmez (cevap anahtarı en sonda gelir) */
+  puanGizli?: boolean;
+}> = ({ soru, no, toplam, sayimSn, puanSn, puanHemen, acilisBasligi, puanGizli }) => {
   const frame = useCurrentFrame();
   const { fps, durationInFrames } = useVideoConfig();
   const acilis = Boolean(acilisBasligi);
@@ -146,7 +148,7 @@ export const SoruSahnesi: React.FC<{
       {acilisBasligi ? (
         <div style={{ fontSize: 76, fontWeight: 800, color: "white", textAlign: "center", lineHeight: 1, textShadow: golge }}>{acilisBasligi}</div>
       ) : null}
-      {!puanHemen ? <Ses ad="ding" kare={puanBas} ses={0.35} /> : null}
+      {!puanHemen && !puanGizli ? <Ses ad="ding" kare={puanBas} ses={0.35} /> : null}
       {Array.from({ length: Math.round(sayimSn) }, (_, i) => (
         <Ses key={`t${i}`} ad="tik" kare={sayimBas + i * fps} ses={0.7} />
       ))}
@@ -193,6 +195,7 @@ export const SoruSahnesi: React.FC<{
             >
               <HarfDairesi harf={HARFLER[i]} renk={HARF_RENKLERI[i]} boy={92} />
               <div style={{ flex: 1, fontSize: yatay ? 40 : uzun ? 44 : 52, fontWeight: 800, color: "#222", lineHeight: 1.05 }}>{metinler[i]}</div>
+              {!puanGizli ? (
               <div
                 style={{
                   flexShrink: 0,
@@ -210,10 +213,12 @@ export const SoruSahnesi: React.FC<{
               >
                 +{puan}
               </div>
+              ) : null}
             </div>
           );
         })}
       </div>
+      {puanGizli ? <Hap style={{ fontSize: 38 }}>✍️ Seçtiğin harfi not et</Hap> : null}
       {acilis && frame < sayimBas ? (
         <Hap style={{ fontSize: 40 }}>🧮 Her cevabın puanı var, sonunda topla!</Hap>
       ) : null}
@@ -534,6 +539,42 @@ export const SonrakiTest: React.FC<{ secenekler: string[] }> = ({ secenekler }) 
       <Kart style={{ transform: `scale(${alt})`, padding: "22px 40px" }}>
         <div style={{ fontSize: 50, fontWeight: 800, color: "#222", textAlign: "center" }}>Yorumlara harfini yaz 👇</div>
       </Kart>
+    </Guvenli>
+  );
+};
+
+/** Puanların sonda verildiği testlerde: her sorunun şık puanları */
+export const CevapAnahtari: React.FC<{ sorular: Soru[]; bas: number; sayfa: number; sayfaSayisi: number }> = ({ sorular, bas, sayfa, sayfaSayisi }) => {
+  const frame = useCurrentFrame();
+  const { durationInFrames } = useVideoConfig();
+  const yatay = useYatay();
+  const a = useGiris(0);
+  return (
+    <Guvenli style={{ opacity: solma(frame, durationInFrames), gap: yatay ? 30 : 26 }}>
+      <Ses ad="whoosh" />
+      <div style={{ display: "flex", alignItems: "center", gap: 20, transform: `scale(${a})` }}>
+        <div style={{ fontSize: yatay ? 76 : 84, fontWeight: 800, color: "white", textShadow: golge }}>Cevap anahtarı 🔑</div>
+        {sayfaSayisi > 1 ? <Hap>{sayfa}/{sayfaSayisi}</Hap> : null}
+      </div>
+      <div style={{ fontSize: 40, fontWeight: 700, color: "white", opacity: 0.95, marginTop: -10 }}>Her sorudaki harfinin puanını yaz, sonunda topla</div>
+      <div style={{ width: "100%", display: "grid", gridTemplateColumns: yatay ? "1fr 1fr 1fr" : "1fr 1fr", gap: yatay ? 22 : 18 }}>
+        {sorular.map((q, n) => {
+          const g = useGiris(6 + n * 4, 12);
+          return (
+            <div key={n} style={{ background: "rgba(255,255,255,0.96)", borderRadius: 28, padding: "16px 20px", transform: `scale(${g})`, boxShadow: "0 8px 0 rgba(0,0,0,0.15)" }}>
+              <div style={{ fontSize: 36, fontWeight: 800, color: "#333", textAlign: "center", marginBottom: 10 }}>Soru {bas + n + 1}</div>
+              <div style={{ display: "flex", justifyContent: "space-around" }}>
+                {q.secenekler.map((sec, i) => (
+                  <div key={i} style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 6 }}>
+                    <HarfDairesi harf={HARFLER[i]} renk={HARF_RENKLERI[i]} boy={58} />
+                    <div style={{ fontSize: 40, fontWeight: 800, color: "#222" }}>{secenekPuani(sec, i)}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          );
+        })}
+      </div>
     </Guvenli>
   );
 };

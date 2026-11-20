@@ -1,9 +1,9 @@
 import React from "react";
-import { AbsoluteFill, Html5Audio, Sequence, Series, staticFile } from "remotion";
+import { AbsoluteFill, Html5Audio, interpolate, Sequence, Series, staticFile, useVideoConfig } from "remotion";
 import { ArkaPlan } from "./ortak";
 import { useFont } from "./font";
-import { SonrakiTest, DetayliSonuc, Giris, Kapanis, Kural, PuanTablosu, SonucSahnesi, SonucSorusu, SoruSahnesi } from "./sahneler";
-import { VARSAYILAN_SONRAKI_TESTLER, puanSiniri, sahneKareleri, soruIleAcilir, sonucAraliklari, sureleriAl, TestVerisi } from "./tipler";
+import { CevapAnahtari, SonrakiTest, DetayliSonuc, Giris, Kapanis, Kural, PuanTablosu, SonucSahnesi, SonucSorusu, SoruSahnesi } from "./sahneler";
+import { ANAHTAR_SAYFA, VARSAYILAN_SONRAKI_TESTLER, puanSiniri, sahneKareleri, soruIleAcilir, sonucAraliklari, sureleriAl, TestVerisi } from "./tipler";
 
 /** Sahnenin başında ilgili ses kaydını çalar (varsa) */
 const Anlatim: React.FC<{ v: TestVerisi; ad: string; gecikme?: number }> = ({ v, ad, gecikme = 4 }) => {
@@ -22,7 +22,20 @@ export const KisilikTesti: React.FC<TestVerisi> = (v) => {
     <AbsoluteFill lang="tr">
       <ArkaPlan renk1={v.tema?.renk1 ?? "#FF9A62"} renk2={v.tema?.renk2 ?? "#FF4F81"} emojiler={v.sonuclar.map((x) => x.emoji)} />
       <TestAkisi v={v} />
+      {v.muzik ? <Muzik dosya={v.muzik} ses={v.muzikSes ?? 0.18} /> : null}
     </AbsoluteFill>
+  );
+};
+
+/** Döngüde çalan arka plan müziği; başta ve sonda yumuşakça açılıp kapanır */
+export const Muzik: React.FC<{ dosya: string; ses: number }> = ({ dosya, ses }) => {
+  const { durationInFrames, fps } = useVideoConfig();
+  return (
+    <Html5Audio
+      src={staticFile(dosya)}
+      loop
+      volume={(f) => ses * interpolate(f, [0, fps, durationInFrames - 2 * fps, durationInFrames], [0, 1, 1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" })}
+    />
   );
 };
 
@@ -53,8 +66,19 @@ export const TestAkisi: React.FC<{ v: TestVerisi }> = ({ v }) => {
             <SoruSahnesi
               soru={soru} no={i + 1} toplam={v.sorular.length} sayimSn={s.sayim} puanSn={s.puan} puanHemen={v.puanZamani === "hemen"}
               acilisBasligi={soruAcilisi && i === 0 ? v.baslik : undefined}
+              puanGizli={v.puanZamani === "sonda"}
             />
             <Anlatim v={v} ad={`soru-${i + 1}`} gecikme={2} />
+          </Series.Sequence>
+        ))}
+        {r.anahtar.map((kare, p) => (
+          <Series.Sequence key={`a${p}`} durationInFrames={kare} name={`Cevap anahtarı ${p + 1}`}>
+            <CevapAnahtari
+              sorular={v.sorular.slice(p * ANAHTAR_SAYFA, (p + 1) * ANAHTAR_SAYFA)}
+              bas={p * ANAHTAR_SAYFA}
+              sayfa={p + 1}
+              sayfaSayisi={r.anahtar.length}
+            />
           </Series.Sequence>
         ))}
         <Series.Sequence durationInFrames={r.puanTopla} name="Puanını topla">

@@ -1,0 +1,64 @@
+{
+  "ustYazi": "KİŞİLİK TESTİ",
+  "baslik": "Hangi Süper Kahramansın?",
+  "kanca": "Herkes Iron Man olmak istiyor... ama sen kimsin?",
+  "muzik": "muzik/enerjik.m4a",
+  "muzikSes": 0.13,
+  "sureler": { "okuma": 24 },
+  "sorular": [
+    { "soru": "Gece saat 2'de sen...", "secenekler": [
+      { "metin": "Yeni bir icat üzerindeyim 🔧", "puan": 3 },
+      { "metin": "Hâlâ ödev yapıyorum 📚", "puan": 1 },
+      { "metin": "Şehri izliyorum 🌃", "puan": 4 },
+      { "metin": "Uyudum, sabah koşu var 🏃", "puan": 2 } ] },
+    { "soru": "Ekip arkadaşın hata yaptı...", "secenekler": [
+      { "metin": "Sorumluluğu birlikte alırız 🤝", "puan": 2 },
+      { "metin": "Bir daha olmasın, plan yaparım 📋", "puan": 4 },
+      { "metin": "Espriyle ortamı yumuşatırım 😄", "puan": 1 },
+      { "metin": "Hemen ben düzeltirim 💡", "puan": 3 } ] },
+    { "soru": "Bir süper güç seç!", "secenekler": [
+      { "metin": "Dahi bir zeka 🧠", "puan": 3 },
+      { "metin": "Asla yorulmamak 💪", "puan": 2 },
+      { "metin": "Duvarlara tırmanmak 🧗", "puan": 1 },
+      { "metin": "Görünmeden her şeyi bilmek 👁️", "puan": 4 } ] },
+    { "soru": "Seni en iyi anlatan?", "secenekler": [
+      { "metin": "Gizemli ve kararlı 🌑", "puan": 4 },
+      { "metin": "Zeki ve özgüvenli 😎", "puan": 3 },
+      { "metin": "Dürüst ve sadık 🛡️", "puan": 2 },
+      { "metin": "Yardımsever ve esprili 😄", "puan": 1 } ] },
+    { "soru": "Kötü adamla karşı karşıyasın...", "secenekler": [
+      { "metin": "Ona ikinci bir şans veririm 🙏", "puan": 2 },
+      { "metin": "Önce bir espri patlatırım 😏", "puan": 1 },
+      { "metin": "Teknolojiyle alt ederim 🚀", "puan": 3 },
+      { "metin": "Gölgelerden saldırırım 🦇", "puan": 4 } ] }
+  ],
+  "sonuclar": [
+    {
+      "emoji": "🕷️", "ad": "Örümcek Adam", "aralik": [5, 8],
+      "slogan": "Büyük kalbin, büyük sorumluluk.",
+      "aciklama": "Yardımsever ve esprili.",
+      "detay": "Herkese yardıma koşarsın ve en zor anda bile bir espri bulursun. Kendi dertlerini çoğu zaman saklarsın ama yanındakiler seninle hep güvende hisseder."
+    },
+    {
+      "emoji": "🛡️", "ad": "Kaptan Amerika", "aralik": [9, 12],
+      "slogan": "İlkelerinden asla vazgeçmezsin.",
+      "aciklama": "Dürüst ve lider.",
+      "detay": "Dürüstlük senin için her şeyden önemli. Ekibi bir arada tutan kişi sensin; doğru olanı, zor olsa bile seçersin."
+    },
+    {
+      "emoji": "🦾", "ad": "Iron Man", "aralik": [13, 16],
+      "slogan": "Zekan senin süper gücün.",
+      "aciklama": "Dahi ve özgüvenli.",
+      "detay": "Sorunlara hızlı ve yaratıcı çözümler bulursun. Özgüvenin bazen ukala görünse de en kritik anda herkesi sen kurtarırsın."
+    },
+    {
+      "emoji": "🦇", "ad": "Batman", "aralik": [17, 20],
+      "slogan": "Karanlıkta bile planın hazır.",
+      "aciklama": "Gizemli ve stratejik.",
+      "detay": "Az konuşur, çok düşünürsün. Her ihtimale karşı bir B planın vardır. Kimseye kolay güvenmezsin ama güvendiğini sonuna kadar korursun."
+    }
+  ],
+  "kapanis": "🦇 Batman çıkanlar, kendinizi gösterin!",
+  "sabitYorum": "Bence en nadir sonuç 🕷️ Örümcek Adam 👀 Sen hangi kahraman çıktın, sana uydu mu?",
+  "sonrakiTestler": ["🦹 Hangi kötü karaktersin?", "🎨 Hangi renksin?", "🍰 Hangi tatlısın?", "🌍 Hangi şehirde yaşamalısın?"]
+}

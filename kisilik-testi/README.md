@@ -127,3 +127,17 @@ Her videonun (ve derlemenin) sonunda kapanıştan önce **"🗳️ Sıradaki tes
 - Seçenekleri değiştirmek için JSON'a `"sonrakiTestler": ["🐾 Hangi hayvansın?", "🎨 Hangi renksin?", ...]` yaz. Yazmazsan varsayılan liste kullanılır (`src/tipler.ts` → `VARSAYILAN_SONRAKI_TESTLER`).
 - `npm run yayin` aynı seçeneklerle bir **Topluluk sekmesi anketi** ve sabit yorumun altına atılacak **ikinci yorumu** da hazırlar.
 - En çok oyu alan testi gerçekten çek ve videoda "sizin seçiminiz" de. İzleyici sesinin duyulduğunu görünce tekrar oy verir.
+
+## Arka plan müziği 🎵
+JSON'a `"muzik": "muzik/sakin.m4a"` ve isteğe bağlı `"muzikSes": 0.16` ekle. Müzik döngüde çalar; başta ve sonda yumuşakça açılıp kapanır.
+Hazır iki telifsiz parça var, ikisi de kodla bestelendi (`python3 scripts/muzik.py`):
+- `muzik/sakin.m4a`: yavaş, ciddi ambient (piyano arpej + pad), uzun ve ciddi testler için
+- `muzik/enerjik.m4a`: hareketli pop (davul + bas + pluck), Shorts için
+
+Kendi müziğini kullanmak istersen `public/muzik/` klasörüne koyup adını yaz. Telif hakkı olmayan ya da lisanslı bir parça olsun.
+
+## Puanlar en sonda (cevap anahtarı) 🔑
+`"puanZamani": "sonda"` yazarsan sorularda puan gösterilmez; izleyici sadece seçtiği harfi not eder ("✍️ Seçtiğin harfi not et").
+Sorular bitince **cevap anahtarı** gelir: her sorunun A/B/C/D puanları, sayfa başına 6 soru (`"sureler": { "anahtar": 14 }` ile süre ayarlanır).
+Sonra "Puanlarını topla", puan tablosu ve sonuçlar gelir. Ciddi testler için uygundur, çünkü izleyici puanı görüp en yüksek şıkkı seçemez.
+Örnek: `testler/duygusal-zekan-kac.json`

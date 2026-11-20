@@ -1,0 +1,65 @@
+# Duygusal Zekan Kaç? 🧠 — seslendirme metni
+# Kayıtları public/ses/duygusal-zekan-kac/ klasörüne bu adlarla koy (.mp3, .wav veya .m4a)
+
+giris.mp3
+Duygusal Zekan Kaç? Bu test seni kendinle yüzleştirebilir. Dürüst cevap ver.
+
+kural.mp3
+Her cevabın bir puanı var. Aklına ilk geleni seç ve puanlarını topla!
+
+soru-1.mp3
+Soru 1. Bir arkadaşının sana kırgın olduğunu fark ettin...
+
+soru-2.mp3
+Soru 2. Çok sinirlendiğin bir anda...
+
+soru-3.mp3
+Soru 3. Biri seni eleştirdiğinde ilk tepkin?
+
+soru-4.mp3
+Soru 4. Kendini kötü hissettiğinde...
+
+soru-5.mp3
+Soru 5. Bir grupta biri hep sessiz kalıyor...
+
+soru-6.mp3
+Soru 6. Önemli bir görüşme öncesi çok gerginsin...
+
+soru-7.mp3
+Soru 7. Bir arkadaşın sana derdini anlatıyor...
+
+soru-8.mp3
+Soru 8. Bir hata yaptın ve herkes fark etti...
+
+soru-9.mp3
+Soru 9. İnsanların ruh halini anlamak senin için...
+
+soru-10.mp3
+Soru 10. Planların son dakika iptal oldu...
+
+soru-11.mp3
+Soru 11. Biriyle fikir ayrılığına düştün...
+
+soru-12.mp3
+Son soru! Kendini ne kadar tanıyorsun?
+
+puan-topla.mp3
+Süre bitti! Şimdi puanlarını topla. Toplamın kaç?
+
+sonuc-1.mp3
+12 ile 19 arası puan aldıysan... Keşif Aşamasında!
+
+sonuc-2.mp3
+20 ile 27 arası puan aldıysan... Gelişen Farkındalık!
+
+sonuc-3.mp3
+28 ile 35 arası puan aldıysan... Dengeli Duygusal Zeka!
+
+sonuc-4.mp3
+36 ile 42 arası puan aldıysan... Yüksek Duygusal Zeka!
+
+sonuc-5.mp3
+43 ile 48 arası puan aldıysan... Duygusal Usta!
+
+kapanis.mp3
+Kaç puan aldın? Yorumlara yaz, karşılaştıralım! Puanını yorumlara yaz!

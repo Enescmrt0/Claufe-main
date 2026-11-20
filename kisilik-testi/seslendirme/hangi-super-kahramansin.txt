@@ -1,0 +1,35 @@
+# Hangi Süper Kahramansın? — seslendirme metni
+# Kayıtları public/ses/hangi-super-kahramansin/ klasörüne bu adlarla koy (.mp3, .wav veya .m4a)
+
+soru-1.mp3
+Hangi Süper Kahramansın? Puanlarını topla! İlk soru: Gece saat 2'de sen...
+
+soru-2.mp3
+Soru 2. Ekip arkadaşın hata yaptı...
+
+soru-3.mp3
+Soru 3. Bir süper güç seç!
+
+soru-4.mp3
+Soru 4. Seni en iyi anlatan?
+
+soru-5.mp3
+Son soru! Kötü adamla karşı karşıyasın...
+
+puan-topla.mp3
+Süre bitti! Şimdi puanlarını topla. Toplamın kaç?
+
+sonuc-1.mp3
+5 ile 8 arası puan aldıysan... Örümcek Adam!
+
+sonuc-2.mp3
+9 ile 12 arası puan aldıysan... Kaptan Amerika!
+
+sonuc-3.mp3
+13 ile 16 arası puan aldıysan... Iron Man!
+
+sonuc-4.mp3
+17 ile 20 arası puan aldıysan... Batman!
+
+kapanis.mp3
+Batman çıkanlar, kendinizi gösterin! Puanını yorumlara yaz!
