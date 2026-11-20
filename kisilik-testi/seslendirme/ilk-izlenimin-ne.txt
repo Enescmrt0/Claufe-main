@@ -1,0 +1,35 @@
+# İnsanlar Seni İlk Gördüğünde Ne Düşünüyor? — seslendirme metni
+# Kayıtları public/ses/ilk-izlenimin-ne/ klasörüne bu adlarla koy (.mp3, .wav veya .m4a)
+
+soru-1.mp3
+İnsanlar Seni İlk Gördüğünde Ne Düşünüyor? Puanlarını topla! İlk soru: Yeni biriyle tanışınca ilk sen...
+
+soru-2.mp3
+Soru 2. Kalabalık bir odaya girdiğinde...
+
+soru-3.mp3
+Soru 3. Hiçbir şey yapmazken yüz ifaden...
+
+soru-4.mp3
+Soru 4. Konuşurken sesin...
+
+soru-5.mp3
+Son soru! Fotoğraflarda sen...
+
+puan-topla.mp3
+Süre bitti! Şimdi puanlarını topla. Toplamın kaç?
+
+sonuc-1.mp3
+5 ile 8 arası puan aldıysan... Soğuk ama Gizemli!
+
+sonuc-2.mp3
+9 ile 12 arası puan aldıysan... Sakin ve Güven Veren!
+
+sonuc-3.mp3
+13 ile 16 arası puan aldıysan... Sıcak ve Samimi!
+
+sonuc-4.mp3
+17 ile 20 arası puan aldıysan... Enerjik ve Akılda Kalan!
+
+kapanis.mp3
+Soğuk çıkanlar, aslında öyle değilsiniz değil mi? Puanını yorumlara yaz!

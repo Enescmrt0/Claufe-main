@@ -1,0 +1,64 @@
+{
+  "ustYazi": "KİŞİLİK TESTİ",
+  "baslik": "İnsanlar Seni İlk Gördüğünde Ne Düşünüyor?",
+  "kanca": "Sen kendini öyle görmüyor olabilirsin...",
+  "muzik": "muzik/enerjik.m4a",
+  "muzikSes": 0.12,
+  "sureler": { "okuma": 24 },
+  "sorular": [
+    { "soru": "Yeni biriyle tanışınca ilk sen...", "secenekler": [
+      { "metin": "Gülümseyip sohbet açarım 😊", "puan": 3 },
+      { "metin": "Önce karşımdakini izlerim 👀", "puan": 1 },
+      { "metin": "Hemen espri patlatırım 😂", "puan": 4 },
+      { "metin": "Kibarca kendimi tanıtırım 🤝", "puan": 2 } ] },
+    { "soru": "Kalabalık bir odaya girdiğinde...", "secenekler": [
+      { "metin": "Tanıdık birini ararım 🔍", "puan": 2 },
+      { "metin": "Herkes beni fark eder 🌟", "puan": 4 },
+      { "metin": "Sessizce köşeye geçerim 🪑", "puan": 1 },
+      { "metin": "Herkese selam veririm 👋", "puan": 3 } ] },
+    { "soru": "Hiçbir şey yapmazken yüz ifaden...", "secenekler": [
+      { "metin": "Hafif gülümseyen 🙂", "puan": 3 },
+      { "metin": "Düşünceli 🤔", "puan": 2 },
+      { "metin": "Sürekli değişen 🤪", "puan": 4 },
+      { "metin": "\"Kızgın mısın?\" derler 😐", "puan": 1 } ] },
+    { "soru": "Konuşurken sesin...", "secenekler": [
+      { "metin": "Herkes duyar 📢", "puan": 4 },
+      { "metin": "Alçak ve kısa 🔈", "puan": 1 },
+      { "metin": "Sıcak ve neşeli 📞", "puan": 3 },
+      { "metin": "Sakin ve net 🎙️", "puan": 2 } ] },
+    { "soru": "Fotoğraflarda sen...", "secenekler": [
+      { "metin": "Hafif bir tebessüm 😌", "puan": 2 },
+      { "metin": "Kocaman gülerim 😁", "puan": 3 },
+      { "metin": "Hiç gülmem 📷", "puan": 1 },
+      { "metin": "Her seferinde farklı poz 🤳", "puan": 4 } ] }
+  ],
+  "sonuclar": [
+    {
+      "emoji": "🧊", "ad": "Soğuk ama Gizemli", "aralik": [5, 8],
+      "slogan": "İlk izlenimin: \"Bu kişiye yaklaşılmaz.\"",
+      "aciklama": "Mesafeli görünen derin biri.",
+      "detay": "Sessizliğin ve ciddi bakışın insanlara mesafeli gelir. Ama seni tanıyan herkes ne kadar derin ve sadık olduğunu görünce şaşırır."
+    },
+    {
+      "emoji": "🌙", "ad": "Sakin ve Güven Veren", "aralik": [9, 12],
+      "slogan": "İlk izlenimin: \"Bu kişi akıllı biri.\"",
+      "aciklama": "Ciddiye alınan, güvenilen biri.",
+      "detay": "Az ama yerinde konuşursun. İnsanlar seni ilk gördüğünde ciddiye alır ve fikrine güvenir; samimi olman sadece biraz zaman alır."
+    },
+    {
+      "emoji": "🌻", "ad": "Sıcak ve Samimi", "aralik": [13, 16],
+      "slogan": "İlk izlenimin: \"Bununla hemen arkadaş olurum.\"",
+      "aciklama": "Herkesi kendine çeken biri.",
+      "detay": "Gülümsemen ve rahatlığın insanları sana çeker. Yeni tanıştığın biri bile kısa sürede sana dertlerini anlatmaya başlar."
+    },
+    {
+      "emoji": "⚡", "ad": "Enerjik ve Akılda Kalan", "aralik": [17, 20],
+      "slogan": "İlk izlenimin: \"Bu kim böyle?!\"",
+      "aciklama": "Unutulmayan biri.",
+      "detay": "Bir ortama girdiğinde fark edilmemen imkânsız. Enerjin ve özgüvenin seni unutulmaz yapar; bazen fazla yoğun bulunsan da kimse seni unutmaz."
+    }
+  ],
+  "kapanis": "🧊 Soğuk çıkanlar, aslında öyle değilsiniz değil mi?",
+  "sabitYorum": "Sonucun tuttu mu? 👀 Bu videoyu bir arkadaşına at, seni ilk gördüğünde ne düşündüğünü sor!",
+  "sonrakiTestler": ["💞 Bağlanma stilin ne?", "💌 Sevgi dilin ne?", "🔥 Stresle nasıl başa çıkıyorsun?", "🌙 Seni en çok ne yoruyor?"]
+}
