@@ -1,0 +1,152 @@
+{
+  "ustYazi": "PSİKOLOJİ TESTİ",
+  "baslik": "Gizli Korkun Ne? 👁️",
+  "kanca": "Kendine bile itiraf etmediğin bir şey olabilir...",
+  "tema": {
+    "renk1": "#4C1D95",
+    "renk2": "#0F172A"
+  },
+  "muzik": "muzik/sakin.m4a",
+  "muzikSes": 0.17,
+  "sureler": {
+    "soru": 6.5,
+    "sayim": 4,
+    "sonucSorusu": 2.5,
+    "sonuc": 6.5,
+    "kapanis": 3.5,
+    "sonraki": 4
+  },
+  "sorular": [
+    {
+      "soru": "Seni en çok ne rahatsız eder?",
+      "secenekler": [
+        {
+          "metin": "Kimse beni aramadığında 📵",
+          "puan": 1
+        },
+        {
+          "metin": "Planlar bozulduğunda 🌪️",
+          "puan": 3
+        },
+        {
+          "metin": "Biri benden iyi olduğunda 📊",
+          "puan": 2
+        },
+        {
+          "metin": "Biri beni çok yakından tanıyınca 🫣",
+          "puan": 4
+        }
+      ]
+    },
+    {
+      "soru": "Bir hata yaptığında ilk düşüncen...",
+      "secenekler": [
+        {
+          "metin": "Yeterince iyi değilim 😞",
+          "puan": 2
+        },
+        {
+          "metin": "Benden uzaklaşırlar mı? 🥺",
+          "puan": 1
+        },
+        {
+          "metin": "Kimse görmesin 🙈",
+          "puan": 4
+        },
+        {
+          "metin": "Her şey elimden kayıyor 😰",
+          "puan": 3
+        }
+      ]
+    },
+    {
+      "soru": "Seni en iyi anlatan cümle?",
+      "secenekler": [
+        {
+          "metin": "Beni gerçekten tanıyan çok az 🔒",
+          "puan": 4
+        },
+        {
+          "metin": "Hep kendimi kıyaslarım 🪞",
+          "puan": 2
+        },
+        {
+          "metin": "Yalnızlığı sevmem 🫂",
+          "puan": 1
+        },
+        {
+          "metin": "Her şeyi planlamak isterim 📋",
+          "puan": 3
+        }
+      ]
+    },
+    {
+      "soru": "Rüyanda koşuyorsun, çünkü...",
+      "secenekler": [
+        {
+          "metin": "Fren tutmuyor 🚗",
+          "puan": 3
+        },
+        {
+          "metin": "Maskem düştü 🎭",
+          "puan": 4
+        },
+        {
+          "metin": "Bir sınava geç kaldım 📝",
+          "puan": 2
+        },
+        {
+          "metin": "Herkes beni bırakıp gitti 🚶",
+          "puan": 1
+        }
+      ]
+    }
+  ],
+  "sonuclar": [
+    {
+      "emoji": "🫂",
+      "ad": "Yalnız Kalmak",
+      "aralik": [
+        4,
+        6
+      ],
+      "aciklama": "Sevdiklerini kaybetme düşüncesi en derin korkun. Bu yüzden ilişkilerine çok emek verirsin, bazen fazlasını."
+    },
+    {
+      "emoji": "🪞",
+      "ad": "Yetersiz Olmak",
+      "aralik": [
+        7,
+        9
+      ],
+      "aciklama": "Dışarıdan güçlü görünsen de içinden \"yeterince iyi miyim?\" diye sorarsın. Oysa yarıştığın tek kişi dünkü sensin."
+    },
+    {
+      "emoji": "🌪️",
+      "ad": "Kontrolü Kaybetmek",
+      "aralik": [
+        10,
+        12
+      ],
+      "aciklama": "Belirsizlik seni huzursuz eder, her şeyin bir planı olsun istersin. Bazen akışa bırakmak en büyük cesarettir."
+    },
+    {
+      "emoji": "🎭",
+      "ad": "Gerçek Yüzünün Görülmesi",
+      "aralik": [
+        13,
+        16
+      ],
+      "aciklama": "İnsanlara bir yanını gösterir, asıl seni saklarsın. Oysa seni gerçekten sevenler maskenin altını da sever."
+    }
+  ],
+  "kapanis": "🎭 Maskeli çıkanlar, kimse görmüyor... itiraf edin 👀",
+  "uyari": "Eğlence amaçlıdır, psikolojik bir değerlendirme değildir.",
+  "sabitYorum": "Sonucun sana ne kadar uydu? 👀 Bu videoyu en yakın arkadaşına at, onun gizli korkusunu da öğren.",
+  "sonrakiTestler": [
+    "💞 Bağlanma stilin ne?",
+    "🧩 Hangi savunma mekanizmasını kullanıyorsun?",
+    "🔥 Öfkeni nasıl yönetiyorsun?",
+    "🪞 Özgüvenin gerçek mi?"
+  ]
+}

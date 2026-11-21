@@ -1,0 +1,32 @@
+# Aşırı Düşünme Seviyen Kaç? 🌀 — seslendirme metni
+# Kayıtları public/ses/asiri-dusunme-seviyen-kac/ klasörüne bu adlarla koy (.mp3, .wav veya .m4a)
+
+soru-1.mp3
+Aşırı Düşünme Seviyen Kaç? Puanlarını topla! İlk soru: Mesajına sadece tamam. diye cevap geldi...
+
+soru-2.mp3
+Soru 2. Gece yatağa girince...
+
+soru-3.mp3
+Soru 3. Bir karar verirken...
+
+soru-4.mp3
+Son soru! Biri Konuşmamız lazım dedi...
+
+puan-topla.mp3
+Süre bitti! Şimdi puanlarını topla. Toplamın kaç?
+
+sonuc-1.mp3
+4 ile 6 arası puan aldıysan... Zen Ustası!
+
+sonuc-2.mp3
+7 ile 9 arası puan aldıysan... Dengeli Düşünür!
+
+sonuc-3.mp3
+10 ile 12 arası puan aldıysan... Senaryo Yazarı!
+
+sonuc-4.mp3
+13 ile 16 arası puan aldıysan... Profesyonel Overthinker!
+
+kapanis.mp3
+Şu an bile düşünüyorsun, değil mi? Puanını yorumlara yaz!

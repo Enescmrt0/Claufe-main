@@ -1,0 +1,32 @@
+# Seni Manipüle Etmek Ne Kadar Kolay? 🎭 — seslendirme metni
+# Kayıtları public/ses/seni-manipule-etmek-ne-kadar-kolay/ klasörüne bu adlarla koy (.mp3, .wav veya .m4a)
+
+soru-1.mp3
+Seni Manipüle Etmek Ne Kadar Kolay? Puanlarını topla! İlk soru: Biri sana iltifat yağdırıp bir iyilik istiyor...
+
+soru-2.mp3
+Soru 2. Tartışmada biri Abartıyorsun dedi...
+
+soru-3.mp3
+Soru 3. Son fırsat, sadece bugün! yazısını görünce...
+
+soru-4.mp3
+Son soru! Biri sana suçluluk hissettirdiğinde...
+
+puan-topla.mp3
+Süre bitti! Şimdi puanlarını topla. Toplamın kaç?
+
+sonuc-1.mp3
+4 ile 6 arası puan aldıysan... Neredeyse İmkânsız!
+
+sonuc-2.mp3
+7 ile 9 arası puan aldıysan... Fark Eden!
+
+sonuc-3.mp3
+10 ile 12 arası puan aldıysan... Kalbi Yumuşak!
+
+sonuc-4.mp3
+13 ile 16 arası puan aldıysan... Kolay Hedef!
+
+kapanis.mp3
+İmkânsız çıkanlar, gerçekten öyle misiniz? Puanını yorumlara yaz!

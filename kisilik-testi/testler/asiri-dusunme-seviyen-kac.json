@@ -1,0 +1,152 @@
+{
+  "ustYazi": "PSİKOLOJİ TESTİ",
+  "baslik": "Aşırı Düşünme Seviyen Kaç? 🌀",
+  "kanca": "4 soruda kafanın içini okuyoruz...",
+  "tema": {
+    "renk1": "#4C1D95",
+    "renk2": "#0F172A"
+  },
+  "muzik": "muzik/sakin.m4a",
+  "muzikSes": 0.17,
+  "sureler": {
+    "soru": 6.5,
+    "sayim": 4,
+    "sonucSorusu": 2.5,
+    "sonuc": 6.5,
+    "kapanis": 3.5,
+    "sonraki": 4
+  },
+  "sorular": [
+    {
+      "soru": "Mesajına sadece \"tamam.\" diye cevap geldi...",
+      "secenekler": [
+        {
+          "metin": "Bütün konuşmayı baştan okurum 🔁",
+          "puan": 4
+        },
+        {
+          "metin": "Bir an durur, geçerim 🤔",
+          "puan": 2
+        },
+        {
+          "metin": "Tamam işte, sorun yok 👍",
+          "puan": 1
+        },
+        {
+          "metin": "Noktayı neden koydu? 😟",
+          "puan": 3
+        }
+      ]
+    },
+    {
+      "soru": "Gece yatağa girince...",
+      "secenekler": [
+        {
+          "metin": "Hemen uyurum 😴",
+          "puan": 1
+        },
+        {
+          "metin": "5 yıl önceki utancım aklıma gelir 😳",
+          "puan": 3
+        },
+        {
+          "metin": "Günü kısaca düşünürüm 🌙",
+          "puan": 2
+        },
+        {
+          "metin": "Kafamda 10 senaryo yazarım 🎬",
+          "puan": 4
+        }
+      ]
+    },
+    {
+      "soru": "Bir karar verirken...",
+      "secenekler": [
+        {
+          "metin": "Artı-eksi listesi yaparım 📝",
+          "puan": 2
+        },
+        {
+          "metin": "İçimden geleni yaparım ⚡",
+          "puan": 1
+        },
+        {
+          "metin": "Günlerce karar veremem ⏳",
+          "puan": 4
+        },
+        {
+          "metin": "Herkese danışırım 🗣️",
+          "puan": 3
+        }
+      ]
+    },
+    {
+      "soru": "Biri \"Konuşmamız lazım\" dedi...",
+      "secenekler": [
+        {
+          "metin": "Ne yaptım acaba? 😬",
+          "puan": 3
+        },
+        {
+          "metin": "O andan itibaren hayatım durur 💀",
+          "puan": 4
+        },
+        {
+          "metin": "Biraz meraklanırım 🤨",
+          "puan": 2
+        },
+        {
+          "metin": "Tamam, ne zaman? 🙂",
+          "puan": 1
+        }
+      ]
+    }
+  ],
+  "sonuclar": [
+    {
+      "emoji": "😴",
+      "ad": "Zen Ustası",
+      "aralik": [
+        4,
+        6
+      ],
+      "aciklama": "Kafan sakin, anda yaşarsın. Olmamış şeyler için uykunu kaçırmazsın; bu çoğu insanın hayal ettiği bir huzur."
+    },
+    {
+      "emoji": "🤔",
+      "ad": "Dengeli Düşünür",
+      "aralik": [
+        7,
+        9
+      ],
+      "aciklama": "Düşünürsün ama boğulmazsın. Önemli şeyleri tartar, gerisini bırakmayı bilirsin."
+    },
+    {
+      "emoji": "🌀",
+      "ad": "Senaryo Yazarı",
+      "aralik": [
+        10,
+        12
+      ],
+      "aciklama": "Bir cümleden üç ihtimal, bir bakıştan beş anlam çıkarırsın. Zihnin çok güçlü; bazen sadece susması gerekiyor."
+    },
+    {
+      "emoji": "🧠",
+      "ad": "Profesyonel Overthinker",
+      "aralik": [
+        13,
+        16
+      ],
+      "aciklama": "Gece 3'te 5 yıl önceki bir konuşmayı analiz edenlerdensin. Bu kadar düşünen bir zihin biraz şefkati hak ediyor."
+    }
+  ],
+  "kapanis": "🧠 Şu an bile düşünüyorsun, değil mi? 😅",
+  "uyari": "Eğlence amaçlıdır, psikolojik bir değerlendirme değildir.",
+  "sabitYorum": "Kafanda en çok döndürdüğün cümle ne? 👀 Sonucunla birlikte yaz, yalnız olmadığını gör!",
+  "sonrakiTestler": [
+    "💞 Bağlanma stilin ne?",
+    "🧩 Hangi savunma mekanizmasını kullanıyorsun?",
+    "🔥 Öfkeni nasıl yönetiyorsun?",
+    "🪞 Özgüvenin gerçek mi?"
+  ]
+}

@@ -1,0 +1,152 @@
+{
+  "ustYazi": "PSİKOLOJİ TESTİ",
+  "baslik": "Seni Manipüle Etmek Ne Kadar Kolay? 🎭",
+  "kanca": "Çoğumuz kendimizi olduğumuzdan güçlü sanırız...",
+  "tema": {
+    "renk1": "#4C1D95",
+    "renk2": "#0F172A"
+  },
+  "muzik": "muzik/sakin.m4a",
+  "muzikSes": 0.17,
+  "sureler": {
+    "soru": 6.5,
+    "sayim": 4,
+    "sonucSorusu": 2.5,
+    "sonuc": 6.5,
+    "kapanis": 3.5,
+    "sonraki": 4
+  },
+  "sorular": [
+    {
+      "soru": "Biri sana iltifat yağdırıp bir iyilik istiyor...",
+      "secenekler": [
+        {
+          "metin": "Kıramam, kabul ederim 🙂",
+          "puan": 3
+        },
+        {
+          "metin": "Bu kadar iyiyken hayır diyemem 🥺",
+          "puan": 4
+        },
+        {
+          "metin": "İltifatı ayırıp tartarım ⚖️",
+          "puan": 2
+        },
+        {
+          "metin": "Niyetini hemen sorgularım 🤨",
+          "puan": 1
+        }
+      ]
+    },
+    {
+      "soru": "Tartışmada biri \"Abartıyorsun\" dedi...",
+      "secenekler": [
+        {
+          "metin": "Kendi hafızama güvenirim 🧠",
+          "puan": 1
+        },
+        {
+          "metin": "Belki de haklıdır derim 😕",
+          "puan": 3
+        },
+        {
+          "metin": "Düşünür, sonra karar veririm 🤔",
+          "puan": 2
+        },
+        {
+          "metin": "Hemen özür dilerim 🙇",
+          "puan": 4
+        }
+      ]
+    },
+    {
+      "soru": "\"Son fırsat, sadece bugün!\" yazısını görünce...",
+      "secenekler": [
+        {
+          "metin": "Hemen alırım 💳",
+          "puan": 4
+        },
+        {
+          "metin": "İhtiyacım var mı, bakarım 🔍",
+          "puan": 2
+        },
+        {
+          "metin": "Hiç etkilenmem 😐",
+          "puan": 1
+        },
+        {
+          "metin": "İçim içimi yer 😬",
+          "puan": 3
+        }
+      ]
+    },
+    {
+      "soru": "Biri sana suçluluk hissettirdiğinde...",
+      "secenekler": [
+        {
+          "metin": "Ne hissettiğimi sorarım 🪞",
+          "puan": 2
+        },
+        {
+          "metin": "Sınırımı net koyarım 🛡️",
+          "puan": 1
+        },
+        {
+          "metin": "Günlerce kendimi suçlarım 🌧️",
+          "puan": 4
+        },
+        {
+          "metin": "Üzülmesin diye ne isterse yaparım 😔",
+          "puan": 3
+        }
+      ]
+    }
+  ],
+  "sonuclar": [
+    {
+      "emoji": "🛡️",
+      "ad": "Neredeyse İmkânsız",
+      "aralik": [
+        4,
+        6
+      ],
+      "aciklama": "Niyetleri sezer, sınırlarını net koyarsın. Seni kandırmaya çalışan genelde kendi oyununa düşer."
+    },
+    {
+      "emoji": "🧠",
+      "ad": "Fark Eden",
+      "aralik": [
+        7,
+        9
+      ],
+      "aciklama": "Ara sıra etkilensen de oyunu çabuk fark edersin. Duygularınla aklın arasında sağlam bir denge var."
+    },
+    {
+      "emoji": "🫠",
+      "ad": "Kalbi Yumuşak",
+      "aralik": [
+        10,
+        12
+      ],
+      "aciklama": "Kimseyi kırmamak için kendinden ödün verirsin. İyi niyetin güzel; ama \"hayır\" demek de bir sevgi biçimi."
+    },
+    {
+      "emoji": "🎯",
+      "ad": "Kolay Hedef",
+      "aralik": [
+        13,
+        16
+      ],
+      "aciklama": "Suçluluk ve iltifat senin zayıf noktan. Bunu bilmek ilk adım; sınır koydukça kimse seni yönetemez."
+    }
+  ],
+  "kapanis": "🛡️ İmkânsız çıkanlar, gerçekten öyle misiniz? 😏",
+  "uyari": "Eğlence amaçlıdır, psikolojik bir değerlendirme değildir.",
+  "sabitYorum": "Seni en son kim, nasıl ikna etti? 👀 Sonucunu yaz, bakalım kaç kişi 🎯 Kolay Hedef çıktı!",
+  "sonrakiTestler": [
+    "💞 Bağlanma stilin ne?",
+    "🧩 Hangi savunma mekanizmasını kullanıyorsun?",
+    "🔥 Öfkeni nasıl yönetiyorsun?",
+    "🪞 Özgüvenin gerçek mi?"
+  ]
+}

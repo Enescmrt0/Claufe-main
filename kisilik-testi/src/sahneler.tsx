@@ -299,7 +299,7 @@ export const SonucSahnesi: React.FC<{ sonuc: Sonuc; i: number; aralik: [number, 
         {sonuc.emoji}
       </div>
       <Kart style={{ width: "100%", maxWidth: yatay ? 1150 : undefined, transform: `translateY(${(1 - c) * 400}px)`, borderBottom: `14px solid ${renk}` }}>
-        <div style={{ fontSize: sonuc.ad.length > 14 ? 76 : 96, fontWeight: 800, color: renk, textAlign: "center", lineHeight: 1 }}>{sonuc.ad}</div>
+        <div style={{ fontSize: sonuc.ad.length > 14 ? 76 : 96, fontWeight: 800, color: koyuRenk(renk), textAlign: "center", lineHeight: 1 }}>{sonuc.ad}</div>
         <div style={{ fontSize: 48, fontWeight: 600, color: "#333", textAlign: "center", lineHeight: 1.18, marginTop: 18 }}>{sonuc.aciklama}</div>
       </Kart>
     </Guvenli>

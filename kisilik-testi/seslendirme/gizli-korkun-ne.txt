@@ -1,0 +1,32 @@
+# Gizli Korkun Ne? 👁️ — seslendirme metni
+# Kayıtları public/ses/gizli-korkun-ne/ klasörüne bu adlarla koy (.mp3, .wav veya .m4a)
+
+soru-1.mp3
+Gizli Korkun Ne? Puanlarını topla! İlk soru: Seni en çok ne rahatsız eder?
+
+soru-2.mp3
+Soru 2. Bir hata yaptığında ilk düşüncen...
+
+soru-3.mp3
+Soru 3. Seni en iyi anlatan cümle?
+
+soru-4.mp3
+Son soru! Rüyanda koşuyorsun, çünkü...
+
+puan-topla.mp3
+Süre bitti! Şimdi puanlarını topla. Toplamın kaç?
+
+sonuc-1.mp3
+4 ile 6 arası puan aldıysan... Yalnız Kalmak!
+
+sonuc-2.mp3
+7 ile 9 arası puan aldıysan... Yetersiz Olmak!
+
+sonuc-3.mp3
+10 ile 12 arası puan aldıysan... Kontrolü Kaybetmek!
+
+sonuc-4.mp3
+13 ile 16 arası puan aldıysan... Gerçek Yüzünün Görülmesi!
+
+kapanis.mp3
+Maskeli çıkanlar, kimse görmüyor... itiraf edin Puanını yorumlara yaz!
