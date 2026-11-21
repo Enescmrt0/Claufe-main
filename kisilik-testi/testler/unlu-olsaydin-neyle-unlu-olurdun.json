@@ -1,0 +1,147 @@
+{
+  "ustYazi": "KİŞİLİK TESTİ",
+  "baslik": "Ünlü Olsaydın Neyle Ünlü Olurdun? 🌟",
+  "kanca": "Herkesin içinde bir yıldız var...",
+  "muzik": "muzik/enerjik.m4a",
+  "muzikSes": 0.13,
+  "sureler": {
+    "soru": 6.5,
+    "sayim": 4,
+    "sonucSorusu": 2.5,
+    "sonuc": 6,
+    "kapanis": 3,
+    "sonraki": 4
+  },
+  "sorular": [
+    {
+      "soru": "Sahneye çıkman gerekse...",
+      "secenekler": [
+        {
+          "metin": "Hazırlanırsam yaparım 📝",
+          "puan": 2
+        },
+        {
+          "metin": "Kaçacak yer ararım 🙈",
+          "puan": 1
+        },
+        {
+          "metin": "Mikrofonu bırakmam 🎤",
+          "puan": 4
+        },
+        {
+          "metin": "Heyecanlanırım ama severim 🎭",
+          "puan": 3
+        }
+      ]
+    },
+    {
+      "soru": "Boş zamanında ne yaparsın?",
+      "secenekler": [
+        {
+          "metin": "Şarkı söyler, dans ederim 💃",
+          "puan": 4
+        },
+        {
+          "metin": "Yeni tarifler denerim 🍳",
+          "puan": 2
+        },
+        {
+          "metin": "Yazar, çizerim ✍️",
+          "puan": 1
+        },
+        {
+          "metin": "Dizi, film izlerim 🍿",
+          "puan": 3
+        }
+      ]
+    },
+    {
+      "soru": "İnsanlar sana en çok ne der?",
+      "secenekler": [
+        {
+          "metin": "Çok derin birisin 🌌",
+          "puan": 1
+        },
+        {
+          "metin": "Tam bir dram yıldızısın 🎭",
+          "puan": 3
+        },
+        {
+          "metin": "Ellerine sağlık 😋",
+          "puan": 2
+        },
+        {
+          "metin": "Enerjin hiç bitmiyor ⚡",
+          "puan": 4
+        }
+      ]
+    },
+    {
+      "soru": "Ünlü olsan en zor ne olurdu?",
+      "secenekler": [
+        {
+          "metin": "Hep kamera önünde olmak 📸",
+          "puan": 3
+        },
+        {
+          "metin": "Hiçbir şey, hazırım 😎",
+          "puan": 4
+        },
+        {
+          "metin": "Herkesin eleştirmesi 🗣️",
+          "puan": 2
+        },
+        {
+          "metin": "Gizliliğimi kaybetmek 🔒",
+          "puan": 1
+        }
+      ]
+    }
+  ],
+  "sonuclar": [
+    {
+      "emoji": "📚",
+      "ad": "Çok Satan Yazar",
+      "aralik": [
+        4,
+        6
+      ],
+      "aciklama": "Kalabalıklardan uzak ama milyonların kalbine dokunan biri olurdun. Kelimelerin senin süper gücün."
+    },
+    {
+      "emoji": "🍳",
+      "ad": "Ünlü Şef",
+      "aralik": [
+        7,
+        9
+      ],
+      "aciklama": "Lezzetin ve sabrınla tanınırdın. Restoranında yer bulmak için aylar önce rezervasyon yapılırdı."
+    },
+    {
+      "emoji": "🎬",
+      "ad": "Dizi Yıldızı",
+      "aralik": [
+        10,
+        12
+      ],
+      "aciklama": "Duygularını öyle iyi yansıtırsın ki herkes seni izlerken ağlar, güler. Bir sahnen gündem olurdu."
+    },
+    {
+      "emoji": "🎤",
+      "ad": "Pop Yıldızı",
+      "aralik": [
+        13,
+        16
+      ],
+      "aciklama": "Sahne, ışıklar ve binlerce kişi... Enerjin seni zirveye taşırdı. Konser biletlerin dakikalar içinde biterdi."
+    }
+  ],
+  "kapanis": "🎤 Pop yıldızı çıkanlar, ilk şarkınızın adı ne olurdu?",
+  "sabitYorum": "Ünlü olsaydın ilk ne yapardın? 👀 Sonucunu ve cevabını yorumlara yaz!",
+  "sonrakiTestler": [
+    "💸 Zengin olacak mısın?",
+    "💘 Kaç kişi sana gizlice aşık?",
+    "🧠 Ne kadar zekisin?",
+    "🫀 Kalbin mi, aklın mı?"
+  ]
+}

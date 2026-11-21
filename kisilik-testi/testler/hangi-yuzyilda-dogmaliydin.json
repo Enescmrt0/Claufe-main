@@ -1,0 +1,147 @@
+{
+  "ustYazi": "KİŞİLİK TESTİ",
+  "baslik": "Hangi Yüzyılda Doğmalıydın? ⏳",
+  "kanca": "Belki de yanlış zamanda doğdun...",
+  "muzik": "muzik/enerjik.m4a",
+  "muzikSes": 0.13,
+  "sureler": {
+    "soru": 6.5,
+    "sayim": 4,
+    "sonucSorusu": 2.5,
+    "sonuc": 6,
+    "kapanis": 3,
+    "sonraki": 4
+  },
+  "sorular": [
+    {
+      "soru": "Birine haber vereceksin...",
+      "secenekler": [
+        {
+          "metin": "Uzun bir sesli mesaj 🎤",
+          "puan": 3
+        },
+        {
+          "metin": "Hologramla görüşürüm 🛸",
+          "puan": 4
+        },
+        {
+          "metin": "Telefonla ararım ☎️",
+          "puan": 2
+        },
+        {
+          "metin": "Mektup yazarım ✉️",
+          "puan": 1
+        }
+      ]
+    },
+    {
+      "soru": "Hayalindeki gece hangisi?",
+      "secenekler": [
+        {
+          "metin": "Caz kulübünde dans 🎷",
+          "puan": 2
+        },
+        {
+          "metin": "Mum ışığında kitap 🕯️",
+          "puan": 1
+        },
+        {
+          "metin": "Sanal gerçeklik partisi 🥽",
+          "puan": 4
+        },
+        {
+          "metin": "Arkadaşlarla kaset dinlemek 📼",
+          "puan": 3
+        }
+      ]
+    },
+    {
+      "soru": "Tarzın nasıl?",
+      "secenekler": [
+        {
+          "metin": "Zarif ve klasik 🎩",
+          "puan": 1
+        },
+        {
+          "metin": "Rahat ve renkli 👟",
+          "puan": 3
+        },
+        {
+          "metin": "Şık ve gösterişli 💃",
+          "puan": 2
+        },
+        {
+          "metin": "Fütüristik 🤖",
+          "puan": 4
+        }
+      ]
+    },
+    {
+      "soru": "Hangisi olmadan yapamazsın?",
+      "secenekler": [
+        {
+          "metin": "İnternet 📶",
+          "puan": 4
+        },
+        {
+          "metin": "Müzik ve dans 🎶",
+          "puan": 2
+        },
+        {
+          "metin": "Huzur ve sessizlik 🌿",
+          "puan": 1
+        },
+        {
+          "metin": "Arkadaşlarım 🫶",
+          "puan": 3
+        }
+      ]
+    }
+  ],
+  "sonuclar": [
+    {
+      "emoji": "🏛️",
+      "ad": "1800'ler",
+      "aralik": [
+        4,
+        6
+      ],
+      "aciklama": "Mektupların, uzun yürüyüşlerin ve sakin akşamların insanısın. Bu hızlı dünya sana biraz fazla gürültülü."
+    },
+    {
+      "emoji": "🎷",
+      "ad": "1920'ler",
+      "aralik": [
+        7,
+        9
+      ],
+      "aciklama": "Şık kıyafetler, caz ve sabaha kadar süren partiler... Doğuştan yıldızsın, sadece biraz geç doğmuşsun."
+    },
+    {
+      "emoji": "📼",
+      "ad": "1990'lar",
+      "aralik": [
+        10,
+        12
+      ],
+      "aciklama": "Kasetler, sokak oyunları, sabit telefonlar... Nostalji senin ruhunda; en güzel anıların hep arkadaşlarla."
+    },
+    {
+      "emoji": "🚀",
+      "ad": "2100'ler",
+      "aralik": [
+        13,
+        16
+      ],
+      "aciklama": "Teknoloji, hız ve yenilik... Zihnin zaten gelecekte yaşıyor. Belki de zamanının çok ötesindesin."
+    }
+  ],
+  "kapanis": "📼 90'lar çıkanlar, nostalji yapalım mı?",
+  "sabitYorum": "Bence en çok 📼 1990'lar çıkacak 👀 Sen hangi yüzyılda doğmalıydın? O dönemde gerçekten yaşamak ister miydin?",
+  "sonrakiTestler": [
+    "💸 Zengin olacak mısın?",
+    "💘 Kaç kişi sana gizlice aşık?",
+    "🧠 Ne kadar zekisin?",
+    "🫀 Kalbin mi, aklın mı?"
+  ]
+}

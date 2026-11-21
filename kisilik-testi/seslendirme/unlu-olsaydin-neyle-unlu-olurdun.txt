@@ -1,0 +1,32 @@
+# Ünlü Olsaydın Neyle Ünlü Olurdun? 🌟 — seslendirme metni
+# Kayıtları public/ses/unlu-olsaydin-neyle-unlu-olurdun/ klasörüne bu adlarla koy (.mp3, .wav veya .m4a)
+
+soru-1.mp3
+Ünlü Olsaydın Neyle Ünlü Olurdun? Puanlarını topla! İlk soru: Sahneye çıkman gerekse...
+
+soru-2.mp3
+Soru 2. Boş zamanında ne yaparsın?
+
+soru-3.mp3
+Soru 3. İnsanlar sana en çok ne der?
+
+soru-4.mp3
+Son soru! Ünlü olsan en zor ne olurdu?
+
+puan-topla.mp3
+Süre bitti! Şimdi puanlarını topla. Toplamın kaç?
+
+sonuc-1.mp3
+4 ile 6 arası puan aldıysan... Çok Satan Yazar!
+
+sonuc-2.mp3
+7 ile 9 arası puan aldıysan... Ünlü Şef!
+
+sonuc-3.mp3
+10 ile 12 arası puan aldıysan... Dizi Yıldızı!
+
+sonuc-4.mp3
+13 ile 16 arası puan aldıysan... Pop Yıldızı!
+
+kapanis.mp3
+Pop yıldızı çıkanlar, ilk şarkınızın adı ne olurdu? Puanını yorumlara yaz!

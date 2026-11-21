@@ -1,0 +1,147 @@
+{
+  "ustYazi": "KİŞİLİK TESTİ",
+  "baslik": "Ne Kadar Kıskançsın? 😤",
+  "kanca": "Dürüst ol, kimse görmüyor 👀",
+  "muzik": "muzik/enerjik.m4a",
+  "muzikSes": 0.13,
+  "sureler": {
+    "soru": 6.5,
+    "sayim": 4,
+    "sonucSorusu": 2.5,
+    "sonuc": 6,
+    "kapanis": 3,
+    "sonraki": 4
+  },
+  "sorular": [
+    {
+      "soru": "Sevgilin başkasının fotoğrafını beğendi...",
+      "secenekler": [
+        {
+          "metin": "Fark etmem bile 😌",
+          "puan": 1
+        },
+        {
+          "metin": "\"Kim bu?\" diye bakarım 🔍",
+          "puan": 3
+        },
+        {
+          "metin": "Görürüm ama takmam 🙂",
+          "puan": 2
+        },
+        {
+          "metin": "Hemen ekran görüntüsü 📸",
+          "puan": 4
+        }
+      ]
+    },
+    {
+      "soru": "Arkadaşın yeni biriyle çok takılıyor...",
+      "secenekler": [
+        {
+          "metin": "Sessizce mesafe koyarım 🧊",
+          "puan": 3
+        },
+        {
+          "metin": "Direkt sorarım: O kim? 😤",
+          "puan": 4
+        },
+        {
+          "metin": "Biraz garip hissederim 😶",
+          "puan": 2
+        },
+        {
+          "metin": "Ne güzel, sevindim 🤗",
+          "puan": 1
+        }
+      ]
+    },
+    {
+      "soru": "\"Görüldü\" attı ama hâlâ çevrimiçi...",
+      "secenekler": [
+        {
+          "metin": "Arka arkaya ??? atarım ❓",
+          "puan": 4
+        },
+        {
+          "metin": "Biraz bekler, unuturum ⏳",
+          "puan": 2
+        },
+        {
+          "metin": "Meşguldür 📵",
+          "puan": 1
+        },
+        {
+          "metin": "Kafamda senaryo kurarım 🎬",
+          "puan": 3
+        }
+      ]
+    },
+    {
+      "soru": "Eski sevgilisinden bahsediyor...",
+      "secenekler": [
+        {
+          "metin": "Konuyu değiştiririm 🔄",
+          "puan": 2
+        },
+        {
+          "metin": "Dinlerim, normal 🙂",
+          "puan": 1
+        },
+        {
+          "metin": "O akşam suratım düşer 😒",
+          "puan": 4
+        },
+        {
+          "metin": "Sessizce bilgi toplarım 🕵️",
+          "puan": 3
+        }
+      ]
+    }
+  ],
+  "sonuclar": [
+    {
+      "emoji": "😌",
+      "ad": "Buz Gibi Sakin",
+      "aralik": [
+        4,
+        6
+      ],
+      "aciklama": "Kıskançlık nedir bilmezsin, güvenin tam. Ama bazen karşındakine \"umursamıyor mu?\" dedirtebilirsin."
+    },
+    {
+      "emoji": "🙂",
+      "ad": "Tatlı Kıskanç",
+      "aralik": [
+        7,
+        9
+      ],
+      "aciklama": "Ara sıra kıskanırsın ama dozunu bilirsin. Bu da sevdiğini gösteren tatlı bir detay."
+    },
+    {
+      "emoji": "🕵️",
+      "ad": "Gizli Dedektif",
+      "aralik": [
+        10,
+        12
+      ],
+      "aciklama": "Belli etmezsin ama her şeyi fark edersin. Kafandaki senaryolar bazen gerçeklerden hızlı koşar."
+    },
+    {
+      "emoji": "🔥",
+      "ad": "Kıskançlık Krizi",
+      "aralik": [
+        13,
+        16
+      ],
+      "aciklama": "Sevdiğini kimseyle paylaşmak istemezsin. Tutkun çok güçlü, ama biraz güven seni çok rahatlatır."
+    }
+  ],
+  "kapanis": "Bu videoyu sevgiline gönder, o ne çıkacak? 👀",
+  "sabitYorum": "🔥 Kıskançlık Krizi çıkanlar kendini göstersin 😂 Sen ne çıktın? Bu videoyu sevgiline at, bakalım o ne çıkacak 👀",
+  "sonrakiTestler": [
+    "💸 Zengin olacak mısın?",
+    "💘 Kaç kişi sana gizlice aşık?",
+    "🧠 Ne kadar zekisin?",
+    "🫀 Kalbin mi, aklın mı?"
+  ]
+}

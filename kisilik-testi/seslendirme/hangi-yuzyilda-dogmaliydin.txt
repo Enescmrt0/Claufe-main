@@ -1,0 +1,32 @@
+# Hangi Yüzyılda Doğmalıydın? ⏳ — seslendirme metni
+# Kayıtları public/ses/hangi-yuzyilda-dogmaliydin/ klasörüne bu adlarla koy (.mp3, .wav veya .m4a)
+
+soru-1.mp3
+Hangi Yüzyılda Doğmalıydın? Puanlarını topla! İlk soru: Birine haber vereceksin...
+
+soru-2.mp3
+Soru 2. Hayalindeki gece hangisi?
+
+soru-3.mp3
+Soru 3. Tarzın nasıl?
+
+soru-4.mp3
+Son soru! Hangisi olmadan yapamazsın?
+
+puan-topla.mp3
+Süre bitti! Şimdi puanlarını topla. Toplamın kaç?
+
+sonuc-1.mp3
+4 ile 6 arası puan aldıysan... 1800'ler!
+
+sonuc-2.mp3
+7 ile 9 arası puan aldıysan... 1920'ler!
+
+sonuc-3.mp3
+10 ile 12 arası puan aldıysan... 1990'lar!
+
+sonuc-4.mp3
+13 ile 16 arası puan aldıysan... 2100'ler!
+
+kapanis.mp3
+90'lar çıkanlar, nostalji yapalım mı? Puanını yorumlara yaz!
