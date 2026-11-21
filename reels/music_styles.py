@@ -159,3 +159,57 @@ def ragtime(t0, t1, g=1.0, bpm=96, tune=True):
                 tt = t + o * e / 2
                 if tt < t1: place(music, _piano(m + (0 if bar % 4 < 2 else -2), .3, .55), tt, g)
         t += 8 * e; bar += 1
+
+# 1940s American hoedown: banjo forward-roll, boom-chick bass, sawing fiddle tune (a galloping feel)
+def _banjo(m, dur=.3, g=1.0):
+    n = int(dur * SR); t = T(n); f = midi(m)
+    x = sum(a * np.sin(2 * np.pi * f * k * t) * np.exp(-t * (9 + 4 * k)) for k, a in ((1, 1), (2, .6), (3, .45), (4, .3), (5, .2)))
+    x += hp(rng.standard_normal(n), 3000) * np.exp(-t * 250) * .3
+    return x * np.minimum(1, t / .001) * .26 * g
+def _fiddle(m, dur=.3, g=1.0):
+    n = int(dur * SR); t = T(n); f = midi(m) * (1 + .007 * np.sin(2 * np.pi * 6 * t) * np.minimum(1, t / .15))
+    ph = np.cumsum(f) / SR; x = 2 * (ph % 1) - 1
+    x = bp(x, 400, 4000) + bp(rng.standard_normal(n), 2000, 6000) * .05
+    return x * np.minimum(1, t / .03) * np.minimum(1, (dur - t) / .04) * .2 * g
+def hoedown(t0, t1, g=1.0, bpm=118, tune=True):
+    e = 60 / bpm / 2; t = t0; bar = 0
+    prog = [(43, (67, 71, 74)), (43, (67, 71, 74)), (48, (67, 72, 76)), (50, (66, 69, 74))]   # G G C D
+    roll = [0, 1, 2, 0, 1, 2, 0, 2]
+    tune_ = [79, 81, 83, 81, 79, 76, 74, 76, 79, 79, 76, 74, 72, 74, 76, 78]
+    while t < t1 - .05:
+        root, ch = prog[bar % 4]
+        for k in range(8):
+            tk = t + k * e
+            if tk >= t1: break
+            place(music, _banjo(ch[roll[k]] + (12 if k % 4 == 3 else 0), .3, .8), tk, g)
+            if k % 4 == 0: place(music, pizz(root - (0 if k == 0 else -7) - 12, .3, .9), tk, g)
+            if k % 2 == 1: place(music, _snare(.12), tk, g)
+            if tune and k % 2 == 0: place(music, _fiddle(tune_[(bar * 4 + k // 2) % 16], e * 2, .9), tk, g)
+        t += 8 * e; bar += 1
+
+# quirky ukulele: bright strummed chords (down-up pattern) with a whistled tune
+def _uke(ms, g=1.0, up=False):
+    out = np.zeros(int(.5 * SR))
+    for k, m in enumerate(ms[::-1] if up else ms):
+        n = int(.45 * SR); t = T(n); f = midi(m)
+        x = (np.sin(2 * np.pi * f * t) + .5 * np.sin(4 * np.pi * f * t) * np.exp(-t * 14) + .25 * np.sin(6 * np.pi * f * t) * np.exp(-t * 20)) * np.exp(-t * 7) * np.minimum(1, t / .002)
+        i = int(k * .012 * SR); out[i:i + n] += x[:len(out) - i]
+    return out * .12 * g
+def _whistle(m, dur=.3, g=1.0):
+    n = int(dur * SR); t = T(n); f = midi(m) * (1 + .012 * np.sin(2 * np.pi * 5.5 * t) * np.minimum(1, t / .1))
+    x = np.sin(2 * np.pi * np.cumsum(f) / SR) + bp(rng.standard_normal(n), 1500, 5000) * .06
+    return x * np.minimum(1, t / .03) * np.minimum(1, (dur - t) / .05) * .18 * g
+def ukulele(t0, t1, g=1.0, bpm=112, tune=True):
+    e = 60 / bpm / 2; t = t0; bar = 0
+    prog = [(48, (60, 64, 67, 72)), (45, (57, 64, 69, 72)), (41, (60, 65, 69, 72)), (43, (59, 62, 67, 71))]   # C Am F G
+    pat = [(0, 0), (2, 0), (3, 1), (5, 1), (6, 0), (7, 1)]
+    tune_ = [(0, 76, 2), (2, 79, 1), (3, 81, 1), (4, 79, 2), (6, 76, 2), (8, 74, 2), (10, 72, 1), (11, 74, 1), (12, 76, 4)]
+    while t < t1 - .05:
+        root, ch = prog[bar % 4]
+        place(music, pizz(root - 12, .4, .7), t, g); place(music, pizz(root - 5, .3, .5), t + 4 * e, g)
+        for (k, up) in pat:
+            if t + k * e < t1: place(music, _uke(ch, .9, up), t + k * e, g)
+        if tune and bar % 2 == 0:
+            for (k, m, d) in tune_:
+                if t + k * e < t1: place(music, _whistle(m, d * e * .95, .9), t + k * e, g)
+        t += 8 * e; bar += 1
