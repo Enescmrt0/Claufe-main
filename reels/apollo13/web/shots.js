@@ -363,7 +363,7 @@ SHOTS.push(mk(47, 48, (ctx, lt, t) => {
   const cam = camA(t, lt, { dz: .02 }); const nl = t > S(48);
   if (!nl) { space(ctx, t, cam); earth(ctx, 300, 760, 260, t); stack(ctx, 1100, 460, 780, t, { panel: 1, cmLit: false }); for (let i = 0; i < 6; i++) { path(ctx, [[1080 + i * 22, 420 + 120], [1090 + i * 22, 420 + 170 + (i % 2) * 30], [1100 + i * 22, 420 + 120]]); ctx.fillStyle = '#cfe9ff'; ctx.fill(); } label(ctx, 'FROZEN & DEAD', 960, 140, 100, t, wt(47, 'frozen') - .1, '#5fb6f0'); }
   else { bgFlat(ctx, '#3a3f4a', '#1a1d24'); applyCam(ctx, cam, 1); clipboard(ctx, 960, 560, 640, ['', '', '', '']); text(ctx, '?', 960, 560, 260, '#c8c8d0', INK, 0); label(ctx, 'NEVER DONE IN FLIGHT', 960, 120, 84, t, wt(48, 'nobody') - .1, '#ffffff', wt(48, 'there') - .1); label(ctx, 'NO CHECKLIST', 960, 120, 100, t, wt(48, 'there') - .1, '#ff6a5a'); }
-  chap(ctx, t, 47); if (!nl)
+  chap(ctx, t, 47);
 }, 'cut'));
 // [49] Ken Mattingly works in a simulator for hours to wake the ship up
 SHOTS.push(mk(49, 49, (ctx, lt, t) => {
