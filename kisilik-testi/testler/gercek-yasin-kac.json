@@ -1,0 +1,182 @@
+{
+  "ustYazi": "ZİHİNSEL YAŞ TESTİ",
+  "baslik": "Gerçek Yaşın Kaç?",
+  "kanca": "Kimliğin bir şey söylüyor, zihnin başka...",
+  "muzik": "muzik/enerjik.m4a",
+  "muzikSes": 0.13,
+  "sureler": {
+    "soru": 6.5,
+    "sayim": 4,
+    "sonucSorusu": 2.5,
+    "sonuc": 6.5,
+    "kapanis": 3.5,
+    "sonraki": 4
+  },
+  "sorular": [
+    {
+      "soru": "Biri seni eleştirdiğinde ilk tepkin?",
+      "secenekler": [
+        {
+          "metin": "Haklı mı diye düşünürüm 🤔",
+          "puan": 3
+        },
+        {
+          "metin": "Hemen savunmaya geçerim 😤",
+          "puan": 1
+        },
+        {
+          "metin": "Teşekkür eder, not alırım 📝",
+          "puan": 4
+        },
+        {
+          "metin": "Bozulurum ama belli etmem 🙂",
+          "puan": 2
+        }
+      ]
+    },
+    {
+      "soru": "Bir planın son anda iptal oldu...",
+      "secenekler": [
+        {
+          "metin": "Oh be, evde kalırım 🛋️",
+          "puan": 4
+        },
+        {
+          "metin": "Hemen yeni plan kurarım 📲",
+          "puan": 2
+        },
+        {
+          "metin": "Moralim bozulur, küserim 😒",
+          "puan": 1
+        },
+        {
+          "metin": "Olur böyle şeyler 🤷",
+          "puan": 3
+        }
+      ]
+    },
+    {
+      "soru": "Bir tartışmada genelde...",
+      "secenekler": [
+        {
+          "metin": "Son sözü ben söylerim 🗣️",
+          "puan": 1
+        },
+        {
+          "metin": "Haklı olsam da susarım 🤐",
+          "puan": 3
+        },
+        {
+          "metin": "Sakinleşince konuşuruz derim 🕊️",
+          "puan": 4
+        },
+        {
+          "metin": "Sonra kafamda yeniden kurarım 🔁",
+          "puan": 2
+        }
+      ]
+    },
+    {
+      "soru": "Seni en çok ne mutlu eder?",
+      "secenekler": [
+        {
+          "metin": "Sürpriz bir macera 🎢",
+          "puan": 2
+        },
+        {
+          "metin": "Sessiz bir sabah kahvesi ☕",
+          "puan": 4
+        },
+        {
+          "metin": "Yeni bir şey satın almak 🛍️",
+          "puan": 1
+        },
+        {
+          "metin": "Bir hedefimi tamamlamak 🎯",
+          "puan": 3
+        }
+      ]
+    },
+    {
+      "soru": "Hata yaptığını fark ettin...",
+      "secenekler": [
+        {
+          "metin": "Bahane bulurum 🙈",
+          "puan": 1
+        },
+        {
+          "metin": "Günlerce kafama takarım 🌀",
+          "puan": 2
+        },
+        {
+          "metin": "Özür diler, düzeltirim 🛠️",
+          "puan": 3
+        },
+        {
+          "metin": "Ders çıkarır, gülüp geçerim 😌",
+          "puan": 4
+        }
+      ]
+    }
+  ],
+  "sonuclar": [
+    {
+      "emoji": "🎒",
+      "ad": "15 Yaşında",
+      "aralik": [
+        5,
+        7
+      ],
+      "aciklama": "Her şeyi tam gaz yaşıyorsun. Samimisin ama kararlarını çoğu zaman duyguların veriyor."
+    },
+    {
+      "emoji": "🎧",
+      "ad": "22 Yaşında",
+      "aralik": [
+        8,
+        10
+      ],
+      "aciklama": "Enerjin yüksek, kafan dolu. Olanları zihninde tekrar oynatsan da her seferinde büyüyorsun."
+    },
+    {
+      "emoji": "☕",
+      "ad": "31 Yaşında",
+      "aralik": [
+        11,
+        14
+      ],
+      "aciklama": "Neyin savaşmaya değdiğini biliyorsun. Eğlenmeyi de, geri çekilmeyi de iyi biliyorsun."
+    },
+    {
+      "emoji": "📚",
+      "ad": "45 Yaşında",
+      "aralik": [
+        15,
+        17
+      ],
+      "aciklama": "Herkes paniklerken sen çözüm düşünürsün. Dram yorar, huzur senin için her şey."
+    },
+    {
+      "emoji": "🦉",
+      "ad": "70 Yaşında",
+      "aralik": [
+        18,
+        20
+      ],
+      "aciklama": "Kolay kırılmaz, kolay kızmazsın. İnsanlar dertleşmek için hep seni arıyor."
+    }
+  ],
+  "kapanis": "Kimlikteki yaşın mı büyük, *gerçek yaşın* mı? 👀",
+  "sabitYorum": "Gerçek yaşın kaç çıktı? Kimlikteki yaşınla farkını yaz, en büyük farkı bulalım 👇",
+  "sonrakiTestler": [
+    "🫀 Kalbin mi, aklın mı?",
+    "🧠 Duygusal zekan kaç?",
+    "💞 Bağlanma stilin ne?",
+    "🌙 İç sesin ne söylüyor?"
+  ],
+  "tema": {
+    "renk1": "#0EA5E9",
+    "renk2": "#6D28D9"
+  },
+  "uyari": "Eğlence amaçlıdır, psikolojik bir değerlendirme değildir."
+}
