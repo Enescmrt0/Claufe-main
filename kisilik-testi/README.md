@@ -141,3 +141,18 @@ Kendi müziğini kullanmak istersen `public/muzik/` klasörüne koyup adını ya
 Sorular bitince **cevap anahtarı** gelir: her sorunun A/B/C/D puanları, sayfa başına 6 soru (`"sureler": { "anahtar": 14 }` ile süre ayarlanır).
 Sonra "Puanlarını topla", puan tablosu ve sonuçlar gelir. Ciddi testler için uygundur, çünkü izleyici puanı görüp en yüksek şıkkı seçemez.
 Örnek: `testler/duygusal-zekan-kac.json`
+
+## Galeri formatı (fotoğraflı şıklar) 🖼️
+Uzun YouTube videoları için: her soruda **2×3 = 6 fotoğraflı şık**, solda dikey süre çubuğu, süre bitince her fotoğrafın üstünde **"PUAN 45"**.
+Sorular arasında etkileşim molaları var; en sonda tüm sonuçlar puan aralıklarıyla tek ekranda gösterilir.
+Örnek: `testler/hangi-manifest-kizisin.json`
+
+JSON'da:
+- `"stil": "galeri"`, `"format": "yatay"`, `"sonucGosterimi": "tablo"`
+- Şıklar: `{ "metin": "Matcha latte", "emoji": "🍵", "puan": 55 }`. Puanlar istediğin sayı olabilir (15, 25, 35, 45, 55, 60 gibi).
+- Soruda `*yıldız*` arasına aldığın kelimeler sarı vurgulanır: `"Güne başlarken ilk *içeceğin* hangisi?"`
+- Molalar: `"aralar": [{ "sonra": 5, "tip": "yorum", "metin": "En sevdiğin *üye* kim?" }, { "sonra": 10, "tip": "tercih", "metin": "...", "secenekler": [{ "metin": "A" }, { "metin": "B" }] }]`
+- Sonuç aralıkları için `"aralik": [225, 330]` yaz. Yazmazsan olası puan aralığı sonuçlara eşit bölünür.
+
+**Görseller:** `npm run gorsel-listesi -- <test>` komutu `public/gorseller/<test>/LISTE.md` dosyasını hazırlar. Orada hangi görselin hangi adla (`s01-1.jpg` … `s15-6.jpg`, `sonuc-1.jpg` …) kaydedileceği yazar.
+Görselleri o klasöre koyman yeterli; video onları kendiliğinden bulur. Eksik görselin yerinde emoji ve açıklama görünür.

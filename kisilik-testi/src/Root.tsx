@@ -41,6 +41,42 @@ const klipleriBul = async (id: string, v: TestVerisi) => {
   return klipler;
 };
 
+/** public/gorseller/<test>/ klasöründeki görselleri bulur: sNN-K, sonuc-N, ara-N-K (.jpg/.jpeg/.png/.webp) */
+const gorselleriBul = async (id: string, v: TestVerisi) => {
+  const bulunan: Record<string, string> = {};
+  if (v.stil !== "galeri") return bulunan;
+  const adlar: string[] = [];
+  v.sorular.forEach((q, i) => q.secenekler.forEach((_, k) => adlar.push(`s${String(i + 1).padStart(2, "0")}-${k + 1}`)));
+  v.sonuclar.forEach((_, k) => adlar.push(`sonuc-${k + 1}`));
+  (v.aralar ?? []).forEach((a, j) => (a.secenekler ?? []).forEach((_, k) => adlar.push(`ara-${j + 1}-${k + 1}`)));
+  await Promise.all(
+    adlar.map(async (ad) => {
+      for (const uzanti of ["jpg", "jpeg", "png", "webp"]) {
+        const yol = `gorseller/${id}/${ad}.${uzanti}`;
+        try {
+          const r = await fetch(staticFile(yol), { method: "HEAD" });
+          if (r.ok) {
+            bulunan[ad] = yol;
+            return;
+          }
+        } catch {
+          // yok, sıradakini dene
+        }
+      }
+    }),
+  );
+  // JSON'da elle yazılmış yollar önceliklidir
+  v.sorular.forEach((q, i) =>
+    q.secenekler.forEach((sec, k) => {
+      if (typeof sec !== "string" && sec.gorsel) bulunan[`s${String(i + 1).padStart(2, "0")}-${k + 1}`] = sec.gorsel;
+    }),
+  );
+  v.sonuclar.forEach((r, k) => {
+    if (r.gorsel) bulunan[`sonuc-${k + 1}`] = r.gorsel;
+  });
+  return bulunan;
+};
+
 export const RemotionRoot: React.FC = () => (
   <>
     <Still id="kanal-profil" component={KanalProfil} width={800} height={800} />
@@ -79,7 +115,8 @@ export const RemotionRoot: React.FC = () => (
           calculateMetadata={async ({ props }: { props: Record<string, unknown> }) => {
             const v = props as unknown as TestVerisi;
             const _klipler = await klipleriBul(slug(k), v);
-            const yeni = { ...v, _klipler };
+            const _gorseller = await gorselleriBul(slug(k), v);
+            const yeni = { ...v, _klipler, _gorseller };
             return { durationInFrames: toplamKare(yeni), props: yeni as unknown as Record<string, unknown> };
           }}
         />

@@ -1,9 +1,30 @@
 /** Şık: düz yazı (puanı sırasına göre 1,2,3,4 olur) ya da { metin, puan } */
-export type Secenek = string | { metin: string; puan: number };
+export type Secenek =
+  | string
+  | {
+      metin: string;
+      puan: number;
+      /** Galeri stilinde: public/ altındaki görsel yolu (yazılmazsa gorseller/<test>/sNN-K.jpg aranır) */
+      gorsel?: string;
+      /** Görsel yokken yer tutucuda gösterilecek emoji */
+      emoji?: string;
+    };
+
+/** Sorular arasına giren etkileşim molası */
+export type Ara = {
+  /** Kaçıncı sorudan sonra gelsin (1'den başlar) */
+  sonra: number;
+  tip: "yorum" | "tercih";
+  metin: string;
+  /** tercih: iki seçenek (yazı + isteğe bağlı görsel/emoji) */
+  secenekler?: { metin: string; gorsel?: string; emoji?: string }[];
+};
 export type Soru = { soru: string; secenekler: Secenek[] };
 /** aralik: [en az, en çok] toplam puan. Yazılmazsa puan aralığı sonuçlara eşit bölünür. */
 export type Sonuc = {
   emoji: string;
+  /** Galeri stilinde sonuç tablosundaki görsel (yazılmazsa gorseller/<test>/sonuc-N.jpg aranır) */
+  gorsel?: string;
   ad: string;
   aciklama: string;
   aralik?: [number, number];
@@ -33,6 +54,14 @@ export type TestVerisi = {
   muzikSes?: number;
   /** true ise public/ses/<test-adı>/ klasöründeki ses kayıtları videoya eklenir */
   seslendirme?: boolean;
+  /** "klasik" (varsayılan, A/B/C/D yazılı şıklar) · "galeri" (2×3 fotoğraflı şıklar) */
+  stil?: "klasik" | "galeri";
+  /** Sorular arasına girecek etkileşim molaları */
+  aralar?: Ara[];
+  /** "tek-tek" (varsayılan): her sonuç ayrı ekranda · "tablo": tüm sonuçlar tek ekranda */
+  sonucGosterimi?: "tek-tek" | "tablo";
+  /** (otomatik) bulunan görseller: "s01-1" → yol, "sonuc-1" → yol */
+  _gorseller?: Record<string, string>;
   /** "dikey" (varsayılan, Shorts 1080x1920) · "yatay" (uzun video 1920x1080) */
   format?: "dikey" | "yatay";
   /** Kural ekranındaki kart yazısı */
@@ -66,6 +95,9 @@ export type Sureler = {
   sonraki: number; // "Sıradaki test ne olsun?" ekranı
   okuma: number; // detaylı sonuçlarda okuma hızı (karakter/sn)
   anahtar: number; // cevap anahtarının her sayfası (6 soru) kaç sn
+  galeriPuan: number; // galeri stilinde puanların görsellerin üstünde kalma süresi
+  ara: number; // etkileşim molası
+  sonucTablosu: number; // sonucGosterimi "tablo" iken final ekranı
 };
 export const FPS = 30;
 export const VARSAYILAN_SURELER: Sureler = {
@@ -81,6 +113,9 @@ export const VARSAYILAN_SURELER: Sureler = {
   sonraki: 5,
   okuma: 17,
   anahtar: 14,
+  galeriPuan: 3.5,
+  ara: 5,
+  sonucTablosu: 12,
 };
 
 /** Cevap anahtarı: her sayfada en fazla bu kadar soru */
@@ -129,14 +164,16 @@ export const sahneKareleri = (v: TestVerisi) => {
     sorular: v.sorular.map((_, i) => {
       // ilk soru videoyu açıyorsa başlığı okumak için +1 sn
       const ek = soruAcilisi && i === 0 ? 1 : 0;
+      if (galeriMi(v)) return k(1.5 + ek + s.sayim + s.galeriPuan);
       const acilis = Math.max(s.soru - s.sayim - s.puan + ek, klip(`soru-${i + 1}`) ? klip(`soru-${i + 1}`) + 0.4 : 0);
       // puanlar sonda verilecekse soru sonunda puan gösterimi yok, kısa bir geçiş yeter
       return k(acilis + s.sayim + (v.puanZamani === "sonda" ? 0.7 : s.puan));
     }),
     anahtar: v.puanZamani === "sonda" ? Array.from({ length: Math.ceil(v.sorular.length / ANAHTAR_SAYFA) }, () => k(s.anahtar)) : [],
     puanTopla: uzat(s.sonucSorusu, "puan-topla"),
-    tablo: v.puanTablosu ? k(s.tablo) : 0,
-    sonuclar: v.sonuclar.map((r, i) => uzat(r.detay ? detayliSonucSuresi(r, s.sonuc, s.okuma) : s.sonuc, `sonuc-${i + 1}`)),
+    aralar: (v.aralar ?? []).map(() => k(s.ara)),
+    tablo: v.sonucGosterimi === "tablo" ? k(s.sonucTablosu) : v.puanTablosu ? k(s.tablo) : 0,
+    sonuclar: v.sonucGosterimi === "tablo" ? [] : v.sonuclar.map((r, i) => uzat(r.detay ? detayliSonucSuresi(r, s.sonuc, s.okuma) : s.sonuc, `sonuc-${i + 1}`)),
     sonraki: v._kapanisYok ? 0 : k(s.sonraki),
     kapanis: v._kapanisYok ? 0 : uzat(s.kapanis, "kapanis"),
   };
@@ -144,10 +181,12 @@ export const sahneKareleri = (v: TestVerisi) => {
 
 export const toplamKare = (v: TestVerisi) => {
   const r = sahneKareleri(v);
-  return r.giris + r.kural + r.sorular.reduce((a, b) => a + b, 0) + r.anahtar.reduce((a, b) => a + b, 0) + r.puanTopla + r.tablo + r.sonuclar.reduce((a, b) => a + b, 0) + r.sonraki + r.kapanis;
+  return r.giris + r.kural + r.sorular.reduce((a, b) => a + b, 0) + r.aralar.reduce((a, b) => a + b, 0) + r.anahtar.reduce((a, b) => a + b, 0) + r.puanTopla + r.tablo + r.sonuclar.reduce((a, b) => a + b, 0) + r.sonraki + r.kapanis;
 };
 
-export const secenekMetni = (s: Secenek) => (typeof s === "string" ? s : s.metin);
+export const secenekMetni = (s: Secenek) => (typeof s === "string" ? s : s.metin ?? "");
+export const galeriMi = (v: TestVerisi) => v.stil === "galeri";
+export const gorselAnahtari = (soru: number, sik: number) => `s${String(soru + 1).padStart(2, "0")}-${sik + 1}`;
 export const secenekPuani = (s: Secenek, i: number) => (typeof s === "string" ? i + 1 : s.puan);
 
 /** Mümkün olan en düşük ve en yüksek toplam puan */

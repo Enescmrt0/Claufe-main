@@ -10,7 +10,7 @@ export const useYatay = () => {
 };
 
 /** Güvenli alan. Dikey (Shorts): üstte başlık, altta açıklama/müzik, sağda butonlar. Yatay: kenarlardan pay. */
-const Guvenli: React.FC<{ children: React.ReactNode; style?: React.CSSProperties }> = ({ children, style }) => {
+export const Guvenli: React.FC<{ children: React.ReactNode; style?: React.CSSProperties }> = ({ children, style }) => {
   const yatay = useYatay();
   return (
   <AbsoluteFill
@@ -30,8 +30,8 @@ const Guvenli: React.FC<{ children: React.ReactNode; style?: React.CSSProperties
   );
 };
 
-const golge = "0 6px 0 rgba(0,0,0,0.18)";
-const Ses: React.FC<{ ad: string; kare?: number; ses?: number }> = ({ ad, kare = 0, ses = 0.6 }) => (
+export const golge = "0 6px 0 rgba(0,0,0,0.18)";
+export const Ses: React.FC<{ ad: string; kare?: number; ses?: number }> = ({ ad, kare = 0, ses = 0.6 }) => (
   <Sequence from={kare} layout="none">
     <Html5Audio src={staticFile(`sfx/${ad}.wav`)} volume={ses} />
   </Sequence>

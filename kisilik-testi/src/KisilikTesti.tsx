@@ -1,9 +1,10 @@
 import React from "react";
 import { AbsoluteFill, Html5Audio, interpolate, Sequence, Series, staticFile, useVideoConfig } from "remotion";
 import { ArkaPlan } from "./ortak";
+import { AraSahne, GaleriSonuclar, GaleriSoru } from "./galeri";
 import { useFont } from "./font";
 import { CevapAnahtari, SonrakiTest, DetayliSonuc, Giris, Kapanis, Kural, PuanTablosu, SonucSahnesi, SonucSorusu, SoruSahnesi } from "./sahneler";
-import { ANAHTAR_SAYFA, VARSAYILAN_SONRAKI_TESTLER, puanSiniri, sahneKareleri, soruIleAcilir, sonucAraliklari, sureleriAl, TestVerisi } from "./tipler";
+import { galeriMi, gorselAnahtari, ANAHTAR_SAYFA, VARSAYILAN_SONRAKI_TESTLER, puanSiniri, sahneKareleri, soruIleAcilir, sonucAraliklari, sureleriAl, TestVerisi } from "./tipler";
 
 /** Sahnenin başında ilgili ses kaydını çalar (varsa) */
 const Anlatim: React.FC<{ v: TestVerisi; ad: string; gecikme?: number }> = ({ v, ad, gecikme = 4 }) => {
@@ -61,16 +62,40 @@ export const TestAkisi: React.FC<{ v: TestVerisi }> = ({ v }) => {
             <Anlatim v={v} ad="kural" />
           </Series.Sequence>
         ) : null}
-        {v.sorular.map((soru, i) => (
-          <Series.Sequence key={i} durationInFrames={r.sorular[i]} name={`Soru ${i + 1}`}>
-            <SoruSahnesi
-              soru={soru} no={i + 1} toplam={v.sorular.length} sayimSn={s.sayim} puanSn={s.puan} puanHemen={v.puanZamani === "hemen"}
-              acilisBasligi={soruAcilisi && i === 0 ? v.baslik : undefined}
-              puanGizli={v.puanZamani === "sonda"}
-            />
+        {v.sorular.map((soru, i) => [
+          <Series.Sequence key={`s${i}`} durationInFrames={r.sorular[i]} name={`Soru ${i + 1}`}>
+            {galeriMi(v) ? (
+              <GaleriSoru
+                soru={soru}
+                no={i + 1}
+                sayimSn={s.sayim}
+                puanSn={s.galeriPuan}
+                gorseller={soru.secenekler.map((_, k) => v._gorseller?.[gorselAnahtari(i, k)])}
+                kanal="HANGİSİSİN?"
+              />
+            ) : (
+              <SoruSahnesi
+                soru={soru}
+                no={i + 1}
+                toplam={v.sorular.length}
+                sayimSn={s.sayim}
+                puanSn={s.puan}
+                puanHemen={v.puanZamani === "hemen"}
+                acilisBasligi={soruAcilisi && i === 0 ? v.baslik : undefined}
+                puanGizli={v.puanZamani === "sonda"}
+              />
+            )}
             <Anlatim v={v} ad={`soru-${i + 1}`} gecikme={2} />
-          </Series.Sequence>
-        ))}
+          </Series.Sequence>,
+          ...(v.aralar ?? [])
+            .map((ara, j) => ({ ara, j }))
+            .filter(({ ara }) => ara.sonra === i + 1)
+            .map(({ ara, j }) => (
+              <Series.Sequence key={`ara${j}`} durationInFrames={r.aralar[j]} name={`Mola: ${ara.metin}`}>
+                <AraSahne ara={ara} gorseller={(ara.secenekler ?? []).map((_, k) => v._gorseller?.[`ara-${j + 1}-${k + 1}`])} />
+              </Series.Sequence>
+            )),
+        ])}
         {r.anahtar.map((kare, p) => (
           <Series.Sequence key={`a${p}`} durationInFrames={kare} name={`Cevap anahtarı ${p + 1}`}>
             <CevapAnahtari
@@ -85,12 +110,21 @@ export const TestAkisi: React.FC<{ v: TestVerisi }> = ({ v }) => {
           <SonucSorusu enAz={enAz} enCok={enCok} />
           <Anlatim v={v} ad="puan-topla" />
         </Series.Sequence>
-        {v.puanTablosu ? (
-          <Series.Sequence durationInFrames={r.tablo} name="Puan tablosu">
-            <PuanTablosu sonuclar={v.sonuclar} araliklar={araliklar} />
+        {r.tablo ? (
+          <Series.Sequence durationInFrames={r.tablo} name={v.sonucGosterimi === "tablo" ? "Sonuçlar" : "Puan tablosu"}>
+            {galeriMi(v) && v.sonucGosterimi === "tablo" ? (
+              <GaleriSonuclar
+                sonuclar={v.sonuclar}
+                araliklar={araliklar}
+                gorseller={v.sonuclar.map((_, k) => v._gorseller?.[`sonuc-${k + 1}`])}
+                altYazi={v.kapanis ?? "Ne çıktın? *Yorumlara yaz!*"}
+              />
+            ) : (
+              <PuanTablosu sonuclar={v.sonuclar} araliklar={araliklar} />
+            )}
           </Series.Sequence>
         ) : null}
-        {v.sonuclar.map((sonuc, i) => (
+        {r.sonuclar.length === 0 ? null : v.sonuclar.map((sonuc, i) => (
           <Series.Sequence key={i} durationInFrames={r.sonuclar[i]} name={`Sonuç ${i + 1}`}>
             {sonuc.detay ? (
               <DetayliSonuc sonuc={sonuc} i={i} aralik={araliklar[i]} />

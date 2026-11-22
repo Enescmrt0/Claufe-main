@@ -13,6 +13,7 @@
     "metin": "node scripts/seslendirme.mjs",
     "seslendir": "node scripts/seslendirme.mjs --uret",
     "yayin": "node scripts/yayin.mjs",
+    "gorsel-listesi": "node scripts/gorsel-listesi.mjs",
     "seslendir-yerel": "node scripts/seslendirme.mjs --uret --motor=espeak"
   },
   "dependencies": {
