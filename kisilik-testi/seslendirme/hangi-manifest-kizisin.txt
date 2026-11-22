@@ -1,0 +1,53 @@
+# Hangi Manifest Kızısın? 💖 — seslendirme metni
+# Kayıtları public/ses/hangi-manifest-kizisin/ klasörüne bu adlarla koy (.mp3, .wav veya .m4a)
+
+giris.mp3
+Hangi Manifest Kızısın? Acaba seçimlerin seni hangi üyeye götürecek?
+
+kural.mp3
+Her cevabın bir puanı var. Aklına ilk geleni seç ve puanlarını topla!
+
+soru-1.mp3
+Soru 1. Güne başlarken ilk *içeceğin* hangisi?
+
+soru-2.mp3
+Soru 2. Hayalindeki *kahvaltı masası* hangisi?
+
+soru-3.mp3
+Soru 3. Dışarı çıkarken *kombininin yıldızı* ne?
+
+soru-4.mp3
+Soru 4. Olmazsa olmaz *aksesuarın* hangisi?
+
+soru-5.mp3
+Soru 5. Çantandaki *vazgeçilmez makyaj ürünü*?
+
+soru-6.mp3
+Soru 6. Hangi *çanta* tam senin tarzın?
+
+soru-7.mp3
+Son soru! Kendine ayırdığın günde *ilk durağın*?
+
+puan-topla.mp3
+Süre bitti! Şimdi puanlarını topla. Toplamın kaç?
+
+sonuc-1.mp3
+105 ile 155 arası puan aldıysan... Esin!
+
+sonuc-2.mp3
+160 ile 210 arası puan aldıysan... Mina!
+
+sonuc-3.mp3
+215 ile 260 arası puan aldıysan... Zeynep!
+
+sonuc-4.mp3
+265 ile 310 arası puan aldıysan... Lidya!
+
+sonuc-5.mp3
+315 ile 365 arası puan aldıysan... Hilal!
+
+sonuc-6.mp3
+370 ile 420 arası puan aldıysan... Sueda!
+
+kapanis.mp3
+Hangi *Manifest* kızı çıktın? *Yorumlara yaz!* Puanını yorumlara yaz!
