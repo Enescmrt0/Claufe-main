@@ -266,16 +266,311 @@
           "puan": 60
         }
       ]
+    },
+    {
+      "soru": "Selfie'lerde hangi *telefon kılıfı* görünüyor?",
+      "secenekler": [
+        {
+          "metin": "Şeffaf kılıf",
+          "emoji": "📱",
+          "puan": 15
+        },
+        {
+          "metin": "Simli kılıf",
+          "emoji": "✨",
+          "puan": 55
+        },
+        {
+          "metin": "Karakterli kılıf",
+          "emoji": "🐻",
+          "puan": 60
+        },
+        {
+          "metin": "Siyah sade kılıf",
+          "emoji": "🖤",
+          "puan": 25
+        },
+        {
+          "metin": "Çiçekli kılıf",
+          "emoji": "🌼",
+          "puan": 45
+        },
+        {
+          "metin": "Aynalı kılıf",
+          "emoji": "🪞",
+          "puan": 35
+        }
+      ]
+    },
+    {
+      "soru": "Seni en iyi yansıtan *aura rengi*?",
+      "secenekler": [
+        {
+          "metin": "Pembe",
+          "emoji": "🩷",
+          "puan": 60
+        },
+        {
+          "metin": "Altın sarısı",
+          "emoji": "💛",
+          "puan": 45
+        },
+        {
+          "metin": "Mor",
+          "emoji": "💜",
+          "puan": 25
+        },
+        {
+          "metin": "Orman yeşili",
+          "emoji": "💚",
+          "puan": 55
+        },
+        {
+          "metin": "Okyanus mavisi",
+          "emoji": "💙",
+          "puan": 35
+        },
+        {
+          "metin": "Kırmızı",
+          "emoji": "❤️",
+          "puan": 15
+        }
+      ]
+    },
+    {
+      "soru": "Boş zamanında *enerjini* nasıl toplarsın?",
+      "secenekler": [
+        {
+          "metin": "Dans ederek",
+          "emoji": "💃",
+          "puan": 35
+        },
+        {
+          "metin": "Uyuyarak",
+          "emoji": "😴",
+          "puan": 25
+        },
+        {
+          "metin": "Müzik dinleyerek",
+          "emoji": "🎧",
+          "puan": 60
+        },
+        {
+          "metin": "Yürüyüş yaparak",
+          "emoji": "🚶",
+          "puan": 55
+        },
+        {
+          "metin": "Arkadaşlarla",
+          "emoji": "🫶",
+          "puan": 45
+        },
+        {
+          "metin": "Resim yaparak",
+          "emoji": "🎨",
+          "puan": 15
+        }
+      ]
+    },
+    {
+      "soru": "Hangi *doğal taş* sana iyi gelir?",
+      "secenekler": [
+        {
+          "metin": "Ametist",
+          "emoji": "💜",
+          "puan": 15
+        },
+        {
+          "metin": "Pembe kuvars",
+          "emoji": "🩷",
+          "puan": 35
+        },
+        {
+          "metin": "Kaplan gözü",
+          "emoji": "🐯",
+          "puan": 25
+        },
+        {
+          "metin": "Ay taşı",
+          "emoji": "🌙",
+          "puan": 45
+        },
+        {
+          "metin": "Yeşim",
+          "emoji": "💚",
+          "puan": 60
+        },
+        {
+          "metin": "Obsidyen",
+          "emoji": "🖤",
+          "puan": 55
+        }
+      ]
+    },
+    {
+      "soru": "Odanın *olmazsa olmaz* detayı?",
+      "secenekler": [
+        {
+          "metin": "Pikap",
+          "emoji": "🎶",
+          "puan": 25
+        },
+        {
+          "metin": "Mantar lamba",
+          "emoji": "🍄",
+          "puan": 15
+        },
+        {
+          "metin": "Poster duvarı",
+          "emoji": "🖼️",
+          "puan": 35
+        },
+        {
+          "metin": "Peluş halı",
+          "emoji": "🧸",
+          "puan": 60
+        },
+        {
+          "metin": "Led ışıklar",
+          "emoji": "💡",
+          "puan": 55
+        },
+        {
+          "metin": "Bitkiler",
+          "emoji": "🪴",
+          "puan": 45
+        }
+      ]
+    },
+    {
+      "soru": "Masana hangi *çiçeği* koyarsın?",
+      "secenekler": [
+        {
+          "metin": "Şakayık",
+          "emoji": "🌸",
+          "puan": 45
+        },
+        {
+          "metin": "Ayçiçeği",
+          "emoji": "🌻",
+          "puan": 35
+        },
+        {
+          "metin": "Lavanta",
+          "emoji": "💐",
+          "puan": 15
+        },
+        {
+          "metin": "Papatya",
+          "emoji": "🌼",
+          "puan": 60
+        },
+        {
+          "metin": "Kuru çiçek",
+          "emoji": "🍂",
+          "puan": 25
+        },
+        {
+          "metin": "Lale",
+          "emoji": "🌷",
+          "puan": 55
+        }
+      ]
+    },
+    {
+      "soru": "Tatlı krizinde *ilk tercihin*?",
+      "secenekler": [
+        {
+          "metin": "Çikolatalı kurabiye",
+          "emoji": "🍪",
+          "puan": 35
+        },
+        {
+          "metin": "Cheesecake",
+          "emoji": "🍰",
+          "puan": 15
+        },
+        {
+          "metin": "Dondurma",
+          "emoji": "🍦",
+          "puan": 25
+        },
+        {
+          "metin": "Baklava",
+          "emoji": "🍯",
+          "puan": 45
+        },
+        {
+          "metin": "Makaron",
+          "emoji": "🌈",
+          "puan": 55
+        },
+        {
+          "metin": "Meyve tabağı",
+          "emoji": "🍓",
+          "puan": 60
+        }
+      ]
+    },
+    {
+      "soru": "Hayalindeki *tatil rotası* hangisi?",
+      "secenekler": [
+        {
+          "metin": "Paris",
+          "emoji": "🗼",
+          "puan": 60
+        },
+        {
+          "metin": "Bali",
+          "emoji": "🏝️",
+          "puan": 55
+        },
+        {
+          "metin": "Tokyo",
+          "emoji": "🗾",
+          "puan": 35
+        },
+        {
+          "metin": "Kapadokya",
+          "emoji": "🎈",
+          "puan": 15
+        },
+        {
+          "metin": "İsviçre Alpleri",
+          "emoji": "🏔️",
+          "puan": 25
+        },
+        {
+          "metin": "New York",
+          "emoji": "🗽",
+          "puan": 45
+        }
+      ]
     }
   ],
   "aralar": [
     {
-      "sonra": 3,
+      "sonra": 5,
       "tip": "yorum",
       "metin": "En sevdiğin *Manifest* üyesi kim?"
     },
     {
-      "sonra": 6,
+      "sonra": 10,
+      "tip": "tercih",
+      "metin": "Hangisini *tercih* edersin?",
+      "secenekler": [
+        {
+          "metin": "Konser bileti",
+          "emoji": "🎤"
+        },
+        {
+          "metin": "Kulis buluşması",
+          "emoji": "📸"
+        }
+      ]
+    },
+    {
+      "sonra": 13,
       "tip": "yorum",
       "metin": "En sevdiğin *Manifest şarkısı* hangisi?"
     }
@@ -286,8 +581,8 @@
       "ad": "Esin",
       "aciklama": "Sen Esin'sın!",
       "aralik": [
-        105,
-        155
+        225,
+        330
       ]
     },
     {
@@ -295,8 +590,8 @@
       "ad": "Mina",
       "aciklama": "Sen Mina'sın!",
       "aralik": [
-        160,
-        210
+        335,
+        440
       ]
     },
     {
@@ -304,8 +599,8 @@
       "ad": "Zeynep",
       "aciklama": "Sen Zeynep'sın!",
       "aralik": [
-        215,
-        260
+        445,
+        550
       ]
     },
     {
@@ -313,8 +608,8 @@
       "ad": "Lidya",
       "aciklama": "Sen Lidya'sın!",
       "aralik": [
-        265,
-        310
+        555,
+        660
       ]
     },
     {
@@ -322,8 +617,8 @@
       "ad": "Hilal",
       "aciklama": "Sen Hilal'sın!",
       "aralik": [
-        315,
-        365
+        665,
+        770
       ]
     },
     {
@@ -331,8 +626,8 @@
       "ad": "Sueda",
       "aciklama": "Sen Sueda'sın!",
       "aralik": [
-        370,
-        420
+        775,
+        900
       ]
     }
   ],

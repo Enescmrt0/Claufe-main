@@ -26,28 +26,52 @@ soru-6.mp3
 Soru 6. Hangi *çanta* tam senin tarzın?
 
 soru-7.mp3
-Son soru! Kendine ayırdığın günde *ilk durağın*?
+Soru 7. Kendine ayırdığın günde *ilk durağın*?
+
+soru-8.mp3
+Soru 8. Selfie'lerde hangi *telefon kılıfı* görünüyor?
+
+soru-9.mp3
+Soru 9. Seni en iyi yansıtan *aura rengi*?
+
+soru-10.mp3
+Soru 10. Boş zamanında *enerjini* nasıl toplarsın?
+
+soru-11.mp3
+Soru 11. Hangi *doğal taş* sana iyi gelir?
+
+soru-12.mp3
+Soru 12. Odanın *olmazsa olmaz* detayı?
+
+soru-13.mp3
+Soru 13. Masana hangi *çiçeği* koyarsın?
+
+soru-14.mp3
+Soru 14. Tatlı krizinde *ilk tercihin*?
+
+soru-15.mp3
+Son soru! Hayalindeki *tatil rotası* hangisi?
 
 puan-topla.mp3
 Süre bitti! Şimdi puanlarını topla. Toplamın kaç?
 
 sonuc-1.mp3
-105 ile 155 arası puan aldıysan... Esin!
+225 ile 330 arası puan aldıysan... Esin!
 
 sonuc-2.mp3
-160 ile 210 arası puan aldıysan... Mina!
+335 ile 440 arası puan aldıysan... Mina!
 
 sonuc-3.mp3
-215 ile 260 arası puan aldıysan... Zeynep!
+445 ile 550 arası puan aldıysan... Zeynep!
 
 sonuc-4.mp3
-265 ile 310 arası puan aldıysan... Lidya!
+555 ile 660 arası puan aldıysan... Lidya!
 
 sonuc-5.mp3
-315 ile 365 arası puan aldıysan... Hilal!
+665 ile 770 arası puan aldıysan... Hilal!
 
 sonuc-6.mp3
-370 ile 420 arası puan aldıysan... Sueda!
+775 ile 900 arası puan aldıysan... Sueda!
 
 kapanis.mp3
 Hangi *Manifest* kızı çıktın? *Yorumlara yaz!* Puanını yorumlara yaz!
