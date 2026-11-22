@@ -23,8 +23,9 @@ export const Vurgulu: React.FC<{ metin: string }> = ({ metin }) => (
 );
 
 /** Fotoğraf ya da (fotoğraf yoksa) emoji + açıklamalı yer tutucu */
-export const Karo: React.FC<{ gorsel?: string; emoji?: string; metin?: string; renk: string; style?: React.CSSProperties }> = ({
+export const Karo: React.FC<{ gorsel?: string; emoji?: string; metin?: string; renk: string; style?: React.CSSProperties; konum?: string }> = ({
   gorsel,
+  konum,
   emoji,
   metin,
   renk,
@@ -32,7 +33,7 @@ export const Karo: React.FC<{ gorsel?: string; emoji?: string; metin?: string; r
 }) => (
   <div style={{ position: "relative", borderRadius: 22, overflow: "hidden", background: "#111", boxShadow: "0 10px 0 rgba(0,0,0,0.25)", ...style }}>
     {gorsel ? (
-      <Img src={staticFile(gorsel)} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+      <Img src={staticFile(gorsel)} style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: konum ?? "50% 50%", display: "block" }} />
     ) : (
       <div
         style={{
@@ -186,6 +187,18 @@ export const AraSahne: React.FC<{ ara: Ara; gorseller: (string | undefined)[] }>
             </React.Fragment>
           ))}
         </div>
+      ) : ara.secenekler && ara.secenekler.length > 2 ? (
+        <div style={{ display: "flex", gap: 22 }}>
+          {ara.secenekler.map((s, i) => {
+            const g = useGiris(8 + i * 5, 12);
+            return (
+              <div key={i} style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 10, transform: `scale(${g})` }}>
+                <Karo gorsel={gorseller[i]} emoji={s.emoji} renk={HARF_RENKLERI[i % HARF_RENKLERI.length]} konum="50% 22%" style={{ width: 250, height: 340, border: `6px solid ${HARF_RENKLERI[i % HARF_RENKLERI.length]}` }} />
+                <div style={{ fontSize: 44, fontWeight: 800, color: "white", textShadow: golge }}>{s.metin.toLocaleUpperCase("tr")}</div>
+              </div>
+            );
+          })}
+        </div>
       ) : (
         <div style={{ fontSize: 140, transform: `translateY(${ok}px) scale(${b})` }}>👇</div>
       )}
@@ -209,14 +222,14 @@ export const GaleriSonuclar: React.FC<{ sonuclar: Sonuc[]; araliklar: [number, n
   return (
     <AbsoluteFill style={{ fontFamily: FONT, opacity: solma(frame, durationInFrames), padding: "50px 150px 40px", display: "flex", flexDirection: "column", gap: 26 }}>
       <Ses ad="tada" ses={0.5} />
-      <div style={{ flex: 1, display: "grid", gridTemplateColumns: "1fr 1fr", gridAutoRows: "1fr", gap: 22 }}>
+      <div style={{ flex: 1, display: "grid", gridTemplateColumns: "1fr 1fr", gridTemplateRows: `repeat(${Math.ceil(sonuclar.length / 2)}, minmax(0, 1fr))`, gap: 22, minHeight: 0 }}>
         {sonuclar.map((r, i) => {
           const g = useGiris(6 + i * 6, 12);
           const [x, y] = araliklar[i];
           const renk = HARF_RENKLERI[i % HARF_RENKLERI.length];
           return (
-            <div key={i} style={{ display: "flex", borderRadius: 24, overflow: "hidden", background: renk, transform: `scale(${g})`, boxShadow: "0 8px 0 rgba(0,0,0,0.25)" }}>
-              <Karo gorsel={gorseller[i]} emoji={r.emoji} renk={renk} style={{ width: "42%", height: "100%", borderRadius: 0, boxShadow: "none" }} />
+            <div key={i} style={{ display: "flex", minHeight: 0, borderRadius: 24, overflow: "hidden", background: renk, transform: `scale(${g})`, boxShadow: "0 8px 0 rgba(0,0,0,0.25)" }}>
+              <Karo gorsel={gorseller[i]} emoji={r.emoji} renk={renk} konum="50% 22%" style={{ width: "42%", height: "100%", borderRadius: 0, boxShadow: "none" }} />
               <div style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 4 }}>
                 <div style={{ fontSize: 44, fontWeight: 800, color: "white", background: "rgba(0,0,0,0.35)", borderRadius: 999, padding: "4px 26px" }}>
                   {x === y ? x : `${x}–${y}`}

@@ -552,7 +552,33 @@
     {
       "sonra": 5,
       "tip": "yorum",
-      "metin": "En sevdiğin *Manifest* üyesi kim?"
+      "metin": "En sevdiğin *Manifest* üyesi kim?",
+      "secenekler": [
+        {
+          "metin": "Esin",
+          "emoji": "💛"
+        },
+        {
+          "metin": "Mina",
+          "emoji": "💗"
+        },
+        {
+          "metin": "Zeynep",
+          "emoji": "💜"
+        },
+        {
+          "metin": "Lidya",
+          "emoji": "💙"
+        },
+        {
+          "metin": "Hilal",
+          "emoji": "💚"
+        },
+        {
+          "metin": "Sueda",
+          "emoji": "🧡"
+        }
+      ]
     },
     {
       "sonra": 10,

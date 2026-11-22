@@ -316,7 +316,13 @@ export const Kapanis: React.FC<{ metin: string; uyari?: string }> = ({ metin, uy
     <Guvenli style={{ gap: yatay ? 28 : 40 }}>
       <Ses ad="tada" ses={0.5} />
       <div style={{ fontSize: yatay ? 92 : 108, fontWeight: 800, color: "white", textAlign: "center", lineHeight: 1.02, textShadow: golge, transform: `scale(${a})` }}>
-        {metin}
+        {metin.split(/(\*[^*]+\*)/).map((p, i) =>
+          p.startsWith("*") && p.endsWith("*") ? (
+            <span key={i} style={{ color: "#FFD60A" }}>{p.slice(1, -1)}</span>
+          ) : (
+            <React.Fragment key={i}>{p}</React.Fragment>
+          ),
+        )}
       </div>
       <div style={{ fontSize: yatay ? 110 : 170, transform: `translateY(${ok * (yatay ? 0.6 : 1)}px) scale(${a})` }}>👇</div>
       <Kart style={{ transform: `scale(${b})`, padding: "24px 44px" }}>
