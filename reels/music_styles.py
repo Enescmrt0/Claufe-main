@@ -213,3 +213,33 @@ def ukulele(t0, t1, g=1.0, bpm=112, tune=True):
             for (k, m, d) in tune_:
                 if t + k * e < t1: place(music, _whistle(m, d * e * .95, .9), t + k * e, g)
         t += 8 * e; bar += 1
+
+# 1970s space synth: analog sequencer arpeggio, warm pad, soft kick (calm wonder; tense=True for a minor, faster drive)
+def _analog(m, dur=.2, g=1.0, cut=2200):
+    n = int(dur * SR); t = T(n); f = midi(m)
+    ph = np.cumsum(np.full(n, f)) / SR; x = (2 * (ph % 1) - 1) + .5 * (2 * ((ph * 1.007) % 1) - 1)
+    x = lp(x, cut) * np.minimum(1, t / .004) * np.exp(-t * 9)
+    return x * .16 * g
+def _pad(ms, dur, g=1.0):
+    n = int(dur * SR); t = T(n); x = np.zeros(n)
+    for m in ms:
+        for d in (-.003, .004):
+            ph = np.cumsum(np.full(n, midi(m) * (1 + d))) / SR; x += np.sign(np.sin(2 * np.pi * ph)) * .5 + (2 * (ph % 1) - 1) * .5
+    x = lp(x / (len(ms) * 2), 900) * (.85 + .15 * np.sin(2 * np.pi * .25 * t))
+    return x * np.minimum(1, t / .8) * np.minimum(1, (dur - t) / .8) * g
+def cosmos(t0, t1, g=1.0, bpm=96, tense=False):
+    s16 = 60 / bpm / 4; t = t0; bar = 0
+    prog = [(45, (57, 60, 64, 69)), (41, (57, 60, 65, 69)), (43, (55, 59, 62, 67)), (40, (55, 59, 64, 67))] if tense else \
+           [(38, (62, 66, 69, 74)), (43, (62, 67, 71, 74)), (40, (59, 64, 67, 71)), (45, (61, 64, 69, 73))]
+    while t < t1 - .05:
+        root, ch = prog[bar % 4]; L = min(16 * s16, t1 - t)
+        if L > .3: place(music, _pad(ch[:3], L, .5), t, g)
+        place(music, pizz(root - 12, 1.2, .8), t, g)
+        for k in range(16):
+            tk = t + k * s16
+            if tk >= t1: break
+            m = ch[[0, 1, 2, 3, 2, 1][k % 6]] + (12 if k % 8 >= 6 else 0)
+            place(music, _analog(m, s16 * 1.8, .8, 1600 + 900 * np.sin(k / 16 * np.pi)), tk, g)
+            if tense and k % 4 == 0: place(music, thud(55, .2, .3), tk, g)
+            if not tense and k % 8 == 0: place(music, thud(60, .25, .18), tk, g)
+        t += 16 * s16; bar += 1

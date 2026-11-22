@@ -1,0 +1,63 @@
+am_michael total 312.18s
+{'i': 0, 'text': 'Two hundred thousand miles from Earth, three men hear a loud bang.', 'start': 0.0, 'dur': 4.217}
+{'i': 1, 'text': 'The spacecraft shudders. Warning lights flash across the panel.', 'start': 4.457, 'dur': 3.729}
+{'i': 2, 'text': 'Then one of them picks up the radio and says the most famous understatement in history.', 'start': 8.306, 'dur': 5.3}
+{'i': 3, 'text': "Houston, we've had a problem.", 'start': 13.727, 'dur': 1.693}
+{'i': 4, 'text': 'What follows are four days in which almost everything goes wrong, and a few hundred people on the ground refuse to give up.', 'start': 15.539, 'dur': 7.377}
+{'i': 5, 'text': 'Apollo 13 was supposed to be the third mission to land on the Moon.', 'start': 23.037, 'dur': 4.38}
+{'i': 6, 'text': 'By 1970, people were already getting bored of Moon landings. The TV networks barely covered the launch.', 'start': 27.537, 'dur': 7.701}
+{'i': 7, 'text': 'The crew was Jim Lovell, the commander, Fred Haise, and Jack Swigert.', 'start': 35.358, 'dur': 4.192}
+{'i': 8, 'text': "Swigert wasn't even supposed to be there.", 'start': 39.67, 'dur': 2.478}
+{'i': 9, 'text': 'Three days before launch, the original pilot, Ken Mattingly, was exposed to measles, and was swapped out.', 'start': 42.268, 'dur': 6.799}
+{'i': 10, 'text': 'He never got sick.', 'start': 49.188, 'dur': 1.101}
+{'i': 11, 'text': 'Two days into the flight, mission control asks the crew to stir the oxygen tanks, a routine chore.', 'start': 50.409, 'dur': 6.589}
+{'i': 12, 'text': 'Swigert flips the switch.', 'start': 57.118, 'dur': 1.63}
+{'i': 13, 'text': 'Sixteen seconds later, oxygen tank number two explodes.', 'start': 58.868, 'dur': 3.958}
+{'i': 14, 'text': 'Years earlier, that tank had been dropped about two inches during a test. And its heater switches were built for twenty-eight volts, but on the ground they were run at sixty-five.', 'start': 62.946, 'dur': 10.536}
+{'i': 15, 'text': 'They welded shut, and cooked the wiring inside the tank.', 'start': 73.602, 'dur': 3.433}
+{'i': 16, 'text': 'For months, it sat there like a bomb with no timer. Until someone stirred it.', 'start': 77.155, 'dur': 4.562}
+{'i': 17, 'text': 'The explosion blew a whole panel off the side of the service module.', 'start': 81.837, 'dur': 3.977}
+{'i': 18, 'text': 'Out of the window, Lovell sees something bad. A cloud of gas, streaming into space.', 'start': 85.934, 'dur': 5.136}
+{'i': 19, 'text': "It's their oxygen. The same oxygen that makes their electricity and their water.", 'start': 91.19, 'dur': 5.105}
+{'i': 20, 'text': 'One by one, the gauges fall. The command module, their only way home, has a few hours of power left.', 'start': 96.415, 'dur': 6.936}
+{'i': 21, 'text': 'The Moon landing is over. Now there is only one question. Can they get home alive?', 'start': 103.471, 'dur': 5.389}
+{'i': 22, 'text': 'There is one place left to go. The lunar module, nicknamed Aquarius.', 'start': 109.1, 'dur': 4.541}
+{'i': 23, 'text': 'It was built to carry two men down to the Moon and back up, for about two days.', 'start': 113.761, 'dur': 4.675}
+{'i': 24, 'text': 'Now it has to keep three men alive for four.', 'start': 118.556, 'dur': 2.618}
+{'i': 25, 'text': 'The crew powers down the command module completely, to save it for the very end, and moves into a vehicle the size of two phone booths.', 'start': 121.294, 'dur': 8.821}
+{'i': 26, 'text': "It's like using your lifeboat as the whole ship.", 'start': 130.235, 'dur': 2.62}
+{'i': 27, 'text': "They can't just turn around. Space doesn't work like that.", 'start': 132.975, 'dur': 3.329}
+{'i': 28, 'text': 'Instead, they have to swing around the back of the Moon, and let its gravity throw them home, like a slingshot.', 'start': 136.424, 'dur': 6.244}
+{'i': 29, 'text': 'Behind the Moon, they lose radio contact with Earth.', 'start': 142.788, 'dur': 3.373}
+{'i': 30, 'text': 'For a while, they are farther from home than any human beings have ever been.', 'start': 146.28, 'dur': 4.382}
+{'i': 31, 'text': "Then they fire the lunar module's engine to speed up the trip, and come out the other side, headed for Earth.", 'start': 150.782, 'dur': 6.64}
+{'i': 32, 'text': 'But a new problem is quietly building up. The air.', 'start': 157.543, 'dur': 3.134}
+{'i': 33, 'text': 'Every breath they take adds carbon dioxide. Too much, and they will pass out, and never wake up.', 'start': 160.796, 'dur': 6.265}
+{'i': 34, 'text': "The lunar module's filters were made for two people, and they are filling up fast.", 'start': 167.181, 'dur': 4.894}
+{'i': 35, 'text': "The command module has plenty of spare filters. There's just one problem.", 'start': 172.195, 'dur': 4.65}
+{'i': 36, 'text': "Its filters are square. The lunar module's holes are round.", 'start': 176.965, 'dur': 3.806}
+{'i': 37, 'text': 'So on the ground, engineers dump everything the crew has on board onto a table. Plastic bags. Cardboard. Hoses. A sock. Duct tape.', 'start': 180.891, 'dur': 9.766}
+{'i': 38, 'text': 'They have to build a square filter that fits a round hole, using only that pile.', 'start': 190.777, 'dur': 4.948}
+{'i': 39, 'text': 'They figure it out, and read the instructions up to the crew, step by step.', 'start': 195.844, 'dur': 4.446}
+{'i': 40, 'text': 'The crew builds it. The carbon dioxide starts to fall.', 'start': 200.41, 'dur': 3.564}
+{'i': 41, 'text': 'Now, to save power, almost everything is switched off. No heaters.', 'start': 204.094, 'dur': 4.315}
+{'i': 42, 'text': 'The cabin gets close to freezing. Water condenses on the walls.', 'start': 208.53, 'dur': 4.171}
+{'i': 43, 'text': 'The crew can barely sleep. They drink very little, to save water.', 'start': 212.821, 'dur': 4.029}
+{'i': 44, 'text': 'Haise comes down with a fever. They are cold, exhausted, and running out of time.', 'start': 216.97, 'dur': 5.093}
+{'i': 45, 'text': 'And the trajectory keeps drifting. To fix it, they have to fire the engine by hand, steering by the edge of the Earth in the window.', 'start': 222.182, 'dur': 8.158}
+{'i': 46, 'text': 'It works.', 'start': 230.46, 'dur': 0.77}
+{'i': 47, 'text': 'Now comes the hardest part. The command module has been frozen and dead for days.', 'start': 231.35, 'dur': 5.489}
+{'i': 48, 'text': 'Nobody has ever restarted one in flight. There was no checklist for it.', 'start': 236.959, 'dur': 4.474}
+{'i': 49, 'text': 'So on the ground, Ken Mattingly, the pilot who was left behind because of measles, works in a simulator for hours, figuring out how to wake the ship up without blowing the tiny amount of power left.', 'start': 241.553, 'dur': 13.187}
+{'i': 50, 'text': 'His procedure works.', 'start': 254.861, 'dur': 1.314}
+{'i': 51, 'text': 'The crew climbs back into the command module, and says goodbye to the lifeboat that saved them.', 'start': 256.295, 'dur': 5.914}
+{'i': 52, 'text': 'The capsule hits the atmosphere, wrapped in fire. The radio goes silent, as it always does.', 'start': 262.328, 'dur': 6.167}
+{'i': 53, 'text': 'Normally, the silence lasts about four minutes.', 'start': 268.615, 'dur': 2.832}
+{'i': 54, 'text': 'Four minutes pass. Nothing.', 'start': 271.566, 'dur': 1.808}
+{'i': 55, 'text': 'Mission control is completely still.', 'start': 273.494, 'dur': 2.22}
+{'i': 56, 'text': 'Then, a voice. The parachutes are open.', 'start': 275.834, 'dur': 2.461}
+{'i': 57, 'text': 'Apollo 13 splashes down in the Pacific Ocean, and Jim Lovell, Fred Haise and Jack Swigert are home.', 'start': 278.415, 'dur': 7.222}
+{'i': 58, 'text': 'Apollo 13 never landed on the Moon. NASA calls it a successful failure.', 'start': 285.757, 'dur': 5.301}
+{'i': 59, 'text': 'The famous line, failure is not an option, was actually written for the movie, years later.', 'start': 291.178, 'dur': 5.606}
+{'i': 60, 'text': 'What really happened was quieter. People who refused to panic, and solved one problem at a time, with whatever they had.', 'start': 296.904, 'dur': 7.805}
+{'i': 61, 'text': "A tank of oxygen nearly killed them. A sock, some duct tape and a lot of people who wouldn't quit brought them home.", 'start': 304.83, 'dur': 7.23}
