@@ -243,3 +243,87 @@ def cosmos(t0, t1, g=1.0, bpm=96, tense=False):
             if tense and k % 4 == 0: place(music, thud(55, .2, .3), tk, g)
             if not tense and k % 8 == 0: place(music, thud(60, .25, .18), tk, g)
         t += 16 * s16; bar += 1
+
+# spooky Victorian parlour: harpsichord broken chords in D minor, celesta tune, low bell (morbid but playful)
+def _harpsi(m, dur=.35, g=1.0):
+    n = int(dur * SR); t = T(n); f = midi(m)
+    x = sum(a * np.sin(2 * np.pi * f * k * t) * np.exp(-t * (5 + 3 * k)) for k, a in ((1, 1), (2, .8), (3, .6), (4, .45), (5, .3), (6, .2)))
+    x += hp(rng.standard_normal(n), 4000) * np.exp(-t * 300) * .25
+    return x * np.minimum(1, t / .001) * .14 * g
+def _celesta(m, dur=.8, g=1.0):
+    n = int(dur * SR); t = T(n); f = midi(m)
+    return (np.sin(2 * np.pi * f * t) + .25 * np.sin(2 * np.pi * f * 4 * t) * np.exp(-t * 10)) * np.exp(-t * 4) * np.minimum(1, t / .002) * .22 * g
+def spooky(t0, t1, g=1.0, bpm=100, tune=True):
+    e = 60 / bpm / 2; t = t0; bar = 0
+    prog = [(38, (62, 65, 69)), (37, (61, 64, 69)), (34, (58, 62, 65)), (33, (57, 61, 64))]   # Dm A/C# Bb A
+    tune_ = [(0, 74), (2, 77), (3, 76), (4, 74), (6, 73), (8, 74), (10, 81), (12, 79), (13, 77), (14, 76)]
+    while t < t1 - .05:
+        root, ch = prog[bar % 4]
+        place(music, pizz(root - 12, .9, .9), t, g); place(music, pizz(root - 5, .6, .6), t + 4 * e, g)
+        for k in range(8):
+            tk = t + k * e
+            if tk < t1: place(music, _harpsi(ch[[0, 1, 2, 1][k % 4]] + (12 if k >= 4 else 0), .4, .8), tk, g)
+        if tune and bar % 2 == 0:
+            for (k, m) in tune_:
+                if t + k * e < t1: place(music, _celesta(m, .8, .9), t + k * e, g)
+        if bar % 4 == 0: place(music, thud(45, .6, .25), t, g)
+        t += 8 * e; bar += 1
+
+# Italian tarantella: mandolin tremolo melody, accordion off-beat chords, 6/8 bounce (A minor / E)
+def _mando(m, dur=.3, g=1.0):
+    n = int(dur * SR); t = T(n); f = midi(m)
+    x = np.zeros(n)
+    for r in range(max(1, int(dur / .045))):
+        i = int(r * .045 * SR); L = n - i; tt = T(L)
+        x[i:] += (np.sin(2 * np.pi * f * tt) + .5 * np.sin(4 * np.pi * f * tt) + .3 * np.sin(6 * np.pi * f * tt)) * np.exp(-tt * 30) * (.8 if r % 2 else 1)
+    return x * .1 * g
+def _accord(ms, dur=.18, g=1.0):
+    n = int(dur * SR); t = T(n); x = np.zeros(n)
+    for m in ms:
+        for d in (-.004, .004):
+            ph = np.cumsum(np.full(n, midi(m) * (1 + d))) / SR; x += np.sign(np.sin(2 * np.pi * ph)) * .6 + (2 * (ph % 1) - 1) * .4
+    x = lp(x / (len(ms) * 2), 2400)
+    return x * np.minimum(1, t / .01) * np.minimum(1, (dur - t) / .03) * .09 * g
+def tarantella(t0, t1, g=1.0, bpm=132, tune=True):
+    e = 60 / bpm / 2; t = t0; bar = 0
+    prog = [(45, (57, 60, 64)), (45, (57, 60, 64)), (40, (56, 59, 64)), (45, (57, 60, 64)), (50, (57, 62, 65)), (45, (57, 60, 64)), (40, (56, 59, 62)), (45, (57, 60, 64))]
+    tune_ = [76, 76, 77, 76, 74, 72, 71, 72, 74, 72, 71, 69]
+    while t < t1 - .05:
+        root, ch = prog[bar % 8]
+        for k in range(6):
+            tk = t + k * e
+            if tk >= t1: break
+            if k == 0: place(music, pizz(root - 12, .3, .9), tk, g)
+            if k == 3: place(music, pizz(root - 5, .3, .7), tk, g)
+            if k in (1, 2, 4, 5): place(music, _accord(ch, e * .8, .8), tk, g)
+            if k in (0, 3): place(music, _hat(.15), tk, g)
+            if tune: place(music, _mando(tune_[(bar * 6 + k) % 12] + (0 if bar % 8 < 4 else -2), e * .95, .9), tk, g)
+        t += 6 * e; bar += 1
+
+# funky lab: clavinet riff, slap-ish bass, bleeps, tight drums (science humour)
+def _clav(m, dur=.14, g=1.0):
+    n = int(dur * SR); t = T(n); f = midi(m); ph = (f * t) % 1
+    x = bp(np.where(ph < .25, 1.0, -.33), 300, 3500)
+    return x * np.minimum(1, t / .002) * np.exp(-t * 14) * .16 * g
+def _bleep(m, dur=.08, g=1.0):
+    n = int(dur * SR); t = T(n); return np.sign(np.sin(2 * np.pi * midi(m) * t)) * np.minimum(1, (dur - t) / .01) * .05 * g
+def labfunk(t0, t1, g=1.0, bpm=104, tune=True):
+    s16 = 60 / bpm / 4; t = t0; bar = 0
+    prog = [(40, (64, 67, 71)), (40, (64, 67, 71)), (45, (64, 69, 72)), (43, (62, 67, 71))]
+    clv = [1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 0, 1, 1, 0]
+    bass = [(0, 0), (3, 0), (6, 12), (8, 0), (10, 7), (14, 10)]
+    while t < t1 - .05:
+        root, ch = prog[bar % 4]
+        for k in range(16):
+            tk = t + k * s16
+            if tk >= t1: break
+            if clv[k]: place(music, _clav(ch[k % 3] + (12 if k % 5 == 0 else 0), s16 * 1.5, .9), tk, g)
+            if k % 2 == 0: place(music, _hat(.25), tk, g)
+            if k in (0, 10): place(music, thud(60, .2, .35), tk, g)
+            if k in (4, 12): place(music, _snare(.35), tk, g)
+        for (k, o) in bass:
+            if t + k * s16 < t1: place(music, pizz(root - 12 + o, .25, 1.0), t + k * s16, g)
+        if tune and bar % 2 == 1:
+            for k, m in enumerate([88, 91, 86, 83]):
+                place(music, _bleep(m, .07, .8), t + (12 + k) * s16, g)
+        t += 16 * s16; bar += 1
