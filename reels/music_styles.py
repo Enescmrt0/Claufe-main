@@ -327,3 +327,68 @@ def labfunk(t0, t1, g=1.0, bpm=104, tune=True):
             for k, m in enumerate([88, 91, 86, 83]):
                 place(music, _bleep(m, .07, .8), t + (12 + k) * s16, g)
         t += 16 * s16; bar += 1
+
+# British ceremonial: brass fanfare chords, timpani rolls, snare (Tower of London pomp; minor=True for a mystery tint)
+def _brass(m, dur=.4, g=1.0):
+    n = int(dur * SR); t = T(n); f = midi(m) * (1 + .003 * np.sin(2 * np.pi * 5 * t))
+    ph = np.cumsum(f) / SR; x = 2 * (ph % 1) - 1
+    cut = 800 + 2200 * np.minimum(1, t / .08); x = lp(x, 2600) * (.6 + .4 * np.minimum(1, t / .05))
+    return x * np.minimum(1, t / .03) * np.minimum(1, (dur - t) / .06) * .14 * g
+def _timp(f=55, g=1.0): n = int(.7 * SR); t = T(n); return (np.sin(2 * np.pi * f * t) * np.exp(-t * 5) + lp(rng.standard_normal(n), 400) * np.exp(-t * 30) * .3) * .5 * g
+def pomp(t0, t1, g=1.0, bpm=96, minor=False):
+    q = 60 / bpm; t = t0; bar = 0
+    prog = [(45, (57, 60, 64)), (41, (57, 60, 65)), (43, (55, 59, 62)), (40, (56, 59, 64))] if minor else \
+           [(48, (60, 64, 67)), (41, (60, 65, 69)), (43, (59, 62, 67)), (48, (60, 64, 67))]
+    fan = [(0, 0, 1.5), (1.5, 1, .5), (2, 2, 1), (3, 1, .5), (3.5, 0, .5)]
+    while t < t1 - .05:
+        root, ch = prog[bar % 4]
+        for (b, i, d) in fan:
+            if t + b * q < t1: place(music, _brass(ch[i] + 12, d * q * .95, .9), t + b * q, g)
+        for m in ch:
+            if t < t1: place(music, _brass(m, min(4 * q, t1 - t) * .95, .45), t, g)
+        place(music, _timp(midi(root - 12), .9), t, g); place(music, _timp(midi(root - 5), .6), t + 2 * q, g)
+        for k in range(8): place(music, _snare(.12 if k % 2 else .2), t + k * q / 2, g)
+        t += 4 * q; bar += 1
+
+# Venetian barcarolle: rocking 6/8 harp arpeggios, string pad, singing oboe line
+def _harp(m, dur=.9, g=1.0):
+    n = int(dur * SR); t = T(n); f = midi(m)
+    return (np.sin(2 * np.pi * f * t) + .4 * np.sin(4 * np.pi * f * t) * np.exp(-t * 6) + .15 * np.sin(6 * np.pi * f * t) * np.exp(-t * 10)) * np.exp(-t * 3) * np.minimum(1, t / .002) * .16 * g
+def _oboe(m, dur=.5, g=1.0):
+    n = int(dur * SR); t = T(n); f = midi(m) * (1 + .005 * np.sin(2 * np.pi * 5.5 * t) * np.minimum(1, t / .2))
+    ph = np.cumsum(f) / SR; x = bp(np.sign(np.sin(2 * np.pi * ph)) * .5 + (2 * (ph % 1) - 1) * .5, 500, 3000)
+    return x * np.minimum(1, t / .05) * np.minimum(1, (dur - t) / .08) * .1 * g
+def barcarolle(t0, t1, g=1.0, bpm=60, tune=True, minor=False):
+    e = 60 / bpm / 3; t = t0; bar = 0
+    prog = [(45, (57, 60, 64)), (50, (57, 62, 65)), (40, (56, 59, 64)), (45, (57, 60, 64))] if minor else \
+           [(43, (59, 62, 67)), (48, (60, 64, 67)), (50, (62, 66, 69)), (43, (59, 62, 67))]
+    tune_ = [(0, 74, 2), (2, 76, 1), (3, 74, 2), (5, 71, 1), (6, 72, 3), (9, 74, 2), (11, 71, 1)]
+    while t < t1 - .05:
+        root, ch = prog[bar % 4]
+        for k in range(12):
+            tk = t + k * e
+            if tk >= t1: break
+            if k % 6 == 0: place(music, pizz(root - 12, .8, .7), tk, g)
+            place(music, _harp([ch[0], ch[1], ch[2], ch[1] + 12, ch[2], ch[1]][k % 6], 1.0, .8), tk, g)
+        L = min(12 * e, t1 - t)
+        if L > .5: place(music, strings([m - 12 for m in ch], L, .35), t, g)
+        if tune and bar % 2 == 0:
+            for (k, m, d) in tune_:
+                if t + k * e < t1: place(music, _oboe(m - (2 if minor and m % 12 == 11 else 0), d * e * .95, .9), t + k * e, g)
+        t += 12 * e; bar += 1
+
+# Parisian musette: accordion waltz with bass-chord-chord, bright melody in thirds
+def musette(t0, t1, g=1.0, bpm=168, tune=True):
+    q = 60 / bpm; t = t0; bar = 0
+    prog = [(41, (65, 69, 72)), (48, (64, 67, 70)), (48, (64, 67, 70)), (41, (65, 69, 72)), (46, (65, 70, 74)), (41, (65, 69, 72)), (48, (64, 67, 70)), (41, (65, 69, 72))]
+    mel = [77, 76, 77, 79, 77, 76, 74, 72, 74, 76, 77, 79, 81, 79, 77, 76, 74, 76, 77, 76, 74, 72, 70, 69]
+    while t < t1 - .05:
+        root, ch = prog[bar % 8]
+        place(music, pizz(root - 12, .4, .9), t, g)
+        for b in (1, 2):
+            if t + b * q < t1: place(music, _accord(ch, q * .7, .8), t + b * q, g)
+        if tune:
+            for b in range(3):
+                if t + b * q < t1:
+                    m = mel[(bar * 3 + b) % 24]; place(music, _accord([m, m - 4], q * .9, .9), t + b * q, g)
+        t += 3 * q; bar += 1
