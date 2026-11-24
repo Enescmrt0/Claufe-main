@@ -392,3 +392,45 @@ def musette(t0, t1, g=1.0, bpm=168, tune=True):
                 if t + b * q < t1:
                     m = mel[(bar * 3 + b) % 24]; place(music, _accord([m, m - 4], q * .9, .9), t + b * q, g)
         t += 3 * q; bar += 1
+
+# comic military: oompah tuba, snare rolls, cheeky piccolo (Emu War)
+def _tuba(m, dur=.3, g=1.0):
+    n = int(dur * SR); t = T(n); f = midi(m); ph = np.cumsum(np.full(n, f)) / SR
+    x = lp(np.sign(np.sin(2 * np.pi * ph)) * .5 + np.sin(2 * np.pi * ph), 700)
+    return x * np.minimum(1, t / .02) * np.exp(-t * 4) * .3 * g
+def warpath(t0, t1, g=1.0, bpm=120, tune=True, sad=False):
+    q = 60 / bpm; t = t0; bar = 0
+    prog = [(38, 45), (43, 50), (45, 52), (38, 45)] if not sad else [(38, 45), (36, 43), (34, 41), (33, 40)]
+    pic = [74, 76, 78, 79, 81, 79, 78, 76, 74, 74, 81, 81, 79, 78, 76, 74] if not sad else [74, 72, 70, 69, 70, 69, 67, 65, 64, 64, 65, 67, 69, 67, 65, 64]
+    while t < t1 - .05:
+        a, b = prog[bar % 4]
+        for k in range(4):
+            tk = t + k * q
+            if tk >= t1: break
+            place(music, _tuba(a - 12 if k % 2 == 0 else b - 12, q * .8, 1.0), tk, g)
+            place(music, _snare(.25 if k % 2 else .15), tk, g); place(music, _snare(.1), tk + q / 2, g)
+            if tune:
+                for h in range(2): place(music, _fife(pic[(bar * 8 + k * 2 + h) % 16] + 12, q * .45, .8), tk + h * q / 2, g)
+        if bar % 4 == 3:
+            for r in range(6): place(music, _snare(.12 + r * .03), t + 3 * q + r * q / 6, g)
+        t += 4 * q; bar += 1
+
+# 1940s boogie-woogie: walking piano left hand, bluesy right-hand riffs, brushed swing drums (Mike)
+def boogie(t0, t1, g=1.0, bpm=150, tune=True):
+    q = 60 / bpm; e1, e2 = q * .66, q * .34; t = t0; bar = 0
+    roots = [43, 43, 48, 43, 50, 48, 43, 50]
+    walk = [0, 4, 7, 9, 10, 9, 7, 4]
+    riff = [(0, 79), (1, 82), (1.5, 79), (2, 77), (3, 74)]
+    while t < t1 - .05:
+        r = roots[bar % 8]
+        for k in range(8):
+            tk = t + (k // 2) * q + (e1 if k % 2 else 0)
+            if tk >= t1: break
+            place(music, _piano(r - 12 + walk[k], .3, .8), tk, g)
+            if k % 2 == 0: place(music, _hat(.2), tk, g)
+        for b in (1, 3):
+            if t + b * q < t1: place(music, _snare(.12), t + b * q, g)
+        if tune and bar % 2 == 0:
+            for (b, m) in riff:
+                if t + b * q < t1: place(music, _piano(m + (r - 43), .35, .7), t + b * q, g); place(music, _piano(m + (r - 43) - 3, .35, .5), t + b * q, g)
+        t += 4 * q; bar += 1
