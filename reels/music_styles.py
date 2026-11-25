@@ -538,3 +538,58 @@ def balalaika(t0, t1, g=1.0, bpm=120, tune=True):
             if tune: place(music, _bala(mel[(bar * 4 + k) % 16], q * .48, 1.0), tk, g)
         place(music, _snare(.1), t + q, g)
         t += 2 * q; bar += 1
+
+# toy-box lullaby: toy piano waltz with glockenspiel sparkles (teddy bear)
+def _toypiano(m, dur=.6, g=1.0):
+    n = int(dur * SR); t = T(n); f = midi(m)
+    x = np.sin(2 * np.pi * f * t) + .5 * np.sin(2 * np.pi * f * 3.9 * t) * np.exp(-t * 14) + .3 * np.sin(2 * np.pi * f * 2 * t) * np.exp(-t * 6)
+    return x * np.exp(-t * 5) * np.minimum(1, t / .002) * .16 * g
+def lullaby(t0, t1, g=1.0, bpm=138, tune=True):
+    q = 60 / bpm; t = t0; bar = 0
+    prog = [(48, (64, 67, 72)), (43, (62, 67, 71)), (45, (64, 69, 72)), (41, (65, 69, 72))]
+    mel = [76, 79, 81, 79, 76, 74, 72, 74, 76, 77, 76, 72]
+    while t < t1 - .05:
+        root, ch = prog[bar % 4]
+        place(music, pizz(root - 12, .5, .8), t, g)
+        for b in (1, 2):
+            if t + b * q < t1: place(music, _toypiano(ch[b], q * .9, .6), t + b * q, g)
+        if tune:
+            for b in range(3):
+                if t + b * q < t1: place(music, _toypiano(mel[(bar * 3 + b) % 12], q * 1.5, 1.0), t + b * q, g)
+        if bar % 2 == 1: place(music, glock(ch[2] + 12, 1.0, .25), t + 2 * q, g)
+        t += 3 * q; bar += 1
+
+# medicine show: honky-tonk piano, jug bass, washboard (ketchup as medicine)
+def _jug(m, dur=.3, g=1.0):
+    n = int(dur * SR); t = T(n); f = midi(m) * (1 + .03 * np.exp(-t * 20))
+    return lp(np.sin(2 * np.pi * np.cumsum(np.full(n, f)) / SR) + .3 * bp(rng.standard_normal(n), 80, 400), 500) * np.minimum(1, t / .02) * np.exp(-t * 5) * .35 * g
+def medshow(t0, t1, g=1.0, bpm=126, tune=True):
+    q = 60 / bpm; t = t0; bar = 0
+    prog = [(43, (59, 62, 67)), (43, (59, 62, 67)), (48, (60, 64, 67)), (50, (62, 66, 69))]
+    mel = [79, 81, 83, 79, 76, 79, 74, 76, 79, 81, 83, 86, 83, 81, 79, 76]
+    while t < t1 - .05:
+        root, ch = prog[bar % 4]
+        for k in range(4):
+            tk = t + k * q
+            if tk >= t1: break
+            place(music, _jug(root - 12 + (7 if k % 2 else 0), q * .8, 1.0), tk, g)
+            for m in ch: place(music, _piano(m + (0.15 if False else 0), q * .4, .35), tk + q / 2, g)
+            place(music, hp(rng.standard_normal(int(.05 * SR)), 3000) * .15, tk + q * .5, g); place(music, hp(rng.standard_normal(int(.05 * SR)), 3000) * .1, tk + q * .75, g)
+            if tune:
+                for h in range(2): place(music, _piano(mel[(bar * 8 + k * 2 + h) % 16], q * .45, .7), tk + h * q / 2, g)
+        t += 4 * q; bar += 1
+
+# baroque minuet: harpsichord in 3/4, bright major, elegant (pineapple parties)
+def minuet(t0, t1, g=1.0, bpm=132, tune=True):
+    q = 60 / bpm; t = t0; bar = 0
+    prog = [(50, (62, 66, 69)), (45, (61, 64, 69)), (47, (62, 66, 71)), (45, (61, 64, 69)), (43, (62, 67, 71)), (50, (62, 66, 69)), (45, (61, 64, 69)), (50, (62, 66, 69))]
+    mel = [74, 76, 78, 79, 78, 76, 74, 73, 71, 73, 74, 76, 78, 79, 81, 79, 78, 76, 74, 76, 73, 74, 74, 74]
+    while t < t1 - .05:
+        root, ch = prog[bar % 8]
+        place(music, _harpsi(root - 12, q * 1.5, .9), t, g)
+        for b in (1, 2):
+            if t + b * q < t1: place(music, _harpsi(ch[b - 1], q * .8, .5), t + b * q, g)
+        if tune:
+            for b in range(3):
+                if t + b * q < t1: place(music, _harpsi(mel[(bar * 3 + b) % 24] + 12, q * .9, .9), t + b * q, g)
+        t += 3 * q; bar += 1
