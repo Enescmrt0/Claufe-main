@@ -1,0 +1,29 @@
+// ---------- props for "The beard tax" (Peter the Great, 1698) ----------
+// long beard under the head of a drawStick figure o (len 0..1.5, cut 0..1 removes it)
+function beardOn(ctx, o, len = 1, col = '#7a4a2a', cut = 0) {
+  if (cut >= 1 || len <= 0) return; const s = o.s || 600; ctx.save(); ctx.translate(o.x, o.y); ctx.scale(o.flip || 1, 1); ctx.rotate(o.lean || 0); const hy = -.765 * s + (o.bob || 0) * s;
+  const L = .45 * len * (1 - cut); ctx.beginPath(); ctx.moveTo(-.17 * s, hy + .02 * s); ctx.quadraticCurveTo(-.2 * s, hy + (.2 + L * .6) * s, 0, hy + (.18 + L) * s); ctx.quadraticCurveTo(.2 * s, hy + (.2 + L * .6) * s, .17 * s, hy + .02 * s); ctx.quadraticCurveTo(.1 * s, hy + .12 * s, 0, hy + .1 * s); ctx.quadraticCurveTo(-.1 * s, hy + .12 * s, -.17 * s, hy + .02 * s); ctx.closePath();
+  ctx.fillStyle = col; ctx.fill(); ctx.lineWidth = Math.max(3, s * .011); ctx.strokeStyle = INK; ctx.stroke();
+  for (let i = 0; i < 4; i++) { ctx.beginPath(); ctx.moveTo((-.1 + i * .065) * s, hy + .14 * s); ctx.quadraticCurveTo((-.08 + i * .06) * s, hy + (.2 + L * .4) * s, (-.04 + i * .03) * s, hy + (.15 + L * .8) * s); ctx.lineWidth = Math.max(2, s * .006); ctx.strokeStyle = 'rgba(0,0,0,.3)'; ctx.stroke(); }
+  ellipse(ctx, -.06 * s, hy + .08 * s, .07 * s, .025 * s, .25); ctx.fillStyle = col; ctx.fill(); ellipse(ctx, .06 * s, hy + .08 * s, .07 * s, .025 * s, -.25); ctx.fill();
+  ctx.restore();
+}
+function boyarHat(ctx, o, col = '#7a2a3a') { const s = o.s || 600; ctx.save(); ctx.translate(o.x, o.y); ctx.scale(o.flip || 1, 1); const hy = -.765 * s; rrect(ctx, -.15 * s, hy - .5 * s, .3 * s, .38 * s, .06 * s); fillStroke(ctx, col, Math.max(3, s * .011)); rrect(ctx, -.2 * s, hy - .17 * s, .4 * s, .09 * s, .04 * s); fillStroke(ctx, '#5a3a22', Math.max(3, s * .011)); ctx.restore(); }
+function peter(ctx, o) { const so = Object.assign({ cols: ['#2a5a3a', '#2a5a3a'], hat: 'none', belt: false, vest: '#c8a040' }, o); drawStick(ctx, so); const s = so.s; ctx.save(); ctx.translate(so.x, so.y); ctx.scale(so.flip || 1, 1); const hy = -.765 * s; for (const sd of [-1, 1]) for (let i = 0; i < 3; i++) { circle(ctx, sd * .17 * s, hy - .08 * s + i * .07 * s, .055 * s); fillStroke(ctx, '#3a2418', Math.max(3, s * .01)); } ctx.beginPath(); ctx.arc(0, hy - .02 * s, .19 * s, Math.PI * 1.1, Math.PI * 1.9); ctx.lineWidth = .06 * s; ctx.strokeStyle = '#3a2418'; ctx.stroke(); for (const sd of [-1, 1]) { ctx.beginPath(); ctx.ellipse(sd * .05 * s, hy + .07 * s, .05 * s, .012 * s, sd * .15, 0, TAU); ctx.fillStyle = '#3a2418'; ctx.fill(); } ctx.restore(); return so; }
+function razor(ctx, x, y, s, rot = 0) { ctx.save(); ctx.translate(x, y); ctx.rotate(rot); rrect(ctx, -s * .5, -s * .08, s * .55, s * .16, s * .04); fillStroke(ctx, '#5a3a22', 5); path(ctx, [[s * .05, -s * .1], [s * .55, -s * .06], [s * .55, s * .02], [s * .05, s * .1]]); fillStroke(ctx, '#d8dce4', 5); ctx.restore(); }
+function beardToken(ctx, x, y, r, rot = 0, flip = 0) {
+  ctx.save(); ctx.translate(x, y); ctx.rotate(rot); ctx.scale(Math.max(.08, Math.abs(Math.cos(flip))), 1); const lw = Math.max(4, r * .06);
+  circle(ctx, 0, 0, r); fillStroke(ctx, '#c87a3a', lw); circle(ctx, 0, 0, r * .84); ctx.lineWidth = lw * .5; ctx.strokeStyle = '#8a4a1a'; ctx.stroke();
+  if (Math.cos(flip) >= 0) { ctx.beginPath(); ctx.moveTo(-r * .32, -r * .3); ctx.quadraticCurveTo(-r * .4, r * .25, 0, r * .45); ctx.quadraticCurveTo(r * .4, r * .25, r * .32, -r * .3); ctx.quadraticCurveTo(0, -r * .1, -r * .32, -r * .3); ctx.fillStyle = '#8a4a1a'; ctx.fill(); ellipse(ctx, -r * .13, -r * .32, r * .15, r * .05, .2); ctx.fill(); ellipse(ctx, r * .13, -r * .32, r * .15, r * .05, -.2); ctx.fill(); }
+  else { text(ctx, 'PAID', 0, -r * .2, r * .3, '#6a3a12', INK, 0); text(ctx, '1705', 0, r * .25, r * .26, '#6a3a12', INK, 0); }
+  ctx.restore();
+}
+function ruble(ctx, x, y, r, rot = 0) { ctx.save(); ctx.translate(x, y); ctx.rotate(rot); circle(ctx, 0, 0, r); fillStroke(ctx, '#d8dce4', Math.max(3, r * .1)); text(ctx, '₽', 0, r * .05, r * 1.1, '#6a6e7a', INK, 0); ctx.restore(); }
+function kremlinBG(ctx, t, cam, o = {}) {
+  applyCam(ctx, cam, .08); drawSky(ctx, o.top || '#8ab8e8', o.bot || '#f2e6d0', -400, 1300); applyCam(ctx, cam, .14); drawCloud(ctx, 160 + t * 6, 400, 80, 1, .9); drawCloud(ctx, 820 + t * 4, 520, 60, 2, .9);
+  applyCam(ctx, cam, .35); ctx.fillStyle = '#b8322c'; ctx.fillRect(-300, 1080, 1700, 200); for (let i = 0; i < 22; i++) { path(ctx, [[-300 + i * 80, 1080], [-280 + i * 80, 1040], [-260 + i * 80, 1080]]); ctx.fillStyle = '#b8322c'; ctx.fill(); }
+  for (const [x, h, c] of [[180, 300, '#3aa35b'], [540, 380, '#f2b52a'], [880, 300, '#2f7de0']]) { rrect(ctx, x - 50, 1080 - h, 100, h, 6); fillStroke(ctx, '#f2ece0', 5); ctx.beginPath(); ctx.moveTo(x - 70, 1080 - h); ctx.quadraticCurveTo(x - 80, 1080 - h - 90, x, 1080 - h - 150); ctx.quadraticCurveTo(x + 80, 1080 - h - 90, x + 70, 1080 - h); ctx.closePath(); fillStroke(ctx, c, 5); line(ctx, x, 1080 - h - 150, x, 1080 - h - 200, 5); }
+  applyCam(ctx, cam, 1); ctx.fillStyle = o.ground || '#c8b89a'; ctx.fillRect(-1000, 1240, 3000, 1000); line(ctx, -1000, 1240, 3000, 1240, 7);
+}
+function windmill(ctx, x, y, s, t) { path(ctx, [[x - s * .2, y], [x - s * .12, y - s * .7], [x + s * .12, y - s * .7], [x + s * .2, y]]); fillStroke(ctx, '#e8dcc4', 5); ctx.save(); ctx.translate(x, y - s * .7); ctx.rotate(t); for (let i = 0; i < 4; i++) { ctx.rotate(Math.PI / 2); rrect(ctx, -s * .05, 0, s * .1, s * .5, 4); fillStroke(ctx, '#ffffff', 4); } ctx.restore(); }
+function lawScroll(ctx, x, y, w, h, lines) { rrect(ctx, x - w / 2, y - h / 2, w, h, 10); fillStroke(ctx, '#f5ecd0', 6); for (const sy of [y - h / 2, y + h / 2]) { rrect(ctx, x - w / 2 - 20, sy - 18, w + 40, 36, 18); fillStroke(ctx, '#c8a060', 6); } lines.forEach((l, i) => text(ctx, l, x, y - h * .25 + i * h * .25, Math.min(h * .16, w * .1), '#3a2010', INK, 0)); }

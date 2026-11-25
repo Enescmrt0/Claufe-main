@@ -475,3 +475,66 @@ def starlight(t0, t1, g=1.0, bpm=84, tense=False):
         if tense:
             for k in range(4): place(music, thud(55, .2, .3), t + k * q, g)
         t += 4 * q; bar += 1
+
+# polka fizz: oom-pah bass, accordion off-beats, bouncy clarinet line (Fanta)
+def _clarinet(m, dur=.2, g=1.0):
+    n = int(dur * SR); t = T(n); f = midi(m) * (1 + .004 * np.sin(2 * np.pi * 5.5 * t)); ph = np.cumsum(f) / SR
+    x = np.sin(2 * np.pi * ph) + .45 * np.sin(6 * np.pi * ph) + .2 * np.sin(10 * np.pi * ph)
+    return lp(x, 3000) * np.minimum(1, t / .015) * np.minimum(1, (dur - t) / .03) * .13 * g
+def polka(t0, t1, g=1.0, bpm=132, tune=True):
+    q = 60 / bpm; t = t0; bar = 0
+    prog = [(41, (65, 69, 72)), (48, (64, 67, 70)), (48, (64, 67, 70)), (41, (65, 69, 72))]
+    mel = [72, 74, 76, 77, 79, 77, 76, 74, 72, 76, 79, 84, 82, 79, 76, 72]
+    while t < t1 - .05:
+        root, ch = prog[bar % 4]
+        for k in range(4):
+            tk = t + k * q / 2
+            if tk >= t1: break
+            if k % 2 == 0: place(music, pizz(root - 12 + (7 if k == 2 else 0), .25, 1.0), tk, g)
+            else: place(music, _accord(ch, q * .35, .9), tk, g)
+            if tune: place(music, _clarinet(mel[(bar * 4 + k) % 16], q * .45, .9), tk, g)
+        place(music, _snare(.12), t + q / 2, g); place(music, _snare(.12), t + 3 * q / 2, g)
+        t += 2 * q; bar += 1
+
+# spy noir: walking bass, brushed swing, muted-trumpet stabs, minor (Nobel medals)
+def _mute(m, dur=.3, g=1.0):
+    n = int(dur * SR); t = T(n); f = midi(m) * (1 + .006 * np.sin(2 * np.pi * 6 * t)); ph = np.cumsum(f) / SR
+    x = bp(2 * (ph % 1) - 1, 600, 2400) * (.6 + .4 * np.minimum(1, t / .06))
+    return x * np.minimum(1, t / .02) * np.minimum(1, (dur - t) / .05) * .16 * g
+def noir(t0, t1, g=1.0, bpm=96, tune=True):
+    q = 60 / bpm; t = t0; bar = 0
+    walk = [[38, 41, 43, 44], [45, 44, 43, 41], [38, 41, 43, 45], [46, 45, 44, 43]]
+    stab = [(0, 74), (1.5, 77), (2.5, 76), (3, 74)]
+    while t < t1 - .05:
+        w = walk[bar % 4]
+        for k in range(4):
+            tk = t + k * q
+            if tk >= t1: break
+            place(music, pizz(w[k] - 12, q * .9, 1.0), tk, g); place(music, _hat(.2), tk + q * .66, g)
+            if k % 2: place(music, _snare(.08), tk, g)
+        if tune and bar % 2 == 1:
+            for (b, m) in stab:
+                if t + b * q < t1: place(music, _mute(m - 12, q * .6, .9), t + b * q, g)
+        t += 4 * q; bar += 1
+
+# balalaika: tremolo-plucked minor folk tune that speeds up (beard tax)
+def _bala(m, dur=.25, g=1.0):
+    n = int(dur * SR); x = np.zeros(n)
+    for r in range(max(1, int(dur / .055))):
+        i = int(r * .055 * SR); L = n - i; tt = T(L); f = midi(m)
+        x[i:] += (np.sin(2 * np.pi * f * tt) + .6 * np.sin(4 * np.pi * f * tt) + .3 * np.sin(6 * np.pi * f * tt)) * np.exp(-tt * 22)
+    return x * .07 * g
+def balalaika(t0, t1, g=1.0, bpm=120, tune=True):
+    q = 60 / bpm; t = t0; bar = 0
+    prog = [(45, (57, 60, 64)), (40, (56, 59, 64)), (45, (57, 60, 64)), (40, (56, 59, 64)), (50, (57, 62, 65)), (45, (57, 60, 64)), (40, (56, 59, 64)), (45, (57, 60, 64))]
+    mel = [76, 74, 72, 71, 72, 74, 76, 76, 77, 76, 74, 72, 71, 69, 71, 72]
+    while t < t1 - .05:
+        root, ch = prog[bar % 8]
+        for k in range(4):
+            tk = t + k * q / 2
+            if tk >= t1: break
+            if k % 2 == 0: place(music, pizz(root - 12, .25, 1.0), tk, g)
+            else: place(music, _bala(ch[0] + 12, q * .4, .6), tk, g); place(music, _bala(ch[2], q * .4, .5), tk, g)
+            if tune: place(music, _bala(mel[(bar * 4 + k) % 16], q * .48, 1.0), tk, g)
+        place(music, _snare(.1), t + q, g)
+        t += 2 * q; bar += 1
