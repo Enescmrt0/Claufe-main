@@ -434,3 +434,44 @@ def boogie(t0, t1, g=1.0, bpm=150, tune=True):
             for (b, m) in riff:
                 if t + b * q < t1: place(music, _piano(m + (r - 43), .35, .7), t + b * q, g); place(music, _piano(m + (r - 43) - 3, .35, .5), t + b * q, g)
         t += 4 * q; bar += 1
+
+# doomsday clockwork: tick-tock percussion, pulsing bass ostinato, staccato strings, rising tension
+def _tock(f=1800, g=1.0): n = int(.05 * SR); t = T(n); return (np.sin(2 * np.pi * f * t) * np.exp(-t * 120) + hp(rng.standard_normal(n), 3000) * np.exp(-t * 200) * .4) * .4 * g
+def _stacc(ms, dur=.12, g=1.0):
+    n = int(dur * SR); t = T(n); x = np.zeros(n)
+    for m in ms:
+        ph = np.cumsum(np.full(n, midi(m))) / SR; x += 2 * (ph % 1) - 1
+    return lp(x / len(ms), 2200) * np.minimum(1, t / .005) * np.exp(-t * 18) * .18 * g
+def clockwork(t0, t1, g=1.0, bpm=112, calm=False):
+    q = 60 / bpm; t = t0; bar = 0
+    prog = [(40, (64, 67, 71)), (40, (64, 67, 71)), (36, (64, 67, 72)), (38, (62, 66, 69))] if not calm else [(48, (60, 64, 67)), (43, (59, 62, 67)), (45, (60, 64, 69)), (41, (60, 65, 69))]
+    while t < t1 - .05:
+        root, ch = prog[bar % 4]
+        for k in range(8):
+            tk = t + k * q / 2
+            if tk >= t1: break
+            place(music, _tock(1800 if k % 2 == 0 else 1300, .9), tk, g)
+            place(music, pizz(root - 12 + (7 if k % 4 == 2 else 0), .2, .8), tk, g)
+            if not calm and k in (0, 3, 6): place(music, _stacc(ch, .14, .9), tk, g)
+            if calm and k in (0, 4): place(music, _vibes(ch[k // 4 % 3] + 12, 1.2, .7), tk, g)
+        if not calm and bar % 4 == 3: place(music, thud(50, .5, .4), t + 3 * q, g)
+        t += 4 * q; bar += 1
+
+# starlight: music-box melody over a shimmering pad and a slow heartbeat pulse (wonder in space)
+def _musicbox(m, dur=1.0, g=1.0):
+    n = int(dur * SR); t = T(n); f = midi(m)
+    return (np.sin(2 * np.pi * f * t) + .4 * np.sin(2 * np.pi * f * 3.01 * t) * np.exp(-t * 6) + .2 * np.sin(2 * np.pi * f * 5.2 * t) * np.exp(-t * 12)) * np.exp(-t * 3.5) * np.minimum(1, t / .002) * .16 * g
+def starlight(t0, t1, g=1.0, bpm=84, tense=False):
+    q = 60 / bpm; t = t0; bar = 0
+    prog = [(45, (57, 60, 64)), (41, (57, 60, 65)), (43, (55, 59, 62)), (40, (55, 59, 64))] if tense else [(43, (59, 62, 67)), (40, (59, 64, 67)), (36, (60, 64, 67)), (38, (57, 62, 66))]
+    mel = [79, 83, 86, 83, 81, 79, 76, 79] if not tense else [76, 79, 81, 79, 77, 76, 72, 76]
+    while t < t1 - .05:
+        root, ch = prog[bar % 4]; L = min(4 * q, t1 - t)
+        if L > .4: place(music, _pad(ch, L, .45), t, g)
+        place(music, pizz(root - 12, 1.0, .7), t, g)
+        for k in range(8):
+            tk = t + k * q / 2
+            if tk < t1: place(music, _musicbox(mel[(bar * 2 + k) % 8] if k % 2 == 0 else ch[k % 3] + 12, .9, .8), tk, g)
+        if tense:
+            for k in range(4): place(music, thud(55, .2, .3), t + k * q, g)
+        t += 4 * q; bar += 1
