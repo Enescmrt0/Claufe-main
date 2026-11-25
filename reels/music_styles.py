@@ -593,3 +593,101 @@ def minuet(t0, t1, g=1.0, bpm=132, tune=True):
             for b in range(3):
                 if t + b * q < t1: place(music, _harpsi(mel[(bar * 3 + b) % 24] + 12, q * .9, .9), t + b * q, g)
         t += 3 * q; bar += 1
+
+# old phonograph parlour: stride piano with vinyl crackle (hello / telephone)
+def phonograph(t0, t1, g=1.0, bpm=112, tune=True):
+    q = 60 / bpm; t = t0; bar = 0
+    prog = [(41, (65, 69, 72)), (46, (65, 70, 74)), (48, (64, 67, 70)), (41, (65, 69, 72))]
+    mel = [77, 76, 77, 81, 79, 77, 74, 72, 74, 77, 79, 81, 82, 81, 79, 77]
+    while t < t1 - .05:
+        root, ch = prog[bar % 4]
+        for k in range(4):
+            tk = t + k * q
+            if tk >= t1: break
+            if k % 2 == 0: place(music, _piano(root - 12 + (7 if k == 2 else 0), q * .8, .8), tk, g)
+            else:
+                for m in ch: place(music, _piano(m - 12, q * .5, .35), tk, g)
+            if tune: place(music, _piano(mel[(bar * 4 + k) % 16], q * .9, .7), tk, g)
+        n = int(4 * q * SR); cr = (rng.random(n) > .9985) * rng.standard_normal(n) * .5 + lp(rng.standard_normal(n), 800) * .02
+        place(music, cr, t, g)
+        t += 4 * q; bar += 1
+
+# chiptune: square-wave arpeggios and bleepy bass (bubble wrap)
+def _sq(m, dur=.1, g=1.0, duty=.5):
+    n = int(dur * SR); t = T(n); ph = (midi(m) * t) % 1
+    return np.where(ph < duty, 1.0, -1.0) * np.minimum(1, (dur - t) / .01) * .06 * g
+def chiptune(t0, t1, g=1.0, bpm=140, tune=True):
+    s16 = 60 / bpm / 4; t = t0; bar = 0
+    prog = [(48, (60, 64, 67)), (45, (57, 60, 64)), (41, (53, 57, 60)), (43, (55, 59, 62))]
+    mel = [76, 79, 84, 79, 77, 76, 74, 72, 74, 76, 79, 81, 79, 76, 74, 76]
+    while t < t1 - .05:
+        root, ch = prog[bar % 4]
+        for k in range(16):
+            tk = t + k * s16
+            if tk >= t1: break
+            place(music, _sq(ch[k % 3] + 12, s16 * .9, .7, .25), tk, g)
+            if k % 4 == 0: place(music, _sq(root - 12, s16 * 1.8, 1.2), tk, g)
+            if k % 8 == 4: place(music, hp(rng.standard_normal(int(.06 * SR)), 2000) * .2, tk, g)
+            if tune and k % 2 == 0: place(music, _sq(mel[(bar * 8 + k // 2) % 16], s16 * 1.8, .9, .5), tk, g)
+        t += 16 * s16; bar += 1
+
+# calliope carnival: bright steam-organ waltz (Play-Doh)
+def _calliope(m, dur=.3, g=1.0):
+    n = int(dur * SR); t = T(n); f = midi(m) * (1 + .01 * np.sin(2 * np.pi * 7 * t)); ph = np.cumsum(f) / SR
+    x = np.sin(2 * np.pi * ph) + .3 * np.sin(4 * np.pi * ph) + bp(rng.standard_normal(n), 1500, 5000) * .05
+    return x * np.minimum(1, t / .02) * np.minimum(1, (dur - t) / .04) * .14 * g
+def calliope(t0, t1, g=1.0, bpm=168, tune=True):
+    q = 60 / bpm; t = t0; bar = 0
+    prog = [(43, (67, 71, 74)), (50, (66, 69, 72)), (50, (66, 69, 72)), (43, (67, 71, 74))]
+    mel = [79, 83, 86, 83, 81, 79, 78, 81, 84, 81, 79, 78]
+    while t < t1 - .05:
+        root, ch = prog[bar % 4]
+        place(music, pizz(root - 12, .4, .9), t, g)
+        for b in (1, 2):
+            if t + b * q < t1: place(music, _calliope(ch[b], q * .6, .5), t + b * q, g)
+        if tune:
+            for b in range(3):
+                if t + b * q < t1: place(music, _calliope(mel[(bar * 3 + b) % 12], q * .9, .9), t + b * q, g)
+        t += 3 * q; bar += 1
+
+# French imperial march: snare rolls, horn calls, bass drum (Napoleon)
+def _horn(m, dur=.4, g=1.0):
+    n = int(dur * SR); t = T(n); ph = np.cumsum(np.full(n, midi(m))) / SR
+    x = lp(np.sin(2 * np.pi * ph) + .5 * np.sin(4 * np.pi * ph) + .3 * np.sin(6 * np.pi * ph), 1600)
+    return x * np.minimum(1, t / .05) * np.minimum(1, (dur - t) / .08) * .12 * g
+def empire(t0, t1, g=1.0, bpm=108, tune=True):
+    q = 60 / bpm; t = t0; bar = 0
+    prog = [(46, (58, 62, 65)), (41, (57, 60, 65)), (46, (58, 62, 65)), (41, (57, 60, 63))]
+    call = [(0, 70, 1), (1, 74, .5), (1.5, 77, .5), (2, 82, 1.5), (3.5, 77, .5)]
+    while t < t1 - .05:
+        root, ch = prog[bar % 4]
+        place(music, thud(55, .4, .5), t, g); place(music, thud(55, .4, .35), t + 2 * q, g)
+        for k in range(8): place(music, _snare(.18 if k % 2 == 0 else .1), t + k * q / 2, g)
+        if bar % 2 == 1:
+            for r in range(6): place(music, _snare(.08 + r * .02), t + 3 * q + r * q / 6, g)
+        L = min(4 * q, t1 - t)
+        if L > .3:
+            for m in ch: place(music, _horn(m - 12, L * .95, .4), t, g)
+        if tune and bar % 2 == 0:
+            for (b, m, d) in call:
+                if t + b * q < t1: place(music, _horn(m, d * q * .95, .9), t + b * q, g)
+        t += 4 * q; bar += 1
+
+# ancient lyre: plucked lyre in a Greek-sounding mode over a frame drum (Hero of Alexandria)
+def _lyre(m, dur=.8, g=1.0):
+    n = int(dur * SR); t = T(n); f = midi(m)
+    x = np.sin(2 * np.pi * f * t) + .4 * np.sin(4 * np.pi * f * t) * np.exp(-t * 5) + .2 * np.sin(6 * np.pi * f * t) * np.exp(-t * 9)
+    return x * np.exp(-t * 3.2) * np.minimum(1, t / .002) * .15 * g
+def lyre(t0, t1, g=1.0, bpm=100, tune=True):
+    q = 60 / bpm; t = t0; bar = 0
+    mel = [64, 65, 67, 69, 67, 65, 64, 62, 64, 65, 64, 62, 60, 62, 64, 64]
+    drone = [(40, 47), (40, 47), (38, 45), (40, 47)]
+    while t < t1 - .05:
+        a, b = drone[bar % 4]
+        place(music, _lyre(a, 1.6, .8), t, g); place(music, _lyre(b, 1.6, .5), t + .02, g)
+        for k in range(4):
+            tk = t + k * q
+            if tk >= t1: break
+            place(music, thud(110 if k % 2 == 0 else 150, .15, .35), tk, g)
+            if tune: place(music, _lyre(mel[(bar * 4 + k) % 16] + 12, q * 1.2, .9), tk, g)
+        t += 4 * q; bar += 1
