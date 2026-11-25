@@ -58,7 +58,7 @@ SHOTS.push({ start: S(5), end: S(6), tr: 'whip', draw(ctx, lt, t) {
 // [6] pay and you got a beard token to carry
 SHOTS.push({ start: S(6), end: S(7), tr: 'whip', draw(ctx, lt, t) {
   const cam = camA(t, lt, { z: 1.06, dz: .04 }); bgFlat(ctx, '#2a3f5f', '#1a2840'); applyCam(ctx, cam, 1);
-  beardToken(ctx, 540, 820, 300 * backOut(cue(t, wt(6, 'token') - .3, .35)), Math.sin(t) * .08, Math.sin(t * 1.5) * .5);
+  beardToken(ctx, 540, 820, 300 * backOut(cue(t, S(6) + .05, .35)), Math.sin(t) * .08, Math.sin(t * 1.5) * .5);
   label(ctx, 'A BEARD TOKEN', 540, 260, 110, t, wt(6, 'token') - .3, '#ffd23a', wt(6, 'carry') - .2); label(ctx, 'CARRY IT ALWAYS', 540, 260, 96, t, wt(6, 'carry') - .2, '#ffffff');
 } });
 // [7] written on it: the beard is a useless burden
