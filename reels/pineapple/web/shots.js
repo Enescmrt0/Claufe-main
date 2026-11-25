@@ -53,7 +53,7 @@ SHOTS.push({ start: S(5), end: S(6), tr: 'whip', draw(ctx, lt, t) {
 SHOTS.push({ start: S(6), end: S(7), tr: 'whip', draw(ctx, lt, t) {
   const cam = camA(t, lt, { z: 1.02, dz: .03 }); const back = t > wt(6, 'next') - .3;
   if (!back) { georgianRoom(ctx, t, cam); diningTable(ctx, 540, 1120, 820); pineapple(ctx, 540, 1070, 300); line(ctx, 400, 760, 680, 1040, 20, '#e0392f'); line(ctx, 680, 760, 400, 1040, 20, '#e0392f'); label(ctx, 'NOBODY ATE IT', 540, 250, 110, t, wt(6, 'nobody') - .2, '#ff6a5a'); }
-  else { bgDay(ctx, t, cam); applyCam(ctx, cam, 1); const k = (t * .6) % 1; carriage(ctx, -200 + k * 1500, GY + 300, 420); pineapple(ctx, -200 + k * 1500, GY + 300 - 230, 120); label(ctx, 'NEXT PARTY →', 540, 250, 110, t, wt(6, 'next') - .3, '#ffd23a'); }
+  else { bgDay(ctx, t, cam); applyCam(ctx, cam, 1); const k = clamp((t - wt(6, 'next') + .3) / 2.2); const cx = 200 + k * 700; carriage(ctx, cx, GY + 300, 420); pineapple(ctx, cx, GY + 300 - 230, 120); rrect(ctx, 820, GY - 40, 220, 300, 8); fillStroke(ctx, '#e8dcc4', 6); text(ctx, 'PARTY', 930, GY + 30, 48, '#c8322c', INK, 0); for (let i = 0; i < 3; i++) star5(ctx, 860 + i * 40, GY - 80, 16, t + i); label(ctx, 'NEXT PARTY →', 540, 250, 110, t, wt(6, 'next') - .3, '#ffd23a'); }
 } });
 // [7] it only got eaten when it was too old to show off
 SHOTS.push({ start: S(7), end: S(8), tr: 'whip', draw(ctx, lt, t) {
