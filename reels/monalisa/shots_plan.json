@@ -1,0 +1,278 @@
+{
+ "keys": [
+  "hook",
+  "glass",
+  "closet",
+  "approach",
+  "lift",
+  "stairwell",
+  "smock",
+  "plumber",
+  "painter",
+  "guards",
+  "picasso",
+  "queue",
+  "papers",
+  "trunk",
+  "florence",
+  "arrest",
+  "today"
+ ],
+ "requests": [
+  {
+   "index": 0,
+   "params": {
+    "model": "gpt_image_2_6",
+    "aspect_ratio": "9:16",
+    "quality": "medium",
+    "prompt": "Vertical 9:16 frame from a 2D cartoon stickman explainer short, same art style as the reference image. STYLE: every character is a stickman with a very large perfectly round white head, simple black dot eyes, small expressive eyebrows and a tiny mouth, no nose, no ears; a small bean-shaped torso wearing period clothes in flat colors; thin black stick arms and stick legs with small round hands; thick clean black outlines and soft cel shading. Backgrounds are richly detailed, colorful painted environments with depth, perspective and soft cinematic lighting, like a polished cartoon set. No text, no captions, no watermark. SCENE: Paris, 1911, inside the Louvre. Close-up of a deep red museum wall where the Mona Lisa should hang: only four empty iron hooks and a pale rectangle on the wallpaper. A museum guard stickman in a dark blue uniform and round kepi cap stares at the empty spot with huge shocked eyes and open mouth. Ornate gilded frames on either side. Dramatic low angle.",
+    "medias": [
+     {
+      "role": "image_references",
+      "value": "12b92587-aacc-4ac1-9478-02181a638fa0"
+     }
+    ]
+   }
+  },
+  {
+   "index": 1,
+   "params": {
+    "model": "gpt_image_2_6",
+    "aspect_ratio": "9:16",
+    "quality": "medium",
+    "prompt": "Vertical 9:16 frame from a 2D cartoon stickman explainer short, same art style as the reference image. STYLE: every character is a stickman with a very large perfectly round white head, simple black dot eyes, small expressive eyebrows and a tiny mouth, no nose, no ears; a small bean-shaped torso wearing period clothes in flat colors; thin black stick arms and stick legs with small round hands; thick clean black outlines and soft cel shading. Backgrounds are richly detailed, colorful painted environments with depth, perspective and soft cinematic lighting, like a polished cartoon set. No text, no captions, no watermark. SCENE: Vincenzo Peruggia (the man in the reference: thick black curled mustache, dark flat cap, long white work smock) carefully fits a protective glass case over a large painting in a Louvre gallery, standing on a small wooden step stool, toolbox at his feet. Gilded frames, red walls, warm skylight light. Medium shot.",
+    "medias": [
+     {
+      "role": "image_references",
+      "value": "12b92587-aacc-4ac1-9478-02181a638fa0"
+     }
+    ]
+   }
+  },
+  {
+   "index": 2,
+   "params": {
+    "model": "gpt_image_2_6",
+    "aspect_ratio": "9:16",
+    "quality": "medium",
+    "prompt": "Vertical 9:16 frame from a 2D cartoon stickman explainer short, same art style as the reference image. STYLE: every character is a stickman with a very large perfectly round white head, simple black dot eyes, small expressive eyebrows and a tiny mouth, no nose, no ears; a small bean-shaped torso wearing period clothes in flat colors; thin black stick arms and stick legs with small round hands; thick clean black outlines and soft cel shading. Backgrounds are richly detailed, colorful painted environments with depth, perspective and soft cinematic lighting, like a polished cartoon set. No text, no captions, no watermark. SCENE: Vincenzo Peruggia (the man in the reference: thick black curled mustache, dark flat cap, long white work smock) hides inside a cramped dark museum storage closet at night, peeking out through a narrow crack in the door with one eye, brooms, buckets and stacked frames around him. Moonlight stripe across his face. Close shot, tense mood.",
+    "medias": [
+     {
+      "role": "image_references",
+      "value": "12b92587-aacc-4ac1-9478-02181a638fa0"
+     }
+    ]
+   }
+  },
+  {
+   "index": 3,
+   "params": {
+    "model": "gpt_image_2_6",
+    "aspect_ratio": "9:16",
+    "quality": "medium",
+    "prompt": "Vertical 9:16 frame from a 2D cartoon stickman explainer short, same art style as the reference image. STYLE: every character is a stickman with a very large perfectly round white head, simple black dot eyes, small expressive eyebrows and a tiny mouth, no nose, no ears; a small bean-shaped torso wearing period clothes in flat colors; thin black stick arms and stick legs with small round hands; thick clean black outlines and soft cel shading. Backgrounds are richly detailed, colorful painted environments with depth, perspective and soft cinematic lighting, like a polished cartoon set. No text, no captions, no watermark. SCENE: Early Monday morning in the empty Louvre Salon Carr\u00e9, closed to visitors. Seen from behind and slightly above, Vincenzo Peruggia (the man in the reference: thick black curled mustache, dark flat cap, long white work smock) in his white smock walks alone across the polished parquet toward the small Mona Lisa painting hanging on the far red wall. Long shadows, pale morning light, no one else around. Wide shot.",
+    "medias": [
+     {
+      "role": "image_references",
+      "value": "12b92587-aacc-4ac1-9478-02181a638fa0"
+     }
+    ]
+   }
+  },
+  {
+   "index": 4,
+   "params": {
+    "model": "gpt_image_2_6",
+    "aspect_ratio": "9:16",
+    "quality": "medium",
+    "prompt": "Vertical 9:16 frame from a 2D cartoon stickman explainer short, same art style as the reference image. STYLE: every character is a stickman with a very large perfectly round white head, simple black dot eyes, small expressive eyebrows and a tiny mouth, no nose, no ears; a small bean-shaped torso wearing period clothes in flat colors; thin black stick arms and stick legs with small round hands; thick clean black outlines and soft cel shading. Backgrounds are richly detailed, colorful painted environments with depth, perspective and soft cinematic lighting, like a polished cartoon set. No text, no captions, no watermark. SCENE: Close-up of Vincenzo Peruggia (the man in the reference: thick black curled mustache, dark flat cap, long white work smock) lifting the Mona Lisa painting off the red wall with both stick hands, his eyes wide, biting his lip, the painting in its heavy gilded frame and glass case. The painting clearly shows the famous Mona Lisa portrait. Dramatic close angle.",
+    "medias": [
+     {
+      "role": "image_references",
+      "value": "12b92587-aacc-4ac1-9478-02181a638fa0"
+     }
+    ]
+   }
+  },
+  {
+   "index": 5,
+   "params": {
+    "model": "gpt_image_2_6",
+    "aspect_ratio": "9:16",
+    "quality": "medium",
+    "prompt": "Vertical 9:16 frame from a 2D cartoon stickman explainer short, same art style as the reference image. STYLE: every character is a stickman with a very large perfectly round white head, simple black dot eyes, small expressive eyebrows and a tiny mouth, no nose, no ears; a small bean-shaped torso wearing period clothes in flat colors; thin black stick arms and stick legs with small round hands; thick clean black outlines and soft cel shading. Backgrounds are richly detailed, colorful painted environments with depth, perspective and soft cinematic lighting, like a polished cartoon set. No text, no captions, no watermark. SCENE: Vincenzo Peruggia (the man in the reference: thick black curled mustache, dark flat cap, long white work smock) crouches in a dim stone service stairwell of the Louvre, prying the Mona Lisa panel out of its gilded frame and glass box, the empty frame leaning against the wall. Narrow spiral stairs, a single lamp. Medium shot.",
+    "medias": [
+     {
+      "role": "image_references",
+      "value": "12b92587-aacc-4ac1-9478-02181a638fa0"
+     }
+    ]
+   }
+  },
+  {
+   "index": 6,
+   "params": {
+    "model": "gpt_image_2_6",
+    "aspect_ratio": "9:16",
+    "quality": "medium",
+    "prompt": "Vertical 9:16 frame from a 2D cartoon stickman explainer short, same art style as the reference image. STYLE: every character is a stickman with a very large perfectly round white head, simple black dot eyes, small expressive eyebrows and a tiny mouth, no nose, no ears; a small bean-shaped torso wearing period clothes in flat colors; thin black stick arms and stick legs with small round hands; thick clean black outlines and soft cel shading. Backgrounds are richly detailed, colorful painted environments with depth, perspective and soft cinematic lighting, like a polished cartoon set. No text, no captions, no watermark. SCENE: Vincenzo Peruggia (the man in the reference: thick black curled mustache, dark flat cap, long white work smock) walks stiffly down a long museum corridor with the Mona Lisa panel hidden flat under his white smock, a suspicious rectangular bulge on his chest, sweating, trying to look casual, whistling. Corridor of marble busts. Medium full shot.",
+    "medias": [
+     {
+      "role": "image_references",
+      "value": "12b92587-aacc-4ac1-9478-02181a638fa0"
+     }
+    ]
+   }
+  },
+  {
+   "index": 7,
+   "params": {
+    "model": "gpt_image_2_6",
+    "aspect_ratio": "9:16",
+    "quality": "medium",
+    "prompt": "Vertical 9:16 frame from a 2D cartoon stickman explainer short, same art style as the reference image. STYLE: every character is a stickman with a very large perfectly round white head, simple black dot eyes, small expressive eyebrows and a tiny mouth, no nose, no ears; a small bean-shaped torso wearing period clothes in flat colors; thin black stick arms and stick legs with small round hands; thick clean black outlines and soft cel shading. Backgrounds are richly detailed, colorful painted environments with depth, perspective and soft cinematic lighting, like a polished cartoon set. No text, no captions, no watermark. SCENE: At a locked side door of the Louvre, a friendly plumber stickman in blue overalls and a cap, with a wrench, happily opens the door for Vincenzo Peruggia (the man in the reference: thick black curled mustache, dark flat cap, long white work smock), who smiles nervously with the bulge under his smock. Bright daylight beyond the door. Medium shot.",
+    "medias": [
+     {
+      "role": "image_references",
+      "value": "12b92587-aacc-4ac1-9478-02181a638fa0"
+     }
+    ]
+   }
+  },
+  {
+   "index": 8,
+   "params": {
+    "model": "gpt_image_2_6",
+    "aspect_ratio": "9:16",
+    "quality": "medium",
+    "prompt": "Vertical 9:16 frame from a 2D cartoon stickman explainer short, same art style as the reference image. STYLE: every character is a stickman with a very large perfectly round white head, simple black dot eyes, small expressive eyebrows and a tiny mouth, no nose, no ears; a small bean-shaped torso wearing period clothes in flat colors; thin black stick arms and stick legs with small round hands; thick clean black outlines and soft cel shading. Backgrounds are richly detailed, colorful painted environments with depth, perspective and soft cinematic lighting, like a polished cartoon set. No text, no captions, no watermark. SCENE: Tuesday in the Louvre: an artist stickman with a beret and a little goatee arrives carrying an easel and paint box, and freezes in shock in front of a red wall with four empty iron hooks where the Mona Lisa used to hang. Visitors in the background. Medium shot.",
+    "medias": [
+     {
+      "role": "image_references",
+      "value": "12b92587-aacc-4ac1-9478-02181a638fa0"
+     }
+    ]
+   }
+  },
+  {
+   "index": 9,
+   "params": {
+    "model": "gpt_image_2_6",
+    "aspect_ratio": "9:16",
+    "quality": "medium",
+    "prompt": "Vertical 9:16 frame from a 2D cartoon stickman explainer short, same art style as the reference image. STYLE: every character is a stickman with a very large perfectly round white head, simple black dot eyes, small expressive eyebrows and a tiny mouth, no nose, no ears; a small bean-shaped torso wearing period clothes in flat colors; thin black stick arms and stick legs with small round hands; thick clean black outlines and soft cel shading. Backgrounds are richly detailed, colorful painted environments with depth, perspective and soft cinematic lighting, like a polished cartoon set. No text, no captions, no watermark. SCENE: Two relaxed Louvre guard stickmen in dark blue uniforms and kepi caps shrug and smile next to the empty wall, a cartoon thought bubble above them showing an old box camera on a tripod photographing the painting. Gilded frames around. Medium shot, comedic.",
+    "medias": [
+     {
+      "role": "image_references",
+      "value": "12b92587-aacc-4ac1-9478-02181a638fa0"
+     }
+    ]
+   }
+  },
+  {
+   "index": 10,
+   "params": {
+    "model": "gpt_image_2_6",
+    "aspect_ratio": "9:16",
+    "quality": "medium",
+    "prompt": "Vertical 9:16 frame from a 2D cartoon stickman explainer short, same art style as the reference image. STYLE: every character is a stickman with a very large perfectly round white head, simple black dot eyes, small expressive eyebrows and a tiny mouth, no nose, no ears; a small bean-shaped torso wearing period clothes in flat colors; thin black stick arms and stick legs with small round hands; thick clean black outlines and soft cel shading. Backgrounds are richly detailed, colorful painted environments with depth, perspective and soft cinematic lighting, like a polished cartoon set. No text, no captions, no watermark. SCENE: A 1911 Paris police office: a stern police inspector stickman with a bowler hat and big mustache questions a nervous young Pablo Picasso stickman with short dark hair and a blue and white striped shirt sitting on a wooden chair under a hanging lamp. Papers and files on the desk. Medium shot.",
+    "medias": [
+     {
+      "role": "image_references",
+      "value": "12b92587-aacc-4ac1-9478-02181a638fa0"
+     }
+    ]
+   }
+  },
+  {
+   "index": 11,
+   "params": {
+    "model": "gpt_image_2_6",
+    "aspect_ratio": "9:16",
+    "quality": "medium",
+    "prompt": "Vertical 9:16 frame from a 2D cartoon stickman explainer short, same art style as the reference image. STYLE: every character is a stickman with a very large perfectly round white head, simple black dot eyes, small expressive eyebrows and a tiny mouth, no nose, no ears; a small bean-shaped torso wearing period clothes in flat colors; thin black stick arms and stick legs with small round hands; thick clean black outlines and soft cel shading. Backgrounds are richly detailed, colorful painted environments with depth, perspective and soft cinematic lighting, like a polished cartoon set. No text, no captions, no watermark. SCENE: The Louvre reopened: a huge crowd of stickmen in 1911 clothes, hats, bonnets and canes, lined up in a long queue through the gallery, all staring at an empty red wall with four iron hooks. Some point, some take notes. Wide shot with deep perspective.",
+    "medias": [
+     {
+      "role": "image_references",
+      "value": "12b92587-aacc-4ac1-9478-02181a638fa0"
+     }
+    ]
+   }
+  },
+  {
+   "index": 12,
+   "params": {
+    "model": "gpt_image_2_6",
+    "aspect_ratio": "9:16",
+    "quality": "medium",
+    "prompt": "Vertical 9:16 frame from a 2D cartoon stickman explainer short, same art style as the reference image. STYLE: every character is a stickman with a very large perfectly round white head, simple black dot eyes, small expressive eyebrows and a tiny mouth, no nose, no ears; a small bean-shaped torso wearing period clothes in flat colors; thin black stick arms and stick legs with small round hands; thick clean black outlines and soft cel shading. Backgrounds are richly detailed, colorful painted environments with depth, perspective and soft cinematic lighting, like a polished cartoon set. No text, no captions, no watermark. SCENE: A whirlwind of 1911 newspapers flying around a cartoon globe of the Earth, each front page showing a big drawing of the Mona Lisa, newsboy stickmen in flat caps shouting on street corners of Paris, New York and London around the globe. Dynamic composition.",
+    "medias": [
+     {
+      "role": "image_references",
+      "value": "12b92587-aacc-4ac1-9478-02181a638fa0"
+     }
+    ]
+   }
+  },
+  {
+   "index": 13,
+   "params": {
+    "model": "gpt_image_2_6",
+    "aspect_ratio": "9:16",
+    "quality": "medium",
+    "prompt": "Vertical 9:16 frame from a 2D cartoon stickman explainer short, same art style as the reference image. STYLE: every character is a stickman with a very large perfectly round white head, simple black dot eyes, small expressive eyebrows and a tiny mouth, no nose, no ears; a small bean-shaped torso wearing period clothes in flat colors; thin black stick arms and stick legs with small round hands; thick clean black outlines and soft cel shading. Backgrounds are richly detailed, colorful painted environments with depth, perspective and soft cinematic lighting, like a polished cartoon set. No text, no captions, no watermark. SCENE: A tiny cramped Paris attic apartment with a slanted roof and a small window: Vincenzo Peruggia (the man in the reference: thick black curled mustache, dark flat cap, long white work smock), now in a plain vest, opens a wooden trunk with a false bottom to reveal the Mona Lisa hidden inside, a single candle lighting his satisfied face. Cozy messy room. Medium shot.",
+    "medias": [
+     {
+      "role": "image_references",
+      "value": "12b92587-aacc-4ac1-9478-02181a638fa0"
+     }
+    ]
+   }
+  },
+  {
+   "index": 14,
+   "params": {
+    "model": "gpt_image_2_6",
+    "aspect_ratio": "9:16",
+    "quality": "medium",
+    "prompt": "Vertical 9:16 frame from a 2D cartoon stickman explainer short, same art style as the reference image. STYLE: every character is a stickman with a very large perfectly round white head, simple black dot eyes, small expressive eyebrows and a tiny mouth, no nose, no ears; a small bean-shaped torso wearing period clothes in flat colors; thin black stick arms and stick legs with small round hands; thick clean black outlines and soft cel shading. Backgrounds are richly detailed, colorful painted environments with depth, perspective and soft cinematic lighting, like a polished cartoon set. No text, no captions, no watermark. SCENE: An elegant art dealer's shop in Florence, Italy, 1913: a bald art dealer stickman with round glasses and a bow tie examines the Mona Lisa on a table with a magnifying glass, eyes huge, while Vincenzo Peruggia (the man in the reference: thick black curled mustache, dark flat cap, long white work smock) in a suit and flat cap waits proudly. Through the window, Florence rooftops and the cathedral dome. Medium shot.",
+    "medias": [
+     {
+      "role": "image_references",
+      "value": "12b92587-aacc-4ac1-9478-02181a638fa0"
+     }
+    ]
+   }
+  },
+  {
+   "index": 15,
+   "params": {
+    "model": "gpt_image_2_6",
+    "aspect_ratio": "9:16",
+    "quality": "medium",
+    "prompt": "Vertical 9:16 frame from a 2D cartoon stickman explainer short, same art style as the reference image. STYLE: every character is a stickman with a very large perfectly round white head, simple black dot eyes, small expressive eyebrows and a tiny mouth, no nose, no ears; a small bean-shaped torso wearing period clothes in flat colors; thin black stick arms and stick legs with small round hands; thick clean black outlines and soft cel shading. Backgrounds are richly detailed, colorful painted environments with depth, perspective and soft cinematic lighting, like a polished cartoon set. No text, no captions, no watermark. SCENE: On a Florence street, two Italian police stickmen in dark uniforms with plumed hats lead away Vincenzo Peruggia (the man in the reference: thick black curled mustache, dark flat cap, long white work smock) in handcuffs; he raises his chin proudly with one hand on his heart, a small Italian flag waving on a balcony behind him. Terracotta buildings. Medium shot.",
+    "medias": [
+     {
+      "role": "image_references",
+      "value": "12b92587-aacc-4ac1-9478-02181a638fa0"
+     }
+    ]
+   }
+  },
+  {
+   "index": 16,
+   "params": {
+    "model": "gpt_image_2_6",
+    "aspect_ratio": "9:16",
+    "quality": "medium",
+    "prompt": "Vertical 9:16 frame from a 2D cartoon stickman explainer short, same art style as the reference image. STYLE: every character is a stickman with a very large perfectly round white head, simple black dot eyes, small expressive eyebrows and a tiny mouth, no nose, no ears; a small bean-shaped torso wearing period clothes in flat colors; thin black stick arms and stick legs with small round hands; thick clean black outlines and soft cel shading. Backgrounds are richly detailed, colorful painted environments with depth, perspective and soft cinematic lighting, like a polished cartoon set. No text, no captions, no watermark. SCENE: Today in the Louvre: the small Mona Lisa behind thick bulletproof glass, and a huge packed modern crowd of stickmen in casual clothes holding up phones to photograph it, a rope barrier in front. Bright modern lighting. Wide shot from behind the crowd.",
+    "medias": [
+     {
+      "role": "image_references",
+      "value": "12b92587-aacc-4ac1-9478-02181a638fa0"
+     }
+    ]
+   }
+  }
+ ]
+}

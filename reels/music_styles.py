@@ -691,3 +691,20 @@ def lyre(t0, t1, g=1.0, bpm=100, tune=True):
             place(music, thud(110 if k % 2 == 0 else 150, .15, .35), tk, g)
             if tune: place(music, _lyre(mel[(bar * 4 + k) % 16] + 12, q * 1.2, .9), tk, g)
         t += 4 * q; bar += 1
+
+# sneaky caper: tiptoe pizzicato bass, muted clarinet line, brushed hats, a glock "ding" (heists)
+def caper(t0, t1, g=1.0, bpm=104, tune=True):
+    q = 60 / bpm; t = t0; bar = 0
+    bass = [38, 41, 43, 44, 45, 44, 43, 41]
+    mel = [(0, 74), (.75, 77), (1.5, 76), (2, 74), (3, 69), (3.5, 72)]
+    while t < t1 - .05:
+        for k in range(8):
+            tk = t + k * q / 2
+            if tk >= t1: break
+            place(music, pizz(bass[k] - 12 + (0 if bar % 2 == 0 else 2), q * .35, .9), tk, g)
+            if k % 2 == 1: place(music, _hat(.15), tk, g)
+        if tune and bar % 2 == 0:
+            for (b, m) in mel:
+                if t + b * q < t1: place(music, _clarinet(m - 12, q * .6, .8), t + b * q, g)
+        if bar % 4 == 3: place(music, glock(86, .8, .25), t + 3.5 * q, g)
+        t += 4 * q; bar += 1
