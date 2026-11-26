@@ -708,3 +708,24 @@ def caper(t0, t1, g=1.0, bpm=104, tune=True):
                 if t + b * q < t1: place(music, _clarinet(m - 12, q * .6, .8), t + b * q, g)
         if bar % 4 == 3: place(music, glock(86, .8, .25), t + 3.5 * q, g)
         t += 4 * q; bar += 1
+
+# 1920s Paris swing (manouche): "la pompe" rhythm guitar, walking bass, violin melody (con man in Paris)
+def _gtr(ms, dur=.12, g=1.0):
+    n = int(dur * SR); t = T(n); x = np.zeros(n)
+    for k, m in enumerate(ms):
+        f = midi(m); i = int(k * .006 * SR); L = n - i; tt = T(L)
+        x[i:] += (np.sin(2 * np.pi * f * tt) + .5 * np.sin(4 * np.pi * f * tt) + .3 * np.sin(6 * np.pi * f * tt)) * np.exp(-tt * 28)
+    return bp(x, 150, 4000) * .07 * g
+def manouche(t0, t1, g=1.0, bpm=180, tune=True):
+    q = 60 / bpm; t = t0; bar = 0
+    prog = [(45, (57, 60, 64, 69)), (45, (57, 60, 64, 69)), (50, (57, 62, 65, 69)), (52, (56, 59, 62, 68))]
+    mel = [76, 77, 76, 72, 69, 72, 76, 81, 79, 77, 76, 74, 76, 72, 71, 69]
+    while t < t1 - .05:
+        root, ch = prog[bar % 4]
+        for k in range(4):
+            tk = t + k * q
+            if tk >= t1: break
+            place(music, pizz(root - 12 + [0, 4, 7, 4][k], q * .8, .9), tk, g)
+            place(music, _gtr(ch, q * (.5 if k % 2 == 0 else .3), 1.0 if k % 2 else .7), tk, g)
+            if tune: place(music, _fiddle(mel[(bar * 4 + k) % 16], q * .95, .8), tk, g)
+        t += 4 * q; bar += 1
