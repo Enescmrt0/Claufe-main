@@ -1,0 +1,12 @@
+<!doctype html><html><head><meta charset="utf-8"><style>@font-face{font-family:Poppins;font-weight:700;src:url(../../lustig/web/fonts/Poppins-Bold.ttf)}body{margin:0}</style></head><body><canvas id="c" width="1080" height="1920"></canvas>
+<script src="lib.js"></script><script src="chars.js"></script><script src="chars2.js"></script><script>
+const ctx = document.getElementById('c').getContext('2d');
+const g = ctx.createLinearGradient(0,0,0,1920); g.addColorStop(0,'#5a6a72'); g.addColorStop(1,'#2a3036'); ctx.fillStyle=g; ctx.fillRect(0,0,1080,1920);
+for (let i=0;i<6;i++){ ctx.fillStyle='rgba(0,0,0,.12)'; ctx.fillRect(0,200+i*260,1080,6); for(let k=0;k<8;k++){circle(ctx,40+k*140,230+i*260,6);ctx.fillStyle='rgba(255,255,255,.15)';ctx.fill();}}
+ctx.fillStyle='#8a7a62'; ctx.fillRect(0,1240,1080,700); line(ctx,0,1240,1080,1240,6);
+person(ctx,{x:280,y:1330,s:760,coat:'#1e1e22',pants:'#1a1a1e',collar:'high',hair:'crop',stubble:true,scar:true,blush:true,arms:{L:[.2,-.1],R:[1.4,.6]},face:{eyes:'half',mouth:'flat',look:[1,0],brow:-.3}});
+person(ctx,{x:780,y:1330,s:760,flip:-1,coat:'#1e2a4f',pants:'#1a2038',buttons:'#e8c04a',cuff:'#e8c04a',collar:'v',tie:'#111',stubble:true,hat:officerCap2,arms:{L:[.15,-.1],R:[.15,-.1]},face:{eyes:'wide',mouth:'o',look:[-1,0]}});
+person(ctx,{x:560,y:1060,s:420,coat:'#1e2438',collar:'sailor',hat:sailorCap,arms:{L:[.2,-.1],R:[2.5,.2]},face:{eyes:'normal',mouth:'grin'}});
+person(ctx,{x:900,y:900,s:380,coat:'#2a3e6a',lamellar:true,belt:'#5a3a22',hat:warHelm,arms:{L:[.2,-.1],R:[2.6,.1]},face:{eyes:'angry',mouth:'shout',moustache:'#1a1a1a'}});
+text(ctx,'YOU ASK TO', 540, 1330, 46, '#fff', INK, 10); text(ctx,'YOU ASK TO', 540, 1330, 46, '#fff', INK, 0);
+</script></body></html>
