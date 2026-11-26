@@ -729,3 +729,19 @@ def manouche(t0, t1, g=1.0, bpm=180, tune=True):
             place(music, _gtr(ch, q * (.5 if k % 2 == 0 else .3), 1.0 if k % 2 else .7), tk, g)
             if tune: place(music, _fiddle(mel[(bar * 4 + k) % 16], q * .95, .8), tk, g)
         t += 4 * q; bar += 1
+
+# thriller: spy-film ostinato (pizz 8ths in D minor), sustained strings, timpani on bar starts; major=True resolves warm
+def thriller(t0, t1, g=1.0, bpm=96, major=False, ost=True):
+    e8 = 60 / bpm / 2; t = t0; bar = 0
+    prog = [(38, (50, 53, 57)), (34, (50, 53, 58)), (31, (50, 55, 58)), (33, (49, 52, 57))] if not major else [(38, (50, 54, 57)), (43, (50, 55, 59)), (35, (50, 54, 59)), (45, (49, 52, 57))]
+    pat = [0, 3, 7, 3, 12, 7, 3, 7]
+    while t < t1 - .05:
+        root, ch = prog[bar % 4]; bl = 8 * e8
+        place(music, strings(list(ch) + [ch[0] + 12], min(bl, t1 - t) + .3, .55), t, g)
+        place(music, _timp(55 if root % 12 == 2 else 49, .8), t, g)
+        if ost:
+            for k in range(8):
+                if t + k * e8 >= t1: break
+                place(music, pizz(root + 12 + pat[k] - (0 if not major or pat[k] != 3 else -1), .3, .75), t + k * e8, g)
+        if bar % 2 == 1: place(music, thud(60, .25, .4), t + 6 * e8, g)
+        t += bl; bar += 1
