@@ -1,8 +1,8 @@
 # The Man Who Said No (Vasili Arkhipov, submarine B-59, 27 October 1962)
 
-Portrait Short, 1080×1920, 30 fps, about 68 s. Second reel in the reference "you" format (see `reels/style/SEN-FORMATI.md`). Final: `arkhipov-final.mp4`.
+Portrait Short, 1080×1920, 30 fps, about 79 s. Second reel in the reference "you" format (see `reels/style/SEN-FORMATI.md`). Final: `arkhipov-final.mp4`.
 
-- `script.json`: 12 sentences, second person; voice Kokoro `am_onyx` at 1.0
+- `script.json`: 12 sentences, second person; voice Kokoro `am_michael` at 1.08
 - `web/env42.js`: submarine interior (hull ribs, pipes, valves, gauges, swinging lamp, drips, steam; dim / red / green light), torpedo room and
   nuclear torpedo, battery, thermometer, fan, underwater scenes with depth charges, US destroyers, night surfacing with searchlights,
   Cuba blockade map, vote cards, Moscow office with naval ensign, archive, snowy grave, Havana 2002 conference

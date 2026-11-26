@@ -1,9 +1,9 @@
 # The Spy With 27 Agents Who Didn't Exist (Juan Pujol, "Garbo", 1941-44)
 
-Portrait Short, 1080×1920, 30 fps, about 66 s. This is the first reel in the reference style; the format is described in
+Portrait Short, 1080×1920, 30 fps, about 77 s. This is the first reel in the reference style; the format is described in
 `reels/style/SEN-FORMATI.md`. Final file: `garbo-final.mp4`.
 
-- `script.json`: 12 sentences, about 216 words, written in the second person ("you"). Voice: Kokoro `am_onyx` at 1.0.
+- `script.json`: 12 sentences, about 216 words, written in the second person ("you"). Voice: Kokoro `am_michael` at 1.08.
 - `web/chars2.js`: egg-head character rig with dressed bodies, gloved hands, stubble, `half`/`angry` eyes and moustaches.
 - `web/env41.js`: the props and sets:
   - Characters: Garbo, German officer, British officer, codebreakers, Hitler, German soldiers.
