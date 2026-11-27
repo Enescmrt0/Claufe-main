@@ -9,7 +9,6 @@ const cue = (t, at, d = .2) => clamp((t - at) / d);
 const camA = (t, lt, o = {}) => { const hh = handheld(t, o.shake == null ? 3 : o.shake); return { x: (o.x || 540) + hh[0], y: (o.y || 960) + hh[1], z: (o.z || 1.02) + (o.dz == null ? .012 : o.dz) * lt, r: o.r || 0 }; };
 const SHOTS = [];
 const walk = (t, a = .4) => ({ L: [.1 + Math.sin(t * 8) * a, -.15], R: [.1 - Math.sin(t * 8) * a, -.15] });
-const sh = (f) => (s, e, tr, d) => SHOTS.push({ start: s, end: e, tr: tr || 'whip', draw: d });
 // [0] 1914: 28 men; ship trapped, crushed, sunk
 SHOTS.push({ start: S(0), end: S(1), tr: 'whip', draw(ctx, lt, t) {
   const cam = camA(t, lt, { z: 1.02, dz: .03 }); const ph = t < wt(0, 'their') - .1 ? 0 : 1;

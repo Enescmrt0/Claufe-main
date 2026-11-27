@@ -1,6 +1,5 @@
 const SHOTS = [];
 const walk = (t, a = .4) => ({ L: [.1 + Math.sin(t * 8) * a, -.15], R: [.1 - Math.sin(t * 8) * a, -.15] });
-const sh = (f) => (s, e, tr, d) => SHOTS.push({ start: s, end: e, tr: tr || 'whip', draw: d });
 // [0] 1914: 28 men; ship trapped, crushed, sunk
 SHOTS.push({ start: S(0), end: S(1), tr: 'whip', draw(ctx, lt, t) {
   const cam = camA(t, lt, { z: 1.02, dz: .03 }); const ph = t < wt(0, 'their') - .1 ? 0 : 1;
